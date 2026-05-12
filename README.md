@@ -11,7 +11,6 @@ Lista TODO: patrz `TODO.md`.
 ## Jak uruchomić lokalnie
 
 ```bash
-cd erli-de/
 python3 -m http.server 8000
 # Otwórz http://localhost:8000
 ```
@@ -29,26 +28,18 @@ Automatyczny – każdy push na `main` = redeploy na Cloudflare Pages.
 **Repo:** https://github.com/maciejgodek-wq/erli-de-preview  
 **Hosting:** Cloudflare Pages (spięty z powyższym repo, branch `main`)
 
-### Pierwszy raz (jednorazowo)
+### Każda zmiana
 
 ```bash
-cd "zaslepka ERLI de/erli-de-test"
-git init
-git remote add origin https://github.com/maciejgodek-wq/erli-de-preview.git
-git add erli-de/
-git commit -m "initial commit"
-git push -u origin main
-```
-
-### Każda kolejna zmiana
-
-```bash
-git add erli-de/
+git add index.html assets/ *.html robots.txt sitemap.xml _headers
 git commit -m "opis zmiany"
 git push
 ```
 
-Po pushu Cloudflare Pages automatycznie pobiera zmiany i deployuje (ok. 1–2 min).
+Po pushu Cloudflare Pages automatycznie deployuje (ok. 1–2 min).
+
+> Pliki strony są w **katalogu głównym repo**.  
+> Nie commituj `briefs/`, `design-system/`, `prompts/` — to materiały robocze.
 
 ## Kontakt
 
