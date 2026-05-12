@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Erli Deutschland - Online-Marktplatz - g&uuml;nstig &amp; sicher einkaufen</title>
-  <meta name="description" content="Alles, was du brauchst, an einem Ort. Entdecke Millionen Produkte, g&uuml;nstige Preise, starke Angebote &amp; sicheres Online-Shopping mit dem Erli-Marktplatz.">
+  <meta name="description" content="Alles, was du brauchst, an einem Ort. Entdecke Millionen Produkte, g&uuml;nstige Preise, starke Angebote und sicheres Online-Shopping mit dem Erli-Marktplatz.">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
   <meta property="og:title" content="Erli Deutschland - Online-Marktplatz - günstig &amp; sicher einkaufen">
   <meta property="og:description" content="Alles, was du brauchst, an einem Ort. Entdecke Millionen Produkte, günstige Preise, starke Angebote &amp; sicheres Online-Shopping mit dem Erli-Marktplatz.">
@@ -12,10 +12,19 @@
   <meta property="og:url" content="https://erli.de/">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Erli">
+  <meta property="og:image" content="https://erli.de/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Erli &ndash; Der neue Online-Marktplatz">
   <link rel="canonical" href="https://erli.de/">
   <link rel="alternate" hreflang="de-DE" href="https://erli.de/">
   <link rel="alternate" hreflang="x-default" href="https://erli.de/">
-  <!-- Consent Mode v2 – muss vor GTM initialisiert werden (DSGVO) -->
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -52,7 +61,7 @@
   <header role="banner" class="site-header">
     <div class="container site-header__inner">
       <a href="/" aria-label="Erli Online-Marktplatz Logo – schnelle Eink&auml;ufe an einem Ort" class="site-header__logo">
-        <img src="/assets/img/erli-logo.svg" alt="Erli" width="82" height="31" loading="eager">
+        <img src="/assets/img/erli-logo.svg" alt="Erli Online-Marktplatz Logo &ndash; schnelle Eink&auml;ufe an einem Ort" width="82" height="31" loading="eager">
       </a>
       <button class="nav-toggle"
               aria-label="Menü öffnen"
@@ -74,13 +83,11 @@
 
   <main id="main">
 
-    <!-- ============ HERO — replikacja 1:1 erli.pl/aplikacja ============
-         Gradient + circle.svg overlay + cut-out person (alpha WebP)
-         TEMP: hero-person.webp z erli.pl CDN — docelowo sesja DE od Marketingu -->
+    
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__inner">
 
-        <!-- Lewa kolumna: treść (odpowiednik .appLogo + text w erli.pl) -->
+        
         <div class="hero__panel">
           <span class="hero__badge">
             <span class="hero__badge-dot" aria-hidden="true"></span>
@@ -103,7 +110,7 @@
           </a>
         </div>
 
-        <!-- Prawa kolumna: cut-out pani z erli.pl/zwroty (alpha PNG) -->
+        
         <div class="hero__photo" aria-hidden="true">
           <img src="/assets/img/hero-pani.png"
                alt=""
@@ -117,9 +124,12 @@
       </div>
     </section>
 
-    <!-- ============ TRUST — białe karty wystające z hero (bez nagłówka) ============ -->
-    <section class="section trust-section" aria-label="Warum Erli">
+    
+    <section class="section trust-section" aria-labelledby="trust-heading">
       <div class="container">
+        <header class="section-header">
+          <h2 id="trust-heading" class="section-header__heading">Warum Erli?</h2>
+        </header>
 
         <ul class="trust-grid" role="list">
 
@@ -136,7 +146,6 @@
             <h3 class="trust-card__title">Online-Marktplatz</h3>
             <p class="trust-card__text">
               Alles an einem Ort &ndash; von Elektronik bis Haus &amp; Garten.
-              Tausende Produkte, ein einfacher Checkout.
             </p>
           </li>
 
@@ -152,7 +161,6 @@
             <h3 class="trust-card__title">G&uuml;nstig einkaufen</h3>
             <p class="trust-card__text">
               Attraktive Preise und starke Angebote f&uuml;r Millionen Produkte.
-              T&auml;glich neue Deals.
             </p>
           </li>
 
@@ -191,8 +199,8 @@
       </div>
     </section>
 
-    <!-- ============ CATEGORIES — Bento grid (Design-1b) ============ -->
-    <!-- PLACEHOLDER: Unsplash CC0 — zastąpić brandowymi zdjęciami od Marketingu -->
+    
+    
     <section aria-labelledby="categories-heading" class="section categories-section animate-reveal">
       <div class="container">
         <header class="section-header">
@@ -201,12 +209,12 @@
           <p class="section-header__description">Bald alles auf Erli &ndash; von Elektronik bis Mode.</p>
         </header>
 
-        <!-- Kolejność: alfabetycznie wg nazw PL (jak na erli.pl): Dom→Dziecko→Elektronika→Firma→Kolekcje→Kultura→Moda→Motoryzacja→Sport→Supermarket→Uroda→Zdrowie -->
+        
         <ul class="cat-bento" role="list">
-          <!-- 1. Haus & Garten (Dom i Ogród) — TALL col 1 r1-2 -->
+          
           <li class="cat-bento__item cat-bento__item--tall">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu (klimat: piękny ogród / outdoor) -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-haus.webp" alt="" loading="lazy" decoding="async" width="400" height="600">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -216,10 +224,10 @@
             </article>
           </li>
 
-          <!-- 2. Kind & Baby (Dziecko) — single col 2 r1 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-kind.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -229,10 +237,22 @@
             </article>
           </li>
 
-          <!-- 3. Elektronik (Elektronika) — TALL col 3 r1-2 -->
+          <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+          <li class="cat-bento__item">
+            <article class="cat-bento-card">
+              <img class="cat-bento-card__img" src="/assets/img/cat-moebel.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
+              <div class="cat-bento-card__overlay" aria-hidden="true"></div>
+              <div class="cat-bento-card__content">
+                <span class="cat-bento-card__name">M&ouml;bel</span>
+                <span class="cat-bento-card__sub">Wohnen &amp; Einrichten</span>
+              </div>
+            </article>
+          </li>
+
+
           <li class="cat-bento__item cat-bento__item--tall">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-elektronik.webp" alt="" loading="lazy" decoding="async" width="400" height="600">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -242,10 +262,10 @@
             </article>
           </li>
 
-          <!-- 4. Gewerbe (Firma) — single col 4 r1 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-business.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -255,10 +275,10 @@
             </article>
           </li>
 
-          <!-- 5. Sammeln & Kunst (Kolekcje i sztuka) — single col 5 r1 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-sammeln.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -268,10 +288,10 @@
             </article>
           </li>
 
-          <!-- 6. Kultur & Unterhaltung (Kultura i rozrywka) — single col 2 r2 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-kultur.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -281,10 +301,10 @@
             </article>
           </li>
 
-          <!-- 7. Mode (Moda) — single col 4 r2 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu (klimat: uśmiechnięta osoba) -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-mode.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -294,10 +314,10 @@
             </article>
           </li>
 
-          <!-- 8. Auto & Motorrad (Motoryzacja) — single col 5 r2 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-auto.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -307,10 +327,10 @@
             </article>
           </li>
 
-          <!-- 9. Sport & Freizeit (Sport i turystyka) — single col 1 r3 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-sport.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -320,10 +340,10 @@
             </article>
           </li>
 
-          <!-- 10. Supermarkt (Supermarket) — WIDE col 2-3 r3 -->
+          
           <li class="cat-bento__item cat-bento__item--wide">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu (klimat: chemia domowa, drogeria) -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-supermarkt.webp" alt="" loading="lazy" decoding="async" width="800" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -333,10 +353,10 @@
             </article>
           </li>
 
-          <!-- 11. Beauty (Uroda) — single col 4 r3 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-beauty.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -346,10 +366,10 @@
             </article>
           </li>
 
-          <!-- 12. Gesundheit (Zdrowie) — single col 5 r3 -->
+          
           <li class="cat-bento__item">
             <article class="cat-bento-card">
-              <!-- TODO: zastąpić brandowym zdjęciem od Marketingu -->
+              
               <img class="cat-bento-card__img" src="/assets/img/cat-gesundheit.webp" alt="" loading="lazy" decoding="async" width="400" height="240">
               <div class="cat-bento-card__overlay" aria-hidden="true"></div>
               <div class="cat-bento-card__content">
@@ -362,16 +382,13 @@
       </div>
     </section>
 
-    <!-- ============ REVIEWS — Marquee à la Lunera ============ -->
-    <!-- DRAFT: opinie do podmiany na realne z erli.pl/opinie + walidacja native DE speaker + Legal (UWG).
-         Gwiazdki: aktualnie wszystkie 5/5 (placeholder zgodny ze średnią 5,8/6) — przy realnych opiniach
-         wartości ustawić indywidualnie per karta (aria-label + liczba ★). NIE WYMYŚLAĆ ratingów.
-         Marquee: 15 ltr + 15 rtl, JS klonuje track dla seamless loop. -->
+    
+    
     <section class="reviews-section animate-reveal" aria-labelledby="reviews-heading">
       <div class="container">
         <header class="section-header">
           <span class="section-eyebrow">Vertrauen</span>
-          <h2 id="reviews-heading" class="section-header__heading">&Uuml;ber 5 Millionen Nutzer vertrauen Erli</h2>
+          <h2 id="reviews-heading" class="section-header__heading">Kundenbewertungen zu Erli</h2>
           <p class="section-header__description">
             Schnelle Lieferung, faire Preise und hilfsbereiter Kundenservice &mdash; das sagen unsere K&auml;uferinnen und K&auml;ufer aus Polen.
             Seit Jahren entdecken Millionen Kundinnen und Kunden auf Erli t&auml;glich neue Schn&auml;ppchen aus zw&ouml;lf Kategorien.
@@ -385,7 +402,7 @@
           <span class="reviews-marquee__pause-icon" aria-hidden="true">⏸</span>
           <span class="reviews-marquee__pause-label">Pausieren</span>
         </button>
-        <!-- Row 1: ltr -->
+        
         <div class="reviews-marquee__row reviews-marquee__row--ltr">
           <ul class="reviews-marquee__track" role="list">
             <li class="review-card">
@@ -511,7 +528,7 @@
           </ul>
         </div>
 
-        <!-- Row 2: rtl -->
+        
         <div class="reviews-marquee__row reviews-marquee__row--rtl">
           <ul class="reviews-marquee__track" role="list">
             <li class="review-card">
@@ -659,7 +676,7 @@
         </p>
       </div>
 
-      <!-- Mini-skrypt: (1) klonuje track raz dla seamless loop, (2) toggle pause button (WCAG 2.2.2). Bez JS marquee pokazuje 15 kart + niewidoczny przycisk. -->
+      
       <script>
         document.querySelectorAll('.reviews-marquee').forEach(marquee => {
           marquee.querySelectorAll('.reviews-marquee__track').forEach(track => {
@@ -681,7 +698,7 @@
       </script>
     </section>
 
-    <!-- ============ CTA SECTION — rounded card, animated hero gradient, osoba wystaje ============ -->
+    
     <section class="cta-section animate-reveal" aria-labelledby="cta-heading">
       <div class="container">
         <div class="cta-card">
@@ -696,7 +713,7 @@
             </a>
           </div>
           <div class="cta-card__visual" aria-hidden="true">
-            <!-- TODO: docelowe zdjęcie od Marketingu -->
+            
             <img class="cta-card__photo" src="/assets/img/hero-pani.png" alt="" loading="lazy" decoding="async">
           </div>
         </div>

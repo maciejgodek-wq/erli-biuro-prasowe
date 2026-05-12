@@ -22,13 +22,20 @@
 
 ## Marketing / Brand
 
-- [ ] OG image (1200×630 px, max 5 MB) — branding Erli + claim dla linków social
-      → wstaw jako `<meta property="og:image">` na wszystkich stronach
+- [x] OG image meta tagi — dodane na 4 indexowalnych stronach (index, faq, ueber-uns, kontakt)
+      → plik `/assets/img/og-image.jpg` (1200×630 px, max 5 MB) do dostarczenia przez Marketing
+      → placeholder: `assets/img/og-image-PLACEHOLDER.txt`
 - [ ] Hero photo — finalna sesja fotograficzna DE
       → zastąpić: `assets/img/hero-person.webp` + `hero-person-mobile.webp` (TEMP: z erli.pl)
 - [ ] Zdjęcia kategorii — 13 szt. (Unsplash CC0 zastąpić brandowymi)
       → `assets/img/cat-*.webp` (12 kategorii + moebel)
-- [ ] Favicon set finalny: 16×16, 32×32, 180×180 (apple-touch-icon), SVG + `<link rel="icon">`
+- [ ] `ueber-uns.html` – sekcja „Was ist Erli?": zastąpić placeholder `cat-elektronik.webp` docelowym zdjęciem od Marketingu
+- [ ] `index.html` + `ueber-uns.html` – CTA-card (dolna sekcja): zastąpić `hero-pani.png` docelowym zdjęciem od Marketingu
+- [x] Favicon — `favicon.svg` + `apple-touch-icon.png` (180×180) + link tagi dla ico/16/32 dodane we wszystkich stronach
+      → `apple-touch-icon.png` = placeholder #0097BC; zastąpić rasterem z `favicon.svg` gdy będzie Inkscape/ImageMagick
+- [ ] Favicon pliki do wygenerowania: `favicon.ico` + `favicon-16x16.png` + `favicon-32x32.png`
+      → wygenerować z `design-system/erli_logo.svg` przed deploymentem
+      → narzędzia: ImageMagick (`convert`) lub rsvg-convert; link tagi już w HTML
 - [ ] Logo SVG erli.de — potwierdzenie finalnej wersji (aktualnie: erli_logo.svg z design-system)
 - [x] Email DE finalny — `kontakt@erli.de` wdrożony w `/kontakt` (podmieniony z `info@erli.de`)
 - [ ] Decyzja: język w stopce (de/pl selector) — brief UX/MKT pkt 9
@@ -84,7 +91,7 @@ Wszystkie teksty oznaczone `<!-- DRAFT: do walidacji native DE speaker -->` wyma
 - [ ] SSL: automatyczny przez hosting (Let's Encrypt / Cloudflare)
 - [ ] Clean URL routing: `/faq` → `faq.html` (Cloudflare Pages: domyślnie OK)
 - [ ] Custom 404 page routing: konfiguracja w `_redirects` (Cloudflare Pages)
-      → dodaj plik `erli-de/_redirects`: `/* /404.html 404`
+      → dodaj plik `_redirects` w root repo: `/* /404.html 404`
 - [ ] EU region potwierdzić w ustawieniach projektu (DSGVO)
 
 ---
