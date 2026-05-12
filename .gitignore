@@ -1,0 +1,30 @@
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editory
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (gdyby ktoś odpalił npm lokalnie)
+node_modules/
+npm-debug.log
+*.log
+
+# Tymczasowe
+*.tmp
+*.temp
+.cache/
+.tmp/
+
+# Nie commituj archiwum design.md v2.2 do repo (zostaje lokalnie)
+design-system/design-v2.2-archive.md
+
+# Claude Code (wewnętrzne pliki agenta)
+.claude/
+
+# Dokumenty wewnętrzne (briefingi, research)
+briefs/
