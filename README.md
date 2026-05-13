@@ -10,10 +10,28 @@ Lista TODO: patrz `TODO.md`.
 
 ## Jak uruchomić lokalnie
 
+### Opcja 1: Node.js (zalecane dla Windows)
+
 ```bash
-python3 -m http.server 8000
+npx http-server -p 8000
 # Otwórz http://localhost:8000
 ```
+
+### Opcja 2: Python 3
+
+```bash
+python3 -m http.server 8000
+# Otwórt http://localhost:8000
+```
+
+### Opcja 3: Python (Windows)
+
+```bash
+python -m http.server 8000
+# Otwórz http://localhost:8000
+```
+
+**Uwaga:** Serwer działa na porcie 8000. Aby zatrzymać serwer, naciśnij `CTRL-C` w terminalu.
 
 ## Stack
 
