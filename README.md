@@ -41,23 +41,49 @@ python -m http.server 8000
 
 ## Deployment
 
-Automatyczny – każdy push na `main` = redeploy na Cloudflare Pages.
+### Automatyczny deployment (Cloudflare Pages)
+
+Projekt jest skonfigurowany z automatycznym deploymentem na Cloudflare Pages. Każdy push na branch `main` wyzwala automatyczny redeploy.
 
 **Repo:** https://github.com/maciejgodek-wq/erli-de-preview  
-**Hosting:** Cloudflare Pages (spięty z powyższym repo, branch `main`)
+**Hosting:** Cloudflare Pages (spięty z powyższym repo, branch `main`)  
+**URL produkcyjny:** [uzupełnić po deployu]
 
-### Każda zmiana
+### Proces deploymentu
+
+1. **Zatwierdź zmiany lokalnie:**
+   ```bash
+   git add <pliki>
+   git commit -m "opis zmiany"
+   ```
+
+2. **Wypchnij na GitHub:**
+   ```bash
+   git push origin main
+   ```
+
+3. **Cloudflare Pages automatycznie:**
+   - Pobiera zmiany z GitHub
+   - Buduje stronę (static site)
+   - Deployuje na produkcję
+   - **Czas:** ok. 1–2 minuty
+
+### Pliki do commitowania
 
 ```bash
-git add index.html assets/ *.html robots.txt sitemap.xml _headers
-git commit -m "opis zmiany"
-git push
+git add index.html assets/ *.html robots.txt sitemap.xml _headers README.md
 ```
 
-Po pushu Cloudflare Pages automatycznie deployuje (ok. 1–2 min).
+**Ważne:**
+- Pliki strony są w **katalogu głównym repo**
+- Nie commituj `briefs/`, `design-system/`, `prompts/` — to materiały robocze
+- Sprawdź `.gitignore` przed commitowaniem nowych plików
 
-> Pliki strony są w **katalogu głównym repo**.  
-> Nie commituj `briefs/`, `design-system/`, `prompts/` — to materiały robocze.
+### Monitorowanie deploymentu
+
+- Sprawdź status deploymentu w panelu Cloudflare Pages
+- Logi buildu są dostępne w dashboardzie Cloudflare
+- Po udanym deployu strona jest dostępna natychmiast na URL produkcyjnym
 
 ## Kontakt
 
