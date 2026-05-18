@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Seite nicht gefunden | Erli</title>
+  <title>Seite nicht gefunden | ERLI</title>
   <meta name="description" content="Die gesuchte Seite wurde nicht gefunden.">
   <meta name="robots" content="noindex,follow">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -23,14 +23,17 @@
     });
     try { var _c = localStorage.getItem('erli-consent'); if (_c) gtag('consent', 'update', JSON.parse(_c)); } catch(e){}
   </script>
-  <!-- Google Tag Manager – TODO: GTM-XXXXXXX durch echte Container-ID ersetzen -->
+  <!-- Google Tag Manager - TODO: GTM-XXXXXXX durch echte Container-ID ersetzen -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
   <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="preload" href="/assets/fonts/roboto-flex-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  
+  
+  
+  <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+  <link rel="stylesheet" href="/assets/css/critical.css">
   <script src="/assets/js/header-scroll.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"ERLI","url":"https://erli.de","logo":"https://erli.de/assets/img/erli-logo.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"German","url":"https://erli.de/kontakt"},"sameAs":["https://erli.pl"]}
@@ -42,8 +45,8 @@
 
   <header role="banner" class="site-header">
     <div class="container site-header__inner">
-      <a href="/" aria-label="Erli Online-Marktplatz Logo – schnelle Eink&auml;ufe an einem Ort" class="site-header__logo">
-        <img src="/assets/img/erli-logo.svg" alt="Erli Online-Marktplatz Logo &ndash; schnelle Eink&auml;ufe an einem Ort" width="82" height="31" loading="eager">
+      <a href="/" aria-label="ERLI Online-Marktplatz Logo – schnelle Eink&auml;ufe an einem Ort" class="site-header__logo">
+        <img src="/assets/img/erli-logo.svg" alt="ERLI Online-Marktplatz Logo - schnelle Eink&auml;ufe an einem Ort" width="82" height="31" loading="eager">
       </a>
       <button class="nav-toggle"
               aria-label="Men&#252; &#246;ffnen"
@@ -87,12 +90,12 @@
     <div class="container">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="site-footer__logo" aria-label="Erli Logo – g&uuml;nstig &amp; sicher online einkaufen">
-            <img src="/assets/img/erli-logo.svg" alt="Erli" width="82" height="31" loading="lazy">
+          <a href="/" class="site-footer__logo" aria-label="ERLI Logo – g&uuml;nstig &amp; sicher online einkaufen">
+            <img src="/assets/img/erli-logo.svg" alt="ERLI" width="82" height="31" loading="lazy">
           </a>
           <p class="site-footer__tagline">
-            Bald in Deutschland. Jetzt in Polen.<br>
-            G&uuml;nstig einkaufen &mdash; jeden Tag.
+            Bald in Deutschland.<br>
+            G&uuml;nstig einkaufen - jeden Tag.
           </p>
         </div>
         <nav class="site-footer__nav" aria-label="Footer Navigation">
@@ -105,8 +108,7 @@
         </nav>
       </div>
       <div class="site-footer__bottom">
-        <p>&copy; 2026 Erli.de</p>
-        <a href="https://erli.pl" rel="alternate external" hreflang="pl">erli.pl &rarr;</a>
+        <p>&copy; 2026 ERLI.de</p>
       </div>
     </div>
   </footer>

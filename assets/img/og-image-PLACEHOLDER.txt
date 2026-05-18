@@ -1,7 +1,0 @@
-TODO: OG image 1200x630px
-- Format: JPG
-- Filename: og-image.jpg
-- Branding: logo Erli + hasło marketingowe + marketplace visual
-- Dostarczy: Marketing
-- Termin: przed deploymentem
-- Meta tagi już dodane we wszystkich 4 indexowalnych stronach (index, faq, ueber-uns, kontakt)

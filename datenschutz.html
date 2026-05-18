@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Datenschutzerkl&auml;rung | Erli.de</title>
-  <meta name="description" content="Datenschutzerkl&auml;rung von Erli.de &ndash; Informationen zur Verarbeitung personenbezogener Daten gem&auml;&szlig; DSGVO.">
+  <title>Datenschutzerkl&auml;rung | ERLI.de</title>
+  <meta name="description" content="Datenschutzerkl&auml;rung von ERLI.de &ndash; Informationen zur Verarbeitung personenbezogener Daten gem&auml;&szlig; DSGVO.">
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://erli.de/datenschutz">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -24,14 +24,17 @@
     });
     try { var _c = localStorage.getItem('erli-consent'); if (_c) gtag('consent', 'update', JSON.parse(_c)); } catch(e){}
   </script>
-  <!-- Google Tag Manager – TODO: GTM-XXXXXXX durch echte Container-ID ersetzen -->
+  <!-- Google Tag Manager - TODO: GTM-XXXXXXX durch echte Container-ID ersetzen -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
   <link rel="preload" href="/assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/base.css">
-  <link rel="stylesheet" href="/assets/css/layout.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="preload" href="/assets/fonts/roboto-flex-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  
+  
+  
+  <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+  <link rel="stylesheet" href="/assets/css/critical.css">
   <script src="/assets/js/header-scroll.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"ERLI","url":"https://erli.de","logo":"https://erli.de/assets/img/erli-logo.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":"German","url":"https://erli.de/kontakt"},"sameAs":["https://erli.pl"]}
@@ -43,8 +46,8 @@
 
   <header role="banner" class="site-header">
     <div class="container site-header__inner">
-      <a href="/" aria-label="Erli Online-Marktplatz Logo – schnelle Eink&auml;ufe an einem Ort" class="site-header__logo">
-        <img src="/assets/img/erli-logo.svg" alt="Erli Online-Marktplatz Logo &ndash; schnelle Eink&auml;ufe an einem Ort" width="82" height="31" loading="eager">
+      <a href="/" aria-label="ERLI Online-Marktplatz Logo – schnelle Eink&auml;ufe an einem Ort" class="site-header__logo">
+        <img src="/assets/img/erli-logo.svg" alt="ERLI Online-Marktplatz Logo - schnelle Eink&auml;ufe an einem Ort" width="82" height="31" loading="eager">
       </a>
       <button class="nav-toggle"
               aria-label="Men&#252; &#246;ffnen"
@@ -85,17 +88,17 @@
           <h2>1. Verantwortlicher</h2>
           <p>
             Verantwortlich f&uuml;r die Datenverarbeitung auf dieser Website ist:<br>
-            [Firmenname, Adres, Email &mdash; do uzupełnienia z Impressum]
+            [Firmenname, Adres, Email - do uzupełnienia z Impressum]
           </p>
 
           <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
           <p>
-            [Standardowe wprowadzenie DSGVO &mdash; do uzupełnienia przez prawnika DE]
+            [Standardowe wprowadzenie DSGVO - do uzupełnienia przez prawnika DE]
           </p>
 
           <h2>3. Server-Logfiles</h2>
           <p>
-            [Opis logów serwera &mdash; IP, User-Agent, timestamp, referrer.
+            [Opis logów serwera - IP, User-Agent, timestamp, referrer.
             Hosting: do uzupełnienia (Cloudflare Pages / Vercel z EU routing).]
           </p>
 
@@ -108,7 +111,7 @@
 
           <h2>5. Google Analytics 4</h2>
           <p>
-            [Opis GA4 z anonimizacj&aacute; IP &mdash; b&eacute;dzie aktywne
+            [Opis GA4 z anonimizacj&aacute; IP - b&eacute;dzie aktywne
             dopiero po opt-in u&zacute;ytkownika (Etap 4). Do uzupełnienia
             przez prawnika DE w zakresie podstawy prawnej (zgoda Art. 6 ust. 1
             lit. a DSGVO) oraz odbiorców danych (Google LLC, USA + SCC).]
@@ -117,19 +120,19 @@
           <h2>6. Google Search Console</h2>
           <p>
             [Wykorzystywane do weryfikacji domeny i monitorowania indeksacji.
-            Nie zbiera danych osobowych użytkowników strony &mdash; Google
+            Nie zbiera danych osobowych użytkowników strony - Google
             przekazuje zagregowane dane wyszukiwania.]
           </p>
 
           <h2>7. Schriftarten (Self-Hosted)</h2>
           <p>
-            [Self-hosted fonts (Montserrat, Roboto Flex) &mdash; brak
+            [Self-hosted fonts (Montserrat, Roboto Flex) - brak
             po&l;&aogon;czenia z Google Fonts CDN, brak transferu IP do Google.]
           </p>
 
           <h2>8. Hosting und CDN</h2>
           <p>
-            [Decyzja: Cloudflare Pages / Vercel z EU routing &mdash; do
+            [Decyzja: Cloudflare Pages / Vercel z EU routing - do
             potwierdzenia przez Legal/DevOps. Standard Contractual Clauses
             je&sacute;li serwery USA.]
           </p>
@@ -149,7 +152,7 @@
           <p>
             Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbeh&ouml;rde
             &uuml;ber die Verarbeitung deiner personenbezogenen Daten zu
-            beschweren. [Zust&auml;ndige Beh&ouml;rde &mdash; do uzupełnienia.]
+            beschweren. [Zust&auml;ndige Beh&ouml;rde - do uzupełnienia.]
           </p>
         </article>
       </div>
@@ -161,15 +164,15 @@
           <div class="cta-card__content">
             <h2 id="datenschutz-cta-heading" class="cta-card__title">Fragen zum Datenschutz?</h2>
             <p class="cta-card__text">
-              Unser Team beantwortet deine Fragen &ndash; auf Deutsch,
-              Englisch oder Polnisch.
+              Unser Team beantwortet deine Fragen - auf Deutsch
+              und Englisch.
             </p>
             <a href="/kontakt" class="btn btn--promotion btn--large cta-card__btn">
               Schreib uns
             </a>
           </div>
           <div class="cta-card__visual" aria-hidden="true">
-            <img class="cta-card__photo" src="/assets/img/hero-pani.png" alt="" loading="lazy" decoding="async">
+            <picture><source type="image/webp" srcset="/assets/img/cta-person.webp"><img class="cta-card__photo" src="/assets/img/cta-person.png" alt="" loading="lazy" decoding="async"></picture>
           </div>
         </div>
       </div>
@@ -181,12 +184,12 @@
     <div class="container">
       <div class="site-footer__grid">
         <div class="site-footer__brand">
-          <a href="/" class="site-footer__logo" aria-label="Erli Logo – g&uuml;nstig &amp; sicher online einkaufen">
-            <img src="/assets/img/erli-logo.svg" alt="Erli" width="82" height="31" loading="lazy">
+          <a href="/" class="site-footer__logo" aria-label="ERLI Logo – g&uuml;nstig &amp; sicher online einkaufen">
+            <img src="/assets/img/erli-logo.svg" alt="ERLI" width="82" height="31" loading="lazy">
           </a>
           <p class="site-footer__tagline">
-            Bald in Deutschland. Jetzt in Polen.<br>
-            G&uuml;nstig einkaufen &mdash; jeden Tag.
+            Bald in Deutschland.<br>
+            G&uuml;nstig einkaufen - jeden Tag.
           </p>
         </div>
         <nav class="site-footer__nav" aria-label="Footer Navigation">
@@ -199,8 +202,7 @@
         </nav>
       </div>
       <div class="site-footer__bottom">
-        <p>&copy; 2026 Erli.de</p>
-        <a href="https://erli.pl" rel="alternate external" hreflang="pl">erli.pl &rarr;</a>
+        <p>&copy; 2026 ERLI.de</p>
       </div>
     </div>
   </footer>
