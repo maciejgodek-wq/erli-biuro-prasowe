@@ -127,12 +127,14 @@
         </div>
         <div class="hero__photo" aria-hidden="true">
           <picture>
-            <source type="image/webp" srcset="/assets/img/hero-person-ueber.webp">
+            <source type="image/webp" srcset="/assets/img/hero-person-ueber.webp"
+                    sizes="(max-width: 768px) 90vw, 340px">
             <img src="/assets/img/hero-person.png" alt=""
                  width="800" height="900"
                  loading="eager" fetchpriority="high"
                  decoding="async"
-                 class="hero__photo-img">
+                 class="hero__photo-img"
+                 sizes="(max-width: 768px) 90vw, 340px">
           </picture>
 
           <div class="hero__float-card hero__float-card--bottom" aria-hidden="true">

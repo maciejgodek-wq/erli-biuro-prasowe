@@ -258,7 +258,7 @@
   font-size: 18px;
   line-height: 26px;
   color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 40px;
+  margin: 0 0 10px;
 }
 
 .hero__stats {
@@ -313,6 +313,13 @@
   .hero__photo-img { max-height: 472px; }
 }
 @media (max-width: 768px) {
+  .hero__title {
+    font-size: clamp(1.75rem, 2vw + 0.75rem, 2.5rem);
+  }
+  .hero__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
   .hero__inner {
     flex-direction: column;
     align-items: center;
@@ -321,13 +328,13 @@
   }
   .hero__panel {
     padding-block: 40px 24px;
-    max-width: 100%;
+    max-width: 90%;
     text-align: center;
     align-items: center;
   }
   /* Override align-self desktop (flex-start) → centered na mobile */
-  .hero__badge,
-  .hero__cta { align-self: center; }
+  .hero__badge { align-self: center; }
+  .hero__cta { align-self: stretch; width: 100%; text-align: center; margin-block: 16px 8px; }
   .hero__photo { align-self: center; margin-inline-end: 0; }
   .hero__photo-img {
     max-height: none;
@@ -1093,8 +1100,8 @@ section.categories-section {
   font-weight: 700;
 }
 @media (max-width: 768px) {
-  .hero__badge,
-  .hero__cta { align-self: center; }
+  .hero__badge { align-self: center; }
+  .hero__cta { align-self: stretch; width: 100%; text-align: center; margin-block: 16px 8px; }
 }
 
 /* ─── Trust Section — białe karty wystają ~50% nad teal hero ─── */
@@ -1107,7 +1114,7 @@ section.categories-section {
   z-index: 2;
 }
 @media (max-width: 768px) {
-  .trust-section { margin-block-start: -60px; }
+  .trust-section { margin-block-start: -150px; }
 }
 
 .trust-grid {
@@ -2002,10 +2009,15 @@ section.categories-section {
   align-items: center;
 }
 .hero--subpage .hero__photo {
-  align-self: flex-end; /* foto dalej dotyka dolnej krawędzi */
+  align-self: center; /* wyśrodkuj foto */
 }
 .hero--subpage .hero__panel {
   padding-block: 36px 36px;
+}
+@media (max-width: 768px) {
+  .hero--subpage .hero__panel {
+    max-width: 90%;
+  }
 }
 .hero--subpage .hero__title {
   font-size: clamp(1.75rem, 2vw + 0.75rem, 2.75rem);
@@ -2018,6 +2030,7 @@ section.categories-section {
 }
 .hero--subpage .hero__photo-img {
   max-height: 340px;
+  width: auto;
 }
 @media (max-width: 980px) {
   .hero--subpage .hero__photo-img { max-height: 260px; }
