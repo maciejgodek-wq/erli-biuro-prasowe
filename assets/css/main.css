@@ -1374,6 +1374,50 @@ section.categories-section {
 .prose li { margin-block-start: var(--space-2); }
 .prose li::marker { color: var(--color-primary-500); }
 
+/* ----------------------------------------------------------------
+   PROSE — wariant LEGAL (Impressum, Datenschutz, AGB)
+   Mniejsze nagłówki, szersza kolumna, gęstsze odstępy między sekcjami.
+   ---------------------------------------------------------------- */
+.prose--legal {
+  max-width: 80ch;
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-text-secondary, var(--color-text-primary));
+}
+.prose--legal h1 {
+  font-size: clamp(1.5rem, 1.125rem + 1.5vw, 2rem);
+  margin-block-end: var(--space-8);
+  letter-spacing: -0.01em;
+}
+.prose--legal h2 {
+  font-size: clamp(1.0625rem, 0.95rem + 0.45vw, 1.1875rem);
+  font-weight: var(--weight-semibold, 600);
+  line-height: 1.35;
+  margin-block: var(--space-10) var(--space-3);
+  letter-spacing: -0.005em;
+  color: var(--color-text-primary);
+}
+.prose--legal h3 {
+  font-size: 1rem;
+  font-weight: var(--weight-semibold, 600);
+  margin-block: var(--space-6) var(--space-2);
+}
+.prose--legal > * + * { margin-block-start: var(--space-4); }
+.prose--legal h2 + p,
+.prose--legal h2 + ul,
+.prose--legal h2 + address { margin-block-start: var(--space-3); }
+.prose--legal p { max-width: 75ch; }
+.prose--legal address {
+  font-style: normal;
+  line-height: 1.55;
+}
+.prose--legal ul {
+  padding-inline-start: var(--space-6);
+  margin-block: var(--space-3);
+}
+.prose--legal li { margin-block-start: var(--space-1); }
+.prose--legal a { word-break: break-word; }
+
 /* ================================================================
    LEGAL PLACEHOLDER (zachowane)
    ================================================================ */
