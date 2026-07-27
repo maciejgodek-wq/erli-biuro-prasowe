@@ -1,11 +1,9 @@
-# Erli.de Design System v3.1 — Production Reference
+# ERLI Design System v3.1 — Production Reference
 
-> **Implementation Guide (2026-05)**  
-> This document describes the **actual, deployed design system** in the erli-de codebase.
-> Komponenty w użyciu na biuroprasowe.erli.pl.
+> **Implementation Guide**  
+> Referencja tokenów i komponentów w użyciu na biuroprasowe.erli.pl.
 
-**Last Updated:** 2026-05-12  
-**Source of Truth:** `erli-de/assets/css/` folder (tokens.css, base.css, layout.css, components.css)  
+**Source of Truth:** `assets/css/` (tokens.css, base.css, layout.css, components.css, press.css)  
 **Status:** ✅ Production Ready
 
 ---
@@ -557,17 +555,17 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
         <p class="site-footer__tagline">Biuro prasowe...</p>
       </div>
       <nav class="site-footer__nav">
-        <h3 class="site-footer__nav-heading">Company</h3>
+        <h3 class="site-footer__nav-heading">Nawigacja</h3>
         <a href="/o-nas">O nas</a>
-        <a href="/kontakt">Contact</a>
-        <!-- More links -->
+        <a href="/kontakt">Kontakt</a>
+        <!-- kolejne pozycje -->
       </nav>
     </div>
     
     <div class="site-footer__bottom">
       <p>&copy; 2026 ERLI</p>
       <div>
-        <a href="/impressum">Legal</a> | <a href="/datenschutz">Privacy</a>
+        <a href="/kontakt">Kontakt dla mediów</a>
       </div>
     </div>
   </div>
