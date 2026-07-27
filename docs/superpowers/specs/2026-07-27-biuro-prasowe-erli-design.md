@@ -46,7 +46,7 @@ Około 35 artykułów z okresu 2023 – listopad 2025, w dwóch kategoriach:
 
 Artykuły są czysto tekstowe: zero zdjęć, zero załączników, zero plików do pobrania.
 
-Kontakt: `pomoc@erli.pl` (kupujący), `media@erli.pl` — Maciej Nowicki (media).
+Kontakt: `pomoc@erli.pl` (kupujący), `media@erli.pl` — Aleksandra Grądzka (media).
 Adresy obfuskowane JavaScriptem. Brak adresu, telefonu i danych rejestrowych.
 
 Elementy do usunięcia przy migracji:
@@ -97,6 +97,7 @@ Dług techniczny do usunięcia przy okazji:
 | D6 | Zero skryptów zewnętrznych na starcie | Brak analityki do migracji; brak ciasteczek = brak obowiązku zgody |
 | D7 | Treść stron O nas i Kontakt 1:1 | Świadoma decyzja — kalendarium kończy się na 2021, liczby są nieaktualne |
 | D8 | Bez paginacji, z kodem uśpionym | ~20 pozycji na kategorię; próg 30 wbudowany w build od początku |
+| D9 | Kontrola języka wymuszona w buildzie | Wymaganie „100% polska strona"; niemieckie ciągi w `aria-label` są niewidoczne dla przeglądu wizualnego |
 
 ## Architektura
 
@@ -230,7 +231,7 @@ zaszyty w środku akapitu i łatwo go przeoczyć.
 
 O nas — treść 1:1 z obecnej strony, w `.prose` z `.check-list` i kalendarium.
 
-Kontakt — dwa bloki: media (Maciej Nowicki, `media@erli.pl`) i kupujący
+Kontakt — dwa bloki: media (Aleksandra Grądzka, `media@erli.pl`) i kupujący
 (`pomoc@erli.pl`). Bez formularza. Adresy jako zwykłe `mailto:`, bez obfuskacji
 JavaScriptem — dziennikarz ma móc skopiować adres, także z wyłączonym JS.
 
@@ -240,6 +241,37 @@ Aktualności · Media o ERLI · O nas · Kontakt.
 
 Aktywna pozycja oznaczona `aria-current="page"`. Próg burgera przesunięty z 480 px
 na 768 px — naprawia rozjazd nawigacji na tabletach.
+
+## Usunięcie języka niemieckiego
+
+Wymaganie: strona ma być w 100% polska. Skan repozytorium wykazał niemieckie ciągi
+w siedmiu miejscach, w tym w trzech plikach przewidzianych do zachowania.
+
+Do naprawy w plikach zachowywanych:
+
+- `assets/js/nav.js` — trzy wystąpienia `aria-label` z wartościami `"Menü öffnen"`
+  i `"Menü schließen"`. Priorytet najwyższy: tekst jest niewidoczny wizualnie, więc
+  przeżywa ręczny przegląd, a czytnik ekranu odczyta polskiemu użytkownikowi
+  niemieckie polecenie. Zamiana na „Otwórz menu" / „Zamknij menu"
+- `assets/js/marquee.js` — `"Abspielen"` / `"Pausieren"`. Plik usuwany wraz
+  z sekcją opinii, która nie ma zastosowania w biurze prasowym
+- `assets/css/components.css` — dwa komentarze sekcyjne po niemiecku, w blokach
+  i tak przeznaczonych do usunięcia
+
+Do rozstrzygnięcia w `design-system/`:
+
+- `audit-report.md` (30 KB) — dotyczy wyłącznie erli.de. Usunąć
+- `preview.html` — galeria komponentów w całości po niemiecku. Zastąpić galerią
+  komponentów biura prasowego po polsku
+- `design.md` — zachować jako referencję tokenów, ale przepisać przykłady kodu
+  na polskie. Niemiecki markup w dokumencie, z którego kopiuje się fragmenty,
+  jest drogą powrotną dla języka, który właśnie usuwamy
+
+Zabezpieczenie stałe: `build.js` po wygenerowaniu `dist/` skanuje wynik pod kątem
+znaków `ä ö ü ß Ä Ö Ü` oraz listy charakterystycznych słów niemieckich i **przerywa
+build błędem**, jeśli cokolwiek znajdzie. Kontrola obejmuje osobno atrybuty
+`aria-label`, `alt` i `title` — miejsca, w których tekst jest niewidoczny i nie
+zostałby wychwycony przeglądem wizualnym.
 
 ## Grafiki
 
@@ -276,8 +308,11 @@ i `Organization` globalnie. Wszystko po polsku, `lang="pl"`.
 
 Zostaje (~1,1 MB): `tokens.css`, `base.css`, `layout.css`, `components.css`
 (po przycięciu), 4 fonty woff2, `erli-logo.svg`, `favicon.svg`,
-`apple-touch-icon.png`, `circle.svg`, `nav.js`, `header-scroll.js`,
-`design-system/design.md`, `_headers`.
+`apple-touch-icon.png`, `circle.svg`, `nav.js` (po tłumaczeniu `aria-label`),
+`header-scroll.js`, `design-system/design.md` (po przepisaniu przykładów),
+`_headers`.
+
+Logo `erli-logo.svg` i `favicon.svg` nie zawierają tekstu — są neutralne językowo.
 
 Zostaje warunkowo: `cat-*.webp` (13 plików), `hero-person.webp`,
 `cta-person.webp`, `was-ist-erli.webp` — materiał źródłowy do key visuali
@@ -285,7 +320,8 @@ i ewentualnych późniejszych zastosowań.
 
 Usuwane (~33 MB): 7 stron DE, `_worker.js`, `TODO.md`, 13 plików `cat-*.png`
 (2–3,5 MB każdy — istnieją wersje WebP), `hero-person.png` (4 MB),
-`cta-person.png` (2 MB), `og-image.png`, `carousel.js` wraz z CSS-em,
+`cta-person.png` (2 MB), `og-image.png`, `carousel.js` i `marquee.js` wraz z CSS-em,
+`design-system/audit-report.md`, `design-system/preview.html`,
 kit formularzy w CSS, martwe systemy `.cat-tile*` / `.cat-card*` / `.kontakt-*` /
 `.page-hero*`, JSON-LD w języku niemieckim, Consent Mode, snippety GTM,
 linki do nieistniejących faviconów, `sitemap.xml` i `robots.txt` rynku DE.
@@ -299,6 +335,7 @@ linki do nieistniejących faviconów, `sitemap.xml` i `robots.txt` rynku DE.
 | Nieaktualna treść O nas (kalendarium do 2021) | Wizerunek | Decyzja świadoma (D7); do aktualizacji w kolejnym etapie |
 | Nieznane środowisko hostingowe | Strona może nie działać po wgraniu | Struktura katalogowa bez zależności od konfiguracji serwera (D3) |
 | Pliki z Joomli mogą zawierać treści niewidoczne z zewnątrz | Niepełna migracja | Przegląd eksportu przed migracją treści |
+| Niemiecki przecieka z zachowanych plików | Naruszenie wymagania „100% polska strona" | Kontrola językowa przerywająca build (D9) |
 
 ## Zależności zewnętrzne
 
