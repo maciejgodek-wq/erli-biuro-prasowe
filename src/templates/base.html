@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ tytulStrony }}</title>
+  <meta name="description" content="{{ opis }}">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  <link rel="canonical" href="{{ kanoniczny }}">
+
+  <meta property="og:type" content="{{ ogTyp }}">
+  <meta property="og:title" content="{{ tytulStrony }}">
+  <meta property="og:description" content="{{ opis }}">
+  <meta property="og:url" content="{{ kanoniczny }}">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="Biuro prasowe ERLI">
+  <meta property="og:image" content="{{ ogObraz }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ tytulStrony }}">
+  <meta name="twitter:description" content="{{ opis }}">
+  <meta name="twitter:image" content="{{ ogObraz }}">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="/assets/fonts/montserrat-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/roboto-flex-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/header-scroll.js" defer></script>
+  {{{ schemaJsonLd }}}
+</head>
+<body>
+  <a href="#main" class="skip-link">Przejdź do treści</a>
+  {{> header }}
+  <main id="main">
+{{{ tresc }}}
+  </main>
+  {{> footer }}
+  <script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
