@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="tlo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#feda30"/>
+      <stop offset="100%" stop-color="#ffc70e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#tlo)"/>
+  <circle cx="1080" cy="90" r="220" fill="#005b71" opacity="0.12"/>
+  <text x="80" y="110" font-family="Montserrat, sans-serif" font-size="26" font-weight="700"
+        fill="#005b71" letter-spacing="3">AKTUALNOŚCI</text>
+  <text font-family="Montserrat, sans-serif" font-size="54" font-weight="700" fill="#1a1a1a">
+      <tspan x="80" y="236">Nowa era handlu online:</tspan>
+      <tspan x="80" y="300">AI od ERLI dla</tspan>
+      <tspan x="80" y="364">sprzedawców</tspan>
+  </text>
+  <text x="80" y="560" font-family="Montserrat, sans-serif" font-size="30" font-weight="700"
+        fill="#1a1a1a" opacity="0.85">ERLI — Biuro prasowe</text>
+</svg>
