@@ -1,0 +1,59 @@
+// build/redirects.js
+
+/** Adresy stale, ktore Joomla serwowala pod /index.php/. */
+const STALE = [
+  { stary: '/index.php/aktualnosci', nowy: '/aktualnosci/' },
+  { stary: '/index.php/media-o-erli', nowy: '/media-o-erli/' },
+  { stary: '/index.php/o-nas', nowy: '/o-nas/' },
+  { stary: '/index.php/kontakt', nowy: '/kontakt/' },
+  { stary: '/index.php', nowy: '/' },
+];
+
+/**
+ * Buduje mape 301 ze starych adresow Joomli na nowe.
+ * Slugi zostaly zachowane, wiec mapowanie jest mechaniczne.
+ */
+export function buildRedirectMap(posty) {
+  const mapa = new Map();
+
+  for (const post of posty) {
+    mapa.set(`/index.php/${post.kategoria}/${post.slug}`, post.url);
+  }
+  for (const { stary, nowy } of STALE) {
+    if (!mapa.has(stary)) mapa.set(stary, nowy);
+  }
+
+  return [...mapa].map(([stary, nowy]) => ({ stary, nowy }));
+}
+
+/** Format dla Apache — plik .htaccess. */
+export function toHtaccess(mapa) {
+  return (
+    '# Przekierowania 301 ze starych adresow Joomli.\n' +
+    '# Wygenerowane przez build.js — nie edytuj recznie.\n\n' +
+    mapa.map(({ stary, nowy }) => `Redirect 301 ${stary} ${nowy}`).join('\n') +
+    '\n'
+  );
+}
+
+/** Format dla nginx — do wklejenia w blok server. */
+export function toNginx(mapa) {
+  const escape = (s) => s.replace(/\./g, '\\.');
+  return (
+    '# Przekierowania 301 ze starych adresow Joomli.\n' +
+    '# Wygenerowane przez build.js — nie edytuj recznie.\n\n' +
+    mapa
+      .map(({ stary, nowy }) => `rewrite ^${escape(stary)}$ ${nowy} permanent;`)
+      .join('\n') +
+    '\n'
+  );
+}
+
+/** Format uniwersalny — do wklejenia w panel hostingu lub arkusz. */
+export function toCsv(mapa) {
+  return (
+    'stary_adres,nowy_adres\n' +
+    mapa.map(({ stary, nowy }) => `${stary},${nowy}`).join('\n') +
+    '\n'
+  );
+}
