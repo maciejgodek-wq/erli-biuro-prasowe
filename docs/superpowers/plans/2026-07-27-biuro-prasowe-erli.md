@@ -53,7 +53,7 @@ src/pages/       o-nas.md kontakt.md
 - Delete: `assets/img/*.png` z wyjątkiem `apple-touch-icon.png`
 - Delete: `assets/css/main.css` (od teraz generowany)
 
-- [ ] **Step 1: Sprawdź stan roboczy**
+- [x] **Step 1: Sprawdź stan roboczy**
 
 ```bash
 git status --short
@@ -61,13 +61,13 @@ git status --short
 
 Expected: czysto (albo tylko `docs/`). Jeśli są inne zmiany — zatrzymaj się i zapytaj.
 
-- [ ] **Step 2: Usuń strony HTML i pliki infrastruktury DE**
+- [x] **Step 2: Usuń strony HTML i pliki infrastruktury DE**
 
 ```bash
 git rm index.html faq.html ueber-uns.html kontakt.html impressum.html datenschutz.html 404.html _worker.js TODO.md sitemap.xml robots.txt
 ```
 
-- [ ] **Step 3: Usuń martwy JavaScript**
+- [x] **Step 3: Usuń martwy JavaScript**
 
 `carousel.js` nie jest ładowany przez żadną stronę. `marquee.js` obsługuje sekcję opinii, której biuro prasowe nie ma, i zawiera niemieckie etykiety.
 
@@ -75,7 +75,7 @@ git rm index.html faq.html ueber-uns.html kontakt.html impressum.html datenschut
 git rm assets/js/carousel.js assets/js/marquee.js
 ```
 
-- [ ] **Step 4: Usuń nieskompresowane PNG-i**
+- [x] **Step 4: Usuń nieskompresowane PNG-i**
 
 Każdy `cat-*.png` waży 2–3,5 MB, `hero-person.png` 4 MB. Wszystkie mają odpowiedniki WebP.
 
@@ -83,19 +83,19 @@ Każdy `cat-*.png` waży 2–3,5 MB, `hero-person.png` 4 MB. Wszystkie mają odp
 git rm assets/img/cat-auto.png assets/img/cat-beauty.png assets/img/cat-business.png assets/img/cat-elektronik.png assets/img/cat-gesundheit.png assets/img/cat-haus.png assets/img/cat-kind.png assets/img/cat-kultur.png assets/img/cat-mode.png assets/img/cat-moebel.png assets/img/cat-sammeln.png assets/img/cat-sport.png assets/img/cat-supermarkt.png assets/img/cta-person.png assets/img/hero-person.png assets/img/og-image.png assets/img/og-image.webp
 ```
 
-- [ ] **Step 5: Usuń dokumenty design systemu dotyczące wyłącznie erli.de**
+- [x] **Step 5: Usuń dokumenty design systemu dotyczące wyłącznie erli.de**
 
 ```bash
 git rm design-system/audit-report.md design-system/preview.html
 ```
 
-- [ ] **Step 6: Usuń wygenerowany CSS**
+- [x] **Step 6: Usuń wygenerowany CSS**
 
 ```bash
 git rm assets/css/main.css
 ```
 
-- [ ] **Step 7: Sprawdź co zostało**
+- [x] **Step 7: Sprawdź co zostało**
 
 ```bash
 git status --short; ls assets/img assets/js assets/css design-system
@@ -106,7 +106,7 @@ Expected w `assets/js`: `nav.js`, `header-scroll.js`.
 Expected w `assets/css`: `tokens.css`, `base.css`, `layout.css`, `components.css`, `critical.css`.
 Expected w `design-system`: `design.md`, `erli_logo.svg`.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add -A && git commit -m "chore: usuniecie stron i assetow rynku niemieckiego
