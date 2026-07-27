@@ -2598,6 +2598,15 @@ Wyłącznie tokeny z `tokens.css` — żadnych wartości wpisanych na sztywno.
   max-width: 52ch;
 }
 
+/* --- aktywna pozycja nawigacji ---
+   aria-current obsluguje czytniki ekranu; ponizsze daje wskazowke wizualna.
+   Bez tego osoba widzaca nie wie, na ktorej stronie jest. */
+.site-header__nav .is-active {
+  color: var(--color-primary-700);
+  font-weight: var(--weight-bold);
+  box-shadow: inset 0 -2px 0 0 var(--color-primary);
+}
+
 /* --- naglowki stron --- */
 .page-title {
   font-family: var(--font-display);
