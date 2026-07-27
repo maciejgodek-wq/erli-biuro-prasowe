@@ -205,7 +205,7 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
   "engines": { "node": ">=22" },
   "scripts": {
     "build": "node build.js",
-    "test": "node --test build/"
+    "test": "node --test \"build/**/*.test.js\""
   },
   "dependencies": {
     "marked": "^15.0.0"
@@ -231,6 +231,10 @@ dist/
 ```
 
 - [ ] **Step 4: Sprawdź, że test runner działa**
+
+Uwaga: Node 24 traktuje argument pozycyjny po `--test` jako ścieżkę pliku lub
+glob, nie jako katalog. `node --test build/` konczy się błędem
+`Cannot find module`. Stąd glob w skrypcie `test` powyżej.
 
 ```bash
 mkdir -p build && printf "import {test} from 'node:test';\nimport assert from 'node:assert/strict';\ntest('sanity', () => assert.equal(1, 1));\n" > build/sanity.test.js && npm test
