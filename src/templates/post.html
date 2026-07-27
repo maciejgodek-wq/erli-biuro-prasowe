@@ -1,0 +1,43 @@
+<article class="post">
+  <div class="container post__container">
+    <p class="post__meta">
+      <a class="post__kategoria" href="{{ kategoriaUrl }}">{{ kategoriaNazwa }}</a>
+      <time datetime="{{ data }}">{{ dataPl }}</time>
+    </p>
+    <h1 class="post__title">{{ tytul }}</h1>
+    {{#if lead}}<p class="post__lead">{{ lead }}</p>{{/if}}
+
+    <figure class="post__media">
+      <img src="{{ grafikaUrl }}" alt="" width="1200" height="630" loading="eager" fetchpriority="high">
+    </figure>
+
+    {{#if zrodlo}}
+    <aside class="source-note">
+      <p>Materiał opublikowany w <strong>{{ zrodlo.nazwa }}</strong>.
+        <a href="{{ zrodlo.url }}" target="_blank" rel="noopener noreferrer">Przejdź do oryginału</a>
+      </p>
+    </aside>
+    {{/if}}
+
+    <div class="prose">
+{{{ trescHtml }}}
+    </div>
+
+    {{> share }}
+  </div>
+</article>
+
+{{#if powiazane}}
+<section class="section section--soft" aria-labelledby="powiazane">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="powiazane" class="section-header__heading">Powiązane materiały</h2>
+    </header>
+    <div class="post-grid">
+      {{#each powiazane}}{{> post-card }}{{/each}}
+    </div>
+  </div>
+</section>
+{{/if}}
+
+{{> contact-block }}

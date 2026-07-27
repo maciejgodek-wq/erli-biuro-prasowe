@@ -1,0 +1,30 @@
+<section class="section section--page-top">
+  <div class="container">
+    <p class="section-eyebrow">Biuro prasowe ERLI</p>
+    <h1 class="page-title">{{ naglowek }}</h1>
+    <p class="page-lead">{{ wprowadzenie }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{#each grupy}}
+    <div class="year-group">
+      <h2 class="year-group__heading">{{ rok }}</h2>
+      <div class="post-grid">
+        {{#each posty}}{{> post-card }}{{/each}}
+      </div>
+    </div>
+    {{/each}}
+
+    {{#if maPaginacje}}
+    <nav class="pagination" aria-label="Paginacja">
+      {{#if poprzednia}}<a class="pagination__link" href="{{ poprzednia }}" rel="prev">Poprzednia</a>{{/if}}
+      <span class="pagination__status">Strona {{ numer }} z {{ lacznie }}</span>
+      {{#if nastepna}}<a class="pagination__link" href="{{ nastepna }}" rel="next">Następna</a>{{/if}}
+    </nav>
+    {{/if}}
+  </div>
+</section>
+
+{{> contact-block }}

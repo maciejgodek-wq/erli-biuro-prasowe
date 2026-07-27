@@ -1,0 +1,37 @@
+<section class="press-hero">
+  <div class="container press-hero__inner">
+    <p class="section-eyebrow">ERLI</p>
+    <h1 class="press-hero__title">Biuro <em class="text-highlight text-highlight--box">prasowe</em></h1>
+    <p class="press-hero__lead">Komunikaty prasowe, wyniki i materiały dla dziennikarzy piszących o ERLI.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="najnowsze">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="najnowsze" class="section-header__heading">Najnowsze</h2>
+      <a class="section-header__link" href="/aktualnosci/">Wszystkie aktualności</a>
+    </header>
+    <div class="post-grid">
+      {{#each najnowsze}}{{> post-card }}{{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="w-skrocie">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="w-skrocie" class="section-header__heading">ERLI w skrócie</h2>
+    </header>
+    <ul class="trust-grid" role="list">
+      {{#each skrot}}
+      <li class="trust-card">
+        <h3 class="trust-card__title">{{ tytul }}</h3>
+        <p class="trust-card__text">{{ tekst }}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+{{> contact-block }}
