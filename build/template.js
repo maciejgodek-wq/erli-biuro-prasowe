@@ -17,52 +17,99 @@ function isTruthy(value) {
   return Array.isArray(value) ? value.length > 0 : Boolean(value);
 }
 
+const OTWARCIE = /\{\{#(each|if)\s+([\w.]+)\s*\}\}/g;
+const ZNACZNIK = /\{\{#(?:each|if)\s+[\w.]+\s*\}\}|\{\{\/(?:each|if)\}\}|\{\{else\}\}/g;
+
+/**
+ * Od pozycji `od` szuka domkniecia biezacego bloku, liczac zagniezdzenia.
+ * Zwraca granice tresci, pozycje za znacznikiem zamykajacym oraz pozycje
+ * {{else}} na poziomie tego bloku (-1 gdy brak).
+ */
+function znajdzDomkniecie(tekst, od) {
+  const re = new RegExp(ZNACZNIK.source, 'g');
+  re.lastIndex = od;
+  let glebokosc = 0;
+  let pozycjaElse = -1;
+  let m;
+
+  while ((m = re.exec(tekst)) !== null) {
+    if (m[0].startsWith('{{#')) {
+      glebokosc++;
+    } else if (m[0] === '{{else}}') {
+      if (glebokosc === 0 && pozycjaElse === -1) pozycjaElse = m.index;
+    } else if (glebokosc === 0) {
+      return { koniecTresci: m.index, po: re.lastIndex, pozycjaElse };
+    } else {
+      glebokosc--;
+    }
+  }
+
+  throw new Error('Niedomkniety blok w szablonie');
+}
+
+/** Podstawia wartosci zmiennych; potrojne nawiasy wstawiaja surowy HTML. */
+function interpoluj(tekst, context) {
+  return tekst
+    .replace(/\{\{\{\s*([\w.]+)\s*\}\}\}/g, (_, path) => lookup(context, path) ?? '')
+    .replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_, path) => escapeHtml(lookup(context, path)));
+}
+
+/**
+ * Rozwija bloki each/if i podstawia zmienne. Kazdy fragment tekstu jest
+ * interpolowany dokladnie raz, w kontekscie bloku, w ktorym lezy — dzieki
+ * temu zmienne elementu petli nie mieszaja sie z zakresem nadrzednym.
+ */
+function renderuj(template, context, partials) {
+  const otwarcie = new RegExp(OTWARCIE.source, 'g');
+  let out = '';
+  let pos = 0;
+  let m;
+
+  while ((m = otwarcie.exec(template)) !== null) {
+    const [pelny, typ, sciezka] = m;
+    out += interpoluj(template.slice(pos, m.index), context);
+
+    const startTresci = m.index + pelny.length;
+    const { koniecTresci, po, pozycjaElse } = znajdzDomkniecie(template, startTresci);
+    const granica = pozycjaElse === -1 ? koniecTresci : pozycjaElse;
+    const tresc = template.slice(startTresci, granica);
+    const alternatywa =
+      pozycjaElse === -1 ? '' : template.slice(pozycjaElse + '{{else}}'.length, koniecTresci);
+
+    const wartosc = lookup(context, sciezka);
+    if (typ === 'each') {
+      out += isTruthy(wartosc) && Array.isArray(wartosc)
+        ? wartosc.map((item) => renderuj(tresc, { ...context, ...item }, partials)).join('')
+        : renderuj(alternatywa, context, partials);
+    } else {
+      out += isTruthy(wartosc)
+        ? renderuj(tresc, context, partials)
+        : renderuj(alternatywa, context, partials);
+    }
+
+    pos = po;
+    otwarcie.lastIndex = po;
+  }
+
+  return out + interpoluj(template.slice(pos), context);
+}
+
 /**
  * Renderuje szablon. Obsluguje:
  *   {{ x }}        wartosc escapowana
  *   {{{ x }}}      surowy HTML
  *   {{> nazwa }}   partial
- *   {{#each x}}…{{/each}}
+ *   {{#each x}}…{{else}}…{{/each}}
  *   {{#if x}}…{{else}}…{{/if}}
- * Bloki sa przetwarzane od najbardziej zagniezdzonych (regex bez zagniezdzen
- * tego samego typu), w petli az do stabilizacji.
+ * Bloki moga byc zagniezdzane dowolnie, takze w tym samym typie —
+ * domkniecia dobierane sa przez liczenie glebokosci, nie regexem.
  */
 export function render(template, context = {}, partials = {}) {
-  let out = template;
-
   // Partiale najpierw, zeby ich zawartosc przeszla przez pozostale reguly.
-  out = out.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => {
+  const zPartialami = template.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => {
     if (!(name in partials)) throw new Error(`Nieznany partial: ${name}`);
     return partials[name];
   });
 
-  // Bloki each i if — powtarzamy, bo zagniezdzenia rozwijaja sie warstwami.
-  let previous;
-  do {
-    previous = out;
-
-    out = out.replace(
-      /\{\{#each\s+([\w.]+)\s*\}\}([\s\S]*?)\{\{\/each\}\}/g,
-      (_, path, body) => {
-        const items = lookup(context, path);
-        if (!Array.isArray(items)) return '';
-        return items
-          .map((item) => render(body, { ...context, ...item }, partials))
-          .join('');
-      }
-    );
-
-    out = out.replace(
-      /\{\{#if\s+([\w.]+)\s*\}\}([\s\S]*?)\{\{\/if\}\}/g,
-      (_, path, body) => {
-        const [whenTrue, whenFalse = ''] = body.split(/\{\{else\}\}/);
-        return isTruthy(lookup(context, path)) ? whenTrue : whenFalse;
-      }
-    );
-  } while (out !== previous);
-
-  out = out.replace(/\{\{\{\s*([\w.]+)\s*\}\}\}/g, (_, path) => lookup(context, path) ?? '');
-  out = out.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_, path) => escapeHtml(lookup(context, path)));
-
-  return out;
+  return renderuj(zPartialami, context, partials);
 }

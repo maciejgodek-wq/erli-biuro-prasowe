@@ -55,6 +55,36 @@ test('if obsluguje galaz else', () => {
   assert.equal(render('{{#if x}}A{{else}}B{{/if}}', { x: false }), 'B');
 });
 
+test('each zagniezdzony w each dobiera wlasne domkniecie', () => {
+  const out = render(
+    '{{#each grupy}}[{{ rok }}:{{#each posty}}{{ tytul }},{{/each}}]{{/each}}',
+    {
+      grupy: [
+        { rok: '2025', posty: [{ tytul: 'A' }, { tytul: 'B' }] },
+        { rok: '2024', posty: [{ tytul: 'C' }] },
+      ],
+    }
+  );
+  assert.equal(out, '[2025:A,B,][2024:C,]');
+});
+
+test('if zagniezdzony w if nie zjada zewnetrznego domkniecia', () => {
+  const szablon = '{{#if maPaginacje}}<nav>{{#if poprzednia}}P{{/if}}|{{ numer }}{{/if}}';
+  assert.equal(render(szablon, { maPaginacje: true, poprzednia: null, numer: 1 }), '<nav>|1');
+  assert.equal(render(szablon, { maPaginacje: false, poprzednia: '/2/', numer: 1 }), '');
+});
+
+test('else dotyczy bloku zewnetrznego, nie zagniezdzonego', () => {
+  const szablon = '{{#if a}}{{#if b}}AB{{else}}A{{/if}}{{else}}nic{{/if}}';
+  assert.equal(render(szablon, { a: true, b: true }), 'AB');
+  assert.equal(render(szablon, { a: true, b: false }), 'A');
+  assert.equal(render(szablon, { a: false, b: true }), 'nic');
+});
+
+test('niedomkniety blok rzuca czytelny blad', () => {
+  assert.throws(() => render('{{#if x}}bez konca', { x: true }), /Niedomkniety blok/);
+});
+
 test('partial jest wstawiany i ma dostep do danych', () => {
   const partials = { stopka: '<footer>{{ rok }}</footer>' };
   assert.equal(render('{{> stopka }}', { rok: '2026' }, partials), '<footer>2026</footer>');
