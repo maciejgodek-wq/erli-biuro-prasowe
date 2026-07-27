@@ -1715,10 +1715,6 @@ Klasa `is-active` i `aria-current` sterowane zmienną `aktywna` z kontekstu stro
           <li><a href="/kontakt/">Kontakt</a></li>
         </ul>
       </nav>
-      <div class="site-footer__contact">
-        <h2 class="site-footer__nav-heading">Kontakt dla mediów</h2>
-        <p>Aleksandra Grądzka<br><a href="mailto:media@erli.pl">media@erli.pl</a></p>
-      </div>
     </div>
     <div class="site-footer__bottom">
       <p>&copy; {{ rok }} ERLI</p>
