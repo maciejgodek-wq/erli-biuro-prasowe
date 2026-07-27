@@ -2,7 +2,7 @@
 
 > **Implementation Guide (2026-05)**  
 > This document describes the **actual, deployed design system** in the erli-de codebase.
-> All components are live on https://erli.de and subpages (ueber-uns, kontakt, faq).
+> Komponenty w użyciu na biuroprasowe.erli.pl.
 
 **Last Updated:** 2026-05-12  
 **Source of Truth:** `erli-de/assets/css/` folder (tokens.css, base.css, layout.css, components.css)  
@@ -214,11 +214,11 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
     <a href="/" class="site-header__logo">
       <img src="/assets/img/erli-logo.svg" alt="Erli">
     </a>
-    <nav aria-label="Hauptnavigation">
+    <nav aria-label="Nawigacja główna">
       <ul class="site-header__nav">
-        <li><a href="/ueber-uns">Über uns</a></li>
+        <li><a href="/o-nas">O nas</a></li>
         <li><a href="/kontakt">Kontakt</a></li>
-        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/aktualnosci">Aktualności</a></li>
       </ul>
     </nav>
   </div>
@@ -233,13 +233,13 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
 
 **Base Variant** (yellow underline)
 ```html
-<h1>Erli – Der neue <span class="text-highlight">Online-Marktplatz</span></h1>
+<h1>Biuro prasowe <span class="text-highlight">ERLI</span></h1>
 ```
 
 **Box Variant** (full yellow background)
 ```html
-<h1>Erli – Der neue Online-Marktplatz<br>
-    <em class="text-highlight text-highlight--box">startet bald</em>
+<h1>Biuro prasowe<br>
+    <em class="text-highlight text-highlight--box">ERLI</em>
 </h1>
 ```
 
@@ -270,15 +270,15 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
     <div class="hero__panel">
       <span class="hero__badge">
         <span class="hero__badge-dot"></span>
-        Bald in Deutschland
+        Komunikaty prasowe
       </span>
       <h1 class="hero__title">
-        Erli – Der neue Online-Marktplatz<br>
-        <em class="text-highlight text-highlight--box">startet bald</em>
+        Biuro prasowe<br>
+        <em class="text-highlight text-highlight--box">ERLI</em>
       </h1>
-      <p class="hero__subtitle">Alles, was du brauchst, an einem Ort.</p>
-      <a href="/ueber-uns" class="btn btn--promotion btn--medium hero__cta">
-        Mehr erfahren
+      <p class="hero__subtitle">Informacje dla mediów w jednym miejscu.</p>
+      <a href="/o-nas" class="btn btn--promotion btn--medium hero__cta">
+        Dowiedz się więcej
       </a>
     </div>
     <div class="hero__photo">
@@ -306,8 +306,8 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
       <div class="trust-card__icon">
         <svg>...</svg>
       </div>
-      <h3 class="trust-card__title">Online-Marktplatz</h3>
-      <p class="trust-card__text">Alles an einem Ort...</p>
+      <h3 class="trust-card__title">Biuro prasowe</h3>
+      <p class="trust-card__text">Wszystko w jednym miejscu...</p>
     </li>
     <!-- Repeat × 4 -->
   </ul>
@@ -443,9 +443,9 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
 <div class="faq-list">
   <details class="faq-item">
     <summary>
-      <h2>Was ist Erli?</h2>
+      <h2>Czym jest ERLI?</h2>
     </summary>
-    <p>Erli ist ein Online-Marktplatz...</p>
+    <p>ERLI to druga co do wielkości platforma marketplace w Polsce.</p>
   </details>
   <!-- Repeat for each FAQ -->
 </div>
@@ -477,7 +477,7 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
       <div class="cta-card__content">
         <h2 class="cta-card__title">Ready to Shop?</h2>
         <p class="cta-card__text">Discover millions of products at great prices.</p>
-        <a href="/ueber-uns" class="btn btn--promotion cta-card__btn">
+        <a href="/o-nas" class="btn btn--promotion cta-card__btn">
           Get Started
         </a>
       </div>
@@ -554,11 +554,11 @@ Text (Black):           #1a1a1a  (--color-text-primary, 17.41:1 AAA on white)
         <a href="/" class="site-footer__logo">
           <img src="..." alt="Erli">
         </a>
-        <p class="site-footer__tagline">Online-Marktplatz...</p>
+        <p class="site-footer__tagline">Biuro prasowe...</p>
       </div>
       <nav class="site-footer__nav">
         <h3 class="site-footer__nav-heading">Company</h3>
-        <a href="/ueber-uns">About</a>
+        <a href="/o-nas">O nas</a>
         <a href="/kontakt">Contact</a>
         <!-- More links -->
       </nav>

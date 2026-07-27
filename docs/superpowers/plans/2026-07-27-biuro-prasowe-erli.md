@@ -128,17 +128,17 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 **Files:**
 - Modify: `assets/js/nav.js`
 
-- [ ] **Step 1: Przeczytaj plik**
+- [x] **Step 1: Przeczytaj plik**
 
 ```bash
 cat assets/js/nav.js
 ```
 
-- [ ] **Step 2: Podmień trzy wystąpienia**
+- [x] **Step 2: Podmień trzy wystąpienia**
 
 Zamień `'Menü schließen'` na `'Zamknij menu'` oraz oba wystąpienia `'Menü öffnen'` na `'Otwórz menu'`.
 
-- [ ] **Step 3: Zweryfikuj, że nie został żaden niemiecki**
+- [x] **Step 3: Zweryfikuj, że nie został żaden niemiecki**
 
 ```bash
 grep -nE "[äöüßÄÖÜ]|Menü|schließen|öffnen" assets/js/nav.js
@@ -146,7 +146,7 @@ grep -nE "[äöüßÄÖÜ]|Menü|schließen|öffnen" assets/js/nav.js
 
 Expected: brak wyników (exit code 1).
 
-- [ ] **Step 4: Przepisz niemieckie przykłady w `design-system/design.md`**
+- [x] **Step 4: Przepisz niemieckie przykłady w `design-system/design.md`**
 
 `design.md` zostaje jako referencja tokenów, ale wszystkie przykłady kodu są po
 niemiecku. To droga powrotna dla języka, który właśnie usuwamy — kopiując z tego
@@ -173,7 +173,7 @@ grep -nE "[äöüßÄÖÜ]|Marktplatz|Deutschland|ueber-uns" design-system/desig
 
 Expected: brak wyników.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add assets/js/nav.js design-system/design.md && git commit -m "fix: polskie etykiety aria-label w nav.js
