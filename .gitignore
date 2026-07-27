@@ -28,3 +28,6 @@ design-system/design-v2.2-archive.md
 
 # Dokumenty wewnętrzne (briefingi, research)
 briefs/
+
+# Wynik budowania
+dist/
