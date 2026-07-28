@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Układ v2 (Żabka) — Biuro prasowe ERLI</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+/* ================================================================
+   UKŁAD v2 — kompozycja wzorowana na biurze prasowym Żabki.
+   Wszystko na tokenach z tokens.css poza trzema wartościami
+   oznaczonymi NOWY TOKEN niżej.
+   ================================================================ */
+
+/* --- NOWE TOKENY do zatwierdzenia --------------------------------
+   Zmierzone u Żabki: kontener 1032 px, zdjęcie w liście 516 px (połowa).
+   Nasz --max-content-width to 1344 px — dla biura prasowego zbyt szeroko,
+   wiersz tekstu robi się nieczytelny.                               */
+:root {
+  --max-press: 1032px;        /* NOWY TOKEN — kontener biura prasowego */
+  --measure-article: 800px;   /* NOWY TOKEN — szpalta artykułu (było 720) */
+  --press-media-min-h: 288px; /* NOWY TOKEN — podłoga wysokości zdjęcia w liście */
+}
+
+.container--press { max-width: var(--max-press); }
+
+/* ================================================================
+   WPIS PRASOWY — jeden wzorzec dla wyróżnionego i dla listy.
+   Różnią się tylko rozmiarem typografii i stroną, na której
+   stoi zdjęcie.
+   ================================================================ */
+
+.press-item { border-bottom: var(--border-hairline) solid var(--color-border); }
+.press-item__link {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: var(--space-2xl);
+  padding-block: var(--space-2xl);
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Zdjęcie: szerokość z kolumny, wysokość z wiersza (wyznacza ją tekst),
+   nadmiar docięty przez cover. ZADNEGO aspect-ratio — trzecie
+   ograniczenie rozpycha element poza tor siatki. */
+.press-item__media {
+  width: 100%;
+  height: 100%;
+  /* Podloga wysokosci. Bez niej wpis z krotkim leadem (50 znakow) daje
+     zdjecie o proporcji 2,5:1 — pasek, nie fotografia. Nasze leady sa
+     dwukrotnie krotsze od Zabkowych (50-183 znaki kontra 191-381), wiec
+     sam tekst nie rozciaga wiersza wystarczajaco. */
+  min-height: var(--press-media-min-h);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--color-neutral-75);
+}
+.press-item__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.press-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+.press-item__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-caption-1);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+}
+.press-item__kategoria { color: var(--color-primary-700); font-weight: var(--weight-bold); }
+.press-item__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-heading);
+  font-size: var(--text-h4);
+}
+/* --text-lg (18 px), nie --text-body-lg (maks 16 px). Cala skala "body"
+   konczy sie na 16 px, co przy 460 px szerokosci daje zbyt gesty tekst
+   i za krotki blok — zdjecie obok robi sie paskiem 2,3:1 zamiast ~1,5:1.
+   --text-lg i --text-h6 maja identyczna definicje, wiec 18 px to istniejacy
+   stopien skali, nie nowa wartosc. */
+.press-item__lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.press-item__more { color: var(--color-link); font-weight: var(--weight-bold); }
+.press-item__link:hover .press-item__title { color: var(--color-primary-700); }
+
+/* --- wariant wyróżniony: zdjęcie po prawej, większa typografia --- */
+.press-item--featured { border-bottom: none; }
+.press-item--featured .press-item__link { padding-block: var(--space-3xl); }
+.press-item--featured .press-item__media { order: 2; }
+.press-item--featured .press-item__title { font-size: var(--text-h2); }
+.press-item--featured .press-item__lead {
+  font-size: var(--text-xl);
+  -webkit-line-clamp: 4;
+}
+
+/* ================================================================
+   BLOK KONTAKTOWY — jedna karta prasowa, notka pod nią
+   ================================================================ */
+.press-contact { padding-block: var(--space-3xl); background: var(--color-surface-soft); }
+.press-contact__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+.press-contact__card {
+  max-width: var(--card-contact);
+  margin-inline: auto;
+  background: var(--color-surface);
+  border: var(--border-hairline) solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--padding-card-comfort);
+  text-align: center;
+}
+.press-contact__rola {
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+}
+.press-contact__osoba {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  margin-block: var(--space-xs) var(--space-sm);
+}
+.press-contact__mail a { font-size: var(--text-body-lg); color: var(--color-link); font-weight: var(--weight-bold); }
+.press-contact__note {
+  max-width: var(--measure-note);
+  margin: var(--space-xl) auto 0;
+  text-align: center;
+  font-size: var(--text-caption-1);
+  color: var(--color-text-secondary);
+}
+:root {
+  --card-contact: 400px;   /* NOWY TOKEN — karta kontaktowa, zmierzone u Żabki */
+  --measure-note: 600px;   /* NOWY TOKEN — notka pod kartą, zmierzone u Żabki */
+}
+
+/* ================================================================
+   STOPKA — dokładamy social media i przejście na erli.pl
+   ================================================================ */
+.site-footer__grid { grid-template-columns: 2fr 1fr 1fr; }
+.site-footer__social { display: flex; gap: var(--space-md); margin-top: var(--space-md); }
+.site-footer__social a { color: var(--color-text-secondary); }
+.site-footer__social a:hover { color: var(--color-primary-700); }
+
+/* ================================================================
+   MOBILE — zdjęcie nad tekstem, pełna szerokość
+   ================================================================ */
+@media (max-width: 768px) {
+  .press-item__link {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding-block: var(--space-xl);
+  }
+  /* W jednej kolumnie nie ma wiersza do wypełnienia — tu proporcja
+     jest jedynym sensownym ograniczeniem wysokości. */
+  .press-item__media { aspect-ratio: var(--aspect-og); height: auto; }
+  .press-item--featured .press-item__media { order: 0; }
+  .press-item--featured .press-item__title { font-size: var(--text-h4); }
+  .press-item--featured .press-item__lead { font-size: var(--text-body-md); -webkit-line-clamp: 3; }
+  .site-footer__grid { grid-template-columns: 1fr; }
+}
+
+/* --- pomocnicze wyłącznie dla podglądu --- */
+.podglad-info {
+  background: var(--color-secondary-50);
+  border-bottom: var(--border-hairline) solid var(--color-secondary);
+  padding: var(--space-md) 0;
+  font-size: var(--text-caption-1);
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Przejdź do treści</a>
+
+<div class="podglad-info">
+  <div class="container container--press">
+    <strong>Układ v2</strong> — kompozycja wzorowana na biurze prasowym Żabki.
+    Bez turkusowego pasa, wyróżniony na górze, pozostałe jeden pod drugim.
+    Zwężaj okno: przy 768 px zdjęcia wchodzą nad tekst.
+  </div>
+</div>
+
+<header role="banner" class="site-header">
+  <div class="container container--press site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="Biuro prasowe ERLI — strona główna">
+      <img src="/assets/img/erli-logo.svg" alt="ERLI" width="82" height="31" loading="eager">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+    <nav aria-label="Nawigacja główna">
+      <ul class="site-header__nav" id="nav-menu" role="list">
+        <li><a href="/aktualnosci/" aria-current="page" class="is-active">Aktualności</a></li>
+        <li><a href="/media-o-erli/">Media o ERLI</a></li>
+        <li><a href="/o-nas/">O nas</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- WYRÓŻNIONY: tekst lewo, zdjęcie prawo -->
+  <div class="container container--press">
+    <article class="press-item press-item--featured">
+      <a class="press-item__link" href="/aktualnosci/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/">
+        <div class="press-item__body">
+          <p class="press-item__meta">
+            <span class="press-item__kategoria">Aktualności</span>
+            <time datetime="2025-11-18">18 listopada 2025</time>
+          </p>
+          <h1 class="press-item__title">ERLI z rekordowym wzrostem — ponad 1,29 mld zł GMV po 9 miesiącach 2025 roku</h1>
+          <p class="press-item__lead">Przychody ERLI wzrosły o 62% do 189,7 mln zł, a zysk operacyjny (EBITDA) sięgnął 15,4 mln zł. Trzeci kwartał zamknął się 50-procentową dynamiką i najwyższą w historii rentownością.</p>
+          <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+        </div>
+        <div class="press-item__media">
+          <img src="/assets/img/artykuly/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/hero.webp" alt="" loading="eager" class="press-item__img">
+        </div>
+      </a>
+    </article>
+  </div>
+
+  <!-- LISTA: jeden pod drugim, zdjęcie lewo -->
+  <section class="section" aria-labelledby="wczesniejsze">
+    <div class="container container--press">
+      <header class="section-header">
+        <h2 id="wczesniejsze" class="section-header__heading">Wcześniejsze</h2>
+        <a class="section-header__link" href="/aktualnosci/">Wszystkie aktualności</a>
+      </header>
+
+      <article class="press-item">
+        <a class="press-item__link" href="/aktualnosci/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/">
+          <div class="press-item__media">
+            <img src="/assets/img/artykuly/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/hero.webp" alt="" loading="lazy" class="press-item__img">
+          </div>
+          <div class="press-item__body">
+            <p class="press-item__meta"><span class="press-item__kategoria">Aktualności</span><time datetime="2025-11-03">3 listopada 2025</time></p>
+            <h3 class="press-item__title">Nowa era handlu online: AI od ERLI dla sprzedawców</h3>
+            <p class="press-item__lead">Platforma e-commerce ERLI wdraża rozwiązania oparte na sztucznej inteligencji, które automatyzują kategoryzację produktów, poprawiają grafiki i personalizują oferty.</p>
+            <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="press-item">
+        <a class="press-item__link" href="/aktualnosci/erli-na-e-commerce-warsaw-expo-2025-2/">
+          <div class="press-item__media">
+            <img src="/assets/img/artykuly/erli-na-e-commerce-warsaw-expo-2025-2/hero.webp" alt="" loading="lazy" class="press-item__img">
+          </div>
+          <div class="press-item__body">
+            <p class="press-item__meta"><span class="press-item__kategoria">Aktualności</span><time datetime="2025-10-03">3 października 2025</time></p>
+            <h3 class="press-item__title">ERLI na E-commerce Warsaw Expo 2025</h3>
+            <p class="press-item__lead">24 października ERLI weźmie udział w E-commerce Warsaw Expo, wcześniej znanym jako Targi eHandlu.</p>
+            <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="press-item">
+        <a class="press-item__link" href="/aktualnosci/platforma-e-commerce-erli-z-rekordowymi-wynikami-za-pierwsze-polrocze-2025-2-2/">
+          <div class="press-item__media">
+            <img src="/assets/img/artykuly/platforma-e-commerce-erli-z-rekordowymi-wynikami-za-pierwsze-polrocze-2025-2-2/hero.webp" alt="" loading="lazy" class="press-item__img">
+          </div>
+          <div class="press-item__body">
+            <p class="press-item__meta"><span class="press-item__kategoria">Aktualności</span><time datetime="2025-08-14">14 sierpnia 2025</time></p>
+            <h3 class="press-item__title">Platforma e-commerce ERLI z rekordowymi wynikami za pierwsze półrocze 2025</h3>
+            <p class="press-item__lead">W pierwszym półroczu 2025 roku ERLI odnotowało ponad 54% wzrost GMV, osiągając wartość przekraczającą oczekiwania rynkowe. Dynamika utrzymała się we wszystkich kluczowych kategoriach.</p>
+            <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="press-item">
+        <a class="press-item__link" href="/media-o-erli/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/">
+          <div class="press-item__media">
+            <img src="/assets/img/artykuly/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/hero.webp" alt="" loading="lazy" class="press-item__img">
+          </div>
+          <div class="press-item__body">
+            <p class="press-item__meta"><span class="press-item__kategoria">Media o ERLI</span><time datetime="2025-03-05">5 marca 2025</time></p>
+            <h3 class="press-item__title">Rekordowy rok dla Erli. E-commerce z 67% wzrostem GMV</h3>
+            <p class="press-item__lead">Platforma odnotowała w 2024 roku wzrost sprzedaży GMV o 67 proc. rok do roku.</p>
+            <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="press-item">
+        <a class="press-item__link" href="/aktualnosci/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena/">
+          <div class="press-item__media">
+            <img src="/assets/img/artykuly/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena/hero.webp" alt="" loading="lazy" class="press-item__img">
+          </div>
+          <div class="press-item__body">
+            <p class="press-item__meta"><span class="press-item__kategoria">Aktualności</span><time datetime="2025-04-16">16 kwietnia 2025</time></p>
+            <h3 class="press-item__title">Polski konsument świadomy i oszczędny podczas zakupów online</h3>
+            <p class="press-item__lead">Liczy się cena, oszczędność i wygoda. ERLI dostrzega, że trend świadomego kupowania utrwala się wśród polskich klientów i przekłada się na konkretne decyzje zakupowe.</p>
+            <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+          </div>
+        </a>
+      </article>
+
+      <article class="press-item">
+        <a class="press-item__link" href="/aktualnosci/swiateczne-rekordy-erli-dynamiczny-wzrost-sprzedazy-i-popularnosc-aplikacji/">
+          <div class="press-item__media">
+            <img src="/assets/img/artykuly/swiateczne-rekordy-erli-dynamiczny-wzrost-sprzedazy-i-popularnosc-aplikacji/hero.webp" alt="" loading="lazy" class="press-item__img">
+          </div>
+          <div class="press-item__body">
+            <p class="press-item__meta"><span class="press-item__kategoria">Aktualności</span><time datetime="2025-01-23">23 stycznia 2025</time></p>
+            <h3 class="press-item__title">Świąteczne rekordy ERLI: dynamiczny wzrost sprzedaży i popularność aplikacji mobilnej</h3>
+            <p class="press-item__lead">Okres świąteczny 2024 był rekordowy dla platformy.</p>
+            <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- KONTAKT: jedna karta + notka -->
+  <section class="press-contact" aria-labelledby="kontakt-prasowy">
+    <div class="container container--press">
+      <h2 id="kontakt-prasowy" class="press-contact__heading">Kontakt dla mediów</h2>
+      <div class="press-contact__card">
+        <p class="press-contact__rola">Kontakt prasowy</p>
+        <p class="press-contact__osoba">Aleksandra Grądzka</p>
+        <p class="press-contact__mail"><a href="mailto:media@erli.pl">media@erli.pl</a></p>
+      </div>
+      <p class="press-contact__note">
+        Serwis prasowy przeznaczony jest wyłącznie dla mediów.
+        Pytania dotyczące zamówień i zakupów prosimy kierować na
+        <a href="mailto:pomoc@erli.pl">pomoc@erli.pl</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo" class="site-footer">
+  <div class="container container--press">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="/" class="site-footer__logo"><img src="/assets/img/erli-logo.svg" alt="ERLI" width="82" height="31" loading="lazy"></a>
+        <p class="site-footer__tagline">Biuro prasowe</p>
+        <div class="site-footer__social">
+          <a href="https://www.facebook.com/erlipl" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.linkedin.com/company/erli-pl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/erli.pl" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.youtube.com/@erlipl" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+      </div>
+      <nav class="site-footer__nav" aria-label="Nawigacja w stopce">
+        <h2 class="site-footer__nav-heading">Biuro prasowe</h2>
+        <ul role="list">
+          <li><a href="/aktualnosci/">Aktualności</a></li>
+          <li><a href="/media-o-erli/">Media o ERLI</a></li>
+          <li><a href="/o-nas/">O nas</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+        </ul>
+      </nav>
+      <nav class="site-footer__nav" aria-label="ERLI">
+        <h2 class="site-footer__nav-heading">ERLI</h2>
+        <ul role="list">
+          <li><a href="https://erli.pl" target="_blank" rel="noopener noreferrer">erli.pl</a></li>
+          <li><a href="mailto:media@erli.pl">media@erli.pl</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom"><p>&copy; 2026 ERLI</p></div>
+  </div>
+</footer>
+
+<script src="/assets/js/header-scroll.js" defer></script>
+<script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
