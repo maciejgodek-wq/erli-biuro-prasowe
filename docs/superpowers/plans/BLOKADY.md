@@ -3,12 +3,28 @@
 Stan: 2026-07-28. Ustalone przy przeglądzie migracji treści (Zadanie 21).
 Decyzja właściciela: **naprawiamy teraz**, potem praca idzie dalej.
 
-**Dopóki pozycje B1 i B2 są otwarte, `dist/` nie jest gotowy do wdrożenia
-i nie należy przekazywać paczki do IT.**
+**Aktualizacja 2026-07-28 (po naprawie): B1, B2, D1, D2, D3 zamknięte.**
+Weryfikacja: `npm test` — 125/125, `node build.js` — 84 strony, 104
+przekierowania, kontrola językowa OK, kontrola obrazków OK (nowa — patrz B1).
+0 zepsutych odwołań do obrazków, 0 ścieżek >260 znaków w `dist/`, wszystkie
+88 slugów z eksportu obecne w mapie przekierowań. D4 i D5 pozostają otwarte —
+wymagają decyzji właściciela, nie zostały ruszone.
+
+**`dist/` gotowy do przekazania IT pod względem B1/B2. Push na `origin`
+wstrzymany — decyzja właściciela.**
 
 ---
 
-## B1 — 314 zepsutych odwołań do obrazków — BLOKUJE WDROŻENIE
+## B1 — 314 zepsutych odwołań do obrazków — BLOKUJE WDROŻENIE — ✅ NAPRAWIONE
+
+**Naprawa:** `grafikaUrl()` w `build/render.js` rozróżnia teraz pełną ścieżkę
+(zaczyna się od `/`) od nazwy pliku w `assets/img/kv/` — prawdziwe zdjęcie ma
+priorytet, key visual zostaje jako fallback. Skrypt `tools/dopisz-grafike-karty.mjs`
+dopisał pole `grafika:` wskazujące pierwszy obraz z treści (hero) do wszystkich
+77 plików. Nowa kontrola `build/image-guard.js` (analogiczna do kontroli
+językowej) przerywa build, jeśli jakikolwiek `src=`/`og:image`/`twitter:image`
+w `dist/` nie ma pliku na dysku — wpięta w `build.js` po skopiowaniu assetów.
+Zweryfikowana ręcznie: chwilowe usunięcie jednego pliku wywołało błąd builda.
 
 Każda karta artykułu, każdy nagłówek artykułu i każdy `og:image` prowadzi na 404.
 
@@ -47,7 +63,7 @@ wyłącznie jako zabezpieczenie.
 
 ---
 
-## B2 — dwie ścieżki przekraczają limit 260 znaków Windows — RYZYKO WDROŻENIA
+## B2 — dwie ścieżki przekraczają limit 260 znaków Windows — RYZYKO WDROŻENIA — ✅ NAPRAWIONE
 
 | Znaków | Slug |
 |---|---|
@@ -59,13 +75,17 @@ Ale `Get-Content` w PowerShellu nie potrafi otworzyć tych plików, a paczkę
 `dist/` wdraża IT, prawdopodobnie narzędziami Windows albo przez FTP. Ryzyko
 cichej utraty dwóch stron przy wdrożeniu.
 
-**Naprawa.** Skrócić slug w wyjściu (np. do 80 znaków, ucinając na granicy
-wyrazu), a oryginalny zachować w mapie przekierowań 301. Do tego przekierowania
-właśnie służą. Skracanie musi być deterministyczne i pokryte testem.
+**Naprawa.** Nowa funkcja `skrocSlug(slug, maks=80)` w `build/posts.js`
+(deterministyczna, testy w `build/posts.test.js`) tnie na granicy wyrazu.
+Użyta w `loadPosts()` do budowy `post.url` — **wszystkie** slugi >80 znaków
+skrócone w wyjściu (nie tylko te dwa), oryginalny slug z Joomli zostaje bez
+zmian jako klucz w mapie przekierowań (`post.slug`, niezależne pole).
+Zweryfikowane: 0 ścieżek >260 znaków w `dist/`, obie strony nadal osiągalne
+przez 301 ze starego adresu.
 
 ---
 
-## D1 — dwa artykuły z leadem dublującym pierwszy akapit
+## D1 — dwa artykuły z leadem dublującym pierwszy akapit — ✅ NAPRAWIONE
 
 Automatyczne usuwanie zdublowanego leadu (32 artykuły) pominęło dwa:
 
@@ -74,17 +94,32 @@ Automatyczne usuwanie zdublowanego leadu (32 artykuły) pominęło dwa:
 
 Lead wyświetla się nad treścią, więc czytelnik widzi ten sam akapit dwa razy.
 
+**Naprawa.** Oba przypadki ominęła automatyka celowo — akapit zaczynał się
+od tekstu leadu, ale miał dodatkowe, unikalne zdanie na końcu (funkcja
+`prawieRowne()` z Zadania 21 słusznie odrzuciła usunięcie całego akapitu,
+żeby nie zgubić tego zdania). `tools/napraw-czesciowo-zdublowany-lead.mjs`
+usuwa tylko część akapitu pokrywającą się z leadem, zachowując zdanie
+dodatkowe. Zweryfikowane ręcznie w obu plikach.
+
 ---
 
-## D2 — jeden artykuł „Media o ERLI" bez pola `zrodlo`
+## D2 — jeden artykuł „Media o ERLI" bez pola `zrodlo` — ✅ NAPRAWIONE
 
 1 z 37. Bez tego pola nie renderuje się blok „Materiał opublikowany w…",
 a link do publikacji zewnętrznej zostaje zagrzebany w akapicie — czyli
 wraca problem, który mieliśmy naprawić.
 
+**Przyczyna.** `znajdzZrodlo()` szuka linku w formacie markdown
+`[tekst](url)` — w tym jednym artykule redaktor wkleił adres jako zwykły
+tekst, bez `<a href>`, potwierdzone w `erlipl_db.sql`. To literówka w
+źródle, nie błąd ekstraktora. **Naprawa.** `tools/dopisz-zrodlo-d2.mjs`
+dopisał `zrodlo: {nazwa: wyborcza.biz, url: ...}`. Zweryfikowane w
+wygenerowanym HTML — blok „Materiał opublikowany w wyborcza.biz" renderuje
+się poprawnie.
+
 ---
 
-## D3 — pięć katalogów zdjęć z nazwami niezgodnymi ze slugiem
+## D3 — pięć katalogów zdjęć z nazwami niezgodnymi ze slugiem — ✅ NAPRAWIONE
 
 Nazwy obcięte, prawdopodobnie obejście limitu ścieżki z B2:
 
@@ -97,6 +132,14 @@ Nazwy obcięte, prawdopodobnie obejście limitu ścieżki z B2:
 Działa, bo markdown wskazuje obciętą ścieżkę. Ale reguła jest doraźna
 i nieudokumentowana — przy B1 trzeba ją ujednolicić, inaczej skrypt
 dopisujący `grafika:` nie znajdzie katalogu dla tych pięciu.
+
+**Naprawa.** `tools/ujednolic-katalogi-zdjec.mjs` przemianował katalogi na
+`skrocSlug(slug, 80)` — ta sama funkcja co w B2, jedna udokumentowana reguła
+zamiast doraźnego ucinania (objęło 25 katalogów, nie tylko te pięć — wiele
+slugów przekracza 80 znaków). Dodatkowo `tools/ujednolic-nazwy-hero.mjs`
+ujednolicił nazwy samych plików zdjęć hero do stałego `hero.webp` — jeden
+oryginalny plik miał ~110-znakową nazwę przypominającą base64, która sama
+w sobie przekraczała limit ścieżki niezależnie od długości slugu.
 
 ---
 
@@ -126,9 +169,9 @@ weryfikowane.
 
 | Zadanie | Stan |
 |---|---|
-| 21 — migracja artykułów | zrobione, z blokadami wyżej |
+| 21 — migracja artykułów | zrobione, blokady B1/B2/D1/D2/D3 zamknięte |
 | 22 — strony O nas i Kontakt | **w toku** |
-| 23 — weryfikacja końcowa i paczka dla IT | **wstrzymane do zamknięcia B1 i B2** |
+| 23 — weryfikacja końcowa i paczka dla IT | odblokowane — B1 i B2 zamknięte, można wznowić |
 | Nowy układ strony głównej | zaprojektowany, podgląd w `dist/podglad-uklad.html`, niewdrożony |
 
 Otwarte pytanie do właściciela: token `--thumb-mobile` (88 px) dla miniatur
@@ -137,5 +180,7 @@ w kompaktowym widoku mobilnym — dopisać do `tokens.css`, użyć `--space-4xl`
 
 ## Stan repozytorium
 
-38 commitów na lokalnym `main`, niewypchniętych. Brak PR-a, brak code review.
-Push wstrzymany decyzją właściciela do zamknięcia blokad.
+55 commitów na lokalnym `main`, niewypchniętych (było 38, +17 przy naprawie
+blokad B1/B2/D1/D2/D3). Brak PR-a, brak code review. **Push nadal wstrzymany
+decyzją właściciela** — zamknięcie B1/B2 nie jest automatycznym zezwoleniem
+na push, to osobna decyzja.
