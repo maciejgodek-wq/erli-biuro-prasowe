@@ -4,20 +4,32 @@ const ZNAKI_DE = /[äöüßÄÖÜ]/;
 
 /**
  * Slowa jednoznacznie niemieckie. Celowo pominiete te, ktore istnieja
- * takze po polsku (Kontakt, Start, Test) lub angielsku.
+ * takze po polsku (Kontakt, Start, Test) lub angielsku — w tym "ich",
+ * ktore po polsku jest zaimkiem ("spelnia ich oczekiwania").
+ *
+ * Granice slowa przez lookaround na \p{L}\p{N}, nie \b: JS-owe \b zna
+ * tylko ASCII [A-Za-z0-9_], wiec polskie znaki diakrytyczne (ą, ż, ó...)
+ * licza sie jako "nie-litery" i tworza falszywa granice w srodku slowa —
+ * "dużymi" dzieli sie na "du" + "żymi", a "du" fałszywie pasuje jako cale
+ * slowo kluczowe.
  */
+const GRANICA_PRZED = '(?<![\\p{L}\\p{N}])';
+const GRANICA_PO = '(?![\\p{L}\\p{N}])';
 const SLOWA_DE = new RegExp(
-  '\\b(' +
+  GRANICA_PRZED +
+    '(' +
     [
       'der', 'die', 'das', 'und', 'oder', 'nicht', 'auch', 'wird', 'sind',
       'eine', 'einen', 'einem', 'eines', 'ist', 'sich', 'mit', 'von', 'zum',
-      'zur', 'bei', 'kann', 'mehr', 'alle', 'wir', 'Sie', 'ich', 'du',
+      'zur', 'bei', 'kann', 'mehr', 'alle', 'wir', 'Sie', 'du',
       'Marktplatz', 'Deutschland', 'deutsch', 'Verkäufer', 'Verkaeufer',
       'Startseite', 'Datenschutz', 'Impressum', 'Anmelden', 'Einkauf',
       'einkaufen', 'Produkte', 'Zahlung', 'Versand', 'Bestellung',
       'schliessen', 'oeffnen', 'Abspielen', 'Pausieren', 'Werktage',
     ].join('|') +
-    ')\\b'
+    ')' +
+    GRANICA_PO,
+  'u'
 );
 
 /** Atrybuty, w ktorych tekst jest niewidoczny wizualnie. */

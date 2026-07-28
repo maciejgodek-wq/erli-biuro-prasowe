@@ -49,3 +49,18 @@ test('trafienie zawiera nazwe pliku', () => {
   const hits = findGerman('<p>Marktplatz</p>', 'aktualnosci/index.html');
   assert.equal(hits[0].plik, 'aktualnosci/index.html');
 });
+
+// Znalezione przy migracji 77 prawdziwych artykulow (Zadanie 21): \b w JS nie
+// traktuje polskich znakow diakrytycznych jako liter, wiec "dużymi" dzieli sie
+// na "du" + "żymi", a "du" fałszywie pasuje jako cale slowo.
+test('nie lapie fragmentu slowa kluczowego rozdzielonego polskim znakiem diakrytycznym', () => {
+  const html = '<p>Świąteczne prezenty z dużymi rabatami. Mamy duże ambicje.</p>';
+  assert.deepEqual(findGerman(html, 'x.html'), []);
+});
+
+// "ich" to prawdziwe polskie slowo (dopelniacz/biernik liczby mnogiej:
+// "spelnia ich oczekiwania"), nie tylko niemieckie "ich" (ja).
+test('polskie zaimek "ich" nie jest trafieniem', () => {
+  const html = '<p>Stąd usługi PayPo idealnie wpisują się w ich potrzeby.</p>';
+  assert.deepEqual(findGerman(html, 'x.html'), []);
+});
