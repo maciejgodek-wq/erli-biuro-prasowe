@@ -205,7 +205,7 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
   "engines": { "node": ">=22" },
   "scripts": {
     "build": "node build.js",
-    "test": "node --test \"build/**/*.test.js\""
+    "test": "node --test \"{build,tools}/**/*.test.js\""
   },
   "dependencies": {
     "marked": "^15.0.0"
