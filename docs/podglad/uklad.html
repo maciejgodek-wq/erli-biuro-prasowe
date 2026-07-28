@@ -28,7 +28,19 @@
   grid-template-columns: 3fr 2fr;
   align-items: stretch;
 }
-.post-card--featured .post-card__media { aspect-ratio: var(--aspect-og); height: 100%; }
+/* Zadnego aspect-ratio w karcie wyroznionej. Grafika jest elementem siatki
+   rozciaganym przez align-items: stretch, wiec ma juz obie wymiary narzucone:
+   szerokosc z kolumny, wysokosc z wiersza. Dolozenie aspect-ratio tworzy
+   trzecie ograniczenie, ktore wygrywa i rozpycha grafike poza kolumne —
+   zmierzone dwa razy: kolumna 778 px / grafika 851 px, potem
+   kolumna 767 px / grafika 795 px. object-fit: cover na <img> zalatwia
+   kadrowanie bez narzucania proporcji kontenerowi. */
+.post-card--featured .post-card__media {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
 .post-card--featured .post-card__body {
   justify-content: center;
   padding: var(--padding-card-comfort);
@@ -47,6 +59,11 @@
 @media (max-width: 1024px) {
   .post-grid--three { grid-template-columns: repeat(2, 1fr); }
   .post-card--featured .post-card__link { grid-template-columns: 1fr; }
+  /* W jednej kolumnie nie ma wiersza do wypelnienia — wracamy do proporcji. */
+  .post-card--featured .post-card__media {
+    height: auto;
+    aspect-ratio: var(--aspect-og);
+  }
 }
 
 /* --- mobile: kafle jako kompaktowe wiersze ---

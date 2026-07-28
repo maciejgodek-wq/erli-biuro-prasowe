@@ -85,8 +85,16 @@
   text-decoration: none;
 }
 /* Obramowanie focusa: globalne :focus-visible z base.css (tokeny). */
-/* aspect-ratio trzyma wysokosc karty niezaleznie od tego, czy grafika sie wczytala. */
-.post-card__media { aspect-ratio: var(--aspect-og); background: var(--color-neutral-75); }
+/* aspect-ratio trzyma wysokosc karty niezaleznie od tego, czy grafika sie wczytala.
+   overflow: hidden jest OBOWIAZKOWE — bez niego zdjecie wyzsze niz ramka rozpycha
+   ja od srodka (min-height: auto na bloku), przez co karty w jednym rzedzie maja
+   rozne wysokosci. Zmierzone przed poprawka: 5 roznych wysokosci (201-255 px)
+   na 30 kartach listy /aktualnosci/. */
+.post-card__media {
+  aspect-ratio: var(--aspect-og);
+  overflow: hidden;
+  background: var(--color-neutral-75);
+}
 .post-card__img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .post-card__body {
   display: flex;

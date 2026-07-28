@@ -346,8 +346,14 @@
 @media (max-width: 1024px) {
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 360px) {
+/* Prog 480, nie 360: 1fr to minmax(auto, 1fr), wiec tor nie zwezy sie ponizej
+   szerokosci min-content. Dlugie slowa w tytulach ("sprzedawcow") wymuszaly
+   ~170 px na tor, co przy dwoch kolumnach + przerwie dawalo 371 px na 343 px
+   dostepnych — 13 px poziomego przewijania calej strony przy 375 px.
+   min-width: 0 na kafelku to zabezpieczenie, gdyby tresc byla jeszcze dluzsza. */
+@media (max-width: 480px) {
   .trust-grid { grid-template-columns: 1fr; }
+  .trust-card { min-width: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
