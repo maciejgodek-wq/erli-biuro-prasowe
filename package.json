@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "node build.js",
     "test": "node --test \"{build,tools}/**/*.test.js\""
   },
   "dependencies": {
     "marked": "^15.0.0"
+  },
+  "devDependencies": {
+    "node-html-parser": "^9.0.0"
   }
 }
