@@ -3,4 +3,11 @@ tytul: Kontakt
 lead: Zapraszamy do kontaktu.
 ---
 
-Treść do uzupełnienia z eksportu Joomli (Task 21).
+## Kontakt dla mediów
+
+Aleksandra Grądzka
+[media@erli.pl](mailto:media@erli.pl)
+
+## Kontakt dla kupujących
+
+[pomoc@erli.pl](mailto:pomoc@erli.pl)
