@@ -18,7 +18,7 @@ Zmianie uległa również liczba zarejestrowanych użytkowników, która w ubieg
 
 *Idealnym przykładem takiego podejścia jest wdrożony przez nas w połowie 2022 roku ERLI Campagins - program oparty o najlepiej funkcjonujące rozwiązania reklamowe na rynku i rozwiązanie dla e-sklepów pozwalające realnie zwiększyć ich sprzedaż. Obecnie już ponad 54% naszego GMV realizowane jest wspólnie z naszymi sprzedawcami w ramach ERLI Campaigns, a średni ROAS (czyli wskaźnik zwrotu z wydatków na reklamę) prowadzonych kampanii wynosi ponad 3500! To najlepiej pokazuje, jak duże znaczenie w aktywacji sprzedaży ma uruchomiony przez nas program wsparcia przedsiębiorców, ale również jak ważne są kompetencje i wiedza zespołu ERLI w tym obszarze. – **podkreśla Adam Ciesielczyk, Prezes ERLI** - Ponadto, jak na stosunkowo krótko funkcjonujący marketplace możemy się pochwalić imponującym wzrostem liczby zarejestrowanych użytkowników – w ub.r. podwoiliśmy ich liczbę, dzięki czemu odnotowaliśmy prawie 2,5 razy więcej transakcji niż w 2021 roku.*
 
-![](images/grafiki/Infografika_1.jpg)
+![](/assets/img/artykuly/platforma-sprzedazowa-erli-podsumowuje-kolejny-rok-dynamicznego-rozwoju/Infografika_1.webp)
 
 **Wsparcie sprzedawców receptą na sukces**
 
@@ -30,7 +30,7 @@ Obecnie na platformie Erli.pl sprzedaż prowadzi ponad 15 tysięcy sprzedawców 
 
 Celem firmy na najbliższe lata jest osiągniecie silnej drugiej pozycji wśród platform sprzedażowych online w Polsce. Zadanie to nie będzie proste, ponieważ na krajowym rynku e-commerce swoją działalność prowadzą, zarówno globalni potentaci, jak i polskie firmy z wieloletnim doświadczeniem w sprzedaży. – *Zamierzamy nadal sukcesywnie realizować swoja strategię rozwoju, która jak widać przynosi wymierne korzyści dla nas i naszych partnerów biznesowych. W najbliższym czasie będziemy informować o nowych inicjatywach, które pomogą nam w utrzymaniu wysokiego tempa wzrostu. W bieżącym roku zamierzamy również zintensyfikować działania mające na celu podniesienie świadomości marki ERLI wśród konsumentów. Celem na koniec roku jest przekroczenie bariery miliarda złotych GMV i 6 mln sprzedanych produktów, a w perspektywie dwuletniej mamy plan podwoić te wyniki. Jestem przekonany, że już niedługo będziemy mogli zakomunikować o kolejnych ważnych wydarzeniach w historii ERLI*– **zapowiada Adam Ciesielczyk.**
 
-![](images/grafiki/Infografika_2.jpg)
+![](/assets/img/artykuly/platforma-sprzedazowa-erli-podsumowuje-kolejny-rok-dynamicznego-rozwoju/Infografika_2.webp)
 
 ***
 

@@ -16,7 +16,7 @@ Galopująca inflacja, podwyżki cen energii oraz wzrost kosztów funkcjonowania 
 
 Jednocześnie, środowisko e-commerce było przez ostatnie lata coraz mniej przyjazne dla sprzedających – koszty prowadzenia sprzedaży w Internecie, na co składają się m.in. nakłady reklamowe, koszty prowizji od sprzedaży, koszty logistyczne i obsługi płatności, koszty serwerów i usług IT, stają się coraz wyższe. Te wysokie kwoty, porównywalne już wręcz z prowadzeniem punktu sprzedaży stacjonarnej, sprzedający przerzucali na kupujących, wciąż podnosząc ceny, przez co e-commerce tracił de facto swoją kluczową cechę konkurencyjną – niższe ceny niż w sklepach stacjonarnych.
 
-![](images/grafiki/1492x364_adam_ciesielczyk.jpg)
+![](/assets/img/artykuly/rewolucja-na-rynku-e-commerce-w-polsce/1492x364_adam_ciesielczyk.webp)
 
 **Koalicja na rzecz niższych cen w Internecie**
 

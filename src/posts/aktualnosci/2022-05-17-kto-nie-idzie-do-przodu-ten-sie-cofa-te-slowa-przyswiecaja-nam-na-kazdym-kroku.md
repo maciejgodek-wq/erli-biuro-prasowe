@@ -16,7 +16,7 @@ Program Google Partners od lat jest wyznacznikiem jakości. Firmy, które biorą
 - Wydatki – ERLI wydało na reklamę co najmniej 10 000 USD w ciągu ostatnich 90 dni, co oznacza, że jesteśmy w stanie wspierać naszych klientów w identyfikowaniu nowych możliwości i utrzymywaniu satysfakcjonujących wyników.
 - Certyfikaty – ponad połowa doradców klienta ds. strategii zatrudnionych przez ERLI wykazała się biegłością w obsłudze Google Ads, zdobywając certyfikaty Google Ads.
 
-![](images/grafiki//banery_1492x364_optymalizacja.png)
+![](/assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/banery_1492x364_optymalizacja.webp)
 
 **Gra warta świeczki**
 
@@ -26,7 +26,7 @@ Zostanie Parterem Google otworzyło przed ERLI wiele ścieżek rozwoju. Po doł�
 - Dostęp i pomoc – uzyskaliśmy pomoc techniczną i dostęp do zasobów związanych z usługami, dzięki którym umożliwimy naszym klientom osiąganie jeszcze większych sukcesów.
 - Uznanie i nagrody – nasza wiedza z zakresu Google Ads znajduje potwierdzenie w praktyce. Dzięki wyzwaniom kwartalnym w programie Google Partners Rewards mamy motywację do wykorzystania naszej wiedzy i umiejętności, by osiągać sukcesy zarówno dla ERLI, jak i naszych klientów.
 
-![](images/grafiki//banery_1492x364_wzorsty.png)
+![](/assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/banery_1492x364_wzorsty.webp)
 
 **Idziemy dalej – Partner CSS**
 

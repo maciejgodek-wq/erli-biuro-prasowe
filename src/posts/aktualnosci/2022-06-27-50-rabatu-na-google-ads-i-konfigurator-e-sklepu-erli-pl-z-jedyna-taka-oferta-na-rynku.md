@@ -14,7 +14,7 @@ Czym ERLI Campaigns wyróżnia się na tle konkurencji? Niższą ceną i lepszym
 
 *„Z punktu widzenia sprzedawców proces zakupowy przypomina wyścig o zwrócenie uwagi potencjalnego klienta. Na mecie tego wyścigu czeka sprzedaż, ale jeśli rozejrzysz się, zobaczysz, że razem z tobą startują tysiące innych zawodników. Wiemy jak wiele zmiennych wpływa na to, czy dany produkt zostanie kupiony, czy nie. Przy pomocy ERLI Campaigns chcemy dać naszym sprzedawcom zarówno odpowiednie narzędzia do promocji, jak i zapewnić im stałe wsparcie. Trzymając się metafory wyścigu – skonstruowaliśmy nie tylko świetny bolid, ale w pakiecie dostarczamy też zespół wykwalifikowanych mechaników, którzy dbają o to, by wszystkie trybiki działały jak należy.”* – **Adam Ciesielczyk, CEO ERLI.pl**
 
-![](images/grafiki/1492x364_erli_shop.jpg)
+![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na-rynku/1492x364_erli_shop.webp)
 
 **ERLI Shop – Twój sklep w kilka minut**
 
@@ -24,7 +24,7 @@ Drugą nowością przygotowaną z myślą o przedsiębiorcach jest ERLI Shop. To
 
 Aż 87% użytkowników podczas zakupów w e-sklepach zwraca uwagę właśnie na markę*. Przedsiębiorcy, którzy zdecydują się na stworzenie własnego sklepu, będą mogli skorzystać z gotowych szablonów, a także od postaw zbudować panel sklepu. Zespół ERLI.pl przygotował wiele opcji, które pozwolą wyróżnić się poszczególnym Sprzedawcom na tle konkurencji. Spośród funkcjonalności kreatora sklepu można wyliczyć m.in. zaawansowane opcje prezentacji produktów oraz promocji swojej oferty przy użyciu grafik, czy banerów reklamowych.
 
-![](images/grafiki/1492x364_erli_shop_campaigns_2.jpg)
+![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na-rynku/1492x364_erli_shop_campaigns_2.webp)
 
 **Być o krok przed innymi**
 

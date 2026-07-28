@@ -18,7 +18,7 @@ W 2023 roku ERLI systematycznie budowało swoją popularność wśród konsument
 
 *- W ciągu dwunastu miesięcy 2023 roku zanotowaliśmy wzrost i rozwój wskaźników we wszystkich obszarach, na których nam zależało. Od początku działamy w oparciu o unikalny model współpracy i bliskiego partnerstwa z merchantami. Patrzymy na rozwój ERLI jako wspólny sukces, który nie byłby możliwy bez naszych partnerów. Dlatego przede wszystkim jesteśmy dumni z poszerzenia bazy sprzedawców, która urosła do 22 tys. na koniec 2023 roku, a dziś wynosi już 24 tysiące. W ten sposób mogliśmy zwiększyć dostępną ofertę produktową do 21 mln produktów i znacząco rozwinąć poszczególne kategorie. To oraz atrakcyjne ceny produktów spowodowały większe zainteresowanie klientów naszą ofertą, dzięki czemu zarejestrowanych na ERLI było już 3 mln kont, zaś blisko 7,5 mln użytkowników w grudniu odwiedziło platformę w poszukiwaniu ofert – wynik ten plasuje nas w gronie najpopularniejszych portali zakupowych w Polsce według badania Gemius[**[3]**](#_ftn3). Dodatkowo w drugiej połowie roku ruszyła nasza aplikacja mobilna ERLI – bez wątpienia był to dla nas najwiekszy projekt biznesowy w 2023 roku i bardzo mocny impuls rozwojowy dla ERLI na kolejne miesiące – **mówi Adam Ciesielczyk, Prezes ERLI**. – Dzięki temu poprawiliśmy zeszłoroczny wynik GMV o ponad 60%, osiągając niemal 740 mln zł i ponad 91 mln przychodu netto. Co warte podkreślenia rozwijaliśmy się 6-krotnie szybciej niż cały rynek e-commerce w Polsce[**[4]**](#_ftn4)*– dodaje.
 
-![](images/grafiki/wyniki-erli-2023-infografika.jpg)
+![](/assets/img/artykuly/kolejny-przelomowy-rok-erli/wyniki-erli-2023-infografika.webp)
 
 **Launch aplikacji ERLI**
 

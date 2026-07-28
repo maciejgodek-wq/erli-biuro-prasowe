@@ -12,7 +12,7 @@ Aplikacja mobilna ERLI zapewnia intuicyjną obsługę i dostęp do jeszcze korzy
 
 - *Wprowadzenie aplikacji mobilnej było naturalnym krokiem w rozwoju ERLI, który miał na celu uproszczenie procesu zakupowego i zapewnienie naszym klientom jeszcze lepszych doświadczeń zakupowych. Przekroczenie 2 milionów pobrań, a także poziom ponad 50% aktywnych użytkowników pokazują, że konsumenci doceniają wygodę i korzyści, jakie oferujemy. W aplikacji ERLI znajdą nie tylko lepsze ceny, ale również dedykowane promocje i rabaty, które nie są dostępne na stronie internetowej. Wymienić można tutaj regularne mega oferty w sekcji Najtaniej oraz cykliczne rabaty na wybrane kategorie produktowe. Nasi użytkownicy mogą śledzić te oferty na bieżąco m.in. poprzez powiadomienia push -***podkreśla Katarzyna Kierach, Dyrektor Marketingu w ERLI**.
 
-![](images/tel-1.png)
+![](/assets/img/artykuly/erli-swietuje-ponad-2-miliony-pobran-aplikacji-mobilnej-polski-m-commerce-rosnie-w-sile-2/tel-1.webp)
 
 **Kluczowe funkcje i innowacje aplikacji**
 
@@ -20,7 +20,7 @@ Aplikacja mobilna ERLI oferuje użytkownikom szereg funkcjonalności, które uł
 
 W ostatnich miesiącach aplikacja została wzbogacona o chat’y - możliwość rozpoczęcia rozmowy ze sprzedawcą oraz konsultantami ERLI w przypadku pytań lub wątpliwości do zamówienia. Dodatkowo w apce stale aktualizowane są filtry i wyszukiwarki, aby znajdowanie produktów były intuicyjne i wygodne dla użytkownika. Te innowacje mają na celu dalsze usprawnienie procesu zakupowego i zwiększenie wygody użytkowników.
 
-![](images/tel-2.png)
+![](/assets/img/artykuly/erli-swietuje-ponad-2-miliony-pobran-aplikacji-mobilnej-polski-m-commerce-rosnie-w-sile-2/tel-2.webp)
 
 **Zaangażowanie użytkowników**
 
@@ -28,7 +28,7 @@ W sierpniu 2024 roku ponad 55% wszystkich transakcji na platformie ERLI zostało
 
 Wysoka ocena w sklepach Google Play i App Store (4,9 w obu sklepach) potwierdza, że aplikacja jest doceniana przez użytkowników za łatwość obsługi, wygodę zakupów oraz korzystne warunki zakupowe.
 
-![](images/tel-4.png)
+![](/assets/img/artykuly/erli-swietuje-ponad-2-miliony-pobran-aplikacji-mobilnej-polski-m-commerce-rosnie-w-sile-2/tel-4.webp)
 
 **Plany na przyszłość i dalszy rozwój aplikacji**
 
