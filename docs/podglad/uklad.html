@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podgląd układu — Biuro prasowe ERLI</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/main.css">
+<style>
+/* ================================================================
+   PROPOZYCJA — reguły do dopisania w assets/css/press.css.
+   Wyłącznie tokeny z tokens.css. Zero wartości na sztywno poza
+   progami media queries i jedną wskazaną niżej.
+   ================================================================ */
+
+/* --- pasek tożsamości: hero zredukowany do jednego wiersza --- */
+.press-hero--slim { padding-block: var(--space-xl); }
+.press-hero--slim .press-hero__title {
+  font-size: var(--text-h2);
+  margin-block: var(--space-xs) var(--space-sm);
+}
+.press-hero--slim .press-hero__lead { font-size: var(--text-body-md); }
+
+/* --- artykuł wyróżniony: ta sama karta w układzie dwukolumnowym --- */
+.post-card--featured .post-card__link {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: stretch;
+}
+.post-card--featured .post-card__media { aspect-ratio: var(--aspect-og); height: 100%; }
+.post-card--featured .post-card__body {
+  justify-content: center;
+  padding: var(--padding-card-comfort);
+  gap: var(--space-md);
+}
+.post-card--featured .post-card__title { font-size: var(--text-h3); }
+.post-card--featured .post-card__lead {
+  font-size: var(--text-body-lg);
+  -webkit-line-clamp: 4;
+}
+.post-card--featured .post-card__more { margin-top: 0; }
+
+/* --- siatka kafli: trzy kolumny na desktopie --- */
+.post-grid--three { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 1024px) {
+  .post-grid--three { grid-template-columns: repeat(2, 1fr); }
+  .post-card--featured .post-card__link { grid-template-columns: 1fr; }
+}
+
+/* --- mobile: kafle jako kompaktowe wiersze ---
+   Dziesięć pełnych kart w jednej kolumnie to bardzo długa strona.
+   Miniatura obok tytułu skraca ją ~trzykrotnie przy tej samej treści. */
+@media (max-width: 768px) {
+  .post-grid--three { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  .post-grid--three .post-card__link {
+    display: grid;
+    grid-template-columns: var(--thumb-mobile) 1fr;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-3);
+  }
+  .post-grid--three .post-card__media {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .post-grid--three .post-card__body { padding: 0; gap: var(--space-xs); }
+  .post-grid--three .post-card__title { font-size: var(--text-body-md); }
+  /* Lead i „Czytaj więcej” zbędne, gdy tytuł jest obok miniatury. */
+  .post-grid--three .post-card__lead,
+  .post-grid--three .post-card__more { display: none; }
+
+  /* Wyróżniony zostaje pełną kartą — to on ma przyciągać wzrok. */
+  .post-card--featured .post-card__body { padding: var(--padding-card-default); }
+  .post-card--featured .post-card__title { font-size: var(--text-h4); }
+  .post-card--featured .post-card__lead { -webkit-line-clamp: 3; }
+}
+
+/* JEDYNA nowa wartość w całej propozycji — szerokość miniatury na mobile.
+   Do rozstrzygnięcia: dopisać jako --thumb-mobile do tokens.css,
+   użyć --space-4xl (96 px), albo zrezygnować z miniatur. */
+:root { --thumb-mobile: 88px; }
+
+/* --- pomocnicze wyłącznie dla tego podglądu, nie do wdrożenia --- */
+.podglad-info {
+  background: var(--color-secondary-50);
+  border-bottom: var(--border-hairline) solid var(--color-secondary);
+  padding: var(--space-md) 0;
+  font-size: var(--text-caption-1);
+}
+.podglad-info strong { font-weight: var(--weight-bold); }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Przejdź do treści</a>
+
+<div class="podglad-info">
+  <div class="container">
+    <strong>Podgląd układu</strong> — propozycja kompozycji strony głównej.
+    Zwężaj okno: przy 1024 px siatka schodzi do dwóch kolumn, przy 768 px kafle stają się kompaktowymi wierszami.
+  </div>
+</div>
+
+<header role="banner" class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="Biuro prasowe ERLI — strona główna">
+      <img src="/assets/img/erli-logo.svg" alt="ERLI" width="82" height="31" loading="eager">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+    </button>
+    <nav aria-label="Nawigacja główna">
+      <ul class="site-header__nav" id="nav-menu" role="list">
+        <li><a href="/aktualnosci/">Aktualności</a></li>
+        <li><a href="/media-o-erli/">Media o ERLI</a></li>
+        <li><a href="/o-nas/">O nas</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="press-hero press-hero--slim">
+    <div class="container press-hero__inner">
+      <p class="section-eyebrow">ERLI</p>
+      <h1 class="press-hero__title">Biuro <em class="text-highlight text-highlight--box">prasowe</em></h1>
+      <p class="press-hero__lead">Komunikaty prasowe, wyniki i materiały dla dziennikarzy piszących o ERLI.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="najnowszy">
+    <div class="container">
+      <h2 id="najnowszy" class="visually-hidden">Najnowszy komunikat</h2>
+      <article class="post-card post-card--featured">
+        <a class="post-card__link" href="/aktualnosci/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/">
+          <div class="post-card__media">
+            <img src="/assets/img/artykuly/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/hero.webp" alt="" width="1200" height="630" loading="eager" class="post-card__img">
+          </div>
+          <div class="post-card__body">
+            <p class="post-card__meta">
+              <span class="post-card__kategoria">Aktualności</span>
+              <time datetime="2025-11-18">18 listopada 2025</time>
+            </p>
+            <h3 class="post-card__title">ERLI z rekordowym wzrostem — ponad 1,29 mld zł GMV po 9 miesiącach 2025 roku</h3>
+            <p class="post-card__lead">Przychody ERLI wzrosły o 62% do 189,7 mln zł, a zysk operacyjny (EBITDA) sięgnął 15,4 mln zł. Trzeci kwartał zamknął się 50-procentową dynamiką i najwyższą w historii rentownością.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="wczesniejsze">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="wczesniejsze" class="section-header__heading">Wcześniejsze</h2>
+        <a class="section-header__link" href="/aktualnosci/">Wszystkie aktualności</a>
+      </header>
+      <div class="post-grid post-grid--three">
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2025-11-03">3 listopada 2025</time></p>
+            <h3 class="post-card__title">Nowa era handlu online: AI od ERLI dla sprzedawców</h3>
+            <p class="post-card__lead">Platforma wdraża rozwiązania oparte na sztucznej inteligencji, które automatyzują kategoryzację produktów.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/erli-na-e-commerce-warsaw-expo-2025-2/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/erli-na-e-commerce-warsaw-expo-2025-2/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2025-10-03">3 października 2025</time></p>
+            <h3 class="post-card__title">ERLI na E-commerce Warsaw Expo 2025</h3>
+            <p class="post-card__lead">24 października ERLI weźmie udział w E-commerce Warsaw Expo, wcześniej znanym jako Targi eHandlu.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/platforma-e-commerce-erli-z-rekordowymi-wynikami-za-pierwsze-polrocze-2025-2-2/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/platforma-e-commerce-erli-z-rekordowymi-wynikami-za-pierwsze-polrocze-2025-2-2/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2025-08-14">14 sierpnia 2025</time></p>
+            <h3 class="post-card__title">Platforma e-commerce ERLI z rekordowymi wynikami za pierwsze półrocze 2025</h3>
+            <p class="post-card__lead">W pierwszym półroczu ERLI odnotowało ponad 54% wzrost GMV.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2025-04-16">16 kwietnia 2025</time></p>
+            <h3 class="post-card__title">Polski konsument świadomy i oszczędny podczas zakupów online</h3>
+            <p class="post-card__lead">Liczy się cena, oszczędność i wygoda — ERLI dostrzega trend świadomego kupowania.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/media-o-erli/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Media o ERLI</span><time datetime="2025-03-05">5 marca 2025</time></p>
+            <h3 class="post-card__title">Rekordowy rok dla Erli. E-commerce z 67% wzrostem GMV</h3>
+            <p class="post-card__lead">Platforma odnotowała w 2024 roku wzrost sprzedaży GMV o 67 proc. rok do roku.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/platforma-e-commerce-erli-challengerem-rynkowym/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/platforma-e-commerce-erli-challengerem-rynkowym/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2025-03-05">5 marca 2025</time></p>
+            <h3 class="post-card__title">Platforma e-commerce ERLI challengerem rynkowym</h3>
+            <p class="post-card__lead">W 2024 roku ERLI odnotowało 67% wzrost GMV, osiągając wartość 1,230 mld zł.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/swiateczne-rekordy-erli-dynamiczny-wzrost-sprzedazy-i-popularnosc-aplikacji/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/swiateczne-rekordy-erli-dynamiczny-wzrost-sprzedazy-i-popularnosc-aplikacji/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2025-01-23">23 stycznia 2025</time></p>
+            <h3 class="post-card__title">Świąteczne rekordy ERLI: wzrost sprzedaży i popularność aplikacji</h3>
+            <p class="post-card__lead">Okres świąteczny 2024 był rekordowy dla platformy.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/media-o-erli/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Media o ERLI</span><time datetime="2024-12-23">23 grudnia 2024</time></p>
+            <h3 class="post-card__title">ERLI chce w '25 przekroczyć 2 mld zł sprzedaży GMV</h3>
+            <p class="post-card__lead">Platforma marketplace po 9 miesiącach roku zwiększyła sprzedaż GMV.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+        <article class="post-card"><a class="post-card__link" href="/aktualnosci/erli-wprowadzil-pierwsza-w-polskim-e-commerce-usluge-gwarancji-darmowego-zwrotu/">
+          <div class="post-card__media"><img src="/assets/img/artykuly/erli-wprowadzil-pierwsza-w-polskim-e-commerce-usluge-gwarancji-darmowego-zwrotu/hero.webp" alt="" width="1200" height="630" loading="lazy" class="post-card__img"></div>
+          <div class="post-card__body">
+            <p class="post-card__meta"><span class="post-card__kategoria">Aktualności</span><time datetime="2024-11-21">21 listopada 2024</time></p>
+            <h3 class="post-card__title">ERLI wprowadził pierwszą w polskim e-commerce usługę Gwarancji Darmowego Zwrotu</h3>
+            <p class="post-card__lead">Po raz kolejny ERLI wprowadza rozwiązanie nowe na polskim rynku.</p>
+            <span class="post-card__more" aria-hidden="true">Czytaj więcej</span>
+          </div></a></article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft" aria-labelledby="w-skrocie">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="w-skrocie" class="section-header__heading">ERLI w skrócie</h2>
+      </header>
+      <ul class="trust-grid" role="list">
+        <li class="trust-card"><h3 class="trust-card__title">Polski marketplace</h3><p class="trust-card__text">Największa polska platforma marketplace tego typu.</p></li>
+        <li class="trust-card"><h3 class="trust-card__title">Ponad 30 tys. sprzedawców</h3><p class="trust-card__text">Wyłącznie polscy sprzedawcy.</p></li>
+        <li class="trust-card"><h3 class="trust-card__title">Miliony produktów</h3><p class="trust-card__text">Szeroka oferta w kilkunastu kategoriach.</p></li>
+        <li class="trust-card"><h3 class="trust-card__title">Aplikacja mobilna</h3><p class="trust-card__text">Ponad 2 miliony pobrań.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact-block" aria-labelledby="kontakt-prasowy">
+    <div class="container contact-block__inner">
+      <h2 id="kontakt-prasowy" class="contact-block__heading">Kontakt dla mediów</h2>
+      <p class="contact-block__person">Aleksandra Grądzka</p>
+      <p class="contact-block__email"><a href="mailto:media@erli.pl">media@erli.pl</a></p>
+      <p class="contact-block__note">Kontakt dla kupujących: <a href="mailto:pomoc@erli.pl">pomoc@erli.pl</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo" class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="/" class="site-footer__logo"><img src="/assets/img/erli-logo.svg" alt="ERLI" width="82" height="31" loading="lazy"></a>
+        <p class="site-footer__tagline">Biuro prasowe</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Nawigacja w stopce">
+        <h2 class="site-footer__nav-heading">Nawigacja</h2>
+        <ul role="list">
+          <li><a href="/aktualnosci/">Aktualności</a></li>
+          <li><a href="/media-o-erli/">Media o ERLI</a></li>
+          <li><a href="/o-nas/">O nas</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom"><p>&copy; 2026 ERLI</p></div>
+  </div>
+</footer>
+
+<script src="/assets/js/header-scroll.js" defer></script>
+<script src="/assets/js/nav.js" defer></script>
+</body>
+</html>
