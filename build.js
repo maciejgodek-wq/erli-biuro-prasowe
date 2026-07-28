@@ -10,6 +10,7 @@ import { renderMarkdown, plainText } from './build/markdown.js';
 import { buildCss } from './build/css.js';
 import { assertNoGerman } from './build/lang-guard.js';
 import { assertNoMissingImages } from './build/image-guard.js';
+import { assertNoMissingRedirectTargets } from './build/redirect-guard.js';
 import { buildSitemap, buildRobots, DOMENA } from './build/seo.js';
 import { buildRedirectMap, toHtaccess, toNginx, toCsv } from './build/redirects.js';
 import { paginate } from './build/paginate.js';
@@ -187,6 +188,11 @@ async function build() {
     ? JSON.parse(await readFile('src/duplikaty.json', 'utf8'))
     : [];
   const mapa = buildRedirectMap(wszystkie, duplikaty);
+
+  // --- kontrola przekierowan: przerywa build ---
+  assertNoMissingRedirectTargets(mapa, DIST);
+  console.log('  kontrola przekierowan: OK');
+
   await zapisz(join(DIST, 'redirects/.htaccess'), toHtaccess(mapa));
   await zapisz(join(DIST, 'redirects/nginx.conf'), toNginx(mapa));
   await zapisz(join(DIST, 'redirects/mapa.csv'), toCsv(mapa));

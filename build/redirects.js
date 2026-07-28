@@ -17,6 +17,13 @@ const STALE = [
  * Joomli) — istnialy pod wlasnym adresem /index.php/<kategoria>/<slug>
  * w obu kategoriach, wiec kierujemy oba warianty. Dopisywane po artykulach,
  * zeby nigdy nie nadpisaly wersji kanonicznej.
+ *
+ * Kazdy wpis w `duplikaty` wskazuje artykul kanoniczny przez {kategoria, slug}
+ * (Joomlowy slug, nietkniety), a adres wyjsciowy jest zawsze czytany z
+ * post.url znalezionego artykulu — nigdy sztywno zapisany. Dzieki temu
+ * zmiana reguly skracania adresow (skrocSlug w build/posts.js) nie moze
+ * rozjechac mapy przekierowan: nowy adres podaza za tym, co faktycznie
+ * wygenerowal loadPosts().
  */
 export function buildRedirectMap(posty, duplikaty = []) {
   const mapa = new Map();
@@ -24,10 +31,16 @@ export function buildRedirectMap(posty, duplikaty = []) {
   for (const post of posty) {
     mapa.set(`/index.php/${post.kategoria}/${post.slug}`, post.url);
   }
-  for (const { stary, kanoniczny } of duplikaty) {
+  for (const { stary, kategoria, slug } of duplikaty) {
+    const kanoniczny = posty.find((p) => p.kategoria === kategoria && p.slug === slug);
+    if (!kanoniczny) {
+      throw new Error(
+        `duplikaty.json: brak artykulu kanonicznego ${kategoria}/${slug} dla wpisu "${stary}"`
+      );
+    }
     for (const kat of ['aktualnosci', 'media-o-erli']) {
       const klucz = `/index.php/${kat}/${stary}`;
-      if (!mapa.has(klucz)) mapa.set(klucz, kanoniczny);
+      if (!mapa.has(klucz)) mapa.set(klucz, kanoniczny.url);
     }
   }
   for (const { stary, nowy } of STALE) {
