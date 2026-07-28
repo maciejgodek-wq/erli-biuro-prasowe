@@ -16,7 +16,8 @@ Repozytorium `erli-biuro-prasowe` zawiera dziś zaślepkę SEO rynku niemieckieg
 
 W zakresie:
 
-- migracja wszystkich ~35 artykułów z Joomli (kategorie: Aktualności, Media o ERLI)
+- migracja wszystkich 77 opublikowanych artykułów z Joomli
+  (kategorie: Aktualności, Media o ERLI)
 - migracja stron O nas i Kontakt — treść 1:1, bez aktualizacji merytorycznej
 - nowe kompozycje stron pod czytelnika-dziennikarza
 - skrypt budujący markdown → statyczny HTML
@@ -35,16 +36,62 @@ Poza zakresem:
 
 ### Obecna strona
 
-Joomla 5, szablon Gridbox 2.9.0. Cztery pozycje menu: Aktualności, Media o ERLI,
-O nas, Kontakt. URL-e w formacie `/index.php/<kategoria>/<slug>`.
+Joomla 5 z komponentem **Gridbox 2.9.0** — treść nie leży w standardowym
+`#__content`, lecz w tabelach page-buildera. Cztery pozycje menu: Aktualności,
+Media o ERLI, O nas, Kontakt. URL-e w formacie `/index.php/<kategoria>/<slug>`.
 
-Około 35 artykułów z okresu 2023 – listopad 2025, w dwóch kategoriach:
+Ustalone z eksportu bazy (`old_reference/BAZA/erlipl_db.sql`, prefiks `l064t_`):
 
-- **Aktualności** (~20) — własne komunikaty prasowe, pełna treść, cytaty zarządu
-- **Media o ERLI** (~20) — streszczenie publikacji zewnętrznej z linkiem do źródła
-  (Bankier.pl i in.) wplecionym w treść akapitu
+**77 opublikowanych artykułów** z okresu kwiecień 2021 – listopad 2025:
 
-Artykuły są czysto tekstowe: zero zdjęć, zero załączników, zero plików do pobrania.
+- **Aktualności** (40, `page_category=8`) — własne komunikaty prasowe, pełna
+  treść, cytaty zarządu
+- **Media o ERLI** (37, `page_category=160`) — streszczenie publikacji
+  zewnętrznej z linkiem do źródła (Bankier.pl i in.) wplecionym w treść akapitu
+
+Wcześniejsze szacowanie na „~35 artykułów z okresu 2023–2025" wynikało z odczytu
+pierwszej strony paginowanej listy na żywym serwisie. Rzeczywisty zakres jest
+ponad dwukrotnie większy i sięga 2021 roku.
+
+### Kształt treści w eksporcie
+
+Treść artykułu siedzi w `l064t_gridbox_pages.params` jako markup edytora
+WYSIWYG — średnio 8,8 KB zagnieżdżonych `<div class="ba-wrapper">`,
+`ba-section`, `ba-overlay` na artykuł, plus osobne ~13 KB inline CSS
+w kolumnie `style`.
+
+W markupie osadzone są **elementy interfejsu edytora**. Tekst po naiwnym
+zdjęciu znaczników zaczyna się od `Section Add New Row Edit Copy Item Add to
+Library Delete Item Section` i dopiero potem następuje właściwy tytuł. Migracja
+musi usuwać poddrzewa `.ba-edit-item`, `.ba-edit-wrapper`, `.ba-tooltip`
+i `.ba-buttons-wrapper`, nie tylko znaczniki.
+
+Użyteczne bez obróbki:
+
+- `intro_text` (~253 B) — czysty lead, bez zanieczyszczeń
+- `page_alias` — kompletne slugi, podstawa mapy przekierowań
+- `created` — data publikacji
+
+Zdjęcia i załączniki: 9 artykułów zawiera `<img>`, 1 zawiera link do pliku.
+Pozostałe 67 to czysty tekst.
+
+### Pozostała zawartość bazy
+
+Poza dwiema kategoriami artykułowymi eksport zawiera:
+
+- **11 duplikatów** artykułów bez kategorii, z sufiksami `-2`, `-2-2`, `-2-2-2`
+  — pozostałości po funkcji „duplikuj stronę" w panelu. Treść identyczna
+  z wersjami kanonicznymi
+- **`/o-nas`** (48 KB) — źródło treści strony O nas
+- `/home`, `/kontakt-2`, `/k` — strony do pominięcia
+- **7 nieopublikowanych**: `Regulamin`, `Statut (2)`, `Regulamin Pchli Targ`,
+  `RODO` (dokumenty prawne, nie prasowe), `O nas3` (szkic),
+  `22 Simple Ways to Get Healthier With Minimal Effort` (demo Gridboksa),
+  `3 000 zł i 100% zwrotu prowizji` (wygasła promocja, celowo wyłączona).
+  Wszystkie pomijane.
+
+⚠️ Eksport zawiera `configuration.php` z danymi dostępowymi do bazy.
+Katalog `old_reference/` jest w `.gitignore` i nie może trafić do repozytorium.
 
 Kontakt: `pomoc@erli.pl` (kupujący), `media@erli.pl` — Aleksandra Grądzka (media).
 Adresy obfuskowane JavaScriptem. Brak adresu, telefonu i danych rejestrowych.
@@ -293,6 +340,14 @@ Slugi zachowane identycznie jak w Joomli, więc mapowanie jest mechaniczne:
 /index.php/aktualnosci/<slug>   →  /aktualnosci/<slug>/
 /index.php/media-o-erli/<slug>  →  /media-o-erli/<slug>/
 ```
+
+**Duplikaty również trafiają do mapy.** 11 sierot bez kategorii (sufiksy `-2`,
+`-2-2`, `-2-2-2`) istnieje dziś pod własnymi adresami i odpowiada treścią.
+Jeśli ktokolwiek zlinkował wersję bez sufiksu, po podmianie dostanie 404.
+Każdy duplikat kierujemy na wersję kanoniczną — koszt 11 wierszy, ryzyko
+pominięcia to zepsuty link w cudzej publikacji.
+
+Razem ok. 88 przekierowań: 77 artykułów + 11 duplikatów + 5 adresów stałych.
 
 Bez tych przekierowań tracimy pozycje w wyszukiwarce i wszystkie linki
 prowadzące do biura prasowego z artykułów w mediach.

@@ -3175,102 +3175,702 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 
 ### Task 21: Migracja artykułów
 
+77 artykułów wyklucza przepisywanie ręczne. Treść siedzi w markupie
+page-buildera Gridbox, z osadzonymi elementami interfejsu edytora — potrzebny
+jest ekstraktor, nie kopiowanie.
+
+**Fakty ustalone z eksportu** (`old_reference/BAZA/erlipl_db.sql`, prefiks `l064t_`):
+
+| Co | Gdzie |
+|---|---|
+| Artykuły | `l064t_gridbox_pages`, `published='1'` |
+| Kategoria | kolumna `page_category`: `8` = Aktualności (40), `160` = Media o ERLI (37) |
+| Treść | kolumna `params` — markup page-buildera, ~8,8 KB/artykuł |
+| Lead | kolumna `intro_text` — **czysty tekst, gotowy do użycia** |
+| Slug | kolumna `page_alias` |
+| Data | kolumna `created` |
+
+⚠️ Kolumna `style` (~13 KB/artykuł) to inline CSS edytora — **ignoruj ją całkowicie**.
+
+⚠️ `params` zawiera poddrzewa interfejsu edytora. Naiwne `strip_tags` daje na
+wejściu: `Section Add New Row Edit Copy Item Add to Library Delete Item Section`
+i dopiero potem właściwy tekst. Trzeba usuwać **elementy DOM**, nie znaczniki.
+
 **Files:**
-- Create: `src/posts/aktualnosci/*.md` (~20 plików)
-- Create: `src/posts/media/*.md` (~20 plików)
+- Create: `tools/sql-parse.mjs` + `tools/sql-parse.test.js`
+- Create: `tools/html-to-md.mjs` + `tools/html-to-md.test.js`
+- Create: `tools/joomla-extract.mjs`
+- Create: `src/posts/aktualnosci/*.md` (40 plików)
+- Create: `src/posts/media/*.md` (37 plików)
+- Modify: `build/redirects.js` + `build/redirects.test.js` (duplikaty)
+- Modify: `package.json` (devDependency)
 
-- [ ] **Step 1: Przejrzyj eksport**
-
-Zlokalizuj w eksporcie tabele artykułów (Joomla: `#__content`) oraz przypisania kategorii (`#__categories`). Sprawdź, czy są artykuły niewidoczne z zewnątrz: nieopublikowane, zarchiwizowane, w koszu. Zgłoś ich listę użytkownikowi i zapytaj, które migrować.
-
-- [ ] **Step 2: Sprawdź konfigurację pod kątem analityki**
-
-```bash
-grep -rniE "gtag|GTM-|UA-[0-9]|G-[A-Z0-9]{8}|analytics|facebook|pixel|hotjar|clarity" <katalog-eksportu> | head -50
-```
-
-Front strony nie pokazywał żadnej analityki. Jeśli w plikach coś jest — zgłoś użytkownikowi przed migracją.
-
-- [ ] **Step 3: Utwórz pliki markdown**
-
-Dla każdego artykułu jeden plik `src/posts/<kategoria>/RRRR-MM-DD-<slug>.md`.
-
-**Slug musi być identyczny jak w Joomli** — na tym opiera się mapa przekierowań. Skopiuj go z pola `alias`, nie generuj z tytułu.
-
-Szablon dla Aktualności:
-
-```markdown
----
-tytul: "<tytul z pola title>"
-data: <RRRR-MM-DD z pola created>
-lead: <pierwsze zdanie lub dwa, bez znacznikow>
----
-
-<tresc: HTML zamieniony na markdown>
-```
-
-Szablon dla Media o ERLI — link do publikacji zewnętrznej wychodzi z treści do pola `zrodlo`:
-
-```markdown
----
-tytul: "<tytul>"
-data: <RRRR-MM-DD>
-lead: <streszczenie>
-zrodlo:
-  nazwa: <nazwa serwisu, np. Bankier.pl>
-  url: <pelny adres artykulu>
----
-
-<tresc bez zdania odsylajacego do zrodla — blok zrodla renderuje sie osobno>
-```
-
-Zasady konwersji HTML → markdown:
-- `<h2>`, `<h3>` → `##`, `###` (nigdy `#` — h1 to tytuł strony)
-- `<p>` → akapit oddzielony pustą linią
-- `<strong>` → `**tekst**`, `<em>` → `*tekst*`
-- `<blockquote>` i cytaty wypowiedzi → `>`
-- `<a href>` → `[tekst](adres)`
-- `&nbsp;`, `&oacute;`, `&#243;` i inne encje → prawdziwe znaki UTF-8
-- usuń wszystkie atrybuty `style`, `class` i puste `<p></p>`
-
-- [ ] **Step 4: Zbuduj i sprawdź liczby**
+- [ ] **Step 1: Potwierdź, że eksport jest na miejscu i nie jest śledzony**
 
 ```bash
-node build.js
+ls old_reference/BAZA/erlipl_db.sql && git check-ignore old_reference && echo "IGNOROWANY - OK"
 ```
 
-Expected: liczby w logu zgadzają się z liczbą plików. Build nie może się wywalić na kontroli językowej ani na walidacji frontmattera.
+Expected: plik istnieje, katalog ignorowany. Eksport zawiera `configuration.php`
+z danymi dostępowymi do bazy — nie może trafić do repozytorium.
 
-- [ ] **Step 5: Wygeneruj key visuale dla nowych artykułów**
+- [ ] **Step 2: Dodaj parser HTML jako zależność deweloperską**
+
+Usuwanie zagnieżdżonych `<div>` regexem jest zawodne. `node-html-parser` nie ma
+własnych zależności i jest używany **wyłącznie przez ekstraktor**, nigdy przez
+`build.js` — produkcyjny build zostaje przy jednej zależności.
+
+```bash
+npm install --save-dev node-html-parser
+```
+
+- [ ] **Step 3: Napisz testy parsera SQL**
+
+```js
+// tools/sql-parse.test.js
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { columns, rows } from './sql-parse.mjs';
+
+const DUMP = `
+CREATE TABLE \`t_pages\` (
+  \`id\` int(11) NOT NULL,
+  \`title\` varchar(255) DEFAULT NULL,
+  \`params\` longtext
+) ENGINE=InnoDB;
+
+INSERT INTO \`t_pages\` (\`id\`, \`title\`, \`params\`) VALUES
+(1, 'Pierwszy', '<p>Tresc</p>'),
+(2, 'Z apostrofem O\\'Brien', '<p>Druga</p>'),
+(3, 'Z przecinkiem, w tytule', NULL);
+`;
+
+test('czyta nazwy kolumn z CREATE TABLE', () => {
+  assert.deepEqual(columns(DUMP, 't_pages'), ['id', 'title', 'params']);
+});
+
+test('czyta wiersze jako obiekty', () => {
+  const r = rows(DUMP, 't_pages');
+  assert.equal(r.length, 3);
+  assert.equal(r[0].title, 'Pierwszy');
+  assert.equal(r[0].params, '<p>Tresc</p>');
+});
+
+test('nie lamie sie na escapowanym apostrofie', () => {
+  assert.equal(rows(DUMP, 't_pages')[1].title, "Z apostrofem O'Brien");
+});
+
+test('nie lamie sie na przecinku w wartosci', () => {
+  assert.equal(rows(DUMP, 't_pages')[2].title, 'Z przecinkiem, w tytule');
+});
+
+test('NULL staje sie pustym ciagiem', () => {
+  assert.equal(rows(DUMP, 't_pages')[2].params, '');
+});
+
+test('nieznana tabela zwraca pusta liste', () => {
+  assert.deepEqual(rows(DUMP, 't_brak'), []);
+});
+```
+
+- [ ] **Step 4: Uruchom testy — muszą się wywalić**
+
+```bash
+node --test tools/sql-parse.test.js
+```
+
+Expected: FAIL — `Cannot find module './sql-parse.mjs'`
+
+- [ ] **Step 5: Zaimplementuj parser SQL**
+
+Ten kod został sprawdzony na rzeczywistym zrzucie — nie upraszczaj go.
+
+```js
+// tools/sql-parse.mjs
+// Parser zrzutu mysqldump. Obsluguje extended inserts (wiele krotek
+// na jedna instrukcje), escapowane apostrofy i przecinki w wartosciach.
+
+/** Nazwy kolumn z CREATE TABLE. */
+export function columns(sql, table) {
+  const m = new RegExp('CREATE TABLE `' + table + '` \\(([\\s\\S]*?)\\n\\)', 'm').exec(sql);
+  if (!m) return [];
+  return m[1]
+    .split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith('`'))
+    .map((l) => l.slice(1, l.indexOf('`', 1)));
+}
+
+/** Krotki wartosci ze wszystkich INSERT INTO dla tabeli. */
+function tuples(sql, table) {
+  const out = [];
+  const marker = 'INSERT INTO `' + table + '`';
+  let idx = 0;
+
+  while ((idx = sql.indexOf(marker, idx)) !== -1) {
+    let i = sql.indexOf('VALUES', idx) + 6;
+    let depth = 0;
+    let inStr = false;
+    let cur = '';
+    let fields = [];
+
+    for (; i < sql.length; i++) {
+      const ch = sql[i];
+
+      if (inStr) {
+        if (ch === '\\') { cur += ch + sql[++i]; continue; }
+        if (ch === "'") { inStr = false; continue; }
+        cur += ch;
+        continue;
+      }
+      if (ch === "'") { inStr = true; continue; }
+      if (ch === '(') { depth++; if (depth === 1) { fields = []; cur = ''; } continue; }
+      if (ch === ',' && depth === 1) { fields.push(cur.trim()); cur = ''; continue; }
+      if (ch === ')') {
+        depth--;
+        if (depth === 0) { fields.push(cur.trim()); out.push(fields); cur = ''; }
+        continue;
+      }
+      if (ch === ';' && depth === 0) break;
+      if (depth >= 1) cur += ch;
+    }
+    idx = i;
+  }
+  return out;
+}
+
+/** Zdejmuje escapowanie mysqldump z wartosci pola. */
+function unescape(value) {
+  if (value === 'NULL') return '';
+  return value
+    .replace(/\\'/g, "'")
+    .replace(/\\"/g, '"')
+    .replace(/\\n/g, '\n')
+    .replace(/\\r/g, '\r')
+    .replace(/\\t/g, '\t')
+    .replace(/\\\\/g, '\\');
+}
+
+/** Wiersze tabeli jako obiekty {kolumna: wartosc}. */
+export function rows(sql, table) {
+  const cols = columns(sql, table);
+  if (!cols.length) return [];
+  return tuples(sql, table).map((t) => {
+    const o = {};
+    cols.forEach((c, i) => { o[c] = unescape(t[i] ?? ''); });
+    return o;
+  });
+}
+```
+
+- [ ] **Step 6: Uruchom testy — muszą przejść**
+
+```bash
+node --test tools/sql-parse.test.js
+```
+
+Expected: `# pass 6`, `# fail 0`
+
+- [ ] **Step 7: Commit parsera**
+
+```bash
+git add tools/sql-parse.mjs tools/sql-parse.test.js package.json package-lock.json && git commit -m "feat(tools): parser zrzutu mysqldump
+
+Extended inserts, escapowane apostrofy, przecinki w wartosciach.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+- [ ] **Step 8: Napisz testy konwertera treści**
+
+Najważniejszy test to ten, który usuwa interfejs edytora. Zacznij od niego.
+
+```js
+// tools/html-to-md.test.js
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { stripEditorChrome, htmlToMarkdown, CHROME_SLOWNIK } from './html-to-md.mjs';
+
+test('usuwa poddrzewo ba-edit-item razem z zawartoscia', () => {
+  const html = `<div class="ba-wrapper">
+    <div class="ba-edit-item"><span class="ba-tooltip">Add New Row</span></div>
+    <p>Prawdziwa tresc.</p>
+  </div>`;
+  const out = stripEditorChrome(html);
+  assert.doesNotMatch(out, /Add New Row/);
+  assert.match(out, /Prawdziwa tresc/);
+});
+
+test('usuwa zagniezdzone poddrzewa interfejsu', () => {
+  const html = `<div class="ba-buttons-wrapper">
+    <span class="ba-edit-wrapper"><span class="ba-tooltip">Delete Item</span></span>
+  </div><p>Tekst.</p>`;
+  const out = stripEditorChrome(html);
+  assert.doesNotMatch(out, /Delete Item/);
+  assert.match(out, /Tekst/);
+});
+
+test('zaden termin ze slownika interfejsu nie przezywa', () => {
+  const html =
+    '<div class="ba-edit-item">' +
+    CHROME_SLOWNIK.map((t) => `<span class="ba-tooltip">${t}</span>`).join('') +
+    '</div><p>Komunikat prasowy.</p>';
+  const out = stripEditorChrome(html);
+  for (const t of CHROME_SLOWNIK) {
+    assert.doesNotMatch(out, new RegExp(t), `przeciekl termin: ${t}`);
+  }
+});
+
+test('naglowki zaczynaja sie od h2, nigdy h1', () => {
+  assert.equal(htmlToMarkdown('<h1>Tytul</h1>').trim(), '## Tytul');
+  assert.equal(htmlToMarkdown('<h2>Srodtytul</h2>').trim(), '## Srodtytul');
+  assert.equal(htmlToMarkdown('<h3>Nizej</h3>').trim(), '### Nizej');
+});
+
+test('akapity rozdzielone pusta linia', () => {
+  assert.equal(htmlToMarkdown('<p>Raz</p><p>Dwa</p>').trim(), 'Raz\n\nDwa');
+});
+
+test('pogrubienie i kursywa', () => {
+  assert.equal(htmlToMarkdown('<p><strong>A</strong> i <em>B</em></p>').trim(), '**A** i *B*');
+});
+
+test('cytat blokowy', () => {
+  assert.equal(htmlToMarkdown('<blockquote><p>Cytat</p></blockquote>').trim(), '> Cytat');
+});
+
+test('link zachowuje adres', () => {
+  assert.equal(
+    htmlToMarkdown('<p><a href="https://bankier.pl/a">Bankier</a></p>').trim(),
+    '[Bankier](https://bankier.pl/a)'
+  );
+});
+
+test('lista punktowana', () => {
+  assert.equal(htmlToMarkdown('<ul><li>Jeden</li><li>Dwa</li></ul>').trim(), '- Jeden\n- Dwa');
+});
+
+test('dekoduje encje na prawdziwe znaki', () => {
+  assert.equal(htmlToMarkdown('<p>zakup&oacute;w&nbsp;online</p>').trim(), 'zakupów online');
+  assert.equal(htmlToMarkdown('<p>AI &amp; ERLI</p>').trim(), 'AI & ERLI');
+});
+
+test('usuwa atrybuty style i class', () => {
+  const out = htmlToMarkdown('<p style="color:red" class="x">Tekst</p>');
+  assert.doesNotMatch(out, /style|class|color/);
+});
+
+test('pomija puste akapity i nadmiarowe puste linie', () => {
+  const out = htmlToMarkdown('<p>A</p><p></p><p>&nbsp;</p><p>B</p>').trim();
+  assert.equal(out, 'A\n\nB');
+});
+
+test('nie zostawia zadnych znacznikow HTML', () => {
+  const out = htmlToMarkdown('<div><p>Tekst <span>w spanie</span></p></div>');
+  assert.doesNotMatch(out, /<[a-z]/i);
+});
+```
+
+- [ ] **Step 9: Uruchom testy — muszą się wywalić**
+
+```bash
+node --test tools/html-to-md.test.js
+```
+
+Expected: FAIL — `Cannot find module './html-to-md.mjs'`
+
+- [ ] **Step 10: Zaimplementuj konwerter**
+
+```js
+// tools/html-to-md.mjs
+import { parse } from 'node-html-parser';
+
+/**
+ * Klasy poddrzew interfejsu edytora Gridbox. Usuwane w calosci,
+ * razem z zawartoscia — nie tylko sam znacznik.
+ */
+const CHROME_KLASY = [
+  'ba-edit-item', 'ba-edit-wrapper', 'ba-tooltip',
+  'ba-buttons-wrapper', 'ba-overlay', 'ba-add-item',
+];
+
+/**
+ * Napisy z panelu administracyjnego. Sluza jako kontrola koncowa —
+ * jesli ktorykolwiek przezyl usuwanie poddrzew, znaczy ze Gridbox
+ * uzyl klasy, ktorej nie ma na liscie powyzej.
+ */
+export const CHROME_SLOWNIK = [
+  'Add New Row', 'Add to Library', 'Copy Item', 'Delete Item',
+  'Edit Item', 'Section', 'Row', 'Column', 'Settings',
+];
+
+/** Usuwa poddrzewa interfejsu edytora. */
+export function stripEditorChrome(html) {
+  const root = parse(html);
+  for (const klasa of CHROME_KLASY) {
+    for (const el of root.querySelectorAll('.' + klasa)) el.remove();
+  }
+  return root.toString();
+}
+
+const ENCJE = {
+  '&nbsp;': ' ', '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"',
+  '&apos;': "'", '&oacute;': 'ó', '&Oacute;': 'Ó', '&aogon;': 'ą',
+  '&eogon;': 'ę', '&lstrok;': 'ł', '&Lstrok;': 'Ł', '&nacute;': 'ń',
+  '&sacute;': 'ś', '&zacute;': 'ź', '&zdot;': 'ż', '&cacute;': 'ć',
+  '&ndash;': '–', '&mdash;': '—', '&hellip;': '…',
+  '&laquo;': '„', '&raquo;': '”', '&bdquo;': '„', '&rdquo;': '”',
+  '&rsquo;': '’', '&lsquo;': '‘', '&shy;': '', '&zwnj;': '',
+};
+
+/** Zamienia encje na znaki UTF-8, w tym numeryczne. */
+function decode(text) {
+  let out = text;
+  for (const [enc, ch] of Object.entries(ENCJE)) out = out.split(enc).join(ch);
+  return out
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
+}
+
+/** Rekurencyjnie zamienia drzewo HTML na markdown. */
+function walk(node) {
+  if (node.nodeType === 3) return decode(node.rawText);
+  if (node.nodeType !== 1) return '';
+
+  const tag = node.rawTagName?.toLowerCase();
+  const dzieci = () => node.childNodes.map(walk).join('');
+
+  switch (tag) {
+    case 'br': return '\n';
+    case 'h1': case 'h2': return `\n\n## ${dzieci().trim()}\n\n`;
+    case 'h3': return `\n\n### ${dzieci().trim()}\n\n`;
+    case 'h4': case 'h5': case 'h6': return `\n\n#### ${dzieci().trim()}\n\n`;
+    case 'p': case 'div': case 'section': return `\n\n${dzieci().trim()}\n\n`;
+    case 'strong': case 'b': {
+      const t = dzieci().trim();
+      return t ? `**${t}**` : '';
+    }
+    case 'em': case 'i': {
+      const t = dzieci().trim();
+      return t ? `*${t}*` : '';
+    }
+    case 'blockquote':
+      return `\n\n${dzieci().trim().split('\n').filter(Boolean).map((l) => `> ${l.trim()}`).join('\n')}\n\n`;
+    case 'a': {
+      const href = node.getAttribute('href') ?? '';
+      const t = dzieci().trim();
+      if (!t) return '';
+      return href ? `[${t}](${href})` : t;
+    }
+    case 'ul': case 'ol': return `\n\n${dzieci().trim()}\n\n`;
+    case 'li': return `\n- ${dzieci().trim()}`;
+    case 'img': {
+      const alt = node.getAttribute('alt') ?? '';
+      const src = node.getAttribute('src') ?? '';
+      return src ? `\n\n![${alt}](${src})\n\n` : '';
+    }
+    case 'script': case 'style': case 'noscript': return '';
+    default: return dzieci();
+  }
+}
+
+/** HTML page-buildera -> czysty markdown. */
+export function htmlToMarkdown(html) {
+  const root = parse(stripEditorChrome(html));
+  return walk(root)
+    .replace(/[ \t]+/g, ' ')
+    .replace(/ *\n */g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .split('\n\n')
+    .map((blok) => blok.trim())
+    .filter((blok) => blok && blok !== '-')
+    .join('\n\n')
+    .trim() + '\n';
+}
+```
+
+- [ ] **Step 11: Uruchom testy — muszą przejść**
+
+```bash
+node --test tools/html-to-md.test.js
+```
+
+Expected: `# pass 13`, `# fail 0`
+
+Jeśli test „zaden termin ze slownika interfejsu nie przezywa" pada — Gridbox użył
+klasy, której nie ma w `CHROME_KLASY`. Znajdź ją w rzeczywistym markupie
+i dopisz, zamiast usuwać termin ze słownika.
+
+- [ ] **Step 12: Commit konwertera**
+
+```bash
+git add tools/html-to-md.mjs tools/html-to-md.test.js && git commit -m "feat(tools): konwerter markupu Gridbox na markdown
+
+Usuwa poddrzewa interfejsu edytora, dekoduje encje, zamienia
+strukture na markdown. Slownik terminow panelu jako kontrola koncowa.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
+```
+
+- [ ] **Step 13: Napisz ekstraktor**
+
+```js
+// tools/joomla-extract.mjs
+// Jednorazowa migracja tresci z eksportu Joomla/Gridbox do plikow markdown.
+// Uruchomienie: node tools/joomla-extract.mjs old_reference/BAZA/erlipl_db.sql
+
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { rows } from './sql-parse.mjs';
+import { htmlToMarkdown, CHROME_SLOWNIK } from './html-to-md.mjs';
+
+const SQL_PATH = process.argv[2];
+if (!SQL_PATH) {
+  console.error('Uzycie: node tools/joomla-extract.mjs <sciezka-do-dumpu.sql>');
+  process.exit(1);
+}
+
+const KATEGORIE = {
+  '8':   { katalog: 'src/posts/aktualnosci', nazwa: 'Aktualności' },
+  '160': { katalog: 'src/posts/media',       nazwa: 'Media o ERLI' },
+};
+
+const sql = readFileSync(SQL_PATH, 'utf8');
+const pages = rows(sql, 'l064t_gridbox_pages');
+
+/** Cudzyslowy w wartosci frontmattera wymagaja escapowania. */
+function yamlString(text) {
+  return `"${String(text).replace(/\\/g, '\\\\').replace(/"/g, '\\"').trim()}"`;
+}
+
+/** Pierwszy link zewnetrzny w tresci — zrodlo dla kategorii Media o ERLI. */
+function znajdzZrodlo(markdown) {
+  const m = /\[([^\]]*)\]\((https?:\/\/(?!(?:www\.)?erli\.pl)[^)]+)\)/.exec(markdown);
+  if (!m) return null;
+  const host = new URL(m[2]).hostname.replace(/^www\./, '');
+  return { nazwa: host, url: m[2] };
+}
+
+const artykuly = pages.filter((p) => p.published === '1' && KATEGORIE[p.page_category]);
+const raport = { zapisane: 0, bezTresci: [], krotkie: [], chrome: [], zObrazkami: [] };
+
+for (const kat of Object.values(KATEGORIE)) mkdirSync(kat.katalog, { recursive: true });
+
+for (const p of artykuly) {
+  const kat = KATEGORIE[p.page_category];
+  const data = String(p.created).slice(0, 10);
+  const slug = p.page_alias;
+
+  if (!slug) throw new Error(`Artykul id=${p.id} "${p.title}" nie ma page_alias`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(data)) throw new Error(`Artykul ${slug}: zla data "${p.created}"`);
+
+  let tresc = htmlToMarkdown(p.params ?? '');
+
+  // Pierwszy naglowek zwykle powtarza tytul strony — usun, h1 daje szablon.
+  const pierwszaLinia = tresc.split('\n')[0] ?? '';
+  if (pierwszaLinia.startsWith('## ') &&
+      pierwszaLinia.slice(3).trim().toLowerCase() === String(p.title).trim().toLowerCase()) {
+    tresc = tresc.split('\n').slice(1).join('\n').trim() + '\n';
+  }
+
+  const zrodlo = p.page_category === '160' ? znajdzZrodlo(tresc) : null;
+
+  const front = [
+    '---',
+    `tytul: ${yamlString(p.title)}`,
+    `data: ${data}`,
+    `lead: ${yamlString(String(p.intro_text ?? '').replace(/\s+/g, ' '))}`,
+  ];
+  if (zrodlo) {
+    front.push('zrodlo:', `  nazwa: ${zrodlo.nazwa}`, `  url: ${zrodlo.url}`);
+  }
+  front.push('---', '');
+
+  writeFileSync(join(kat.katalog, `${data}-${slug}.md`), front.join('\n') + '\n' + tresc, 'utf8');
+  raport.zapisane++;
+
+  // Kontrola jakosci
+  const czysty = tresc.replace(/[#>*\-\[\]()]/g, '').replace(/\s+/g, ' ').trim();
+  if (!czysty) raport.bezTresci.push(slug);
+  else if (czysty.length < 400) raport.krotkie.push(`${slug} (${czysty.length} zn.)`);
+  for (const t of CHROME_SLOWNIK) {
+    if (new RegExp(`\\b${t}\\b`).test(tresc)) { raport.chrome.push(`${slug}: "${t}"`); break; }
+  }
+  if (/!\[/.test(tresc)) raport.zObrazkami.push(slug);
+}
+
+console.log(`Zapisano ${raport.zapisane} artykulow`);
+console.log(`  Aktualnosci:  ${artykuly.filter((p) => p.page_category === '8').length}`);
+console.log(`  Media o ERLI: ${artykuly.filter((p) => p.page_category === '160').length}`);
+
+const sekcja = (tytul, lista) => {
+  if (!lista.length) return;
+  console.log(`\n${tytul} (${lista.length}):`);
+  for (const x of lista) console.log(`  ${x}`);
+};
+
+sekcja('BEZ TRESCI — wymaga recznego uzupelnienia', raport.bezTresci);
+sekcja('PODEJRZANIE KROTKIE — sprawdz recznie', raport.krotkie);
+sekcja('INTERFEJS EDYTORA PRZECIEKL — napraw CHROME_KLASY', raport.chrome);
+sekcja('ZAWIERA OBRAZKI — sprawdz sciezki', raport.zObrazkami);
+
+if (raport.chrome.length) {
+  console.error('\nBLAD: interfejs edytora w tresci. Nie commituj przed naprawa.');
+  process.exit(1);
+}
+```
+
+- [ ] **Step 14: Uruchom ekstrakcję**
+
+```bash
+node tools/joomla-extract.mjs old_reference/BAZA/erlipl_db.sql
+```
+
+Expected: `Zapisano 77 artykulow`, `Aktualnosci: 40`, `Media o ERLI: 37`.
+
+Jeśli sekcja „INTERFEJS EDYTORA PRZECIEKL" nie jest pusta — skrypt kończy się
+błędem. Znajdź brakującą klasę w `params` problematycznego artykułu, dopisz ją
+do `CHROME_KLASY` w `tools/html-to-md.mjs` i uruchom ponownie. **Nie usuwaj
+terminu ze słownika, żeby uciszyć kontrolę.**
+
+- [ ] **Step 15: Przeczytaj pięć artykułów w całości**
+
+To jedyny krok, którego nie zastąpi automat. Wybierz: najstarszy (2021),
+najnowszy (2025), jeden z kategorii Media o ERLI, jeden z listy „podejrzanie
+krótkie" i jeden z listy „zawiera obrazki".
+
+```bash
+ls src/posts/aktualnosci | head -3
+ls src/posts/media | head -3
+```
+
+Sprawdź w każdym: polskie znaki bez uszkodzeń, brak resztek panelu edytora,
+cytaty wypowiedzi jako `>`, śródtytuły jako `##`, lead nie duplikuje pierwszego
+akapitu, akapity nie są posklejane w jeden blok.
+
+- [ ] **Step 16: Dopisz duplikaty do mapy przekierowań**
+
+11 sierot bez kategorii istnieje dziś pod własnymi adresami. Bez przekierowania
+zwrócą 404 po podmianie.
+
+Najpierw test w `build/redirects.test.js`:
+
+```js
+test('duplikaty kieruja na wersje kanoniczna', () => {
+  const mapa = buildRedirectMap(POSTY, [
+    { stary: 'erli-idzie-na-rekord', kanoniczny: '/media-o-erli/erli-idzie-na-rekord-2-2-2/' },
+  ]);
+  const wpis = mapa.find((r) => r.stary === '/index.php/aktualnosci/erli-idzie-na-rekord');
+  assert.equal(wpis.nowy, '/media-o-erli/erli-idzie-na-rekord-2-2-2/');
+});
+```
+
+Uruchom — musi paść. Potem w `build/redirects.js` rozszerz sygnaturę:
+
+```js
+export function buildRedirectMap(posty, duplikaty = []) {
+  const mapa = new Map();
+
+  for (const post of posty) {
+    mapa.set(`/index.php/${post.kategoria}/${post.slug}`, post.url);
+  }
+  // Duplikaty po artykulach, zeby nigdy nie nadpisaly wersji kanonicznej.
+  for (const { stary, kanoniczny } of duplikaty) {
+    for (const kat of ['aktualnosci', 'media-o-erli']) {
+      const klucz = `/index.php/${kat}/${stary}`;
+      if (!mapa.has(klucz)) mapa.set(klucz, kanoniczny);
+    }
+  }
+  for (const { stary, nowy } of STALE) {
+    if (!mapa.has(stary)) mapa.set(stary, nowy);
+  }
+
+  return [...mapa].map(([stary, nowy]) => ({ stary, nowy }));
+}
+```
+
+Utwórz `src/duplikaty.json` z listą sierot — slug bez sufiksu kieruje na ten,
+który jest w kategorii:
+
+```json
+[
+  { "stary": "erli-idzie-na-rekord",    "kanoniczny": "/media-o-erli/erli-idzie-na-rekord-2-2-2/" },
+  { "stary": "erli-idzie-na-rekord-2",  "kanoniczny": "/media-o-erli/erli-idzie-na-rekord-2-2-2/" },
+  { "stary": "erli-idzie-na-rekord-2-2","kanoniczny": "/media-o-erli/erli-idzie-na-rekord-2-2-2/" }
+]
+```
+
+Pozostałe osiem wpisów ustal tak samo: dla każdego duplikatu znajdź wersję
+z `page_category` 8 lub 160 i wskaż jej adres. Duplikaty dotyczą tytułów:
+„Platforma e-commerce ERLI z rekordowymi wynikami za pierwsze półrocze 2025"
+(4 kopie), „ERLI idzie na rekord" (3), „ERLI wprowadził pierwszą… Gwarancji
+Darmowego Zwrotu" (2), „ERLI na E-commerce Warsaw Expo 2025" (1),
+„ERLI świętuje ponad 2 miliony pobrań" (1).
+
+W `build.js` wczytaj plik i przekaż do mapy:
+
+```js
+const duplikaty = existsSync('src/duplikaty.json')
+  ? JSON.parse(await readFile('src/duplikaty.json', 'utf8'))
+  : [];
+const mapa = buildRedirectMap(wszystkie, duplikaty);
+```
+
+- [ ] **Step 17: Wygeneruj key visuale**
 
 ```bash
 node tools/kv-generate.js
 npx --yes sharp-cli --input "assets/img/kv/*.svg" --output assets/img/kv --format webp --quality 82
-node build.js
 ```
 
-- [ ] **Step 6: Sprawdź kompletność mapy przekierowań**
+Expected: 78 plików `.webp` (77 artykułów + `default`).
+
+- [ ] **Step 18: Zbuduj i sprawdź liczby**
 
 ```bash
-wc -l dist/redirects/mapa.csv
+npm test && node build.js
 ```
 
-Expected: liczba wierszy = liczba artykułów + 5 adresów stałych + 1 nagłówek.
+Expected: wszystkie testy przechodzą; `77 aktualnosci+media`, `88 przekierowan`
+(77 + 11 duplikatów), kontrola językowa OK.
 
-- [ ] **Step 7: Przejrzyj losowe artykuły w przeglądarce**
+- [ ] **Step 19: Sprawdź, że paginacja się włączyła**
+
+40 artykułów w Aktualnościach przekracza próg 30, więc lista musi się podzielić.
+
+```bash
+ls dist/aktualnosci/
+```
+
+Expected: `index.html` oraz katalog `2/` z własnym `index.html`.
+
+```bash
+grep -o 'rel="next" *href="[^"]*"' dist/aktualnosci/index.html
+```
+
+Expected: link do `/aktualnosci/2/`.
+
+Media o ERLI ma 37 artykułów — również powyżej progu, więc `dist/media-o-erli/2/`
+też musi istnieć.
+
+- [ ] **Step 20: Przejrzyj w przeglądarce**
 
 ```bash
 npx http-server dist -p 8000 -c-1
 ```
 
-Otwórz 5 losowych artykułów. Sprawdź: polskie znaki, śródtytuły, cytaty, linki zewnętrzne otwierają się w nowej karcie, artykuły z kategorii Media mają blok źródła nad treścią.
+Sprawdź: obie listy z podziałem na strony i nagłówkami lat, pięć losowych
+artykułów, blok źródła nad treścią w kategorii Media o ERLI, grafiki wyróżniające
+się ładują.
 
-- [ ] **Step 8: Commit**
+- [ ] **Step 21: Commit**
 
 ```bash
-git add src/posts assets/img/kv && git commit -m "content: migracja artykulow z Joomli
+git add tools/joomla-extract.mjs src/posts src/duplikaty.json build/redirects.js build/redirects.test.js build.js assets/img/kv && git commit -m "content: migracja 77 artykulow z Joomli/Gridbox
 
-Slugi zachowane 1:1 — mapa przekierowan opiera sie na nich.
+Ekstraktor zdejmuje warstwe page-buildera i poddrzewa interfejsu
+edytora. Slugi zachowane 1:1. Duplikaty bez kategorii (11 sierot)
+kieruja przekierowaniem na wersje kanoniczna.
 
 Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>"
 ```
@@ -3287,7 +3887,37 @@ Treść przenoszona 1:1 (decyzja D7). Kalendarium kończy się na 2021 i liczby 
 
 - [ ] **Step 1: Przepisz `o-nas.md`**
 
-Zachowaj strukturę oryginału: opis platformy, korzyści dla kupujących, usługi dla sprzedawców, kategorie, kalendarium. Listy jako `-`, sekcje jako `##`.
+Źródłem jest strona `/o-nas` z eksportu — w `l064t_gridbox_pages` wiersz
+z `page_alias='o-nas'` i `page_category='0'`, kolumna `params`, 48 KB.
+To ta sama treść, którą widać dziś na żywym serwisie.
+
+Wyciągnij ją tym samym konwerterem, który powstał w Task 21:
+
+```bash
+node -e "
+import('./tools/sql-parse.mjs').then(async ({rows}) => {
+  const {htmlToMarkdown} = await import('./tools/html-to-md.mjs');
+  const fs = await import('node:fs');
+  const sql = fs.readFileSync('old_reference/BAZA/erlipl_db.sql','utf8');
+  const p = rows(sql,'l064t_gridbox_pages').find(x => x.page_alias === 'o-nas');
+  fs.writeFileSync('o-nas-surowy.md', htmlToMarkdown(p.params), 'utf8');
+  console.log('Zapisano o-nas-surowy.md,', htmlToMarkdown(p.params).length, 'znakow');
+});
+"
+```
+
+Następnie przenieś treść do `src/pages/o-nas.md`, dokładając frontmatter
+i porządkując strukturę: opis platformy, korzyści dla kupujących, usługi dla
+sprzedawców, kategorie, kalendarium. Listy jako `-`, sekcje jako `##`.
+
+Treść przenosisz **1:1** (decyzja D7) — kalendarium kończy się na 2021, liczby
+są nieaktualne. To świadoma decyzja właściciela projektu, nie błąd do naprawienia.
+
+Usuń plik roboczy po skończeniu:
+
+```bash
+rm o-nas-surowy.md
+```
 
 - [ ] **Step 2: Przepisz `kontakt.md`**
 
@@ -3351,6 +3981,30 @@ grep -rniE "[äöüßÄÖÜ]|erli\.de|Marktplatz|Deutschland|ueber-uns|impressum
 ```
 
 Expected: brak wyników.
+
+- [ ] **Step 2b: Sprawdź, że żaden slug z eksportu nie wypadł z mapy przekierowań**
+
+To najważniejsza kontrola w całym zadaniu. Pominięty slug = zepsuty link
+w cudzej publikacji.
+
+```bash
+node -e "
+import('./tools/sql-parse.mjs').then(async ({rows}) => {
+  const fs = await import('node:fs');
+  const sql = fs.readFileSync('old_reference/BAZA/erlipl_db.sql','utf8');
+  const SYSTEMOWE = ['home','kontakt-2','k','o-nas'];
+  const slugi = rows(sql,'l064t_gridbox_pages')
+    .filter(p => p.published === '1' && p.page_alias && !SYSTEMOWE.includes(p.page_alias))
+    .map(p => p.page_alias);
+  const csv = fs.readFileSync('dist/redirects/mapa.csv','utf8');
+  const brak = slugi.filter(s => !csv.includes('/' + s + ','));
+  console.log(brak.length ? 'BRAK W MAPIE (' + brak.length + '):\n  ' + brak.join('\n  ') : 'OK — wszystkie ' + slugi.length + ' slugow w mapie');
+});
+"
+```
+
+Expected: `OK — wszystkie 88 slugow w mapie`. Jeśli czegoś brakuje, uzupełnij
+`src/duplikaty.json` przed dalszymi krokami.
 
 - [ ] **Step 3: Sprawdź, że nie ma odwołań do usuniętych plików**
 
