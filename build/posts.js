@@ -13,6 +13,22 @@ export function slugFromFilename(filename) {
   return filename.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
 }
 
+/**
+ * Skraca slug do wyjscia (URL, katalog obrazkow), tnac na granicy wyrazu
+ * (dywiz) na pozycji <= maks. Ponizej limitu zwraca wejscie bez zmian.
+ * Deterministyczna: ten sam slug zawsze daje ten sam wynik — od tego zalezy
+ * spojnosc mapy przekierowan 301 miedzy kolejnymi buildami (B2).
+ *
+ * Oryginalny (dlugi) slug z Joomli NIE jest tym zastepowany nigdzie indziej —
+ * sluzy tylko do budowy adresu wyjsciowego i nazwy katalogu obrazkow.
+ */
+export function skrocSlug(slug, maks = 80) {
+  if (slug.length <= maks) return slug;
+  const uciety = slug.slice(0, maks);
+  const ostatniDywiz = uciety.lastIndexOf('-');
+  return ostatniDywiz > 0 ? uciety.slice(0, ostatniDywiz) : uciety;
+}
+
 /** Sortuje malejaco po dacie; przy remisie alfabetycznie po slugu. Nie mutuje wejscia. */
 export function sortByDateDesc(posts) {
   return [...posts].sort((a, b) => {
@@ -69,7 +85,7 @@ export async function loadPosts(dir, kategoria) {
         grafika: data.grafika ?? null,
         zrodlo: data.zrodlo ?? null,
         tresc: body,
-        url: `/${kategoria}/${slug}/`,
+        url: `/${kategoria}/${skrocSlug(slug)}/`,
       };
     })
   );

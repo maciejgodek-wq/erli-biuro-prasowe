@@ -9,6 +9,7 @@ import { render } from './build/template.js';
 import { renderMarkdown, plainText } from './build/markdown.js';
 import { buildCss } from './build/css.js';
 import { assertNoGerman } from './build/lang-guard.js';
+import { assertNoMissingImages } from './build/image-guard.js';
 import { buildSitemap, buildRobots, DOMENA } from './build/seo.js';
 import { buildRedirectMap, toHtaccess, toNginx, toCsv } from './build/redirects.js';
 import { paginate } from './build/paginate.js';
@@ -174,6 +175,10 @@ async function build() {
   await cp('assets/fonts', join(DIST, 'assets/fonts'), { recursive: true });
   await cp('assets/img', join(DIST, 'assets/img'), { recursive: true });
   await cp('assets/js', join(DIST, 'assets/js'), { recursive: true });
+
+  // --- kontrola obrazkow: przerywa build (wymaga skopiowanych assetow) ---
+  assertNoMissingImages(strony, DIST);
+  console.log('  kontrola obrazkow: OK');
 
   await zapisz(join(DIST, 'sitemap.xml'), buildSitemap(doSitemap));
   await zapisz(join(DIST, 'robots.txt'), buildRobots());

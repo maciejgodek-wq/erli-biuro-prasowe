@@ -34,6 +34,13 @@ test('grafika uzywa jawnie podanej nazwy', () => {
   assert.equal(grafikaUrl({ slug: 'x', grafika: 'ai-sprzedawcy' }), '/assets/img/kv/ai-sprzedawcy.webp');
 });
 
+test('grafika uzywa pelnej sciezki gdy zaczyna sie od /', () => {
+  assert.equal(
+    grafikaUrl({ slug: 'x', grafika: '/assets/img/artykuly/x/hero.webp' }),
+    '/assets/img/artykuly/x/hero.webp'
+  );
+});
+
 test('schema NewsArticle zawiera tytul, date i wydawce', () => {
   const json = JSON.parse(
     articleSchema({

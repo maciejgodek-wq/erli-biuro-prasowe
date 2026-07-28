@@ -29,8 +29,14 @@ export function navFlags(url) {
   };
 }
 
-/** Sciezka do key visuala; domyslnie nazwa pliku rowna slugowi. */
+/**
+ * Sciezka do grafiki karty/og:image. Wartosc `grafika` zaczynajaca sie
+ * od `/` to gotowa sciezka (prawdziwe zdjecie artykulu w assets/img/artykuly/)
+ * — ma priorytet. W przeciwnym razie to nazwa pliku w assets/img/kv/
+ * (generowany key visual), domyslnie rowna slugowi.
+ */
 export function grafikaUrl(post) {
+  if (post.grafika && post.grafika.startsWith('/')) return post.grafika;
   return `/assets/img/kv/${post.grafika ?? post.slug}.webp`;
 }
 
