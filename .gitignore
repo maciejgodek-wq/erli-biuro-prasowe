@@ -31,6 +31,7 @@ briefs/
 
 # Wynik budowania
 dist/
+biuro-prasowe-*.tar.gz
 
 # Eksport starej Joomli — material zrodlowy do migracji, 829 MB.
 # Zawiera configuration.php z danymi dostepowymi do bazy.
