@@ -8,7 +8,9 @@
     {{#if lead}}<p class="post__lead">{{ lead }}</p>{{/if}}
 
     <figure class="post__media">
-      <img src="{{ grafikaUrl }}" alt="" width="1200" height="630" loading="eager" fetchpriority="high">
+      <img src="{{ grafikaUrl }}" srcset="{{ grafikaSrcset }}"
+           sizes="(max-width: 840px) 100vw, 800px"
+           alt="" loading="eager" fetchpriority="high">
     </figure>
 
     {{#if zrodlo}}

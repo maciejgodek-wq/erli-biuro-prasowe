@@ -6,13 +6,23 @@ import { DOMENA } from './seo.js';
 const ROZSZERZENIA_OBRAZKOW = /\.(webp|png|jpe?g|gif|svg)$/i;
 
 /**
- * Wyciaga wszystkie odwolania do obrazkow z HTML: src="..." (img, script
- * ladujace obrazy) oraz content="..." przy og:image/twitter:image.
+ * Wyciaga wszystkie odwolania do obrazkow z HTML: src="...", srcset="..."
+ * oraz content="..." przy og:image/twitter:image.
  * Filtruje po rozszerzeniu — pomija JS, CSS, fonty.
+ *
+ * srcset jest sprawdzany osobno, bo przegladarka wybiera z niego zrodlo
+ * i brakujacy wariant nie ujawnia sie w src — obrazek po prostu sie nie
+ * pojawia na czesci ekranow.
  */
 export function findImageRefs(html) {
   const refs = [];
   for (const m of html.matchAll(/\ssrc="([^"]+)"/g)) refs.push(m[1]);
+  for (const m of html.matchAll(/\ssrcset="([^"]+)"/g)) {
+    for (const kandydat of m[1].split(',')) {
+      const url = kandydat.trim().split(/\s+/)[0];
+      if (url) refs.push(url);
+    }
+  }
   for (const m of html.matchAll(/(?:property="og:image"|name="twitter:image")\s+content="([^"]+)"/g)) {
     refs.push(m[1]);
   }

@@ -88,11 +88,24 @@ export function powiazaneDo(post, wszystkie, ile = 3) {
   return [...tejSamej, ...reszta].slice(0, ile);
 }
 
+/**
+ * Wariant 600 px tej samej grafiki — do srcset na kartach.
+ * Powstaje w tools/optymalizuj-obrazy.mjs obok pliku glownego.
+ * Zwraca null, gdy grafika nie jest plikiem .webp (fallback na kv).
+ */
+export function grafikaUrlMala(post) {
+  const duza = grafikaUrl(post);
+  return duza.endsWith('.webp') ? duza.replace(/\.webp$/, '-600.webp') : null;
+}
+
 /** Wzbogaca post o pola potrzebne w szablonach. */
 export function decoratePost(post) {
   return {
     ...post,
     grafikaUrl: grafikaUrl(post),
+    grafikaSrcset: grafikaUrlMala(post)
+      ? `${grafikaUrlMala(post)} 600w, ${grafikaUrl(post)} 1200w`
+      : '',
     kategoriaNazwa: KATEGORIE[post.kategoria].nazwa,
     kategoriaUrl: KATEGORIE[post.kategoria].url,
     urlPelny: `${DOMENA}${post.url}`,

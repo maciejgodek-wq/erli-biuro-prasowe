@@ -1,7 +1,9 @@
 <article class="press-item">
   <a class="press-item__link" href="{{ url }}">
     <div class="press-item__media">
-      <img src="{{ grafikaUrl }}" alt="" loading="lazy" decoding="async" class="press-item__img">
+      <img src="{{ grafikaUrl }}" srcset="{{ grafikaSrcset }}"
+           sizes="(max-width: 768px) 100vw, 460px"
+           alt="" loading="lazy" decoding="async" class="press-item__img">
     </div>
     <div class="press-item__body">
       <p class="press-item__meta">

@@ -10,6 +10,11 @@ przekierowania, kontrola językowa OK, kontrola obrazków OK (nowa — patrz B1)
 88 slugów z eksportu obecne w mapie przekierowań. D4 i D5 pozostają otwarte —
 wymagają decyzji właściciela, nie zostały ruszone.
 
+**Aktualizacja 2026-07-28 (trzecia — wszystko zamknięte): D4 i D5
+zweryfikowane przeciw bazie (`tools/weryfikuj-migracje.mjs`) — migracja
+niczego nie zgubiła, bez zmian w treści. D6 (waga obrazków) naprawione:
+`/aktualnosci/` z 5147 KB na 890 KB. Rejestr nie ma już otwartych punktów.**
+
 **Aktualizacja 2026-07-28 (przegląd wykrył regresję): naprawiona — patrz
 „Regresja — 14 przekierowań na 404" niżej. Zadania 22 i 23 zamknięte.**
 Weryfikacja końcowa: `npm test` — 133/133, `node build.js` — 84 strony, 104
@@ -183,25 +188,60 @@ w sobie przekraczała limit ścieżki niezależnie od długości slugu.
 
 ---
 
-## D4 — dziesięć artykułów poniżej 400 znaków treści
+## D4 — artykuły poniżej 400 znaków treści — ✅ ZWERYFIKOWANE, BEZ ZMIAN
 
-Wzmianki prasowe z 2021–2022 (`erli-rzuca-wyzwanie-allegro` — 128 znaków,
-`erli-pl-rzuca-wyzwanie-gigantom` — 180). Prawdopodobnie tak wyglądają
-w źródle, ale nikt tego nie potwierdził przeciw bazie.
+Wzmianki prasowe z 2021–2022 (`erli-rzuca-wyzwanie-allegro`,
+`erli-pl-rzuca-wyzwanie-gigantom`). Podejrzenie: czy krótkie w źródle,
+czy migracja zgubiła treść.
+
+**Wynik.** `tools/weryfikuj-migracje.mjs` porównał pełną treść pliku
+(lead + body) z tekstem w bazie. Osiem artykułów poniżej 500 znaków,
+**każdy o proporcji dokładnie 1,00** względem źródła — plik zawiera tyle
+samo tekstu, co baza. Zero przypadków poniżej progu 0,8. To autentycznie
+krótkie wzmianki prasowe, nie ubytek migracji. Nic do naprawy.
 
 ---
 
-## D5 — niezweryfikowane zmiany autonomiczne
+## D5 — zmiany autonomiczne sesji migracyjnej — ✅ ZWERYFIKOWANE, BEZ ZMIAN
 
-Wykonane przez sesję migracyjną bez osobnego commita — wszystko wewnątrz
-commita `0e56474`:
+Wykonane bez osobnego commita, wewnątrz commita `0e56474`:
 
 - 32 artykuły z automatycznie usuniętym zdublowanym leadem
 - poprawiona literówka w treści artykułu z 2023 roku
 
-Przegląd wymaga diffa przeciw `old_reference/BAZA/erlipl_db.sql`. Wykryto
-dwa przypadki nieudanego dedupu (D1); pozostałe 30 i zmiana treści nie były
-weryfikowane.
+**Wynik.** `tools/weryfikuj-migracje.mjs` sprawdził, czy słownictwo z bazy
+jest w całości obecne w plikach — próg 3% unikalnych słów. **Zero artykułów
+powyżej progu.** Automatyczne usuwanie leadu niczego nie zgubiło.
+
+Metodyczna uwaga: pierwsza wersja kontroli porównywała zdania i dawała
+11 fałszywych alarmów — fragment przechodzący przez granicę struktury
+markdowna („…spacerowy.\*\*\* ERLI.pl to…") nie występuje w pliku w tej
+postaci, choć wszystkie jego słowa tam są. Porównanie słowo w słowo
+usuwa ten artefakt.
+
+---
+
+## D6 — waga obrazków — ✅ NAPRAWIONE
+
+Zdjęcia pobrane z CDN starej Joomli miały do 1440 px szerokości i do 664 KB,
+a wyświetlają się w kolumnie 460 px (karta) albo 800 px (artykuł).
+
+**Zmierzone przed naprawą:** `/aktualnosci/` 5147 KB obrazków,
+strona główna 1207 KB.
+
+**Naprawa.** `tools/optymalizuj-obrazy.mjs` (zależność deweloperska `sharp`)
+przeskalował 89 plików do maks. 1200 px przy jakości 74 i wygenerował
+wariant 600 px obok każdego. Szablony podają oba przez `srcset` z `sizes`.
+Kontrola `build/image-guard.js` rozszerzona na `srcset` — brakujący wariant
+nie ujawniłby się w `src`, obrazek po prostu nie pojawiłby się na części
+ekranów.
+
+| | Przed | Po |
+|---|---|---|
+| Pliki na dysku | 13,3 MB | 3,9 MB (oba warianty) |
+| Największy plik | 664 KB | 104 KB |
+| `/aktualnosci/` | 5147 KB | **890 KB** |
+| Strona główna | 1207 KB | **158 KB** |
 
 ---
 
