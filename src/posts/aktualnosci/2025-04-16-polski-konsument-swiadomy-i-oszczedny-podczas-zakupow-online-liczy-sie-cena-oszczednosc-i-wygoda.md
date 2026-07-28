@@ -4,6 +4,8 @@ data: 2025-04-16
 lead: "ERLI, dynamicznie rozwijający się polski marketplace dostrzega, że trend świadomego kupowania zyskuje na znaczeniu, a platformy e-commerce odgrywają kluczową rolę w odpowiadaniu na te potrzeby."
 ---
 
+![](/assets/img/artykuly/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena-oszczednosc-i-wygoda/hero-5--3-.webp)
+
 ***Platforma e-commerce ERLI prezentuje wyniki badania o postawach Polaków wobec zakupów i pieniędzy***
 
 **W ostatnim czasie zakupy online stały się nieodłączną częścią życia Polaków – w 2024 roku 78% polskich internautów dokonywało zakupów online. Odsetek ten był na poziomie wyniku za 2023 rok, co wskazuje na stabilizację trendu. Polacy podchodzą do zakupów w sposób strategiczny – porównują ceny, korzystają z promocji i wybierają wygodne rozwiązania online. Już 71% konsumentów deklaruje, że przed zakupem analizuje różne oferty, a ponad 40% aktywnie korzysta z programów lojalnościowych i rabatów. ERLI, dynamicznie rozwijający się polski marketplace dostrzega, że trend świadomego kupowania zyskuje na znaczeniu, a platformy e-commerce odgrywają kluczową rolę w odpowiadaniu na te potrzeby. Tezy te potwierdzone zostały też w najnowszym, prezentowanym przez ERLI badaniu postaw Polaków wobec zakupów i pieniędzy. Platforma wychodząc naprzeciw oczekiwaniom nowoczesnych konsumentów, dostosowuje swoją ofertę umożliwiając przemyślane i korzystne zakupy.**

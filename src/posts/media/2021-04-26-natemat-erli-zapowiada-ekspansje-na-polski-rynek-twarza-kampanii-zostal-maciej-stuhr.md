@@ -7,6 +7,8 @@ zrodlo:
   url: https://natemat.pl/347245,erli-pl-to-nowa-platforma-zakupowa-dlaczego-warto-z-niej-korzystac
 ---
 
+![](/assets/img/artykuly/natemat-erli-zapowiada-ekspansje-na-polski-rynek-twarza-kampanii-zostal-maciej-stuhr/hero-baner_9_870x400.webp)
+
 ### NaTemat: Erli zapowiada ekspansję na polski rynek. Twarzą kampanii został Maciej Stuhr
 
 Całość artykułu dostępna pod adresem:

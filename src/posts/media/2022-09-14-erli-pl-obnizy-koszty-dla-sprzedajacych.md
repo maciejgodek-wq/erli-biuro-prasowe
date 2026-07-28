@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.wiadomoscihandlowe.pl/artykul/erli-pl-obnizy-koszty-dla-sprzedajacych-pomoga-w-tym-inpost-google-i-payu
 ---
 
+![](/assets/img/artykuly/erli-pl-obnizy-koszty-dla-sprzedajacych/hero-870x400_media_o_erli_7.webp)
+
 ### Erli.pl obniży koszty dla sprzedających. Pomogą w tym InPost, Google i PayU
 
 Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU.

@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.dlahandlu.pl/e-commerce/wiadomosci/erli-pl-chcemy-byc-druga-platforma-sprzedazowa-w-polsce-wywiad,120027.html
 ---
 
+![](/assets/img/artykuly/erli-pl-chcemy-byc-druga-platforma-sprzedazowa-w-polsce/hero-057830_r0_940.webp)
+
 **ERLI.pl: Chcemy być drugą platformą sprzedażową w Polsce (wywiad)**
 
 - Tworząc ERLI chcieliśmy, aby nasz model biznesowy był odporny na zawirowania ekonomiczne. Zależało nam na tym, aby poza oczywistym celem jakim było prowadzenie działalności biznesowej, ERLI było również realnym wsparciem dla sprzedających i szansą na tańsze zakupy dla kupujących. Wiedzieliśmy, że musimy zaoferować zupełnie nowy model relacji biznesowej w e-commerce - mówi w rozmowie z dlahandlu.pl Katarzyna Kierach, dyrektorka marketingu ERLI.pl.

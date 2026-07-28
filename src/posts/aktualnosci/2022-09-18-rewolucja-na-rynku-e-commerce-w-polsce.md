@@ -4,6 +4,8 @@ data: 2022-09-18
 lead: "Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU."
 ---
 
+![](/assets/img/artykuly/rewolucja-na-rynku-e-commerce-w-polsce/hero-870x400_rewolucja_e-commerce_3.webp)
+
 ### Rewolucja na rynku e-commerce w Polsce! Platforma ERLI.pl przeznaczy 50 mln złotych na wsparcie polskich sprzedawców
 
 **Szalejąca inflacja oraz podwyżki cen energii i podatków przyniosą ogromne zmiany dla rynku handlu. Z badań wynika, że konsumenci będą wybierać e-commerce, który notować będzie dalszy wzrost. Tylko ten sektor zaproponuje porównywalność ofert, a tego właśnie będą szukać konsumenci. Rosnący e- commerce jest zatem szansą dla sklepów na zwiększanie obrotów, a model biznesowy ERLI.pl jest na to odpowiedzią.**

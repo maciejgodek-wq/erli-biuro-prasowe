@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.rp.pl/handel/art37053871-w-online-walka-nie-tylko-o-kupujacych-platformy-walcza-z-drozyzna
 ---
 
+![](/assets/img/artykuly/w-online-walka-nie-tylko-o-kupujacych/hero-870x400_media_o_erli_6.webp)
+
 ### W online walka nie tylko o kupujących. Platformy walczą z drożyzną
 
 Platforma zakupowa Erli przeznaczy 50 mln zł na wsparcie sprzedawców, aby pomóc im obniżyć koszty działalności - obsługę płatności, logistyczne oraz reklamowe.

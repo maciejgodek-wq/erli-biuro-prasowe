@@ -7,6 +7,8 @@ zrodlo:
   url: https://mycompanypolska.pl/artykul/amazon-wymiecie-konkurencje-po-wejsciu-do-polski-%22nasz-rynek-e-commerce-jest-pojemny%22/6328
 ---
 
+![](/assets/img/artykuly/amazon-wymiecie-konkurencje-po-wejsciu-do-polski-nasz-rynek-e-commerce-jest-pojemny/hero-baner_14_870x400.webp)
+
 ### MyCompanyPolska.pl: Amazon wymiecie konkurencję po wejściu do Polski? "Nasz rynek e-commerce jest pojemny"
 
 Całość artykułu dostępna pod adresem:

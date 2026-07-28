@@ -7,6 +7,8 @@ zrodlo:
   url: https://mycompanypolska.pl/artykul/erli-chce-zainwestowac-50-mln-zlotych-w-e-sklepy-%22model-radykalnie-obnizy-koszty-dla-sprzedajacych%22/10138
 ---
 
+![](/assets/img/artykuly/erli-pl-chce-zainwestowac-50-mln-zlotych-w-e-sklepy/hero-870x400_media_o_erli_9.webp)
+
 ### ERLI.pl chce zainwestować 50 mln złotych w e-sklepy. "Model radykalnie obniży koszty dla sprzedających".
 
 Całość artykułu dostępna pod adresem:

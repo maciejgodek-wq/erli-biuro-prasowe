@@ -4,6 +4,8 @@ data: 2022-05-18
 lead: "ERLI.pl robi kolejny ważny krok w rozwoju, nawiązując współpracę z PayPo – liderem płatności odroczonych. Od teraz każdy z blisko 3,5 milionów klientów ERLI.pl może skorzystać z usługi „PayU – Płacę później z PayPo” i zapłacić za swoje zakupy nawet za 30 dni, bez dodatkowych kosztów."
 ---
 
+![](/assets/img/artykuly/erli-pl-robi-kolejny-wazny-krok-w-rozwoju-nawiazujac-wspolprace-z-paypo/hero-870x400_payu_paypo_2.webp)
+
 ### Na ERLI.pl odroczysz płatności z PayU i PayPo
 
 **Płatności odroczone zyskują na popularności**

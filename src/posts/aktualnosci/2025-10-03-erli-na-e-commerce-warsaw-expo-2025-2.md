@@ -4,6 +4,8 @@ data: 2025-10-03
 lead: "24 października ERLI weźmie udział w E-commerce Warsaw Expo (wcześniej: Targi eHandlu), które odbędzie się w EXPO XXI w stolicy."
 ---
 
+![](/assets/img/artykuly/erli-na-e-commerce-warsaw-expo-2025-2/hero-press.webp)
+
 **ERLI na E-commerce Warsaw Expo 2025 — zapraszamy do stoiska D1.8, D1.7 i D2.7**
 
 **24 października** ERLI weźmie udział w **E-commerce Warsaw Expo** (wcześniej: Targi eHandlu), które odbędzie się w EXPO XXI w stolicy. W trakcie wydarzenia platforma przedstawi kluczowe rozwiązania i strategie dla sprzedawców chcących skutecznie rozwijać sprzedaż online.

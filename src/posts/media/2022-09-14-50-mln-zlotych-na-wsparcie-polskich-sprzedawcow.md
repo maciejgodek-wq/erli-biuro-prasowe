@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.isbtech.pl/2022/09/platforma-erli-pl-przeznaczy-50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/
 ---
 
+![](/assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero-870x400_media_o_erli_5.webp)
+
 ### Platforma ERLI.pl przeznaczy 50 mln złotych na wsparcie polskich sprzedawców
 
 Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU.

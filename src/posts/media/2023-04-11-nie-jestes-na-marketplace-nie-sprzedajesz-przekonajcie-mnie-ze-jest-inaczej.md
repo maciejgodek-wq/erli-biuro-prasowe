@@ -7,6 +7,8 @@ zrodlo:
   url: https://bizblog.spidersweb.pl/erli-nie-jestes-na-marketplace-nie-sprzedajesz
 ---
 
+![](/assets/img/artykuly/nie-jestes-na-marketplace-nie-sprzedajesz-przekonajcie-mnie-ze-jest-inaczej/hero-erli-sprzedajacy.webp)
+
 **Nie jesteś na marketplace, nie sprzedajesz. Przekonajcie mnie, że jest inaczej**
 
 Platformy sprzedażowe osiągają w Polsce ogromne rozmiary, sprawiając, że wielu sprzedawców swoje pierwsze kroki kieruje właśnie do nich. Z pewnymi wyjątkami obecność w takim miejscu staje się kwestią: sprzedam, albo nie sprzedam. I jeżeli nie dojdzie do jakiegoś przewrotu, ten trend będzie się tylko pogłębiał.

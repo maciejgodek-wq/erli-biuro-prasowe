@@ -4,6 +4,8 @@ data: 2024-11-21
 lead: "ERLI, jeden z najszybciej rozwijających się marketplace’ów w Europie, po raz kolejny udowadnia, że podstawą rozwoju platformy jest stałe podnoszenie jakości doświadczenia zakupowego. Dlatego marketplace wprowadził Gwarancję Darmowego Zwrotu - nową, wygodną i bezpieczną usługę zwrotu, którą można wykupić na etapie składania zamówienia."
 ---
 
+![](/assets/img/artykuly/erli-wprowadzil-pierwsza-w-polskim-e-commerce-usluge-gwarancji-darmowego-zwrotu-2-2/hero-2024-11-1732783577-hero-mob.webp)
+
 **ERLI – marketplace nr 2 w Polsce, wprowadził nowatorską i wygodną usługę dla klientów – Gwarancję Darmowego Zwrotu. Dzięki niej, kupujący za jedyne 1,99 zł mogą zapewnić sobie możliwość darmowego zwrotu produktów za pośrednictwem Paczkomat® InPost. Aby z niej skorzystać, wystarczy na etapie składania zamówienia dodać do koszyka nową usługę i opłacić całość zamówienia. Rozwiązanie będzie dostępne dla wszystkich zamówień umożliwiających wybór dostawy do urządzenia paczkowego InPost. Gwarancja Darmowego Zwrotu to pierwsze tego typu rozwiązanie w Polsce, które zwiększa komfort i bezpieczeństwo zakupów online****.**
 
 **ERLI, jeden z najszybciej rozwijających się marketplace’ów w Europie, po raz kolejny udowadnia, że podstawą rozwoju platformy jest stałe podnoszenie jakości doświadczenia zakupowego. Dlatego marketplace wprowadził Gwarancję Darmowego Zwrotu - nową, wygodną i bezpieczną usługę zwrotu, którą można wykupić na etapie składania zamówienia.**

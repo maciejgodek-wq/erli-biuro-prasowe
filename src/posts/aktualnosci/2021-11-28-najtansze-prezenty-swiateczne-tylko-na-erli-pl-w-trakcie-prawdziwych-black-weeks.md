@@ -4,6 +4,8 @@ data: 2021-11-28
 lead: "Osoby, które szukają pomysłów na prezenty świąteczne w atrakcyjnych cenach znajdą bogaty wybór produktów na ERLI.pl. Platforma zakupów on-line w każdą środę organizuje niezwykłe promocje na nowe kategorie produktów – są to prawdziwe Black Weeks. Firma oferuje najlepsze ceny, a dla pierwszych kupujących gwarantuje, że są one najniższe w kraju. Co więcej, zarejestrowani użytkownicy cieszą się darmową dostawą dzięki współpracy z firmą InPost. W najbliższą środę promocją objęte zostaną produkty idealnie nadające się na świąteczne prezenty – m.in. zestawy klocków Lego, stół do gry w piłkarzyki czy robot kuchenny."
 ---
 
+![](/assets/img/artykuly/najtansze-prezenty-swiateczne-tylko-na-erli-pl-w-trakcie-prawdziwych-black-weeks/hero-baner_2_870x400.webp)
+
 ### Najtańsze prezenty świąteczne tylko na ERLI.pl w trakcie prawdziwych Black Weeks
 
 Black Weeks na ERLI.pl to cykliczna (odbywająca się co środę) akcja promocyjna obejmująca różne grupy produktów. W pierwszej edycji promocji można było nabyć smartfony Realme 7-Pro 8 GB w cenie 599,50 zł (dziś najniższa cena wg ceneo.pl to 1238 zł) a model Xiaomi Redmi Note 10 Pro 6/128 GB za 738,99 zł (wg dzisiejszych ofert najniższa cena to 1256 zł). Oferta cieszyła się niezwykłym powodzeniem, ponieważ Black Weeks na ERLI.pl to faktyczne, niespotykane nigdzie indziej obniżki cen. Oddają one realny charakter i założenia Czarnego Piątku, w przeciwieństwie do często spotykanych na rynku haseł nawiązujących do tego święta zakupów, a w rzeczywistości będących symbolicznymi promocjami.

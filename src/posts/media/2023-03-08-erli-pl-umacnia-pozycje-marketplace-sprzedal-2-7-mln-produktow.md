@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.dlahandlu.pl/e-commerce/wiadomosci/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow,116539.html
 ---
 
+![](/assets/img/artykuly/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow/hero-1492x364_adam_ciesielczyk.webp)
+
 **Erli.pl umacnia pozycję. Marketplace sprzedał 2,7 mln produktów**
 
 **​**

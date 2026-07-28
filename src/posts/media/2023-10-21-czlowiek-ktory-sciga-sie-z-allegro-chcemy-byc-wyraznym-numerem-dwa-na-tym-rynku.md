@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.forbes.pl/biznes/wlasciciel-erli-sciga-sie-z-allegro-chcemy-byc-wyraznym-numerem-dwa/7kyp1ky#forbes-no-paylock
 ---
 
+![](/assets/img/artykuly/czlowiek-ktory-sciga-sie-z-allegro-chcemy-by/hero-_qbk9kpturbxy9ly2rlmwrkzju0otyyymmwmgrlymnkztvhnje3mzewyy5qcgeslqmazqeazsaazriakwxna47nal_eaaghmau.webp)
+
 **Człowiek, który ściga się z Allegro. „Chcemy być wyraźnym numerem dwa na tym rynku”**
 
 Pozycja Erli w zestawieniu z Allegro przypomina walkę biblijnego Dawida i Goliata. Skalą działania giełdowy gigant bije platformę Adama Ciesielczyka na głowę. Ale to Erli postawiło na wspieranie niedocenianych przez gigantów sprzedawców, dzięki czemu nie tylko utrzymuje się na trudnym rynku, ale także co roku zwielokrotnia swoje przychody.

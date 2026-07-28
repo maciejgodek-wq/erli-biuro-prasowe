@@ -7,6 +7,8 @@ zrodlo:
   url: https://geekweek.interia.pl/internet/news-erli-startuje-z-aplikacja-mobilna-na-start-bonus-w-wysokosci,nId,6939329
 ---
 
+![](/assets/img/artykuly/erli-startuje-z-aplikacja-mobilna-na-start-bonus-w-wysokosci-50-zl/hero-aplikacja-erli_1.webp)
+
 **ERLI startuje z aplikacją mobilną. Na start bonus w wysokości 50 zł**
 
 ERLI stara się coraz mocniej konkurować z Allegro. Platforma ogłosiła start własnej aplikacji mobilnej na smartfony z systemami Android oraz iOS. Przy okazji dla klientów przygotowano promocję, która ma zachęcić do instalacji oprogramowania. Tym jest bonus w wysokości 50 zł, który można wykorzystać na następne zakupy.

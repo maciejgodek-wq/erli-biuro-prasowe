@@ -7,6 +7,8 @@ zrodlo:
   url: https://biznes.pap.pl/wiadomosci/firmy/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv-wywiad
 ---
 
+![](/assets/img/artykuly/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv/hero-doc-20241223-50443448-erli_prezes.webp)
+
 **ERLI chce w '25 przekroczyć 2 mld zł sprzedaży GMV**
 
 **ERLI, platforma marketplace, która po 9 miesiącach tego roku zwiększyła sprzedaż GMV o ponad 70 proc. do ok. 850 mln zł, w przyszłym roku chce przekroczyć 2 mld zł GMV - poinformował PAP Biznes prezes Adam Ciesielczyk. Spółka planuje w 2025 r. dużą kampanię wizerunkową, chce przyciągnąć 10 tys. nowych sprzedawców.**

@@ -7,6 +7,8 @@ zrodlo:
   url: https://bezprawnik.pl/aplikacja-erli/
 ---
 
+![](/assets/img/artykuly/erli-chce-gonic-allegro-i-wlasnie-wykonalo-duzy-krok-do-tego-celu/hero-adobestock_613365109.webp)
+
 **ERLI chce gonić Allegro i właśnie wykonało duży krok do tego celu**
 
 Następny gracz na arenie polskiego ecommerce zagrał mocną kartą. ERLI to jeden z najszybciej rozwijających się rynkowych marketplace’ów, a teraz zainaugurował swoją mobilną aplikację dostępną dla posiadaczy telefonów z Androidem i iOS.

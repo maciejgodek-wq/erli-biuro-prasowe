@@ -4,6 +4,8 @@ data: 2025-01-23
 lead: "Okres świąteczny 2024 był rekordowy dla platformy ERLI, która odnotowała imponujący wzrost GMV o 70,45% w porównaniu z analogicznym okresem w poprzednim roku. W szczytowym dniu sprzedażowym, 16 grudnia, platforma osiągnęła najwyższy wynik w swojej historii, generując 8,43 mln zł GMV, 51 tys. transakcji oraz sprzedaż ponad 95 tys. produktów."
 ---
 
+![](/assets/img/artykuly/swiateczne-rekordy-erli-dynamiczny-wzrost-sprzedazy-i-popularnosc-aplikacji-mobilnej/hero-swieta_erli_art2.webp)
+
 **Okres świąteczny 2024 był rekordowy dla platformy ERLI, która odnotowała imponujący wzrost GMV o 70,45% w porównaniu z analogicznym okresem w poprzednim roku. W szczytowym dniu sprzedażowym, 16 grudnia, platforma osiągnęła najwyższy wynik w swojej historii, generując 8,43 mln zł GMV, 51 tys. transakcji oraz sprzedaż ponad 95 tys. produktów. Wyróżniły się także kategorie "Dom i ogród" oraz "Supermarket", które miały w tym czasie duże wzrosty.**
 
 **Świąteczne rekordy sprzedaży – dane ERLI za grudzień 2024 r.**

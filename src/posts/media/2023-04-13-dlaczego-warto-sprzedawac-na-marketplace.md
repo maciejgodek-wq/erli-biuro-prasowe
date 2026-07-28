@@ -7,6 +7,8 @@ zrodlo:
   url: https://mycompanypolska.pl/artykul/dlaczego-warto-sprzedawac-na-marketplace/11706
 ---
 
+![](/assets/img/artykuly/dlaczego-warto-sprzedawac-na-marketplace/hero-uxkfedi5hcjfswondxk6_930_620.webp)
+
 **Dlaczego warto sprzedawać na marketplace?**
 
 Zanim zaczniesz swój własny biznes w e-commerce pomyśl, co chcesz osiągnąć i jak duże pieniądze możesz włożyć na start.

@@ -4,6 +4,8 @@ data: 2021-05-26
 lead: "„Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej ERLI.pl – nowego marketplace’u na polskim rynku e-handlu. Ambasadorem kampanii został aktor Maciej Stuhr. Pierwsze spoty reklamowe pojawią się w kanałach telewizyjnych już 7 kwietnia. Kampania w kanałach digitalowych ruszy 12 kwietnia. Pierwszy etap kampanii potrwa do czerwca 2021 roku."
 ---
 
+![](/assets/img/artykuly/kampania-reklamowa-erli-pl-maciej-stuhr-ambasadorem-nowego-marketplace-u/hero-baner_4_870x400_stuhr.webp)
+
 ### „Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej ERLI.pl
 
 Użytkownicy sieci oraz widzowie telewizji będą mieli okazję bliżej poznać ERLI i ofertę nowego marketplace’u dzięki pięciu spotom reklamowym – jednemu 30-sekudnowemu i czterem 15-sekundowym. W każdym z nich w humorystyczny, ale również informacyjny sposób Maciej Stuhr przybliża nie tylko przykładowe produkty, jakie można znaleźć na ERLI.pl, ale również podkreśla najważniejsze cechy platformy, w tym wyjątkowy program lojalnościowy. Każda wydana złotówka na ERLI to jeden punkt kumulowany w programie. Dzięki temu użytkownicy ERLI.pl mogą skorzystać z darmowego pobytu w ośrodkach Holiday Park & Resort nad polskim morzem.

@@ -4,6 +4,8 @@ data: 2024-10-16
 lead: "Usługa ERLI DPD Kurier jest już dostępna i mogą ją oferować kupującym wszystkie e-sklepy zarejestrowane na platformie ERLI."
 ---
 
+![](/assets/img/artykuly/erli-nawiazuje-wspolprace-z-dpd-i-uruchamia-nowa-metode-dostaw/hero-dpd-grafika-2048x854.webp)
+
 **ERLI – marketplace nr 2 w Polsce, nawiązał współpracę z DPD, tym samym rozszerzając ofertę Metod Dostaw ERLI. Nowe rozwiązanie to odpowiedź na potrzeby sprzedawców w zakresie dostępu do szybkich i wygodnych przesyłek e-commerce i szansa na optymalizację ich kosztów logistycznych. Usługa ERLI DPD Kurier jest już dostępna i mogą ją oferować kupującym wszystkie e-sklepy zarejestrowane na platformie ERLI.**
 
 **ERLI plasuje się wśród najszybciej rozwijających się marketplace’ów w Europie. Platforma stale rozszerza zakres usług i narzędzi dla sprzedawców, zgodnie z aktualnymi trendami e-commerce. Najnowszym rozwiązaniem jest ERLI DPD Kurier, metoda dostawy realizowana przez firmę kurierską DPD.**

@@ -4,6 +4,8 @@ data: 2021-11-17
 lead: "ERLI.pl – platforma do zakupów on-line w każdą środę organizuje niezwykłe promocje na nowe kategorie produktów. Ceny wystawianych przedmiotów należą do najniższych w Polsce (rabaty sięgają do -50%), a dodatkowo zarejestrowani użytkownicy cieszą się darmową dostawą dzięki współpracy z firmą InPost. W najbliższą środę promocją objęte zostaną produkty do pracy i dla rodziny – m.in. laptopy oraz wózek spacerowy."
 ---
 
+![](/assets/img/artykuly/najnizsze-ceny-w-polsce-w-kazda-srode-prawdziwe-black-weeks-tylko-na-erli-pl/hero-baner_3_870x400.webp)
+
 ### Najniższe ceny w Polsce w każdą środę – prawdziwe Black Weeks tylko na ERLI.pl
 
 ERLI.pl to miejsce w sieci, w którym każdy amator zakupów online znajdzie szeroki wybór produktów, jedne z najatrakcyjniejszych cen na rynku, gwarancję wiarygodnych sprzedawców oraz wyjątkowe nagrody za zakupy w postaci darmowego pobytu w luksusowych ośrodkach Holiday Park & Resort. Z kolei dla sprzedawców ERLI.pl jest szybko rozwijającą się platformą handlową, na której każdy internetowy i tradycyjny sprzedawca znajdzie wsparcie w założeniu sklepu online i rozwoju biznesu.

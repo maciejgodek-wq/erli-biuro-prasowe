@@ -4,6 +4,8 @@ data: 2025-08-14
 lead: "W pierwszym półroczu 2025 roku ERLI odnotowało ponad 54% wzrost GMV, osiągając wartość 829,1 mln zł, w porównaniu do 539,6 mln zł w analogicznym okresie w 2024 roku."
 ---
 
+![](/assets/img/artykuly/platforma-e-commerce-erli-z-rekordowymi-wynikami-za-pierwsze-polrocze-2025-2-2-2-2/hero-adobestock_627681061.webp)
+
 **Platforma e-commerce ERLI ogłosiła wyniki finansowe za pierwsze półrocze 2025 roku, które wskazują na dynamiczny wzrost we wszystkich kluczowych wskaźnikach operacyjnych i finansowych. W porównaniu do analogicznego okresu ubiegłego roku, firma zwiększyła GMV o 53,7%, wartość transakcji o 53,3%, liczbę transakcji o 56,6%, liczbę sprzedanych przedmiotów o 57,7% oraz przychody o 62,8**%. **Platforma ERLI, zgodnie z wynikami, skutecznie umacnia swoją pozycję na rynku e-commerce. Działa jako marketplace, który z powodzeniem łączy szeroki wybór produktów z realnymi profitami dla sprzedawców i konsumentów.**
 
 W pierwszym półroczu 2025 roku ERLI odnotowało ponad 54% wzrost GMV, osiągając wartość 829,1 mln zł, w porównaniu do 539,6 mln zł w analogicznym okresie w 2024 roku. Firma szacuje, że EBITDA za pierwsze sześć miesięcy 2025 r. wyniosła 8,7 mln złotych (+42,3%). Dla porównania, za cały 2024 rok wynosiła 12,01 mln zł, co świadczy o dynamicznym wzroście efektywności operacyjnej marketplace’u. Przychód platformy wyniósł 120,4 mln zł (+62,8% H12024/H12025). Zarówno liczba transakcji na platformie, która wzrosła o 56,6%, osiągając poziom 4 mln, jak i wzrost o 57,7% liczby sprzedanych przedmiotów do 9,8 mln sztuk są świetnymi dowodami na to, że rośnie w znaczącym tempie wśród konsumentów zaufanie do platformy.

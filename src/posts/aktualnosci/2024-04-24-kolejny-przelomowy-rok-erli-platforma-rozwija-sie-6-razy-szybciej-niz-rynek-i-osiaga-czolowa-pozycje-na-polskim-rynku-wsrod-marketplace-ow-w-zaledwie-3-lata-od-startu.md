@@ -4,6 +4,8 @@ data: 2024-04-24
 lead: "ERLI osiągnęło ponad 91 mln przychodu netto oraz rekordową liczbę 3,6 mln transakcji notując przy tym stały wzrost liczby sprzedawców i klientów, co pozwoliło umocnić platformie swoją pozycję na rynku e-commerce w Polsce"
 ---
 
+![](/assets/img/artykuly/kolejny-przelomowy-rok-erli/hero-AdobeStock_179531844.webp)
+
 **Kolejny przełomowy rok ERLI – platforma rozwija się 6 razy szybciej niż rynek[**[1]**](#_ftn1) i osiąga czołową pozycję na polskim rynku wśród marketplace’ów w zaledwie 3 lata od startu**
 
 ERLI osiągnęło ponad 91 mln przychodu netto oraz rekordową liczbę 3,6 mln transakcji notując przy tym stały wzrost liczby sprzedawców i klientów, co pozwoliło umocnić platformie swoją pozycję na rynku

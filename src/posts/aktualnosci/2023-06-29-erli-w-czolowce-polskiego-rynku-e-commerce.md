@@ -4,6 +4,8 @@ data: 2023-06-29
 lead: "ERLI zyskuje coraz większą popularność – 2 mln klientów założyło konto, a platforma znalazła się wśród najpopularniejszych serwisów zakupowych w Polsce."
 ---
 
+![](/assets/img/artykuly/erli-w-czolowce-polskiego-rynku-e-commerce/hero-erli-w-czoowce-polskiego-rynku-e-commerce2.webp)
+
 **ERLI.pl, najszybciej rozwijający się marketplace w Polsce zarejestrował 2 milionowego klienta na swojej platformie. Wynik ten firma wypracowała w zaledwie w dwa i pół roku od rozpoczęcia działalności. Platforma pojawiła się również po raz pierwszy w swojej historii w zestawieniu TOP10 najpopularniejszych w Polsce stron zakupowych. Jest to efekt sukcesywnie realizowanej strategii ERLI, która zakłada, że do końca bieżącego roku liczba klientów zwiększy się do 3 mln, a baza sklepów do ponad 20 tys.**
 
 Platforma zakupowa ERLI swoją działalność rozpoczęła w 2020 roku. Od tego czasu notuje bardzo wysoką dynamikę rozwoju i obecnie znajduje się już w czołówce polskiego rynku e-commerce. W ostatnim czasie firma, poza dobrymi wynikami finansowymi, może pochwalić się również coraz liczniejszą, bo już 2 mln grupą klientów, którzy założyli swoje konto na platformie. To wzrost od początku roku o ponad 600 tys. nowych użytkowników. Z kolei ponad 6 mln internautów co miesiąc odwiedza platformę, aby znaleźć produkty z niższą ceną niż na konkurencyjnych stronach.

@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.dlahandlu.pl/e-commerce/wiadomosci/erli-pl-przeznaczy-50-mln-zl-na-reklamy-w-google-dla-sprzedajacych-na-platformie,111396.html
 ---
 
+![](/assets/img/artykuly/erli-pl-przeznaczy-50-mln-zl-na-reklamy/hero-870x400_media_o_erli_4.webp)
+
 ### ERLI.pl przeznaczy 50 mln zł na reklamy w Google dla sprzedających na platformie
 
 Całość artykułu dostępna pod adresem:

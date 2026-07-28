@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.pb.pl/erli-rzuca-wyzwanie-allegro-1163631
 ---
 
+![](/assets/img/artykuly/erli-rzuca-wyzwanie-allegro/hero-870x400_media_o_erli_3.webp)
+
 ### Erli rzuca wyzwanie Allegro
 
 Całość artykułu dostępna pod adresem:

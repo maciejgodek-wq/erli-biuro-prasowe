@@ -4,6 +4,8 @@ data: 2023-09-25
 lead: "W aplikacji ERLI ruszyła sekcja „NAJtaniej!”, w której dostępne są najtańsze oferty zakupowe – każda w limitowanych ilościach i o określonym czasie trwania."
 ---
 
+![](/assets/img/artykuly/rusza-najtaniej-w-aplikacji-erli-najlepsze-miejsce-dla-lowcow-okazji-w-internecie/hero-press-appka-najtaniej.webp)
+
 **Rusza „NAJtaniej!” w aplikacji ERLI – najlepsze miejsce dla łowców okazji w internecie**
 
 **ERLI, jedna z najszybciej rozwijających się platform zakupowych w Polsce, uruchomiła w swojej aplikacji idealną dla poszukiwaczy okazji sekcję „NAJtaniej!”. Dzięki niej użytkownicy mogą być pewni, że codziennie znajdą w niej nowe najkorzystniejsze oferty – każda z nich jest dostępna przez określony czas i w ograniczonych ilościach. Ponadto, nieprzerwanie na użytkowników aplikacji ERLI czekają dodatkowe korzyści, takie jak jeszcze niższe ceny produktów, rok darmowej dostawy czy kupon rabatowy o wartości 50 zł na kolejne zakupy.**

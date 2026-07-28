@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.wirtualnemedia.pl/artykul/maciej-stuhr-reklama-erli-pl-cala-przyjemnosc-na-naszej-stronie-wideo
 ---
 
+![](/assets/img/artykuly/wirtualnemedia-maciej-stuhr-w-pierwszej-kampanii-platformy-erli-pl/hero-baner_10_870x400.webp)
+
 ### Wirtualnemedia: Maciej Stuhr w pierwszej kampanii platformy Erli.pl
 
 **Maciej Stuhr w pierwszej kampanii platformy Erli.pl**

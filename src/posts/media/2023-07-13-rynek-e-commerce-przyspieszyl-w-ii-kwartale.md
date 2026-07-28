@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.portalspozywczy.pl/handel/wiadomosci/rynek-e-commerce-przyspieszyl-w-ii-kwartale,229541.html
 ---
 
+![](/assets/img/artykuly/rynek-e-commerce-przyspieszyl-w-ii-kwartale/hero-adobestock_604763387.webp)
+
 **Rynek e-commerce przyspieszył w II kwartale**
 
 Rynek e-commerce, po pierwszym kwartale tego roku, w którym nabierał rozpędu, od kwietnia „wrzucił wyższy bieg” zwiększając jeszcze dynamikę sprzedaży. Branża e-handlu najlepsze wyniki osiągnęła w tym czasie w maju - miesiąc ten jest już tradycyjnie dobrym okresem sprzedażowym - ocenia Katarzyna Kierach, Dyrektor Marketingu ERLI.pl.

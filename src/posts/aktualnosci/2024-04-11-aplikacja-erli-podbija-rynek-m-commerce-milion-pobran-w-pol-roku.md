@@ -4,6 +4,8 @@ data: 2024-04-11
 lead: "Zaledwie 6 miesięcy wystarczyło, aby aplikacja mobilna ERLI przekroczyła 1 milion pobrań."
 ---
 
+![](/assets/img/artykuly/aplikacja-erli-podbija-rynek-m-commerce-milion-pobran-w-pol-roku/hero-aplikacja-mobilna-erli---1-mln-pobran.webp)
+
 **Aplikacja ERLI podbija rynek m-commerce – milion pobrań w pół roku**
 
 Codziennie 7 tys. kupujących online pobiera aplikację ERLI

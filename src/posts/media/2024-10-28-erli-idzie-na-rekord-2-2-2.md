@@ -7,6 +7,8 @@ zrodlo:
   url: https://www.pb.pl/erli-idzie-na-rekord-1228946
 ---
 
+![](/assets/img/artykuly/erli-idzie-na-rekord-2-2-2/hero-ac_zdjcie.webp)
+
 **ERLI idzie na rekord**
 
 **W ciągu pierwszych dziewięciu miesięcy tego roku platforma e-handlowa osiągnęła 849 mln zł wartości sprzedaży brutto, co oznacza wzrost o 71 proc. rok do roku.**

@@ -4,6 +4,8 @@ data: 2021-05-12
 lead: "Spark Foundry, agencja należąca do Publicis Groupe, zajmie się obsługą mediową nowej platformy zakupowej ERLI.pl. Agencja została wybrana w drodze przetargu"
 ---
 
+![](/assets/img/artykuly/erli-pl-nawiazuje-wspolprace-z-agencja-mediowa-spark-foundry/hero-baner_6_870x400_sf.webp)
+
 ### ERLI.pl nawiązuje współpracę z agencją mediową Spark Foundry
 
 *Współpraca ze Spark Foundry to kolejny etap rozwoju ERLI. Już za moment rozpoczynamy szeroką kampanię marketingową. Będziemy docierali do Polaków zarówno przez telewizję, jak i kanały digitalowe. Dynamicznie się rozwijamy i chcemy współpracować z profesjonalnymi partnerami, którzy skutecznie pomogą nam realizować nasze cele. Wierzę, że współpraca z agencjami, takimi jak MSL czy Spark Foundry, które funkcjonują w ramach jednej Grupy Publicis, wpłynie pozytywnie na sprawną i efektywną komunikację przy projektach realizowanych dla naszego marketplace’u* – **mówi Adam Ciesielczyk, Prezes ERLI.pl.**

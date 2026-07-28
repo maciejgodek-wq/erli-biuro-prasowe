@@ -4,6 +4,8 @@ data: 2023-11-23
 lead: "Po niespełna 4 miesiącach funkcjonowania już 2 z 5 transakcji na ERLI realizowane są właśnie przez aplikację."
 ---
 
+![](/assets/img/artykuly/aplikacja-erli-ponad-420-tys-instalacji-i-2-miejsce-na-liscie-najpopularniejszych-aplikacji-zakupowych-google-play/hero-blackweeks_erli.webp)
+
 **Aplikacja ERLI: ponad 420 tys. instalacji i 2. miejsce na liście najpopularniejszych aplikacji zakupowych Google Play**
 
 **W sierpniu br. ERLI uruchomiło swoją aplikacje mobilną, która przyciąga tysiące poszukiwaczy okazji zakupowych. Przekładając to na liczby, każdego dnia średnio 5 tys. nowych użytkowników rejestruje się w aplikacji ERLI, co w efekcie doprowadziło ją do 2. miejsca najpopularniejszych aplikacji zakupowych w sklepie Google Play[**[1]**](#_ftn1), wyprzedzając między innymi takie aplikacje jak Allegro, Aliexpress czy InPost. Co więcej - znalazła się też na trzecim miejscu najpopularniejszych aplikacji w Polsce, przed takimi markami jak WhatsApp czy TikTok. To efekt wysokiej funkcjonalności, ale przede wszystkich świetnych cen oraz korzyści, jakie platforma ERLI przygotowała dla kupujących w aplikacji. Po niespełna 4 miesiącach funkcjonowania już 2 z 5 transakcji na ERLI realizowane są właśnie przez aplikację. Jak zapewnia marka to dopiero początek i rozwija nowe narzędzie, aby dostarczyć kupującym jeszcze lepsze i najkorzystniejsze cenowo doświadczenia z zakupów w internecie.**

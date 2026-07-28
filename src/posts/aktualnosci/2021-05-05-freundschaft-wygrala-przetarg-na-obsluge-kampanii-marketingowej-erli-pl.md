@@ -4,6 +4,8 @@ data: 2021-05-05
 lead: "Grupa Freundschaft (dawniej: Scholz & Friends, Emlab, The Digitals i Booost | Grupa S/F) wygrała przetarg dla nowej platformy zakupowej ERLI.pl. Współpraca będzie dotyczyć opracowania strategii, platformy i komunikacji pierwszej kampanii reklamowej dla marki."
 ---
 
+![](/assets/img/artykuly/freundschaft-wygrala-przetarg-na-obsluge-kampanii-marketingowej-erli-pl/hero-baner_5_870x400.webp)
+
 ### Freundschaft wygrała przetarg na obsługę kampanii marketingowej ERLI.pl
 
 Marketplace ERLI.pl działa na rynku od 2020 r. Plany rozwoju platformy w 2021 roku zostaną wsparte kompleksową kampanią telewizyjną i digitalową, za realizację której będzie odpowiadać agencja Freundschaft.

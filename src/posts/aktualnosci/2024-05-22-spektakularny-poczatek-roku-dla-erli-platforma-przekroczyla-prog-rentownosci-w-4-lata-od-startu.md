@@ -4,6 +4,8 @@ data: 2024-05-22
 lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r."
 ---
 
+![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w-4-lata-od-startu/hero-1v4-1.webp)
+
 **Spektakularny początek roku dla ERLI – platforma przekroczyła próg rentowności w 4 lata od startu**
 
 Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r. Dzięki temu EBITDA spółki po pierwszym kwartale wyniosła ponad 3,2 mln zł. Spółka planuje do 2025 roku zainwestować ponad pół miliarda złotych na rozwój oraz działania marketingowe.

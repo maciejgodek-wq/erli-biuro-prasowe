@@ -4,6 +4,8 @@ data: 2022-05-17
 lead: "Kto nie idzie do przodu, ten się… cofa! Te słowa przyświecają nam na każdym kroku rozwoju ERLI. Codziennie staramy się podnosić swoje kwalifikacje, by zapewnić naszym klientom jak najlepsze doświadczenia i radość z zakupów. Dlatego z ogromną satysfakcją ogłaszamy - zostaliśmy Partnerem Google!"
 ---
 
+![](/assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/hero-870x400_google_partner.webp)
+
 ### Zespół naszej platformy został doceniony jako specjaliści Google Ads
 
 Tak duże wyróżnienie świadczy o stale rosnącym potencjale ERLI w zakresie digital marketingu i Google Ads. Tytuł Partnera Google to nie tylko dowód uznania naszej wiedzy i profesjonalizmu przez giganta z Mountain View, to także potwierdzenie jakości marki ERLI. Wystarczy wspomnieć, że jesteśmy jedną z zaledwie kilkuset polskich firm, które mogą pochwalić się tak ścisłą współpracą z Google.

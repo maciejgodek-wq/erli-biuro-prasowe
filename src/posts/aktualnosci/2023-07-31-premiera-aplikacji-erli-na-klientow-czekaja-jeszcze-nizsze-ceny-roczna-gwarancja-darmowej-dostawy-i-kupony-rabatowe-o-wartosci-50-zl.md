@@ -4,6 +4,8 @@ data: 2023-07-31
 lead: "Firma uruchamia aplikację mobilną, dzięki której klienci mogą jeszcze taniej zrobić zakupy na ERLI z gwarantowaną roczną darmową dostawą i kuponami rabatowymi o równowartości 50 zł do wykorzystania przy kolejnej transakcji."
 ---
 
+![](/assets/img/artykuly/premiera-aplikacji-erli-na-klientow-czekaja-jeszcze-nizsze-ceny-roczna-gwarancja-darmowej-dostawy-i-kupony-rabatowe-o-wartosci/hero-aplikacja-erli_1.webp)
+
 **Premiera aplikacji ERLI – na klientów czekają jeszcze niższe ceny, roczna gwarancja darmowej dostawy i kupony rabatowe o wartości 50 zł**
 
 **ERLI, jeden z najszybciej rozwijających się marketplace w Polsce, który dzięki swojemu unikalnemu modelowi współpracy ze sprzedawcami błyskawicznie osiągnął ponad 2 mln klientów, rusza z kolejną ofensywą na rynku****e-commerce. Firma uruchamia aplikację mobilną, dzięki której klienci mogą jeszcze taniej zrobić zakupy na ERLI z gwarantowaną roczną darmową dostawą i kuponami rabatowymi o równowartości 50 zł do wykorzystania przy kolejnej transakcji. Dla sprzedawców to szansa na zwiększenie zysków, dzięki obniżonym kosztom promocji oferty na platformie zakupowej. Do końca 2024 roku ERLI zamierza zainwestować 80 mln zł w rozwijanie funkcjonalności aplikacji, promowanie ofert sprzedawców oraz wzmacnianie pozycji marki.**
