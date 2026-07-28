@@ -21,6 +21,22 @@ test('usuwa zagniezdzone poddrzewa interfejsu', () => {
   assert.match(out, /Tekst/);
 });
 
+test('usuwa etykiete szerokosci kolumny "Span N" (znaleziona przy recznym przegladzie 77 artykulow)', () => {
+  const html = `<div class="column-wrapper">
+    <div class="span12 ba-grid-column-wrapper" data-span="12">
+      <div class="ba-grid-column">
+        <div class="ba-item-text ba-item"><div class="content-text">Prawdziwa tresc.</div></div>
+        <div class="empty-item"><span><span class="ba-tooltip add-section-tooltip">Add New Plugin</span></span></div>
+        <div class="column-info"> Span 12 </div>
+      </div>
+    </div>
+  </div>`;
+  const out = htmlToMarkdown(html);
+  assert.doesNotMatch(out, /Span/);
+  assert.doesNotMatch(out, /Add New Plugin/);
+  assert.match(out, /Prawdziwa tresc/);
+});
+
 test('zaden termin ze slownika interfejsu nie przezywa', () => {
   const html =
     '<div class="ba-edit-item">' +
@@ -73,6 +89,11 @@ test('usuwa atrybuty style i class', () => {
 
 test('pomija puste akapity i nadmiarowe puste linie', () => {
   const out = htmlToMarkdown('<p>A</p><p></p><p>&nbsp;</p><p>B</p>').trim();
+  assert.equal(out, 'A\n\nB');
+});
+
+test('pomija naglowki bez tekstu (pozostalosc po obrazkach w naglowku)', () => {
+  const out = htmlToMarkdown('<p>A</p><h3></h3><p>B</p>').trim();
   assert.equal(out, 'A\n\nB');
 });
 

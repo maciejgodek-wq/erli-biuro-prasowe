@@ -12,12 +12,23 @@ const STALE = [
 /**
  * Buduje mape 301 ze starych adresow Joomli na nowe.
  * Slugi zostaly zachowane, wiec mapowanie jest mechaniczne.
+ *
+ * `duplikaty` to sieroty bez kategorii (funkcja "duplikuj strone" w panelu
+ * Joomli) — istnialy pod wlasnym adresem /index.php/<kategoria>/<slug>
+ * w obu kategoriach, wiec kierujemy oba warianty. Dopisywane po artykulach,
+ * zeby nigdy nie nadpisaly wersji kanonicznej.
  */
-export function buildRedirectMap(posty) {
+export function buildRedirectMap(posty, duplikaty = []) {
   const mapa = new Map();
 
   for (const post of posty) {
     mapa.set(`/index.php/${post.kategoria}/${post.slug}`, post.url);
+  }
+  for (const { stary, kanoniczny } of duplikaty) {
+    for (const kat of ['aktualnosci', 'media-o-erli']) {
+      const klucz = `/index.php/${kat}/${stary}`;
+      if (!mapa.has(klucz)) mapa.set(klucz, kanoniczny);
+    }
   }
   for (const { stary, nowy } of STALE) {
     if (!mapa.has(stary)) mapa.set(stary, nowy);

@@ -178,7 +178,10 @@ async function build() {
   await zapisz(join(DIST, 'sitemap.xml'), buildSitemap(doSitemap));
   await zapisz(join(DIST, 'robots.txt'), buildRobots());
 
-  const mapa = buildRedirectMap(wszystkie);
+  const duplikaty = existsSync('src/duplikaty.json')
+    ? JSON.parse(await readFile('src/duplikaty.json', 'utf8'))
+    : [];
+  const mapa = buildRedirectMap(wszystkie, duplikaty);
   await zapisz(join(DIST, 'redirects/.htaccess'), toHtaccess(mapa));
   await zapisz(join(DIST, 'redirects/nginx.conf'), toNginx(mapa));
   await zapisz(join(DIST, 'redirects/mapa.csv'), toCsv(mapa));

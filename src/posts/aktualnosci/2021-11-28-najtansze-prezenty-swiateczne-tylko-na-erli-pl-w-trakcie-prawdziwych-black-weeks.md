@@ -1,0 +1,36 @@
+---
+tytul: "Najtańsze prezenty świąteczne tylko na ERLI.pl w trakcie prawdziwych Black Weeks"
+data: 2021-11-28
+lead: "Osoby, które szukają pomysłów na prezenty świąteczne w atrakcyjnych cenach znajdą bogaty wybór produktów na ERLI.pl. Platforma zakupów on-line w każdą środę organizuje niezwykłe promocje na nowe kategorie produktów – są to prawdziwe Black Weeks. Firma oferuje najlepsze ceny, a dla pierwszych kupujących gwarantuje, że są one najniższe w kraju. Co więcej, zarejestrowani użytkownicy cieszą się darmową dostawą dzięki współpracy z firmą InPost. W najbliższą środę promocją objęte zostaną produkty idealnie nadające się na świąteczne prezenty – m.in. zestawy klocków Lego, stół do gry w piłkarzyki czy robot kuchenny."
+---
+
+### Najtańsze prezenty świąteczne tylko na ERLI.pl w trakcie prawdziwych Black Weeks
+
+Black Weeks na ERLI.pl to cykliczna (odbywająca się co środę) akcja promocyjna obejmująca różne grupy produktów. W pierwszej edycji promocji można było nabyć smartfony Realme 7-Pro 8 GB w cenie 599,50 zł (dziś najniższa cena wg ceneo.pl to 1238 zł) a model Xiaomi Redmi Note 10 Pro 6/128 GB za 738,99 zł (wg dzisiejszych ofert najniższa cena to 1256 zł). Oferta cieszyła się niezwykłym powodzeniem, ponieważ Black Weeks na ERLI.pl to faktyczne, niespotykane nigdzie indziej obniżki cen. Oddają one realny charakter i założenia Czarnego Piątku, w przeciwieństwie do często spotykanych na rynku haseł nawiązujących do tego święta zakupów, a w rzeczywistości będących symbolicznymi promocjami.
+
+Nowa edycja Black Weeks na ERLI.pl wystartuje już w najbliższą środę 24.11 o godzinie 9:00. Produkty objęte ofertą są skierowane do dorosłych jak i dzieci – co stanowi idealną propozycję dla tych, którzy już szukają prezentów pod choinkę. W miarę wykupywania najtańszych produktów ich ceny będą stopniowo rosły, więc warto się spieszyć.
+
+**Lista potencjalnych prezentów dostępnych w ramach promocji to:**
+
+- [Zestaw klocków Lego Classic](https://erli.pl/lego-classic/lego-classic-10696-kreatywne-klocki-484-elementy,102658622)
+- [Zestaw klocków Lego Classic – duże pudełko](https://erli.pl/lego-classic/lego-classic-10698-kreatywne-llocki-duze-pudelk-790-el,102658641)
+- [Zestaw klocków Lego Jurassic World](https://erli.pl/lego-classic/lego-classic-10698-kreatywne-llocki-duze-pudelk-790-el,102658641)
+- [Monitor Monitor 27' ASUS TUF](https://erli.pl/monitory-monitory/monitor-27-asus-tuf-vg27vh1b-fhd-165hz-va-curved,74664518)
+- [Monitor 27' ASUS ProArt](https://erli.pl/monitory-monitory/monitor-27-asus-proart-pa278qv-wqhd-ips-hdmi-mdp,114511862)
+- [Zestaw](https://erli.pl/laptopy-hp-compaq/mocny-hp-14-dq-i3-8-gb-256-gb-ssd-windows-11,108714837) [garnków](https://erli.pl/garnki-i-patelnie-zestawy-garnkow/zestaw-garnkow-marmurowych-indukcja-garnki-komplet,93348053)[marmurowych](https://erli.pl/garnki-i-patelnie-zestawy-garnkow/zestaw-garnkow-marmurowych-indukcja-garnki-komplet,93348053)
+- [Duży](https://erli.pl/garnki-i-patelnie-zestawy-garnkow/duzy-zestaw-garnkow-garnki-marmurowe-gaz-indukcja,45086561) [zestaw](https://erli.pl/laptopy-hp-compaq/mocny-hp-14-dq-i3-8-gb-256-gb-ssd-windows-11,108714837) [garnków](https://erli.pl/garnki-i-patelnie-zestawy-garnkow/duzy-zestaw-garnkow-garnki-marmurowe-gaz-indukcja,45086561)
+- [Zestaw](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ferli.pl%2Fgarnki-i-patelnie-zestawy-garnkow%2Fzestaw-garnkow-granitowych-patelnia-indukcja%2C105445549&data=04%7C01%7Cigor.stypa%40mslgroup.com%7C37aa1f9b782e4ecbe40d08d9ab487a87%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C637729150096754264%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=yJyJJgdLBhnnI9GbKDliWvcNAOCwcdoWJF%2FjDCXrhMo%3D&reserved=0) [garnków](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ferli.pl%2Fgarnki-i-patelnie-zestawy-garnkow%2Fzestaw-garnkow-granitowych-patelnia-indukcja%2C105445549&data=04%7C01%7Cigor.stypa%40mslgroup.com%7C37aa1f9b782e4ecbe40d08d9ab487a87%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C637729150096754264%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=yJyJJgdLBhnnI9GbKDliWvcNAOCwcdoWJF%2FjDCXrhMo%3D&reserved=0) [granitowych](https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Ferli.pl%2Fgarnki-i-patelnie-zestawy-garnkow%2Fzestaw-garnkow-granitowych-patelnia-indukcja%2C105445549&data=04%7C01%7Cigor.stypa%40mslgroup.com%7C37aa1f9b782e4ecbe40d08d9ab487a87%7Cd52c9ea17c2147b182a333a74b1f74b8%7C0%7C0%7C637729150096754264%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=yJyJJgdLBhnnI9GbKDliWvcNAOCwcdoWJF%2FjDCXrhMo%3D&reserved=0)
+- [Blender kielichowy](https://erli.pl/do-kuchni-blendery-kielichowe/blender-kielichowy-stojacy-mikser-x-850-w-koliber,114402465)[Koliber](https://erli.pl/do-kuchni-blendery-kielichowe/blender-kielichowy-stojacy-mikser-x-850-w-koliber,114402465)
+- [Wyciskarka](https://erli.pl/do-kuchni-wyciskarki-wolnoobrotowe/wyciskarka-wolnoobrotowa-sqeezemax-x-800-w-3w1,113768801) [wolnoobrotowa Sqeezemax](https://erli.pl/do-kuchni-wyciskarki-wolnoobrotowe/wyciskarka-wolnoobrotowa-sqeezemax-x-800-w-3w1,113768801)
+- [Robot kuchenny](https://erli.pl/do-kuchni-roboty-kuchenne/robot-kuchenny-mikser-planetarny-robomax-x-2200-w,102841309)
+- [Domek](https://erli.pl/akcesoria-dla-lalek-domki-dla-lalek/drewniany-domek-dla-lalek-duzy-3-pietrowy-z-winda-i-lampka-led,86779748) [dla lalek](https://erli.pl/akcesoria-dla-lalek-domki-dla-lalek/drewniany-domek-dla-lalek-duzy-3-pietrowy-z-winda-i-lampka-led,86779748)
+- [Kuchnia dla dzieci](https://erli.pl/agd-kuchnie/kuchnia-drewniana-dla-dzieci-ricokids-rc-836,114156092)
+- [Stół do gry w piłkarzyki](https://erli.pl/gry-i-zabawy-pilka-nozna/stol-duzy-do-gry-w-pilkarzyki-neo-sport-ns-401,109669653)
+- [Smartwatch Xiaomi](https://erli.pl/smartwatche-xiaomi/smartband-xiaomi-mi-smart-band-6-tetno-spo2-opaska,51061329)
+- [Wieża stereo Blaupunkt](https://erli.pl/sprzet-grajacy-dla-domu-wieze-stereo/wieza-stereo-blaupunkt-ms50bt-bt-mp3-usb-pilot-cd,107822682)
+- [Głośnik przenośny Feegar](https://erli.pl/sprzet-grajacy-przenosny-glosniki-przenosne/feegar-glosnik-bluetooth-przenosny-radio-fm-aux-sd,73616627)
+- [Samochód zdalnie sterowany](https://erli.pl/zdalnie-sterowane-samochody/samochod-rc-overmax-x-monster-3-0,110766791)
+- [Słuchawka Bluetooth](https://erli.pl/elektronika-samochodowa-sluchawki-bluetooth/feegar-bond-pro-sluchawka-bluetooth-5-1-hd-16h-cvc,38414622) [Feegar Bond Pro](https://erli.pl/elektronika-samochodowa-sluchawki-bluetooth/feegar-bond-pro-sluchawka-bluetooth-5-1-hd-16h-cvc,38414622)
+- [Mini piekarnik elektryczny](https://erli.pl/do-kuchni-mini-piekarniki/piekarnik-elektryczny-48l-termoobieg-rozen-grill,114413029)​
+
+Ceny powyższych produktów, wraz z rabatem gwarantującym najniższą cenę na rynku, zostaną ujawnione we wtorek wieczorem na ERLI.pl. Dodatkowo w ramach ofert Black Weeks zarejestrowani użytkownicy ERLI.pl będą mogli skorzystać z darmowej dostawy realizowanej przez kuriera InPost lub do paczkomatów tej firmy. Niezwykłe przeceny na ERLI.pl będą pojawiać się w każdą kolejną środę i potrwają do 22 grudnia 2021 r.

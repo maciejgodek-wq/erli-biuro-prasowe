@@ -47,3 +47,19 @@ test('brak duplikatow w mapie', () => {
   const stare = mapa.map((r) => r.stary);
   assert.equal(new Set(stare).size, stare.length);
 });
+
+test('duplikaty kieruja na wersje kanoniczna', () => {
+  const mapa = buildRedirectMap(POSTY, [
+    { stary: 'erli-idzie-na-rekord', kanoniczny: '/media-o-erli/erli-idzie-na-rekord-2-2-2/' },
+  ]);
+  const wpis = mapa.find((r) => r.stary === '/index.php/aktualnosci/erli-idzie-na-rekord');
+  assert.equal(wpis.nowy, '/media-o-erli/erli-idzie-na-rekord-2-2-2/');
+});
+
+test('duplikat nie nadpisuje adresu prawdziwego artykulu', () => {
+  const mapa = buildRedirectMap(POSTY, [
+    { stary: 'nowa-era-handlu', kanoniczny: '/aktualnosci/inny-artykul/' },
+  ]);
+  const wpis = mapa.find((r) => r.stary === '/index.php/aktualnosci/nowa-era-handlu');
+  assert.equal(wpis.nowy, '/aktualnosci/nowa-era-handlu/');
+});

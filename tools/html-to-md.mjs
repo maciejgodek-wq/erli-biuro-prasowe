@@ -7,6 +7,7 @@ import { parse } from 'node-html-parser';
 const CHROME_KLASY = [
   'ba-edit-item', 'ba-edit-wrapper', 'ba-tooltip',
   'ba-buttons-wrapper', 'ba-overlay', 'ba-add-item',
+  'column-info', 'empty-item',
 ];
 
 /**
@@ -15,8 +16,8 @@ const CHROME_KLASY = [
  * uzyl klasy, ktorej nie ma na liscie powyzej.
  */
 export const CHROME_SLOWNIK = [
-  'Add New Row', 'Add to Library', 'Copy Item', 'Delete Item',
-  'Edit Item', 'Section', 'Row', 'Column', 'Settings',
+  'Add New Row', 'Add New Plugin', 'Add to Library', 'Copy Item', 'Delete Item',
+  'Edit Item', 'Section', 'Row', 'Column', 'Settings', 'Span',
 ];
 
 /** Usuwa poddrzewa interfejsu edytora. */
@@ -98,7 +99,7 @@ export function htmlToMarkdown(html) {
     .replace(/\n{3,}/g, '\n\n')
     .split('\n\n')
     .map((blok) => blok.trim())
-    .filter((blok) => blok && blok !== '-')
+    .filter((blok) => blok && blok !== '-' && !/^#{1,6}$/.test(blok))
     .join('\n\n')
     .trim() + '\n';
 }
