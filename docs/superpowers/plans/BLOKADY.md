@@ -10,8 +10,48 @@ przekierowania, kontrola językowa OK, kontrola obrazków OK (nowa — patrz B1)
 88 slugów z eksportu obecne w mapie przekierowań. D4 i D5 pozostają otwarte —
 wymagają decyzji właściciela, nie zostały ruszone.
 
-**`dist/` gotowy do przekazania IT pod względem B1/B2. Push na `origin`
-wstrzymany — decyzja właściciela.**
+**Aktualizacja 2026-07-28 (przegląd wykrył regresję): naprawiona — patrz
+„Regresja — 14 przekierowań na 404" niżej. Zadania 22 i 23 zamknięte.**
+Weryfikacja końcowa: `npm test` — 133/133, `node build.js` — 84 strony, 104
+przekierowania, wszystkie trzy kontrole (językowa, obrazki, przekierowania)
+OK. 0 zepsutych odwołań do obrazków, 0 zepsutych celów przekierowań,
+0 ścieżek >260 znaków w `dist/`, wszystkie 88 slugów z eksportu w mapie.
+Paczka `dist/` (bez `redirects/`) waży ~16,1 MB nieskompresowane, ~14,9 MB
+jako `biuro-prasowe-v1.0.0.tar.gz` — powyżej orientacyjnych <10 MB z planu,
+bo ten szacunek powstał przed naprawą B1 (prawdziwe zdjęcia jako grafika
+karty w 77 artykułach). Lokalny tag `v1.0.0` utworzony, niewypchnięty.
+
+**`dist/` gotowy do przekazania IT. Push na `origin` wstrzymany — decyzja
+właściciela.**
+
+---
+
+## Regresja — 14 przekierowań na 404 — ✅ NAPRAWIONE
+
+Wykryta przy przeglądzie po zamknięciu B1/B2/D1/D2/D3. Naprawa B2 (skracanie
+slugów >80 znaków w `post.url`, funkcja `skrocSlug` w `build/posts.js`)
+objęła 24 z 77 artykułów, ale `src/duplikaty.json` trzymał cele przekierowań
+zapisane na sztywno, z pełnym (nieskróconym) slugiem. Trzy cele przestały
+istnieć, dając 14 zepsutych wpisów w mapie:
+
+- 8× `/aktualnosci/platforma-e-commerce-erli-z-rekordowymi-wynikami-za-pierwsze-polrocze-2025-2-2-2-2/`
+- 4× `/aktualnosci/erli-wprowadzil-pierwsza-w-polskim-e-commerce-usluge-gwarancji-darmowego-zwrotu-2-2/`
+- 2× `/aktualnosci/erli-swietuje-ponad-2-miliony-pobran-aplikacji-mobilnej-polski-m-commerce-rosnie-w-sile-2/`
+
+**Naprawa.** Zmieniony format `src/duplikaty.json`: zamiast sztywnego URL-a
+docelowego, każdy wpis wskazuje artykuł kanoniczny przez `{kategoria, slug}`
+(Joomlowy slug, nietknięty). `buildRedirectMap()` w `build/redirects.js`
+szuka tego artykułu w zbiorze postów i czyta jego `post.url` — ten sam,
+który wyznaczył `skrocSlug()` w `loadPosts()`. Rzuca czytelnym błędem, gdy
+duplikat wskazuje artykuł, którego nie ma, zamiast po cichu wygenerować zły
+adres. Dzięki temu kolejna zmiana reguły skracania nie może już rozjechać
+mapy przekierowań z rzeczywistymi adresami stron.
+
+Dodatkowo nowa kontrola `build/redirect-guard.js` (na wzór
+`build/image-guard.js`) przerywa build, jeśli którykolwiek cel w mapie
+przekierowań nie ma odpowiadającego pliku w `dist/` — wpięta w `build.js`
+zaraz po zbudowaniu mapy. Ta klasa błędu nie powinna już wrócić niezauważona.
+Testy w `build/redirects.test.js` i `build/redirect-guard.test.js`.
 
 ---
 
@@ -170,8 +210,8 @@ weryfikowane.
 | Zadanie | Stan |
 |---|---|
 | 21 — migracja artykułów | zrobione, blokady B1/B2/D1/D2/D3 zamknięte |
-| 22 — strony O nas i Kontakt | **w toku** |
-| 23 — weryfikacja końcowa i paczka dla IT | odblokowane — B1 i B2 zamknięte, można wznowić |
+| 22 — strony O nas i Kontakt | ✅ zrobione — treść 1:1 z eksportu (D7), kontakt prasowy Aleksandra Grądzka |
+| 23 — weryfikacja końcowa i paczka dla IT | ✅ zrobione — README zaktualizowany, `biuro-prasowe-v1.0.0.tar.gz` gotowy, tag lokalny |
 | Nowy układ strony głównej | zaprojektowany, podgląd w `dist/podglad-uklad.html`, niewdrożony |
 
 Otwarte pytanie do właściciela: token `--thumb-mobile` (88 px) dla miniatur
@@ -180,7 +220,8 @@ w kompaktowym widoku mobilnym — dopisać do `tokens.css`, użyć `--space-4xl`
 
 ## Stan repozytorium
 
-55 commitów na lokalnym `main`, niewypchniętych (było 38, +17 przy naprawie
-blokad B1/B2/D1/D2/D3). Brak PR-a, brak code review. **Push nadal wstrzymany
-decyzją właściciela** — zamknięcie B1/B2 nie jest automatycznym zezwoleniem
-na push, to osobna decyzja.
+59 commitów na lokalnym `main`, niewypchniętych (było 55, +4 przy naprawie
+regresji przekierowań i zamknięciu Zadań 22/23). Tag `v1.0.0` utworzony
+lokalnie. Brak PR-a, brak code review. **Push nadal wstrzymany decyzją
+właściciela** — zamknięcie blokad nie jest automatycznym zezwoleniem na
+push, to osobna decyzja.
