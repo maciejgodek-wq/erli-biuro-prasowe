@@ -31,3 +31,7 @@ briefs/
 
 # Wynik budowania
 dist/
+
+# Eksport starej Joomli — material zrodlowy do migracji, 829 MB.
+# Zawiera configuration.php z danymi dostepowymi do bazy.
+old_reference/
