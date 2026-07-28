@@ -1,90 +1,107 @@
-# erli.de – Preview
+# Biuro prasowe ERLI
 
-Zaślepka SEO erli.de dla rynku niemieckiego.
-Wersja preview do review przez interesariuszy.
+Statyczna strona biura prasowego ERLI — `biuroprasowe.erli.pl`.
+Bez CMS-a. Posty to pliki markdown, stronę generuje `build.js`.
 
-## Status
+## Wymagania
 
-Proof of concept – treści i assets do uzupełnienia przed launchem.
-Lista TODO: patrz `TODO.md`.
-
-## Jak uruchomić lokalnie
-
-### Opcja 1: Node.js (zalecane dla Windows)
+Node 22 lub nowszy.
 
 ```bash
-npx http-server -p 8000
-# Otwórz http://localhost:8000
+npm install
 ```
 
-### Opcja 2: Python 3
+## Dodanie nowego komunikatu
+
+1. Utwórz plik w `src/posts/aktualnosci/` (albo `src/posts/media/` dla
+   publikacji w mediach zewnętrznych). Nazwa: `RRRR-MM-DD-slug-artykulu.md`.
+
+```markdown
+---
+tytul: "Tytuł komunikatu"
+data: 2026-08-15
+lead: Jedno–dwa zdania streszczenia. Widoczne na karcie i w wynikach wyszukiwania.
+---
+
+Treść w markdownie. Śródtytuły przez `##`, cytaty przez `>`.
+```
+
+   Dla kategorii Media o ERLI dodaj pole `zrodlo`:
+
+```markdown
+zrodlo:
+  nazwa: Bankier.pl
+  url: https://www.bankier.pl/wiadomosc/...
+```
+
+2. Wygeneruj grafikę wyróżniającą:
 
 ```bash
-python3 -m http.server 8000
-# Otwórt http://localhost:8000
+node tools/kv-generate.js
+npx --yes sharp-cli --input "assets/img/kv/*.svg" --output assets/img/kv --format webp --quality 82
 ```
 
-### Opcja 3: Python (Windows)
+   Aby użyć własnej grafiki zamiast wygenerowanej: wgraj plik
+   `assets/img/kv/<nazwa>.webp` (1200×630) i dopisz `grafika: <nazwa>`
+   do frontmattera.
+
+3. Zbuduj:
 
 ```bash
-python -m http.server 8000
-# Otwórz http://localhost:8000
+node build.js
 ```
 
-**Uwaga:** Serwer działa na porcie 8000. Aby zatrzymać serwer, naciśnij `CTRL-C` w terminalu.
+Wynik ląduje w `dist/`. To zawartość tego katalogu wgrywa się na serwer.
 
-## Stack
-
-- HTML5 + CSS + vanilla JS
-- Hosting: Cloudflare Pages (auto-deploy z GitHub)
-- Design system: `design-system/design.md`
-
-## Deployment
-
-### Automatyczny deployment (Cloudflare Pages)
-
-Projekt jest skonfigurowany z automatycznym deploymentem na Cloudflare Pages. Każdy push na branch `main` wyzwala automatyczny redeploy.
-
-**Repo:** https://github.com/maciejgodek-wq/erli-de-preview  
-**Hosting:** Cloudflare Pages (spięty z powyższym repo, branch `main`)  
-**URL produkcyjny:** [uzupełnić po deployu]
-
-### Proces deploymentu
-
-1. **Zatwierdź zmiany lokalnie:**
-   ```bash
-   git add <pliki>
-   git commit -m "opis zmiany"
-   ```
-
-2. **Wypchnij na GitHub:**
-   ```bash
-   git push origin main
-   ```
-
-3. **Cloudflare Pages automatycznie:**
-   - Pobiera zmiany z GitHub
-   - Buduje stronę (static site)
-   - Deployuje na produkcję
-   - **Czas:** ok. 1–2 minuty
-
-### Pliki do commitowania
+## Budowanie i testy
 
 ```bash
-git add index.html assets/ *.html robots.txt sitemap.xml _headers README.md
+npm run build   # generuje dist/
+npm test        # testy modułów budujących
 ```
 
-**Ważne:**
-- Pliki strony są w **katalogu głównym repo**
-- Nie commituj `briefs/`, `design-system/`, `prompts/` — to materiały robocze
-- Sprawdź `.gitignore` przed commitowaniem nowych plików
+Build przerywa się błędem w trzech sytuacjach:
 
-### Monitorowanie deploymentu
+- w wygenerowanym HTML-u znajdzie język niemiecki — pozostałość po
+  poprzednim przeznaczeniu tego repozytorium. Sprawdzana jest też treść
+  atrybutów `aria-label`, `alt` i `title`;
+- jakikolwiek `src=`/`og:image`/`twitter:image` w wyniku nie ma
+  odpowiadającego pliku na dysku;
+- mapa przekierowań 301 wskazuje adres, pod którym w `dist/` nie ma
+  wygenerowanej strony.
 
-- Sprawdź status deploymentu w panelu Cloudflare Pages
-- Logi buildu są dostępne w dashboardzie Cloudflare
-- Po udanym deployu strona jest dostępna natychmiast na URL produkcyjnym
+## Wdrożenie
 
-## Kontakt
+Zawartość `dist/` (bez katalogu `redirects/`) trafia do katalogu głównego
+serwera.
 
-Head of UX: [uzupełnić]
+**Katalog `dist/redirects/` to nie pliki strony.** Zawiera mapę przekierowań
+301 ze starych adresów Joomli w trzech formatach — `.htaccess` (Apache),
+`nginx.conf`, `mapa.csv` (panel hostingu). Muszą zostać wdrożone razem
+z podmianą strony. Bez nich każdy link do biura prasowego z artykułów
+w mediach prowadzi na 404, a strona traci pozycje w wyszukiwarce.
+
+Po wdrożeniu: zgłosić `sitemap.xml` w Google Search Console.
+
+## Struktura
+
+```
+src/posts/       komunikaty (markdown)
+src/pages/       O nas, Kontakt
+src/templates/   szablony stron
+src/partials/    fragmenty wielokrotnego użytku
+build/           moduły generatora + testy
+tools/           generator grafik wyróżniających, skrypty jednorazowe migracji
+assets/          CSS (źródła), fonty, obrazy
+dist/            wynik budowania (nie w repozytorium)
+```
+
+`assets/css/main.css` jest generowany przez build ze źródeł
+(`tokens`, `base`, `layout`, `components`). Nie edytuj go —
+zmiany wprowadzaj w plikach źródłowych.
+
+## Dokumentacja
+
+- `docs/superpowers/specs/` — projekt techniczny
+- `docs/superpowers/plans/` — plan wdrożenia i rejestr blokad (`BLOKADY.md`)
+- `design-system/design.md` — tokeny i komponenty
