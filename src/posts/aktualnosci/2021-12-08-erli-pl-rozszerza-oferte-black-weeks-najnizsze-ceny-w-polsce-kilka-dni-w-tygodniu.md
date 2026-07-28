@@ -2,9 +2,10 @@
 tytul: "ERLI.pl rozszerza ofertę Black Weeks. Najniższe ceny w Polsce kilka dni w tygodniu!"
 data: 2021-12-08
 lead: "Podczas gdy cały świat oczekuje największych promocji jedynie podczas Black Friday i Cyber Monday, w ERLI.pl Black Weeks się nie kończą. Już nie tylko w środy, ale także w poniedziałki, wtorki i czwartki, platforma oferuje swoim klientem wybór określonej grupy produktów, w najniższych cenach na rynku. Już dziś wystartowały promocje z ofertą z gadżetami elektronicznymi, we wtorek użytkownicy znajdą wiele inspiracji na prezenty dla najmłodszych, dzień później będą mogli upolować świąteczne dekoracje do domu w obniżonych cenach, a w czwartek sprzęt AGD z dużymi rabatami."
+grafika: /assets/img/artykuly/erli-pl-rozszerza-oferte-black-weeks-najnizsze-ceny-w-polsce-kilka-dni-w/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-rozszerza-oferte-black-weeks-najnizsze-ceny-w-polsce-kilka-dni-w-tygodniu/hero-baner_1_870x400.webp)
+![](/assets/img/artykuly/erli-pl-rozszerza-oferte-black-weeks-najnizsze-ceny-w-polsce-kilka-dni-w/hero.webp)
 
 ### ERLI.pl rozszerza ofertę Black Weeks. Najniższe ceny w Polsce już nie tylko w środy, a kilka dni w tygodniu!
 

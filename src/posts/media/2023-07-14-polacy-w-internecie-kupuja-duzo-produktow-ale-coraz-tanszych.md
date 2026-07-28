@@ -5,9 +5,10 @@ lead: "Choć w pierwszym półroczu sprzedaż, jak i liczba transakcji, w sklepa
 zrodlo:
   nazwa: rp.pl
   url: https://www.rp.pl/handel/art38736551-polacy-w-internecie-kupuja-duzo-produktow-ale-coraz-tanszych
+grafika: /assets/img/artykuly/polacy-w-internecie-kupuja-duzo-produktow-ale-coraz-tanszych/hero.webp
 ---
 
-![](/assets/img/artykuly/polacy-w-internecie-kupuja-duzo-produktow-ale-coraz-tanszych/hero-adobestock_323370908.webp)
+![](/assets/img/artykuly/polacy-w-internecie-kupuja-duzo-produktow-ale-coraz-tanszych/hero.webp)
 
 **Polacy w internecie kupują dużo produktów, ale coraz tańszych**
 

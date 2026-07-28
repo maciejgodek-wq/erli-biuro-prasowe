@@ -5,9 +5,10 @@ lead: "Platforma e-commerce Erli odnotowała w 2024 roku wzrost sprzedaży GMV o
 zrodlo:
   nazwa: bankier.pl
   url: https://www.bankier.pl/wiadomosc/Erli-zanotowalo-w-24-wzrost-sprzedazy-GMV-o-67-proc-do-1-23-mld-zl-8902192.html
+grafika: /assets/img/artykuly/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/hero.webp
 ---
 
-![](/assets/img/artykuly/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/hero-adobestock_655337911.webp)
+![](/assets/img/artykuly/rekordowy-rok-dla-erli-e-commerce-z-67-wzrostem-gmv/hero.webp)
 
 **Rekordowy rok dla Erli. E-commerce z 67% wzrostem GMV**
 

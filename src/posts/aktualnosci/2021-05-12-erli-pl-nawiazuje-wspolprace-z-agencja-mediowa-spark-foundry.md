@@ -2,9 +2,10 @@
 tytul: "ERLI.pl nawiązuje współpracę z agencją mediową Spark Foundry"
 data: 2021-05-12
 lead: "Spark Foundry, agencja należąca do Publicis Groupe, zajmie się obsługą mediową nowej platformy zakupowej ERLI.pl. Agencja została wybrana w drodze przetargu"
+grafika: /assets/img/artykuly/erli-pl-nawiazuje-wspolprace-z-agencja-mediowa-spark-foundry/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-nawiazuje-wspolprace-z-agencja-mediowa-spark-foundry/hero-baner_6_870x400_sf.webp)
+![](/assets/img/artykuly/erli-pl-nawiazuje-wspolprace-z-agencja-mediowa-spark-foundry/hero.webp)
 
 ### ERLI.pl nawiązuje współpracę z agencją mediową Spark Foundry
 

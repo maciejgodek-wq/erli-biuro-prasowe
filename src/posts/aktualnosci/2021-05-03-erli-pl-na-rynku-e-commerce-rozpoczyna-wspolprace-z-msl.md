@@ -2,9 +2,10 @@
 tytul: "ERLI.pl - nowy gracz na rynku e-commerce - rozpoczyna współpracę z MSL"
 data: 2021-05-03
 lead: "ERLI.pl, nowy marketplace i atrakcyjna alternatywa dla dotychczasowych rozwiązań e-handlu na polskim rynku, powierzyła agencji MSL koordynowanie działań komunikacyjnych (PR B2C i B2B), media relations, pozycjonowanie ekspertów, realizację działań z zakresu komunikacji kryzysowej oraz prowadzenie biura prasowego platformy. Dodatkowo MSL będzie realizować działania z obszaru współpracy z liderami opinii w mediach społecznościowych."
+grafika: /assets/img/artykuly/erli-pl-na-rynku-e-commerce-rozpoczyna-wspolprace-z-msl/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-na-rynku-e-commerce-rozpoczyna-wspolprace-z-msl/hero-baner_7_870x400_msl.webp)
+![](/assets/img/artykuly/erli-pl-na-rynku-e-commerce-rozpoczyna-wspolprace-z-msl/hero.webp)
 
 ### ERLI.pl - nowy gracz na rynku e-commerce - rozpoczyna współpracę z MSL
 

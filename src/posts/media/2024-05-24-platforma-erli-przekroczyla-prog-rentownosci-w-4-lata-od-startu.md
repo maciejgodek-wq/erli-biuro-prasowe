@@ -5,9 +5,10 @@ lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/platforma-erli-przekroczyla-prog-rentownosci-w-4-lata-od-startu/14869
+grafika: /assets/img/artykuly/platforma-erli-przekroczyla-prog-rentownosci-w-4-lata-od-startu/hero.webp
 ---
 
-![](/assets/img/artykuly/platforma-erli-przekroczyla-prog-rentownosci-w-4-lata-od-startu/hero-adobestock_600067369.webp)
+![](/assets/img/artykuly/platforma-erli-przekroczyla-prog-rentownosci-w-4-lata-od-startu/hero.webp)
 
 **Platforma ERLI przekroczyła próg rentowności w 4 lata od startu**
 

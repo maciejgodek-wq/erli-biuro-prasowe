@@ -5,9 +5,10 @@ lead: "Marketplace Erli przekroczył próg 4 milionów zarejestrowanych klientó
 zrodlo:
   nazwa: dlahandlu.pl
   url: https://www.dlahandlu.pl/e-commerce/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za-2-zl,149403.html
+grafika: /assets/img/artykuly/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za/hero.webp
 ---
 
-![](/assets/img/artykuly/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za-2-zl/hero-press_4_miliony_uytkownikw.webp)
+![](/assets/img/artykuly/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za/hero.webp)
 
 **Polski marketplace ma 4 mln użytkowników, usługę kurierską i gwarancję zwrotu za 2 zł**
 

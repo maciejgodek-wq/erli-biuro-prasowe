@@ -5,9 +5,10 @@ lead: "PayPo umacnia pozycję lidera płatności odroczonych, nawiązując wspó
 zrodlo:
   nazwa: omnichannelnews.pl
   url: https://omnichannelnews.pl/2022/04/27/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/
+grafika: /assets/img/artykuly/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/hero.webp
 ---
 
-![](/assets/img/artykuly/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/hero-erli-paypo-870x400.webp)
+![](/assets/img/artykuly/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/hero.webp)
 
 ### Platforma Erli.pl wprowadza płatności odroczone od PayU i PayPo
 

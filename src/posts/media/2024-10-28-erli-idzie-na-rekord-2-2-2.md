@@ -5,9 +5,10 @@ lead: "W ciągu pierwszych dziewięciu miesięcy tego roku platforma e-handlowa 
 zrodlo:
   nazwa: pb.pl
   url: https://www.pb.pl/erli-idzie-na-rekord-1228946
+grafika: /assets/img/artykuly/erli-idzie-na-rekord-2-2-2/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-idzie-na-rekord-2-2-2/hero-ac_zdjcie.webp)
+![](/assets/img/artykuly/erli-idzie-na-rekord-2-2-2/hero.webp)
 
 **ERLI idzie na rekord**
 

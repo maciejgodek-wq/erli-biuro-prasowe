@@ -2,9 +2,10 @@
 tytul: "Spektakularny początek roku dla ERLI – platforma przekroczyła próg rentowności w 4 lata od startu"
 data: 2024-05-22
 lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r."
+grafika: /assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w/hero.webp
 ---
 
-![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w-4-lata-od-startu/hero-1v4-1.webp)
+![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w/hero.webp)
 
 **Spektakularny początek roku dla ERLI – platforma przekroczyła próg rentowności w 4 lata od startu**
 
@@ -18,7 +19,7 @@ ERLI jest aktualnie jedną z najszybciej rozwijających się platform sprzedażo
 
 Osiągnięte przez ERLI wyniki oznaczają, że spółka po raz pierwszy w swojej historii przekroczyła próg rentowności (tzw. break-even). To punkt zwrotny dla platformy, a dodatkowo stanowi potwierdzenie, że jej model jest skuteczny i pozwala na inwestycje oraz skalowanie biznesu w kolejnych latach. –*Dla mnie osobiście to powód do ogromnej satysfakcji: pomysł na biznes, który zaczynałem 4 lata temu przynosi coraz bardziej spektakularne efekty. Pokazuje też, że pomimo bardzo dużej konkurencji na polskim rynku e-commerce, brakowało podmiotu, który zadba o interesy przedsiębiorców i pozwoli im generować coraz większe zyski, jednocześnie oferując konsumentom niższe ceny produktów***– dodaje Adam Ciesielczyk.**
 
-![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w-4-lata-od-startu/wyniki-1q24-podsum.webp)
+![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w/wyniki-1q24-podsum.webp)
 
 **Intensyfikacja działań i rosnąca popularność aplikacji**
 
@@ -30,7 +31,7 @@ Dodatkowo lepsze nastroje konsumentów sprawiły, że klienci chętniej robili z
 
 Platforma ERLI powstała w 2020 roku z ambicją, aby stać się realną alternatywą dla głównych graczy na polskim rynku e-commerce, zarówno dla klientów, ale przede wszystkim dla sprzedawców. Dzięki konsekwentnie realizowanej autorskiej strategii bliskiej współpracy z merchantami, ERLI może oferować korzystne warunki sprzedaży, zmniejszając koszty prowadzenia biznesu w internecie. To z kolei pozwala obniżać ceny ponad 26 mln ofert dostępnych obecnie dla kupujących i stale zachowywać wysoką konkurencyjność cenową na platformie. Takie podejście zwiększa również popularność platformy – miesięcznie ERLI odwiedza średnio 7,5 mln użytkowników internetu – to ok. 30% wszystkich internautów[[3]](#_ftn3) w Polsce. Dodatkowym impulsem rozwoju bazy klientów ERLI było uruchomienie aplikacji mobilnej, którą od września ub.r. pobrało już ponad 1,4 mln użytkowników. To wszystko sprawiło, że ERLI zajmuje pozycję w „pierwszej dziesiątce” najpopularniejszych platform zakupowych według badania Mediapanel Gemius, wyprzedzając takich gigantów internetowych, jak Amazon czy Vinted.
 
-![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w-4-lata-od-startu/infografika-kamienie-milowe-pion-01-01.webp)
+![](/assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w/infografika-kamienie-milowe-pion-01-01.webp)
 
 **ERLI wspiera polskich sprzedawców**
 

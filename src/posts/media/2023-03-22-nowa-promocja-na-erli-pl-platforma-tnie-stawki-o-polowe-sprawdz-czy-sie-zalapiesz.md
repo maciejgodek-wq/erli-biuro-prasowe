@@ -5,9 +5,10 @@ lead: "Erli.pl ogłosiło, że na sześć miesięcy obniży o połowę prowizję
 zrodlo:
   nazwa: bizblog.spidersweb.pl
   url: https://bizblog.spidersweb.pl/nowa-promocja-na-erli-pl-platforma-tnie-stawki-o-polowe
+grafika: /assets/img/artykuly/nowa-promocja-na-erli-pl-platforma-tnie-stawki-o-polowe-sprawdz-czy-sie/hero.webp
 ---
 
-![](/assets/img/artykuly/nowa-promocja-na-erli-pl-platforma-tnie-stawki-o-polowe-sprawdz-czy-sie-zalapiesz/hero-adobestock_627213320.webp)
+![](/assets/img/artykuly/nowa-promocja-na-erli-pl-platforma-tnie-stawki-o-polowe-sprawdz-czy-sie/hero.webp)
 
 **Nowa promocja na Erli.pl. Platforma tnie stawki o połowę. Sprawdź, czy się załapiesz**
 

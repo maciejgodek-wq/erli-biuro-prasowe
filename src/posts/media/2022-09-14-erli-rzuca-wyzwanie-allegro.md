@@ -5,9 +5,10 @@ lead: "Platforma e-handlowa, która zadebiutowała w ubiegłym roku, chce przyci
 zrodlo:
   nazwa: pb.pl
   url: https://www.pb.pl/erli-rzuca-wyzwanie-allegro-1163631
+grafika: /assets/img/artykuly/erli-rzuca-wyzwanie-allegro/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-rzuca-wyzwanie-allegro/hero-870x400_media_o_erli_3.webp)
+![](/assets/img/artykuly/erli-rzuca-wyzwanie-allegro/hero.webp)
 
 ### Erli rzuca wyzwanie Allegro
 

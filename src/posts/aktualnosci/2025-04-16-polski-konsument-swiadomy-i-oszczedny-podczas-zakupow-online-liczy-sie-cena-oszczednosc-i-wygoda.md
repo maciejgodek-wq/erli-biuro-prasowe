@@ -2,9 +2,10 @@
 tytul: "Polski konsument świadomy i oszczędny podczas zakupów online. Liczy się cena, oszczędność i wygoda"
 data: 2025-04-16
 lead: "ERLI, dynamicznie rozwijający się polski marketplace dostrzega, że trend świadomego kupowania zyskuje na znaczeniu, a platformy e-commerce odgrywają kluczową rolę w odpowiadaniu na te potrzeby."
+grafika: /assets/img/artykuly/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena/hero.webp
 ---
 
-![](/assets/img/artykuly/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena-oszczednosc-i-wygoda/hero-5--3-.webp)
+![](/assets/img/artykuly/polski-konsument-swiadomy-i-oszczedny-podczas-zakupow-online-liczy-sie-cena/hero.webp)
 
 ***Platforma e-commerce ERLI prezentuje wyniki badania o postawach Polaków wobec zakupów i pieniędzy***
 

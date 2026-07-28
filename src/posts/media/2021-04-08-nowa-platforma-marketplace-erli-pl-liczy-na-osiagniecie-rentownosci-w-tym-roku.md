@@ -5,9 +5,10 @@ lead: "- Za dużymi markami w ofercie Erli.pl stoją dystrybutorzy. Rozmawiamy z
 zrodlo:
   nazwa: wiadomoscihandlowe.pl
   url: https://www.wiadomoscihandlowe.pl/artykul/nowa-platforma-marketplace-erli-pl-liczy-na-osiagniecie-rentownosci-w-tym-roku-wywiad
+grafika: /assets/img/artykuly/nowa-platforma-marketplace-erli-pl-liczy-na-osiagniecie-rentownosci-w-tym-roku/hero.webp
 ---
 
-![](/assets/img/artykuly/nowa-platforma-marketplace-erli-pl-liczy-na-osiagniecie-rentownosci-w-tym-roku/hero-baner_13_870x400.webp)
+![](/assets/img/artykuly/nowa-platforma-marketplace-erli-pl-liczy-na-osiagniecie-rentownosci-w-tym-roku/hero.webp)
 
 ### Wiadomości Handlowe: Nowa platforma marketplace Erli.pl liczy na osiągnięcie rentowności w tym roku
 

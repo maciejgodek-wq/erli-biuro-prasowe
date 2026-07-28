@@ -5,9 +5,10 @@ lead: "ERLI, platforma marketplace, która po 9 miesiącach tego roku zwiększy�
 zrodlo:
   nazwa: biznes.pap.pl
   url: https://biznes.pap.pl/wiadomosci/firmy/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv-wywiad
+grafika: /assets/img/artykuly/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv/hero-doc-20241223-50443448-erli_prezes.webp)
+![](/assets/img/artykuly/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv/hero.webp)
 
 **ERLI chce w '25 przekroczyć 2 mld zł sprzedaży GMV**
 

@@ -5,9 +5,10 @@ lead: "Szalejąca inflacja oraz podwyżki cen energii i podatków przyniosą ogr
 zrodlo:
   nazwa: isbtech.pl
   url: https://www.isbtech.pl/2022/09/platforma-erli-pl-przeznaczy-50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/
+grafika: /assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero.webp
 ---
 
-![](/assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero-870x400_media_o_erli_5.webp)
+![](/assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero.webp)
 
 ### Platforma ERLI.pl przeznaczy 50 mln złotych na wsparcie polskich sprzedawców
 

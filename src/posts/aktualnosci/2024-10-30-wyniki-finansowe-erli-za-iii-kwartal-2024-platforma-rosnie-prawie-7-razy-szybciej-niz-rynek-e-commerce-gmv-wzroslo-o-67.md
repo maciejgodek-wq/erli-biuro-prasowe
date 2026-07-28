@@ -2,9 +2,10 @@
 tytul: "Wyniki finansowe ERLI za III kwartał 2024: platforma rośnie prawie 7 razy szybciej niż rynek e-commerce, GMV wzrosło o 67%"
 data: 2024-10-30
 lead: "W III kwartale 2024 roku ERLI odnotowało dynamiczne wzrosty, zwiększając wartość sprzedanych towarów (GMV) o 67% względem okresu Q3 2023 r. Łączne GMV wyniosło 309 mln zł, a patrząc od stycznia 2024 r., wartość ta osiągnęła 849 mln PLN."
+grafika: /assets/img/artykuly/wyniki-finansowe-erli-za-iii-kwartal-2024-platforma-rosnie-prawie-7-razy/hero.webp
 ---
 
-![](/assets/img/artykuly/wyniki-finansowe-erli-za-iii-kwartal-2024-platforma-rosnie-prawie-7-razy-szybciej-niz-rynek-e-commerce-gmv-wzroslo-o-67/hero-adobestock_627681061.webp)
+![](/assets/img/artykuly/wyniki-finansowe-erli-za-iii-kwartal-2024-platforma-rosnie-prawie-7-razy/hero.webp)
 
 **ERLI, jedna z najszybciej rozwijających się platform e-commerce w Europie, zakończyła trzeci kwartał 2024 roku z imponującymi wynikami finansowymi i operacyjnymi. W ciągu pierwszych dziewięciu miesięcy br. platforma niemal podwoiła swoje przychody netto względem analogicznego okresu rok wcześniej, a w samym Q3 wzrost ten wyniósł 87%. Marketplace kontynuuje dynamiczny rozwój napędzany silnymi wynikami sprzedażowymi, rosnącą popularnością aplikacji mobilnej oraz dalszą ekspansją na rynku. Na platformie średnio co niecałe 2 sekundy sprzedawany jest produkt, co świadczy o wysokim poziomie zainteresowania i zaufania klientów do oferty ERLI. Najnowsze wskaźniki branżowe również potwierdzają istotny rozwój marketplace’u w konkurencyjnym sektorze zakupów online.**
 

@@ -5,9 +5,10 @@ lead: "Platforma Erli.pl zaoferowała sprzedawcom model biznesowy, który pozwol
 zrodlo:
   nazwa: wiadomoscihandlowe.pl
   url: https://www.wiadomoscihandlowe.pl/artykul/erli-pl-obnizy-koszty-dla-sprzedajacych-pomoga-w-tym-inpost-google-i-payu
+grafika: /assets/img/artykuly/erli-pl-obnizy-koszty-dla-sprzedajacych/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-obnizy-koszty-dla-sprzedajacych/hero-870x400_media_o_erli_7.webp)
+![](/assets/img/artykuly/erli-pl-obnizy-koszty-dla-sprzedajacych/hero.webp)
 
 ### Erli.pl obniży koszty dla sprzedających. Pomogą w tym InPost, Google i PayU
 

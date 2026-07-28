@@ -5,9 +5,10 @@ lead: "„Cała przyjemność na naszej stronie” to hasło pierwszej kampanii 
 zrodlo:
   nazwa: wirtualnemedia.pl
   url: https://www.wirtualnemedia.pl/artykul/maciej-stuhr-reklama-erli-pl-cala-przyjemnosc-na-naszej-stronie-wideo
+grafika: /assets/img/artykuly/wirtualnemedia-maciej-stuhr-w-pierwszej-kampanii-platformy-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/wirtualnemedia-maciej-stuhr-w-pierwszej-kampanii-platformy-erli-pl/hero-baner_10_870x400.webp)
+![](/assets/img/artykuly/wirtualnemedia-maciej-stuhr-w-pierwszej-kampanii-platformy-erli-pl/hero.webp)
 
 ### Wirtualnemedia: Maciej Stuhr w pierwszej kampanii platformy Erli.pl
 

@@ -5,9 +5,10 @@ lead: "Zanim zaczniesz swój własny biznes w e-commerce pomyśl, co chcesz osi�
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/dlaczego-warto-sprzedawac-na-marketplace/11706
+grafika: /assets/img/artykuly/dlaczego-warto-sprzedawac-na-marketplace/hero.webp
 ---
 
-![](/assets/img/artykuly/dlaczego-warto-sprzedawac-na-marketplace/hero-uxkfedi5hcjfswondxk6_930_620.webp)
+![](/assets/img/artykuly/dlaczego-warto-sprzedawac-na-marketplace/hero.webp)
 
 **Dlaczego warto sprzedawać na marketplace?**
 

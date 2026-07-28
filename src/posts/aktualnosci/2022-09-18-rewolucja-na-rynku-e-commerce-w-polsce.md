@@ -2,9 +2,10 @@
 tytul: "Rewolucja na rynku e-commerce w Polsce"
 data: 2022-09-18
 lead: "Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU."
+grafika: /assets/img/artykuly/rewolucja-na-rynku-e-commerce-w-polsce/hero.webp
 ---
 
-![](/assets/img/artykuly/rewolucja-na-rynku-e-commerce-w-polsce/hero-870x400_rewolucja_e-commerce_3.webp)
+![](/assets/img/artykuly/rewolucja-na-rynku-e-commerce-w-polsce/hero.webp)
 
 ### Rewolucja na rynku e-commerce w Polsce! Platforma ERLI.pl przeznaczy 50 mln złotych na wsparcie polskich sprzedawców
 

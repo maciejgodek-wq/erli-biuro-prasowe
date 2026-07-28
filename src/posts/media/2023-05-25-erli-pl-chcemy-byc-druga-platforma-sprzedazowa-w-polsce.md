@@ -5,9 +5,10 @@ lead: "Celem firmy na najbliższe lata jest osiągniecie silnej drugiej pozycji 
 zrodlo:
   nazwa: dlahandlu.pl
   url: https://www.dlahandlu.pl/e-commerce/wiadomosci/erli-pl-chcemy-byc-druga-platforma-sprzedazowa-w-polsce-wywiad,120027.html
+grafika: /assets/img/artykuly/erli-pl-chcemy-byc-druga-platforma-sprzedazowa-w-polsce/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-chcemy-byc-druga-platforma-sprzedazowa-w-polsce/hero-057830_r0_940.webp)
+![](/assets/img/artykuly/erli-pl-chcemy-byc-druga-platforma-sprzedazowa-w-polsce/hero.webp)
 
 **ERLI.pl: Chcemy być drugą platformą sprzedażową w Polsce (wywiad)**
 

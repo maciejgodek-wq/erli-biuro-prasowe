@@ -5,9 +5,10 @@ lead: "Pozycja Erli w zestawieniu z Allegro przypomina walkę biblijnego Dawida 
 zrodlo:
   nazwa: forbes.pl
   url: https://www.forbes.pl/biznes/wlasciciel-erli-sciga-sie-z-allegro-chcemy-byc-wyraznym-numerem-dwa/7kyp1ky#forbes-no-paylock
+grafika: /assets/img/artykuly/czlowiek-ktory-sciga-sie-z-allegro-chcemy-byc-wyraznym-numerem-dwa-na-tym-rynku/hero.webp
 ---
 
-![](/assets/img/artykuly/czlowiek-ktory-sciga-sie-z-allegro-chcemy-by/hero-_qbk9kpturbxy9ly2rlmwrkzju0otyyymmwmgrlymnkztvhnje3mzewyy5qcgeslqmazqeazsaazriakwxna47nal_eaaghmau.webp)
+![](/assets/img/artykuly/czlowiek-ktory-sciga-sie-z-allegro-chcemy-byc-wyraznym-numerem-dwa-na-tym-rynku/hero.webp)
 
 **Człowiek, który ściga się z Allegro. „Chcemy być wyraźnym numerem dwa na tym rynku”**
 

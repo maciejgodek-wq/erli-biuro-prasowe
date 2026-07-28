@@ -5,9 +5,10 @@ lead: "Platforma Erli.pl ma już 2 mln zarejestrowanych klientów. Przed marketp
 zrodlo:
   nazwa: wiadomoscihandlowe.pl
   url: https://www.wiadomoscihandlowe.pl/e-commerce-i-e-grocery/platformy-zakupowe/marketplace-erli-pl-do-konca-roku-chce-zwiekszyc-liczbe-zarejestrowanych-klientow-do-3-mln-2486061
+grafika: /assets/img/artykuly/marketplace-erli-pl-do-konca-roku-chce-zwiekszyc-liczbe-zarejestrowanych/hero.webp
 ---
 
-![](/assets/img/artykuly/marketplace-erli-pl-do-konca-roku-chce-zwiekszyc-liczbe-zarejestrowanych-klientow-do-3-mln/hero-klient.webp)
+![](/assets/img/artykuly/marketplace-erli-pl-do-konca-roku-chce-zwiekszyc-liczbe-zarejestrowanych/hero.webp)
 
 **Marketplace Erli.pl do końca roku chce zwiększyć liczbę zarejestrowanych klientów do 3 mln**
 

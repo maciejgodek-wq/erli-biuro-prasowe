@@ -2,9 +2,10 @@
 tytul: "-50% rabatu na Google Ads i konfigurator e-sklepu – ERLI.pl z jedyną taką ofertą na rynku"
 data: 2022-06-27
 lead: "W dobie dynamicznego rozwoju rynku e-commerce przedsiębiorcy, sprzedający na platformach typu marketplace, poszukują narzędzi, które zapewnią im wzrost sprzedaży i wyróżnią ich ofertę na tle stale rosnącej konkurencji. W ERLI.pl doskonale znamy potrzeby naszych Sprzedawców, dlatego od dłuższego czasu pracowaliśmy nad rozwiązaniami, które sprostają ich oczekiwaniom. Teraz możemy oficjalnie zaprezentować światu nasze nowe usługi – ERLI Shop i ERLI Campaigns"
+grafika: /assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/hero.webp
 ---
 
-![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na-rynku/hero-870x400_erli_campaigns.webp)
+![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/hero.webp)
 
 ### -50% rabatu na Google Ads i konfigurator e-sklepu – ERLI.pl z jedyną taką ofertą na rynku
 
@@ -16,7 +17,7 @@ Czym ERLI Campaigns wyróżnia się na tle konkurencji? Niższą ceną i lepszym
 
 *„Z punktu widzenia sprzedawców proces zakupowy przypomina wyścig o zwrócenie uwagi potencjalnego klienta. Na mecie tego wyścigu czeka sprzedaż, ale jeśli rozejrzysz się, zobaczysz, że razem z tobą startują tysiące innych zawodników. Wiemy jak wiele zmiennych wpływa na to, czy dany produkt zostanie kupiony, czy nie. Przy pomocy ERLI Campaigns chcemy dać naszym sprzedawcom zarówno odpowiednie narzędzia do promocji, jak i zapewnić im stałe wsparcie. Trzymając się metafory wyścigu – skonstruowaliśmy nie tylko świetny bolid, ale w pakiecie dostarczamy też zespół wykwalifikowanych mechaników, którzy dbają o to, by wszystkie trybiki działały jak należy.”* – **Adam Ciesielczyk, CEO ERLI.pl**
 
-![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na-rynku/1492x364_erli_shop.webp)
+![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/1492x364_erli_shop.webp)
 
 **ERLI Shop – Twój sklep w kilka minut**
 
@@ -26,7 +27,7 @@ Drugą nowością przygotowaną z myślą o przedsiębiorcach jest ERLI Shop. To
 
 Aż 87% użytkowników podczas zakupów w e-sklepach zwraca uwagę właśnie na markę*. Przedsiębiorcy, którzy zdecydują się na stworzenie własnego sklepu, będą mogli skorzystać z gotowych szablonów, a także od postaw zbudować panel sklepu. Zespół ERLI.pl przygotował wiele opcji, które pozwolą wyróżnić się poszczególnym Sprzedawcom na tle konkurencji. Spośród funkcjonalności kreatora sklepu można wyliczyć m.in. zaawansowane opcje prezentacji produktów oraz promocji swojej oferty przy użyciu grafik, czy banerów reklamowych.
 
-![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na-rynku/1492x364_erli_shop_campaigns_2.webp)
+![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/1492x364_erli_shop_campaigns_2.webp)
 
 **Być o krok przed innymi**
 

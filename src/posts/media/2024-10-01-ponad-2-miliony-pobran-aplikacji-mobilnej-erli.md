@@ -5,9 +5,10 @@ lead: "Platforma e-commerce ERLI przekroczyła próg 2 milionów pobrań swojej 
 zrodlo:
   nazwa: nowymarketing.pl
   url: https://nowymarketing.pl/ponad-2-miliony-pobran-aplikacji-mobilnej-erli/
+grafika: /assets/img/artykuly/ponad-2-miliony-pobran-aplikacji-mobilnej-erli/hero.webp
 ---
 
-![](/assets/img/artykuly/ponad-2-miliony-pobran-aplikacji-mobilnej-erli/hero-2-mln-pobra---press-grafika.webp)
+![](/assets/img/artykuly/ponad-2-miliony-pobran-aplikacji-mobilnej-erli/hero.webp)
 
 **Ponad 2 miliony pobrań aplikacji mobilnej ERLI**
 

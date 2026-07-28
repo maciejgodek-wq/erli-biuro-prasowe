@@ -5,9 +5,10 @@ lead: "„Cała przyjemność na naszej stronie” – to hasło pierwszej kampa
 zrodlo:
   nazwa: marketingprzykawie.pl
   url: https://marketingprzykawie.pl/espresso/maciej-stuhr-kampanii-reklamowej-erli-pl/
+grafika: /assets/img/artykuly/marketingprzykawie-maciej-stuhr-w-kampanii-reklamowej-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/marketingprzykawie-maciej-stuhr-w-kampanii-reklamowej-erli-pl/hero-baner_8_870x400.webp)
+![](/assets/img/artykuly/marketingprzykawie-maciej-stuhr-w-kampanii-reklamowej-erli-pl/hero.webp)
 
 ### MarketingPrzyKawie: Maciej Stuhr w kampanii reklamowej Erli.pl
 

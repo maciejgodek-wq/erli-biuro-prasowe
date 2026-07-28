@@ -5,9 +5,10 @@ lead: "ERLI stara się coraz mocniej konkurować z Allegro. Platforma ogłosiła
 zrodlo:
   nazwa: geekweek.interia.pl
   url: https://geekweek.interia.pl/internet/news-erli-startuje-z-aplikacja-mobilna-na-start-bonus-w-wysokosci,nId,6939329
+grafika: /assets/img/artykuly/erli-startuje-z-aplikacja-mobilna-na-start-bonus-w-wysokosci-50-zl/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-startuje-z-aplikacja-mobilna-na-start-bonus-w-wysokosci-50-zl/hero-aplikacja-erli_1.webp)
+![](/assets/img/artykuly/erli-startuje-z-aplikacja-mobilna-na-start-bonus-w-wysokosci-50-zl/hero.webp)
 
 **ERLI startuje z aplikacją mobilną. Na start bonus w wysokości 50 zł**
 

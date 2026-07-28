@@ -2,9 +2,10 @@
 tytul: "Platforma sprzedażowa ERLI podsumowuje kolejny rok dynamicznego rozwoju"
 data: 2023-03-10
 lead: "ERLI osiąga ponad 470 mln zł GMV i podwaja liczbę transakcji oraz klientów, dzięki czemu umacnia swoją pozycję w polskim e-commerce."
+grafika: /assets/img/artykuly/platforma-sprzedazowa-erli-podsumowuje-kolejny-rok-dynamicznego-rozwoju/hero.webp
 ---
 
-![](/assets/img/artykuly/platforma-sprzedazowa-erli-podsumowuje-kolejny-rok-dynamicznego-rozwoju/hero-AdobeStock_179531844.webp)
+![](/assets/img/artykuly/platforma-sprzedazowa-erli-podsumowuje-kolejny-rok-dynamicznego-rozwoju/hero.webp)
 
 **Platforma Erli.pl, najszybciej rozwijający się marketplace w Polsce, podsumowała 2022 rok, który istotnie umocnił jej pozycje na krajowym rynku e-commerce. Osiągnęła ona wynik ponad 470 mln zł GMV oraz przekroczyła 2,7 mln sprzedanych produktów.**
 

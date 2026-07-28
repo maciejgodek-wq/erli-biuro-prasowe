@@ -2,9 +2,10 @@
 tytul: "Najlepsze oferty na świąteczne prezenty z dużymi rabatami na ERLI.pl"
 data: 2021-12-14
 lead: "Boże Narodzenie zbliża się wielkimi krokami, dlatego warto zacząć myśleć o świątecznych upominkach. W poniedziałki, wtorki, środy i czwartki w ramach akcji Black Weeks na ERLI.pl, użytkownicy platformy znajdą wyjątkowe okazje z określonych grup produktów, w najniższych cenach na rynku. Już dziś wystartowały promocje z ofertą z gadżetami elektronicznymi, a we wtorek z produktami beauty. Dzień później klienci będą mogli upolować świąteczne dekoracje do domu w obniżonych cenach, a w czwartek sprzęt AGD z dużymi rabatami."
+grafika: /assets/img/artykuly/najlepsze-oferty-na-swiateczne-prezenty-z-duzymi-rabatami-na-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/najlepsze-oferty-na-swiateczne-prezenty-z-duzymi-rabatami-na-erli-pl/hero-banery_870x400_bw_najnizsze_ceny_w_polsce.webp)
+![](/assets/img/artykuly/najlepsze-oferty-na-swiateczne-prezenty-z-duzymi-rabatami-na-erli-pl/hero.webp)
 
 ### Najlepsze oferty na świąteczne prezenty z dużymi rabatami na ERLI.pl​
 

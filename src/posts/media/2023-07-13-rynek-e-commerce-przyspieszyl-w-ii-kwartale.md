@@ -5,9 +5,10 @@ lead: "Rynek e-commerce, po pierwszym kwartale tego roku, w którym nabierał ro
 zrodlo:
   nazwa: portalspozywczy.pl
   url: https://www.portalspozywczy.pl/handel/wiadomosci/rynek-e-commerce-przyspieszyl-w-ii-kwartale,229541.html
+grafika: /assets/img/artykuly/rynek-e-commerce-przyspieszyl-w-ii-kwartale/hero.webp
 ---
 
-![](/assets/img/artykuly/rynek-e-commerce-przyspieszyl-w-ii-kwartale/hero-adobestock_604763387.webp)
+![](/assets/img/artykuly/rynek-e-commerce-przyspieszyl-w-ii-kwartale/hero.webp)
 
 **Rynek e-commerce przyspieszył w II kwartale**
 

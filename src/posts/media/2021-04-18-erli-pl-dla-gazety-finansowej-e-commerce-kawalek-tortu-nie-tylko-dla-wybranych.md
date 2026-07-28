@@ -5,9 +5,10 @@ lead: "Rok 2020 rozpoczął się dramatem niebywałych pożarów, jakie trawiły
 zrodlo:
   nazwa: gf24.pl
   url: https://gf24.pl/wp-content/uploads/2021/02/Rynek_e-commerce.pdf
+grafika: /assets/img/artykuly/erli-pl-dla-gazety-finansowej-e-commerce-kawalek-tortu-nie-tylko-dla-wybranych/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-dla-gazety-finansowej-e-commerce-kawalek-tortu-nie-tylko-dla-wybranych/hero-baner_11_870x400.webp)
+![](/assets/img/artykuly/erli-pl-dla-gazety-finansowej-e-commerce-kawalek-tortu-nie-tylko-dla-wybranych/hero.webp)
 
 ### ERLI.pl dla Gazety Finansowej: E-commerce – kawałek tortu nie tylko dla wybranych
 

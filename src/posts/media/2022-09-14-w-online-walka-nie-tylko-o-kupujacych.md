@@ -5,9 +5,10 @@ lead: "Firma prowadząca platformę typu marketplace jak Allegro czy Amazon wyja
 zrodlo:
   nazwa: rp.pl
   url: https://www.rp.pl/handel/art37053871-w-online-walka-nie-tylko-o-kupujacych-platformy-walcza-z-drozyzna
+grafika: /assets/img/artykuly/w-online-walka-nie-tylko-o-kupujacych/hero.webp
 ---
 
-![](/assets/img/artykuly/w-online-walka-nie-tylko-o-kupujacych/hero-870x400_media_o_erli_6.webp)
+![](/assets/img/artykuly/w-online-walka-nie-tylko-o-kupujacych/hero.webp)
 
 ### W online walka nie tylko o kupujących. Platformy walczą z drożyzną
 

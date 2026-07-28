@@ -2,11 +2,12 @@
 tytul: "ERLI jako pierwsze w regionie EMEA przeprowadziło innowacyjne badanie Meta Conversion Lift wzbogacone o metodologię channel lift do celów sprzedażowych. Celem jeszcze skuteczniejsza ocena potencjału wykorzystywanych kanałów reklamowych"
 data: 2025-06-26
 lead: "ERLI, jeden z najszybciej rozwijających się marketplace’ów w Polsce, jako pierwszy reklamodawca w regionie EMEA (Europa, Bliski Wschód i Afryka), przeprowadził nowatorskie badanie Meta Conversion Lift z wykorzystaniem metodologii channel lift do kampanii sprzedażowych."
+grafika: /assets/img/artykuly/erli-jako-pierwsze-w-regionie-emea-przeprowadzilo-innowacyjne-badanie-meta/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-jako-pierwsze-w-regionie-emea-przeprowadzilo-innowacyjne-badanie-meta-conversion-lift-wzbogacone-o-metodologie-channel-lif/hero-case-study-meta.webp)
+![](/assets/img/artykuly/erli-jako-pierwsze-w-regionie-emea-przeprowadzilo-innowacyjne-badanie-meta/hero.webp)
 
-**ERLI, jeden z najszybciej rozwijających się marketplace’ów w Polsce, jako pierwszy reklamodawca w regionie EMEA (Europa, Bliski Wschód i Afryka), przeprowadził nowatorskie badanie Meta Conversion Lift z wykorzystaniem metodologii channel lift do kampanii sprzedażowych. Celem analizy jest lepsze zrozumienie, jaki udział mają reklamy Mety w sprzedaży zakończonej w badanych kanałach: Google Ads, Bing Ads oraz ruchu organicznym. Dane pozyskane w badaniu pozwalają jeszcze skuteczniej wspierać sprzedaż merchantów – są kolejnym ważnym źródłem informacji przy podejmowaniu decyzji o optymalizacji działań reklamowych, doborze kanałów i dystrybucji budżetu.**
+**Celem analizy jest lepsze zrozumienie, jaki udział mają reklamy Mety w sprzedaży zakończonej w badanych kanałach: Google Ads, Bing Ads oraz ruchu organicznym. Dane pozyskane w badaniu pozwalają jeszcze skuteczniej wspierać sprzedaż merchantów – są kolejnym ważnym źródłem informacji przy podejmowaniu decyzji o optymalizacji działań reklamowych, doborze kanałów i dystrybucji budżetu.**
 
 **Założona w 2020 roku polska platforma zakupowa ERLI skupia ponad 9 milionów aktywnych użytkowników miesięcznie. Oferując ponad 35 milionów produktów i współpracując z ponad 30 000 sprzedawców, ERLI dąży do tego, by dla konsumentów zakupy online były proste, tanie i skuteczne. Swój model biznesowy opiera na unikalnej współpracy z partnerami, którym dostarcza realne wsparcie w sprzedaży, między innymi poprzez zaawansowane działania marketingowe, badania, testy i technologie. Ekosystem reklamowy jest środowiskiem bardzo dynamicznym i zmiennym, dlatego ERLI regularnie przeprowadza szereg badań i testów mających na celu jak najlepszą optymalizację kampanii i wydatkowanie budżetów. Tylko w Mecie realizowała badania takie jak Convesion Lift, Search Lift, Brand Lift, czy testy A/B.**
 

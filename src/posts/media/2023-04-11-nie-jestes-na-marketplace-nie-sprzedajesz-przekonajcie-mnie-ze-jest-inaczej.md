@@ -5,9 +5,10 @@ lead: "Platformy sprzedażowe osiągają w Polsce ogromne rozmiary, sprawiając,
 zrodlo:
   nazwa: bizblog.spidersweb.pl
   url: https://bizblog.spidersweb.pl/erli-nie-jestes-na-marketplace-nie-sprzedajesz
+grafika: /assets/img/artykuly/nie-jestes-na-marketplace-nie-sprzedajesz-przekonajcie-mnie-ze-jest-inaczej/hero.webp
 ---
 
-![](/assets/img/artykuly/nie-jestes-na-marketplace-nie-sprzedajesz-przekonajcie-mnie-ze-jest-inaczej/hero-erli-sprzedajacy.webp)
+![](/assets/img/artykuly/nie-jestes-na-marketplace-nie-sprzedajesz-przekonajcie-mnie-ze-jest-inaczej/hero.webp)
 
 **Nie jesteś na marketplace, nie sprzedajesz. Przekonajcie mnie, że jest inaczej**
 

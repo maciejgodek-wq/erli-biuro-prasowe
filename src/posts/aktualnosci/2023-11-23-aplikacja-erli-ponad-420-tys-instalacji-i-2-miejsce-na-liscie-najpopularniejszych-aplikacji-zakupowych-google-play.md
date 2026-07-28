@@ -2,9 +2,10 @@
 tytul: "Aplikacja ERLI: ponad 420 tys. instalacji i 2. miejsce na liście najpopularniejszych aplikacji zakupowych Google Play"
 data: 2023-11-23
 lead: "Po niespełna 4 miesiącach funkcjonowania już 2 z 5 transakcji na ERLI realizowane są właśnie przez aplikację."
+grafika: /assets/img/artykuly/aplikacja-erli-ponad-420-tys-instalacji-i-2-miejsce-na-liscie/hero.webp
 ---
 
-![](/assets/img/artykuly/aplikacja-erli-ponad-420-tys-instalacji-i-2-miejsce-na-liscie-najpopularniejszych-aplikacji-zakupowych-google-play/hero-blackweeks_erli.webp)
+![](/assets/img/artykuly/aplikacja-erli-ponad-420-tys-instalacji-i-2-miejsce-na-liscie/hero.webp)
 
 **Aplikacja ERLI: ponad 420 tys. instalacji i 2. miejsce na liście najpopularniejszych aplikacji zakupowych Google Play**
 

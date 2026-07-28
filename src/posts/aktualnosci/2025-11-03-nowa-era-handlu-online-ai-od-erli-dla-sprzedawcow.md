@@ -2,9 +2,10 @@
 tytul: "Nowa era handlu online: AI od ERLI dla sprzedawców"
 data: 2025-11-03
 lead: "Platforma e-commerce ERLI stale pracuje nad innowacyjnymi rozwiązaniami, które wspierają rozwój sprzedawców i ułatwiają zakupy użytkownikom. Wdrażając technologie oparte na sztucznej inteligencji, ERLI automatycznie kategoryzuje produkty, poprawia grafiki i personalizuje oferty – dzięki czemu codzienna sprzedaż staje się prostsza, a zakupy bardziej intuicyjne."
+grafika: /assets/img/artykuly/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/hero.webp
 ---
 
-![](/assets/img/artykuly/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/hero-1b.webp)
+![](/assets/img/artykuly/nowa-era-handlu-online-ai-od-erli-dla-sprzedawcow/hero.webp)
 
 **Nowa era handlu online: AI od ERLI dla sprzedawców**
 

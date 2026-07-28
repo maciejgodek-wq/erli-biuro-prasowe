@@ -2,9 +2,10 @@
 tytul: "Freundschaft wygrała przetarg na obsługę kampanii marketingowej ERLI.pl"
 data: 2021-05-05
 lead: "Grupa Freundschaft (dawniej: Scholz & Friends, Emlab, The Digitals i Booost | Grupa S/F) wygrała przetarg dla nowej platformy zakupowej ERLI.pl. Współpraca będzie dotyczyć opracowania strategii, platformy i komunikacji pierwszej kampanii reklamowej dla marki."
+grafika: /assets/img/artykuly/freundschaft-wygrala-przetarg-na-obsluge-kampanii-marketingowej-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/freundschaft-wygrala-przetarg-na-obsluge-kampanii-marketingowej-erli-pl/hero-baner_5_870x400.webp)
+![](/assets/img/artykuly/freundschaft-wygrala-przetarg-na-obsluge-kampanii-marketingowej-erli-pl/hero.webp)
 
 ### Freundschaft wygrała przetarg na obsługę kampanii marketingowej ERLI.pl
 

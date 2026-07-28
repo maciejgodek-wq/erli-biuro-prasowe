@@ -5,9 +5,10 @@ lead: "Do końca tego roku firma Erli chce przekazać e-sklepom kupony na reklam
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/erli-chce-zainwestowac-50-mln-zlotych-w-e-sklepy-%22model-radykalnie-obnizy-koszty-dla-sprzedajacych%22/10138
+grafika: /assets/img/artykuly/erli-chce-zainwestowac-50-mln-zlotych-w-e-sklepy/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-chce-zainwestowac-50-mln-zlotych-w-e-sklepy/hero-870x400_media_o_erli_1.webp)
+![](/assets/img/artykuly/erli-chce-zainwestowac-50-mln-zlotych-w-e-sklepy/hero.webp)
 
 ### Erli chce zainwestować 50 mln złotych w e-sklepy. "Model radykalnie obniży koszty dla sprzedających"
 

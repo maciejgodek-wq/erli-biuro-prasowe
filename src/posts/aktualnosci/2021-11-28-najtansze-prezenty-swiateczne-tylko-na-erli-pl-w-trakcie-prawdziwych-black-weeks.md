@@ -2,9 +2,10 @@
 tytul: "Najtańsze prezenty świąteczne tylko na ERLI.pl w trakcie prawdziwych Black Weeks"
 data: 2021-11-28
 lead: "Osoby, które szukają pomysłów na prezenty świąteczne w atrakcyjnych cenach znajdą bogaty wybór produktów na ERLI.pl. Platforma zakupów on-line w każdą środę organizuje niezwykłe promocje na nowe kategorie produktów – są to prawdziwe Black Weeks. Firma oferuje najlepsze ceny, a dla pierwszych kupujących gwarantuje, że są one najniższe w kraju. Co więcej, zarejestrowani użytkownicy cieszą się darmową dostawą dzięki współpracy z firmą InPost. W najbliższą środę promocją objęte zostaną produkty idealnie nadające się na świąteczne prezenty – m.in. zestawy klocków Lego, stół do gry w piłkarzyki czy robot kuchenny."
+grafika: /assets/img/artykuly/najtansze-prezenty-swiateczne-tylko-na-erli-pl-w-trakcie-prawdziwych-black-weeks/hero.webp
 ---
 
-![](/assets/img/artykuly/najtansze-prezenty-swiateczne-tylko-na-erli-pl-w-trakcie-prawdziwych-black-weeks/hero-baner_2_870x400.webp)
+![](/assets/img/artykuly/najtansze-prezenty-swiateczne-tylko-na-erli-pl-w-trakcie-prawdziwych-black-weeks/hero.webp)
 
 ### Najtańsze prezenty świąteczne tylko na ERLI.pl w trakcie prawdziwych Black Weeks
 

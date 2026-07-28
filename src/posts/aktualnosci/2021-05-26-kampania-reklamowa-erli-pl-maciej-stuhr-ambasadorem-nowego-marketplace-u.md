@@ -2,9 +2,10 @@
 tytul: "„Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej ERLI.pl"
 data: 2021-05-26
 lead: "„Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej ERLI.pl – nowego marketplace’u na polskim rynku e-handlu. Ambasadorem kampanii został aktor Maciej Stuhr. Pierwsze spoty reklamowe pojawią się w kanałach telewizyjnych już 7 kwietnia. Kampania w kanałach digitalowych ruszy 12 kwietnia. Pierwszy etap kampanii potrwa do czerwca 2021 roku."
+grafika: /assets/img/artykuly/kampania-reklamowa-erli-pl-maciej-stuhr-ambasadorem-nowego-marketplace-u/hero.webp
 ---
 
-![](/assets/img/artykuly/kampania-reklamowa-erli-pl-maciej-stuhr-ambasadorem-nowego-marketplace-u/hero-baner_4_870x400_stuhr.webp)
+![](/assets/img/artykuly/kampania-reklamowa-erli-pl-maciej-stuhr-ambasadorem-nowego-marketplace-u/hero.webp)
 
 ### „Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej ERLI.pl
 

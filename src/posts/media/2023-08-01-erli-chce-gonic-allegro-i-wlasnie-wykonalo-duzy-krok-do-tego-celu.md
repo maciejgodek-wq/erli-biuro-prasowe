@@ -5,9 +5,10 @@ lead: "Następny gracz na arenie polskiego ecommerce zagrał mocną kartą. ERLI
 zrodlo:
   nazwa: bezprawnik.pl
   url: https://bezprawnik.pl/aplikacja-erli/
+grafika: /assets/img/artykuly/erli-chce-gonic-allegro-i-wlasnie-wykonalo-duzy-krok-do-tego-celu/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-chce-gonic-allegro-i-wlasnie-wykonalo-duzy-krok-do-tego-celu/hero-adobestock_613365109.webp)
+![](/assets/img/artykuly/erli-chce-gonic-allegro-i-wlasnie-wykonalo-duzy-krok-do-tego-celu/hero.webp)
 
 **ERLI chce gonić Allegro i właśnie wykonało duży krok do tego celu**
 

@@ -5,9 +5,10 @@ lead: "Twórcy Erli Campaigns postanowili zaoferować sprzedawcom najlepsze waru
 zrodlo:
   nazwa: spidersweb.pl
   url: https://spidersweb.pl/bizblog/erli-campaigns/
+grafika: /assets/img/artykuly/erli-pl-rzuca-wyzwanie-gigantom/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-rzuca-wyzwanie-gigantom/hero-870x400_media_o_erli_2.webp)
+![](/assets/img/artykuly/erli-pl-rzuca-wyzwanie-gigantom/hero.webp)
 
 ### Erli.pl rzuca wyzwanie gigantom. Gorącą oferta wschodzącego rywala Allegro i Amazona
 

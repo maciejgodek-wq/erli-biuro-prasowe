@@ -5,9 +5,10 @@ lead: "- W tym dynamicznie zmieniającym się sektorze, jakim jest e-commerce, k
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/polska-firma-z-rynku-e-commerce-rzuca-wyzwanie-gigantom-%22chcemy-dac-klientom-alternatywe%22/6351
+grafika: /assets/img/artykuly/polska-firma-z-rynku-e-commerce-rzuca-wyzwanie-gigantom/hero.webp
 ---
 
-![](/assets/img/artykuly/polska-firma-z-rynku-e-commerce-rzuca-wyzwanie-gigantom/hero-baner_12_870x400.webp)
+![](/assets/img/artykuly/polska-firma-z-rynku-e-commerce-rzuca-wyzwanie-gigantom/hero.webp)
 
 ### MyCompanyPolska.pl: Polska firma z rynku e-commerce rzuca wyzwanie gigantom. "Chcemy dać klientom alternatywę"
 

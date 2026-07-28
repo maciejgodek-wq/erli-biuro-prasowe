@@ -2,9 +2,10 @@
 tytul: "Premiera aplikacji ERLI – na klientów czekają jeszcze niższe ceny, roczna gwarancja darmowej dostawy i kupony rabatowe o wartości 50 zł"
 data: 2023-07-31
 lead: "Firma uruchamia aplikację mobilną, dzięki której klienci mogą jeszcze taniej zrobić zakupy na ERLI z gwarantowaną roczną darmową dostawą i kuponami rabatowymi o równowartości 50 zł do wykorzystania przy kolejnej transakcji."
+grafika: /assets/img/artykuly/premiera-aplikacji-erli-na-klientow-czekaja-jeszcze-nizsze-ceny-roczna/hero.webp
 ---
 
-![](/assets/img/artykuly/premiera-aplikacji-erli-na-klientow-czekaja-jeszcze-nizsze-ceny-roczna-gwarancja-darmowej-dostawy-i-kupony-rabatowe-o-wartosci/hero-aplikacja-erli_1.webp)
+![](/assets/img/artykuly/premiera-aplikacji-erli-na-klientow-czekaja-jeszcze-nizsze-ceny-roczna/hero.webp)
 
 **Premiera aplikacji ERLI – na klientów czekają jeszcze niższe ceny, roczna gwarancja darmowej dostawy i kupony rabatowe o wartości 50 zł**
 

@@ -5,9 +5,10 @@ lead: "Erli uruchomiło w aplikacji sekcję Najtaniej. Na platformie codziennie 
 zrodlo:
   nazwa: bizblog.spidersweb.pl
   url: https://bizblog.spidersweb.pl/lowcy-okazji-gotowi-erli-ma-dla-was-oferte
+grafika: /assets/img/artykuly/lowcy-okazji-gotowi-erli-ma-dla-was-oferte/hero.webp
 ---
 
-![](/assets/img/artykuly/lowcy-okazji-gotowi-erli-ma-dla-was-oferte/hero-girl.webp)
+![](/assets/img/artykuly/lowcy-okazji-gotowi-erli-ma-dla-was-oferte/hero.webp)
 
 **Łowcy okazji gotowi? Erli ma dla was ofertę**
 

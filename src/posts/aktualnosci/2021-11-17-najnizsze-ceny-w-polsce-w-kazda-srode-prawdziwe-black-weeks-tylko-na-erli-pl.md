@@ -2,9 +2,10 @@
 tytul: "Najniższe ceny w Polsce w każdą środę – prawdziwe Black Weeks tylko na ERLI.pl"
 data: 2021-11-17
 lead: "ERLI.pl – platforma do zakupów on-line w każdą środę organizuje niezwykłe promocje na nowe kategorie produktów. Ceny wystawianych przedmiotów należą do najniższych w Polsce (rabaty sięgają do -50%), a dodatkowo zarejestrowani użytkownicy cieszą się darmową dostawą dzięki współpracy z firmą InPost. W najbliższą środę promocją objęte zostaną produkty do pracy i dla rodziny – m.in. laptopy oraz wózek spacerowy."
+grafika: /assets/img/artykuly/najnizsze-ceny-w-polsce-w-kazda-srode-prawdziwe-black-weeks-tylko-na-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/najnizsze-ceny-w-polsce-w-kazda-srode-prawdziwe-black-weeks-tylko-na-erli-pl/hero-baner_3_870x400.webp)
+![](/assets/img/artykuly/najnizsze-ceny-w-polsce-w-kazda-srode-prawdziwe-black-weeks-tylko-na-erli-pl/hero.webp)
 
 ### Najniższe ceny w Polsce w każdą środę – prawdziwe Black Weeks tylko na ERLI.pl
 

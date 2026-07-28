@@ -5,9 +5,10 @@ lead: "Erli.pl to nowy projekt w polskiej cyberprzestrzeni. Platforma e-commerce
 zrodlo:
   nazwa: komputerswiat.pl
   url: https://www.komputerswiat.pl/aktualnosci/wydarzenia/erlipl-nowa-polska-platforma-e-commerce-chce-byc-drugim-allegro/lvg3wgy
+grafika: /assets/img/artykuly/erli-pl-nowa-polska-platforma-e-commerce-chce-byc-drugim-allegro/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-nowa-polska-platforma-e-commerce-chce-byc-drugim-allegro/hero-baner_7_870x400.webp)
+![](/assets/img/artykuly/erli-pl-nowa-polska-platforma-e-commerce-chce-byc-drugim-allegro/hero.webp)
 
 ### KomputerŚwiat: Erli.pl - nowa polska platforma e-commerce chce być drugim Allegro
 

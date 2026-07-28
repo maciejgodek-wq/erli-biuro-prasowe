@@ -5,9 +5,10 @@ lead: "Platforma Erli.pl podsumowała 2022 rok, który umocnił jej pozycje na k
 zrodlo:
   nazwa: dlahandlu.pl
   url: https://www.dlahandlu.pl/e-commerce/wiadomosci/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow,116539.html
+grafika: /assets/img/artykuly/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow/hero-1492x364_adam_ciesielczyk.webp)
+![](/assets/img/artykuly/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow/hero.webp)
 
 **Erli.pl umacnia pozycję. Marketplace sprzedał 2,7 mln produktów**
 

@@ -2,9 +2,10 @@
 tytul: "Darmowa dostawa z ErliPRO już od 39 zł!"
 data: 2022-06-29
 lead: "Darmowa dostawa z ErliPRO stała się właśnie jeszcze bardziej dostępna. Od teraz, dokonując zakupów za łączną kwotę 39 zł, klienci ERLI.pl mogą skorzystać z bezpłatnej przesyłki do tysięcy Paczkomatów, punktów dostaw oraz kurierem! Bez żadnych ukrytych opłat."
+grafika: /assets/img/artykuly/darmowa-dostawa-z-erlipro-juz-od-39-zl/hero.webp
 ---
 
-![](/assets/img/artykuly/darmowa-dostawa-z-erlipro-juz-od-39-zl/hero-darmowa_dostawa_erli_pro_870x400.webp)
+![](/assets/img/artykuly/darmowa-dostawa-z-erlipro-juz-od-39-zl/hero.webp)
 
 ### Darmowa dostawa z ErliPRO już od 39 zł!
 

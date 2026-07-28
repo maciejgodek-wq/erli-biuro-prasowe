@@ -2,9 +2,10 @@
 tytul: "ERLI z rekordowym wzrostem – ponad 1,29 mld zł GMV po 9 miesiącach 2025 roku. Trzeci kwartał z 50% dynamiką i najwyższą w historii rentownością"
 data: 2025-11-18
 lead: "Przychody ERLI wzrosły o 62% do 189,7 mln zł, a zysk operacyjny (EBITDA) sięgnął 15,4 mln zł – aż o 95% więcej niż rok wcześniej."
+grafika: /assets/img/artykuly/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku-trzeci-kwartal-z-50-dynamika-i-najwyzsza-w-historii-rentownoscia/hero-2--9-.webp)
+![](/assets/img/artykuly/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/hero.webp)
 
 **ERLI z rekordowym wzrostem – ponad 1,29 mld zł GMV po 9 miesiącach 2025 roku. Trzeci kwartał z 50% dynamiką i najwyższą w historii rentownością**
 
