@@ -1,7 +1,7 @@
 ---
 tytul: "Magia Świąt w aplikacji ERLI:  Pobierz aplikacje ERLI i zrób zakupy z PayPo, a otrzymasz rabat na kolejne zakupy"
 data: 2023-12-10
-lead: "Dzięki nowej promocji na ERLI, korzystanie z płatności odroczonych PayPo staje się nie tylko wygodne, ale także bardziej opłacalne. To świetna opcja dla tych, którzy chcą zoptymalizować świąteczne wydatki i jednocześnie zyskać dodatkowe korzyści."
+lead: "Dzięki nowej promocji na ERLI, korzystanie z płatności odroczonych PayPo staje się nie tylko wygodne, ale także bardziej opłacalne. To świetna opcja dla tych, którzy chcą zoptymalizować świąteczne wydatki i jednocześnie zyskać dodatkowe korzyści. Magia Świąt w aplikacji ERLI: Pobierz aplikację ERLI i zrób zakupy z PayPo, a otrzymasz rabat na kolejne zakupy"
 grafika: /assets/img/artykuly/magia-swiat-w-aplikacji-erli-pobierz-aplikacje-erli-i-zrob-zakupy-z-paypo-a/hero.webp
 ---
 

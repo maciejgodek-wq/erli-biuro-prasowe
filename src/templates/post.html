@@ -28,14 +28,12 @@
 </article>
 
 {{#if powiazane}}
-<section class="section section--soft" aria-labelledby="powiazane">
-  <div class="container">
+<section class="section" aria-labelledby="powiazane">
+  <div class="container container--press">
     <header class="section-header">
       <h2 id="powiazane" class="section-header__heading">Powiązane materiały</h2>
     </header>
-    <div class="post-grid">
-      {{#each powiazane}}{{> post-card }}{{/each}}
-    </div>
+    {{#each powiazane}}{{> press-item }}{{/each}}
   </div>
 </section>
 {{/if}}

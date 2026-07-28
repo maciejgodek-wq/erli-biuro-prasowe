@@ -351,7 +351,23 @@
 
   /* Szerokości układu biura prasowego */
   --min-post-card: 300px;   /* min. kolumna auto-fill w .post-grid */
-  --max-narrow:    720px;   /* kolumna tekstu artykułu i stron statycznych */
+  --max-narrow:    720px;   /* kolumna tekstu stron statycznych */
+
+  /* --- Układ v2: wyróżniony artykuł i lista pionowa ---------------
+     Wartości z pomiaru referencji wskazanej przez właściciela
+     (viewport 1400 px). --max-content-width 1344 px jest dla biura
+     prasowego zbyt szerokie: wiersz tekstu przestaje być czytelny. */
+  --max-press:       1032px;  /* kontener biura prasowego */
+  --measure-article:  800px;  /* szpalta tekstu artykułu */
+  --card-contact:     400px;  /* karta kontaktu prasowego */
+  --measure-note:     600px;  /* notka pod kartą kontaktową */
+
+  /* Tekst czytelniczy artykułu.
+     Skala "body" kończy się na 1rem (16 px), a powyżej istnieją wyłącznie
+     tokeny nagłówkowe. Do komunikatów prasowych 16 px jest za mało —
+     zmierzone: przy 15,35 px akapity zwężały się do 602 px przez
+     p { max-width: 70ch } z base.css. Stąd osobny stopień 20 px. */
+  --text-article: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
 
   /* Podniesienie karty na hover */
   --lift-card: -2px;

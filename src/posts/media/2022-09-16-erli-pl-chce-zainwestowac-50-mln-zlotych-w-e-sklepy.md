@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI.pl zainwestuje 50 mln złotych w e-sklepy"
 data: 2022-09-16
-lead: "Do końca tego roku ERLI chce przekazać e-sklepom kupony na reklamy w Google Ads o wartości 50 mln złotych. Ponadto szykowana jest specjalna platforma i szereg innych działań, które mają pomóc sprzedającym w internecie."
+lead: "Do końca tego roku ERLI chce przekazać e-sklepom kupony na reklamy w Google Ads o wartości 50 mln złotych. Ponadto szykowana jest specjalna platforma i szereg innych działań, które mają pomóc sprzedającym w internecie. https://www.pb.pl/erli-rzuca-wyzwanie-allegro-1163631"
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/erli-chce-zainwestowac-50-mln-zlotych-w-e-sklepy-%22model-radykalnie-obnizy-koszty-dla-sprzedajacych%22/10138

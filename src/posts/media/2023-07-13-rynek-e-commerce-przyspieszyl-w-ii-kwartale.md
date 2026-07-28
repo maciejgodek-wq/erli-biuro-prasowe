@@ -1,7 +1,7 @@
 ---
 tytul: "Rynek e-commerce przyspieszył w II kwartale"
 data: 2023-07-13
-lead: "Rynek e-commerce, po pierwszym kwartale tego roku, w którym nabierał rozpędu, od kwietnia „wrzucił wyższy bieg” zwiększając jeszcze dynamikę sprzedaży."
+lead: "Rynek e-commerce, po pierwszym kwartale tego roku, w którym nabierał rozpędu, od kwietnia „wrzucił wyższy bieg” zwiększając jeszcze dynamikę sprzedaży. Rynek e-commerce przyspieszył w II kwartale"
 zrodlo:
   nazwa: portalspozywczy.pl
   url: https://www.portalspozywczy.pl/handel/wiadomosci/rynek-e-commerce-przyspieszyl-w-ii-kwartale,229541.html

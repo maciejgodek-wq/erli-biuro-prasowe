@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI w czołówce polskiego rynku e-commerce"
 data: 2023-06-29
-lead: "ERLI zyskuje coraz większą popularność – 2 mln klientów założyło konto, a platforma znalazła się wśród najpopularniejszych serwisów zakupowych w Polsce."
+lead: "ERLI zyskuje coraz większą popularność – 2 mln klientów założyło konto, a platforma znalazła się wśród najpopularniejszych serwisów zakupowych w Polsce. ERLI.pl, najszybciej rozwijający się marketplace w Polsce zarejestrował 2 milionowego klienta na swojej platformie."
 grafika: /assets/img/artykuly/erli-w-czolowce-polskiego-rynku-e-commerce/hero.webp
 ---
 

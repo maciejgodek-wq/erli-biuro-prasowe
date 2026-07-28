@@ -1,7 +1,7 @@
 ---
 tytul: "Platforma e-commerce ERLI challengerem rynkowym!"
 data: 2025-03-05
-lead: "W 2024 roku ERLI odnotowało 67% wzrost GMV, osiągając wartość 1,230 mld zł, w porównaniu do 740 mln zł w 2023 roku. Firma szacuje, że EBITDA za 2024 r. wyniosła 12,01 mln zł."
+lead: "W 2024 roku ERLI odnotowało 67% wzrost GMV, osiągając wartość 1,230 mld zł, w porównaniu do 740 mln zł w 2023 roku. Firma szacuje, że EBITDA za 2024 r. wyniosła 12,01 mln zł. ERLI podsumowuje 2024 rok: 67% wzrost GMV, 66% więcej transakcji i 5 milionów zarejestrowanych użytkowników"
 grafika: /assets/img/artykuly/platforma-e-commerce-erli-challengerem-rynkowym/hero.webp
 ---
 

@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI chce gonić Allegro i właśnie wykonało duży krok do tego celu"
 data: 2023-08-01
-lead: "Następny gracz na arenie polskiego ecommerce zagrał mocną kartą. ERLI to jeden z najszybciej rozwijających się rynkowych marketplace’ów, a teraz zainaugurował swoją mobilną aplikację dostępną dla posiadaczy telefonów z Androidem i iOS."
+lead: "Następny gracz na arenie polskiego ecommerce zagrał mocną kartą. ERLI to jeden z najszybciej rozwijających się rynkowych marketplace’ów, a teraz zainaugurował swoją mobilną aplikację dostępną dla posiadaczy telefonów z Androidem i iOS. ERLI chce gonić Allegro i właśnie wykonało duży krok do tego celu"
 zrodlo:
   nazwa: bezprawnik.pl
   url: https://bezprawnik.pl/aplikacja-erli/

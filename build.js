@@ -22,13 +22,6 @@ import {
 const ROK = '2026';
 const DIST = 'dist';
 
-const SKROT = [
-  { tytul: 'Polski marketplace', tekst: 'Największa polska platforma marketplace tego typu.' },
-  { tytul: 'Ponad 30 tys. sprzedawców', tekst: 'Wyłącznie polscy sprzedawcy.' },
-  { tytul: 'Miliony produktów', tekst: 'Szeroka oferta w kilkunastu kategoriach.' },
-  { tytul: 'Aplikacja mobilna', tekst: 'Ponad 2 miliony pobrań.' },
-];
-
 /** Wczytuje wszystkie szablony i partiale z dysku. */
 async function loadTemplates() {
   const czytaj = async (dir) => {
@@ -90,16 +83,19 @@ async function build() {
   };
 
   // --- strona główna ---
+  // Najnowszy artykul jest wyrozniony (szeroka karta na szarym pasie),
+  // pozostale ida jeden pod drugim. Stad podzial zamiast jednolitej listy.
+  const [wyrozniony, ...reszta] = wszystkie;
   dodaj('/', skladaj(tpl, 'home', {
     url: '/',
     tytulStrony: 'Biuro prasowe ERLI',
     opis: 'Komunikaty prasowe, wyniki i materiały dla dziennikarzy piszących o ERLI.',
     kanoniczny: `${DOMENA}/`,
     ogTyp: 'website',
-    ogObraz: `${DOMENA}/assets/img/kv/default.webp`,
+    ogObraz: wyrozniony ? `${DOMENA}${wyrozniony.grafikaUrl}` : `${DOMENA}/assets/img/kv/default.webp`,
     schemaJsonLd: `<script type="application/ld+json">${organizationSchema()}</script>`,
-    najnowsze: wszystkie.slice(0, 6),
-    skrot: SKROT,
+    wyrozniony: wyrozniony ?? null,
+    pozostale: reszta.slice(0, 6),
   }), '2026-07-27', '1.0');
 
   // --- listy kategorii ---

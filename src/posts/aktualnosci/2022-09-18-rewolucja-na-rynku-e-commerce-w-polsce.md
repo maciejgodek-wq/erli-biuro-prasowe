@@ -1,7 +1,7 @@
 ---
 tytul: "Rewolucja na rynku e-commerce w Polsce"
 data: 2022-09-18
-lead: "Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU."
+lead: "Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU. Szalejąca inflacja oraz podwyżki cen energii i podatków przyniosą ogromne zmiany dla rynku handlu."
 grafika: /assets/img/artykuly/rewolucja-na-rynku-e-commerce-w-polsce/hero.webp
 ---
 

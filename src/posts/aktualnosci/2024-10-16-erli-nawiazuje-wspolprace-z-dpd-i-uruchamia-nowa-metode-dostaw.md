@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI nawiązuje współpracę z DPD i uruchamia nową metodę dostaw"
 data: 2024-10-16
-lead: "Usługa ERLI DPD Kurier jest już dostępna i mogą ją oferować kupującym wszystkie e-sklepy zarejestrowane na platformie ERLI."
+lead: "Usługa ERLI DPD Kurier jest już dostępna i mogą ją oferować kupującym wszystkie e-sklepy zarejestrowane na platformie ERLI. ERLI – marketplace nr 2 w Polsce, nawiązał współpracę z DPD, tym samym rozszerzając ofertę Metod Dostaw ERLI."
 grafika: /assets/img/artykuly/erli-nawiazuje-wspolprace-z-dpd-i-uruchamia-nowa-metode-dostaw/hero.webp
 ---
 

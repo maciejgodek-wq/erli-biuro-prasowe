@@ -1,7 +1,7 @@
 ---
 tytul: "Czas na wakacje? Czas na HOT Okazje!"
 data: 2022-06-29
-lead: "Żar leje się z bezchmurnego nieba. Termometry już dawno wskazały 30 stopni, a temperatura dalej rośnie. Pot cieknie z rozgrzanego czoła. Co zrobić w taki ukrop? W ERLI.pl mamy tylko jedno rozwiązanie… Dorzucić do pieca!"
+lead: "Żar leje się z bezchmurnego nieba. Termometry już dawno wskazały 30 stopni, a temperatura dalej rośnie. Pot cieknie z rozgrzanego czoła. Co zrobić w taki ukrop? W ERLI.pl mamy tylko jedno rozwiązanie… Dorzucić do pieca! W tym roku postanowiliśmy nie robić sobie wakacji od niskich cen."
 grafika: /assets/img/artykuly/czas-na-wakacje-czas-na-hot-okazje/hero.webp
 ---
 

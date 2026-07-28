@@ -1,0 +1,16 @@
+<article class="press-item">
+  <a class="press-item__link" href="{{ url }}">
+    <div class="press-item__media">
+      <img src="{{ grafikaUrl }}" alt="" loading="lazy" decoding="async" class="press-item__img">
+    </div>
+    <div class="press-item__body">
+      <p class="press-item__meta">
+        <span class="press-item__kategoria">{{ kategoriaNazwa }}</span>
+        <time datetime="{{ data }}">{{ dataPl }}</time>
+      </p>
+      <h3 class="press-item__title">{{ tytul }}</h3>
+      <p class="press-item__lead">{{ lead }}</p>
+      <span class="press-item__more" aria-hidden="true">Czytaj więcej →</span>
+    </div>
+  </a>
+</article>

@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI.pl uruchomił program „Na Start” dla nowych sprzedawców"
 data: 2023-03-21
-lead: "Polski marketplace obniża o 50% prowizję dla nowych sprzedawców na pół roku"
+lead: "Polski marketplace obniża o 50% prowizję dla nowych sprzedawców na pół roku ERLI.pl, najszybciej rozwijająca się platforma sprzedażowa w Polsce, uruchomiła program obniżający finansowe bariery wejścia dla polskich przedsiębiorstw w branży e-commerce."
 grafika: /assets/img/artykuly/erli-pl-uruchomil-program-na-start-dla-nowych-sprzedawcow/hero.webp
 ---
 

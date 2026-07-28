@@ -1,7 +1,7 @@
 ---
 tytul: "Polacy w internecie kupują dużo produktów, ale coraz tańszych"
 data: 2023-07-14
-lead: "Choć w pierwszym półroczu sprzedaż, jak i liczba transakcji, w sklepach online wzrosła – to zarazem średnia wartość transakcji spadła. Pomimo skoku cen aż o 13 proc."
+lead: "Choć w pierwszym półroczu sprzedaż, jak i liczba transakcji, w sklepach online wzrosła – to zarazem średnia wartość transakcji spadła. Pomimo skoku cen aż o 13 proc. Polacy w internecie kupują dużo produktów, ale coraz tańszych"
 zrodlo:
   nazwa: rp.pl
   url: https://www.rp.pl/handel/art38736551-polacy-w-internecie-kupuja-duzo-produktow-ale-coraz-tanszych

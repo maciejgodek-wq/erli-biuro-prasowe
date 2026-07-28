@@ -1,19 +1,16 @@
 <section class="section section--page-top">
-  <div class="container">
-    <p class="section-eyebrow">Biuro prasowe ERLI</p>
+  <div class="container container--press">
     <h1 class="page-title">{{ naglowek }}</h1>
     <p class="page-lead">{{ wprowadzenie }}</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
+  <div class="container container--press">
     {{#each grupy}}
     <div class="year-group">
       <h2 class="year-group__heading">{{ rok }}</h2>
-      <div class="post-grid">
-        {{#each posty}}{{> post-card }}{{/each}}
-      </div>
+      {{#each posty}}{{> press-item }}{{/each}}
     </div>
     {{/each}}
 

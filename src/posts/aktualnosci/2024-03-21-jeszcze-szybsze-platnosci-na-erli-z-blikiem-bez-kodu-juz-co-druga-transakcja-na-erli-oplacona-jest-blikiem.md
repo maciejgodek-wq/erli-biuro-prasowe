@@ -1,7 +1,7 @@
 ---
 tytul: "Jeszcze szybsze płatności na ERLI z BLIKIEM bez kodu"
 data: 2024-03-21
-lead: "ERLI – marketplace nr 2 w Polsce – we współpracy z BLIKIEM, liderem płatności mobilnych, wdrożył nowoczesną i wygodną metodę płatności: BLIK bez kodu."
+lead: "ERLI – marketplace nr 2 w Polsce – we współpracy z BLIKIEM, liderem płatności mobilnych, wdrożył nowoczesną i wygodną metodę płatności: BLIK bez kodu. Jeszcze szybsze płatności na ERLI z BLIKIEM bez kodu"
 grafika: /assets/img/artykuly/jeszcze-szybsze-platnosci-na-erli-z-blikiem-bez-kodu-juz-co-druga-transakcja-na/hero.webp
 ---
 

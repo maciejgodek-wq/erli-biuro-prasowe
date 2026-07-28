@@ -6,36 +6,23 @@
    Sklejany jako ostatni, wiec przy rownej specyficznosci wygrywa.
    ================================================================ */
 
-/* --- hero --- */
-.press-hero {
-  background: var(--gradient-brand-vivid);
-  color: var(--color-text-on-brand);
-  padding-block: var(--space-3xl);
-}
-.press-hero__title {
-  font-family: var(--font-display);
-  font-size: var(--text-display-lg);
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-tight);
-  margin-block: var(--space-md) var(--space-lg);
-}
-.press-hero__lead {
-  font-size: var(--text-body-lg);
-  max-width: var(--measure-lead);
-}
-/* Eyebrow na gradiencie — teal z components.css nie ma kontrastu na tealu. */
-.press-hero .section-eyebrow {
-  color: var(--color-text-on-brand);
-}
+/* --- kontenery --- */
+.container--press  { max-width: var(--max-press); }
+.container--narrow { max-width: var(--max-narrow); }
 
 /* --- aktywna pozycja nawigacji ---
    aria-current obsluguje czytniki ekranu; ponizsze daje wskazowke wizualna.
-   Bez tego osoba widzaca nie wie, na ktorej stronie jest.
+   Cienka linia z odstepem zamiast paska przyklejonego do liter. Kolor
+   i pogrubienie zostaja jako drugi kanal informacji — sam kolor nie
+   spelnia WCAG 1.4.1.
    Specyficznosc 0,2,0 — wygrywa z .site-header__nav a (0,1,1). */
 .site-header__nav .is-active {
-  color: var(--color-primary-700);
+  color: var(--color-text-primary);
   font-weight: var(--weight-bold);
-  box-shadow: inset 0 calc(-1 * var(--border-emphasis)) 0 0 var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-hairline);
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: var(--space-1-5);
 }
 
 /* --- naglowki stron --- */
@@ -47,63 +34,55 @@
   margin-block: var(--space-sm) var(--space-md);
 }
 .page-lead {
-  font-size: var(--text-body-lg);
+  font-size: var(--text-lg);
   color: var(--color-text-secondary);
   max-width: var(--measure-prose);
 }
 
-/* --- siatka kart --- */
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--min-post-card), 1fr));
-  gap: var(--space-lg);
-}
+/* ================================================================
+   WPIS PRASOWY — jeden wzorzec dla wyroznionego i dla listy.
+   Roznia sie tylko rozmiarem typografii i strona, na ktorej stoi
+   zdjecie.
+   ================================================================ */
 
-/* --- karta artykulu --- */
-.post-card {
-  background: var(--color-surface);
-  border: var(--border-hairline) solid var(--color-border);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  transition: box-shadow var(--duration-default) var(--ease-default),
-              transform var(--duration-default) var(--ease-default);
-}
-.post-card:hover,
-.post-card:focus-within {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(var(--lift-card));
-}
-@media (prefers-reduced-motion: reduce) {
-  .post-card:hover,
-  .post-card:focus-within { transform: none; }
-}
-.post-card__link {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.press-item { border-bottom: var(--border-hairline) solid var(--color-border); }
+.press-item__link {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: var(--space-2xl);
+  padding-block: var(--space-2xl);
   color: inherit;
   text-decoration: none;
 }
-/* Obramowanie focusa: globalne :focus-visible z base.css (tokeny). */
-/* aspect-ratio trzyma wysokosc karty niezaleznie od tego, czy grafika sie wczytala.
-   overflow: hidden jest OBOWIAZKOWE — bez niego zdjecie wyzsze niz ramka rozpycha
-   ja od srodka (min-height: auto na bloku), przez co karty w jednym rzedzie maja
-   rozne wysokosci. Zmierzone przed poprawka: 5 roznych wysokosci (201-255 px)
-   na 30 kartach listy /aktualnosci/. */
-.post-card__media {
-  aspect-ratio: var(--aspect-og);
+
+/* Zdjecie: szerokosc z kolumny siatki, wysokosc z wiersza (wyznacza go
+   kolumna tekstu), nadmiar dociety przez object-fit.
+
+   ZADNEGO aspect-ratio w wariancie dwukolumnowym. Element siatki ma juz
+   oba wymiary narzucone; aspect-ratio jest trzecim ograniczeniem, wygrywa
+   i rozpycha zdjecie poza tor, ucinajac tekst w sasiedniej kolumnie.
+   Zmierzone dwukrotnie: tor 778 px / grafika 851 px, potem tor 767 px /
+   grafika 795 px.
+
+   overflow: hidden jest obowiazkowe — bez niego zdjecie wyzsze niz ramka
+   rozpycha ja od srodka (min-height: auto na bloku). */
+.press-item__media {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  border-radius: var(--radius-xl);
   background: var(--color-neutral-75);
 }
-.post-card__img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.post-card__body {
+.press-item__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.press-item__body {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  padding: var(--padding-card-default);
-  flex: 1;
+  justify-content: center;
 }
-.post-card__meta {
+.press-item__meta {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -112,21 +91,39 @@
   text-transform: uppercase;
   letter-spacing: var(--tracking-overline);
 }
-.post-card__kategoria { color: var(--color-primary-700); font-weight: var(--weight-bold); }
-.post-card__title {
+.press-item__kategoria { color: var(--color-primary-700); font-weight: var(--weight-bold); }
+.press-item__title {
   font-family: var(--font-display);
-  font-size: var(--text-h5);
+  font-size: var(--text-h4);
   font-weight: var(--weight-bold);
   line-height: var(--leading-heading);
 }
-.post-card__lead {
+.press-item__lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
   color: var(--color-text-secondary);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.post-card__more { margin-top: auto; color: var(--color-link); font-weight: var(--weight-bold); }
+.press-item__more { color: var(--color-link); font-weight: var(--weight-bold); }
+.press-item__link:hover .press-item__title { color: var(--color-primary-700); }
+
+/* --- pas wyroznionego ---
+   --color-surface-alt (#f4f4f4), nie --color-surface-soft (#fafafa):
+   to drugie jest przy bieli nieodroznialne. Sam pas wystarcza za
+   wyroznienie — bez ramki i bez cienia. */
+.featured-band { background: var(--color-surface-alt); }
+
+.press-item--featured { border-bottom: none; }
+.press-item--featured .press-item__link { padding-block: var(--space-3xl); }
+.press-item--featured .press-item__media { order: 2; }
+.press-item--featured .press-item__title { font-size: var(--text-h2); }
+.press-item--featured .press-item__lead {
+  font-size: var(--text-xl);
+  -webkit-line-clamp: 4;
+}
 
 /* --- grupy roczne --- */
 .year-group + .year-group { margin-top: var(--space-3xl); }
@@ -139,8 +136,10 @@
   margin-bottom: var(--space-lg);
 }
 
-/* --- artykul --- */
-.post__container { max-width: var(--max-narrow); }
+/* ================================================================
+   ARTYKUL
+   ================================================================ */
+.post__container { max-width: var(--measure-article); }
 .post__meta {
   display: flex;
   gap: var(--space-md);
@@ -157,13 +156,31 @@
   margin-block: var(--space-sm) var(--space-md);
 }
 .post__lead {
-  font-size: var(--text-body-lg);
+  font-size: var(--text-xl);
   font-weight: var(--weight-bold);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
 }
 .post__media { margin-block: var(--space-lg); }
 .post__media img { width: 100%; height: auto; border-radius: var(--radius-lg); display: block; }
+
+/* Tekst czytelniczy. base.css ustawia p { max-width: 70ch }, co przy
+   malej czcionce sciska akapit wezej niz kontener — zmierzone 602 px
+   przy kontenerze 720 px. Tutaj kontener jest miara szerokosci. */
+.post .prose,
+.page-prose {
+  font-size: var(--text-article);
+  line-height: var(--leading-body);
+}
+.post .prose p,
+.post .prose li,
+.page-prose p,
+.page-prose li { max-width: none; }
+.post .prose h2,
+.page-prose h2 { font-size: var(--text-h3); margin-top: var(--space-2xl); }
+.post .prose h3,
+.page-prose h3 { font-size: var(--text-h4); margin-top: var(--space-xl); }
+.post .prose img { width: 100%; height: auto; border-radius: var(--radius-lg); margin-block: var(--space-lg); }
 
 /* --- blok zrodla dla kategorii media --- */
 .source-note {
@@ -197,17 +214,53 @@
 }
 .share__link:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
 
-/* --- blok kontaktowy --- */
-.contact-block { background: var(--color-surface-soft); padding-block: var(--space-2xl); }
-.contact-block__inner { text-align: center; }
-.contact-block__heading { font-family: var(--font-display); font-size: var(--text-h3); margin-bottom: var(--space-md); }
-.contact-block__person { font-weight: var(--weight-bold); }
-.contact-block__email a { font-size: var(--text-body-lg); color: var(--color-link); }
-.contact-block__note { margin-top: var(--space-md); color: var(--color-text-secondary); font-size: var(--text-caption-1); }
+/* ================================================================
+   KONTAKT DLA MEDIOW — jedna karta, notka pod nia
+   ================================================================ */
+.press-contact { padding-block: var(--space-3xl); background: var(--color-surface-soft); }
+.press-contact__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+.press-contact__card {
+  max-width: var(--card-contact);
+  margin-inline: auto;
+  background: var(--color-surface);
+  border: var(--border-hairline) solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--padding-card-comfort);
+  text-align: center;
+}
+.press-contact__rola {
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+}
+.press-contact__osoba {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  margin-block: var(--space-xs) var(--space-sm);
+}
+.press-contact__mail a {
+  font-size: var(--text-lg);
+  color: var(--color-link);
+  font-weight: var(--weight-bold);
+}
+.press-contact__note {
+  max-width: var(--measure-note);
+  margin: var(--space-xl) auto 0;
+  text-align: center;
+  font-size: var(--text-caption-1);
+  color: var(--color-text-secondary);
+}
 /* base.css ustawia p { max-width: 70ch } — wysrodkowanie wymaga margin-inline. */
-.contact-block__inner p { margin-inline: auto; }
+.press-contact__card p { margin-inline: auto; }
 
-/* --- paginacja (nieaktywna przy obecnej liczbie wpisow) --- */
+/* --- paginacja --- */
 .pagination {
   display: flex;
   align-items: center;
@@ -220,12 +273,36 @@
 /* --- naglowek sekcji z linkiem ---
    erli.de centrowalo ten blok (text-align + margin-inline: auto), przez co
    naglowek i link ladowaly jeden pod drugim. Tu odzyskuja jeden wiersz. */
-.section-header { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-lg); }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
 .section-header__link { color: var(--color-link); font-weight: var(--weight-bold); }
 
-.container--narrow { max-width: var(--max-narrow); }
+/* --- stopka: social media --- */
+.site-footer__social { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-md); }
+.site-footer__social a { color: var(--color-text-secondary); }
+.site-footer__social a:hover { color: var(--color-primary-700); }
 
+/* ================================================================
+   MOBILE — zdjecie nad tekstem, pelna szerokosc
+   ================================================================ */
 @media (max-width: 768px) {
-  .post-grid { grid-template-columns: 1fr; }
-  .press-hero { padding-block: var(--space-2xl); }
+  .press-item__link {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding-block: var(--space-xl);
+  }
+  /* W jednej kolumnie nie ma wiersza do wypelnienia — tu proporcja jest
+     jedynym sensownym ograniczeniem wysokosci, wiec aspect-ratio jest OK. */
+  .press-item__media { aspect-ratio: var(--aspect-og); height: auto; }
+  /* Zdjecie nie moze wyprzedzac tytulu w kolejnosci czytania. */
+  .press-item--featured .press-item__media { order: 0; }
+  .press-item--featured .press-item__link { padding-block: var(--space-2xl); }
+  .press-item--featured .press-item__title { font-size: var(--text-h4); }
+  .press-item--featured .press-item__lead { font-size: var(--text-lg); -webkit-line-clamp: 3; }
 }
