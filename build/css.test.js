@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { concatCss, CSS_ORDER } from './css.js';
 
 test('kolejnosc zrodel jest ustalona', () => {
-  assert.deepEqual(CSS_ORDER, ['tokens.css', 'base.css', 'layout.css', 'components.css']);
+  assert.deepEqual(CSS_ORDER, ['tokens.css', 'base.css', 'layout.css', 'components.css', 'press.css']);
 });
 
 test('skleja w podanej kolejnosci', () => {

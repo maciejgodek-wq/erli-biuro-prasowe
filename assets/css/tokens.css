@@ -334,6 +334,30 @@
 
   /* Premium-card radius (briefem 16px — extension poza design.md 3.4) */
   --radius-xl: 20px;   /* design v3 — odejście od v2.2 8px, premium card look */
+
+  /* ============ BIURO PRASOWE — rozszerzenie poza design.md ============
+     Tokeny dodane dla press.css, żeby ten arkusz nie zawierał żadnej
+     wartości wpisanej na sztywno. Wartości pochodzą z planu
+     docs/superpowers/plans/2026-07-27-biuro-prasowe-erli.md (Task 19). */
+
+  /* Grubości obramowań — dotąd literały rozsiane po components.css */
+  --border-hairline: 1px;   /* separatory, obramowanie karty */
+  --border-emphasis: 2px;   /* podkreślenie aktywnej pozycji, linia pod rokiem */
+  --border-accent:   var(--space-1);   /* 4px — pasek akcentu przy .source-note */
+
+  /* Szerokości miary tekstu (czytelna długość wiersza) */
+  --measure-lead:  52ch;   /* lead w hero */
+  --measure-prose: 60ch;   /* lead na podstronach */
+
+  /* Szerokości układu biura prasowego */
+  --min-post-card: 300px;   /* min. kolumna auto-fill w .post-grid */
+  --max-narrow:    720px;   /* kolumna tekstu artykułu i stron statycznych */
+
+  /* Podniesienie karty na hover */
+  --lift-card: -2px;
+
+  /* Proporcje grafiki OG (1200×630 — zgodne z og:image w base.html) */
+  --aspect-og: 1200 / 630;
 }
 
 /* Smooth <details> height interpolation (Chrome 129+, Firefox 137+) */

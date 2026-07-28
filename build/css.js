@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 /** Kolejnosc ma znaczenie: tokeny zanim ktokolwiek ich uzyje. */
-export const CSS_ORDER = ['tokens.css', 'base.css', 'layout.css', 'components.css'];
+export const CSS_ORDER = ['tokens.css', 'base.css', 'layout.css', 'components.css', 'press.css'];
 
 const NAGLOWEK = `/* Plik generowany przez build.js — nie edytuj recznie.
    Zrodla: assets/css/{${CSS_ORDER.join(', ')}} */\n\n`;

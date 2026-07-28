@@ -1,0 +1,223 @@
+/* ================================================================
+   press.css — komponenty biura prasowego.
+   Wszystkie wartosci pochodza z tokens.css. Zadnej liczby na sztywno
+   poza progami media queries — te musza byc literalami (patrz
+   komentarz przy --bp-* w tokens.css).
+   Sklejany jako ostatni, wiec przy rownej specyficznosci wygrywa.
+   ================================================================ */
+
+/* --- hero --- */
+.press-hero {
+  background: var(--gradient-brand-vivid);
+  color: var(--color-text-on-brand);
+  padding-block: var(--space-3xl);
+}
+.press-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  margin-block: var(--space-md) var(--space-lg);
+}
+.press-hero__lead {
+  font-size: var(--text-body-lg);
+  max-width: var(--measure-lead);
+}
+/* Eyebrow na gradiencie — teal z components.css nie ma kontrastu na tealu. */
+.press-hero .section-eyebrow {
+  color: var(--color-text-on-brand);
+}
+
+/* --- aktywna pozycja nawigacji ---
+   aria-current obsluguje czytniki ekranu; ponizsze daje wskazowke wizualna.
+   Bez tego osoba widzaca nie wie, na ktorej stronie jest.
+   Specyficznosc 0,2,0 — wygrywa z .site-header__nav a (0,1,1). */
+.site-header__nav .is-active {
+  color: var(--color-primary-700);
+  font-weight: var(--weight-bold);
+  box-shadow: inset 0 calc(-1 * var(--border-emphasis)) 0 0 var(--color-primary);
+}
+
+/* --- naglowki stron --- */
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-heading);
+  margin-block: var(--space-sm) var(--space-md);
+}
+.page-lead {
+  font-size: var(--text-body-lg);
+  color: var(--color-text-secondary);
+  max-width: var(--measure-prose);
+}
+
+/* --- siatka kart --- */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-post-card), 1fr));
+  gap: var(--space-lg);
+}
+
+/* --- karta artykulu --- */
+.post-card {
+  background: var(--color-surface);
+  border: var(--border-hairline) solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: box-shadow var(--duration-default) var(--ease-default),
+              transform var(--duration-default) var(--ease-default);
+}
+.post-card:hover,
+.post-card:focus-within {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(var(--lift-card));
+}
+@media (prefers-reduced-motion: reduce) {
+  .post-card:hover,
+  .post-card:focus-within { transform: none; }
+}
+.post-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+/* Obramowanie focusa: globalne :focus-visible z base.css (tokeny). */
+/* aspect-ratio trzyma wysokosc karty niezaleznie od tego, czy grafika sie wczytala. */
+.post-card__media { aspect-ratio: var(--aspect-og); background: var(--color-neutral-75); }
+.post-card__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--padding-card-default);
+  flex: 1;
+}
+.post-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-caption-1);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+}
+.post-card__kategoria { color: var(--color-primary-700); font-weight: var(--weight-bold); }
+.post-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-heading);
+}
+.post-card__lead {
+  color: var(--color-text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.post-card__more { margin-top: auto; color: var(--color-link); font-weight: var(--weight-bold); }
+
+/* --- grupy roczne --- */
+.year-group + .year-group { margin-top: var(--space-3xl); }
+.year-group__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  color: var(--color-text-muted);
+  border-bottom: var(--border-emphasis) solid var(--color-border);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* --- artykul --- */
+.post__container { max-width: var(--max-narrow); }
+.post__meta {
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+}
+.post__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-heading);
+  margin-block: var(--space-sm) var(--space-md);
+}
+.post__lead {
+  font-size: var(--text-body-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+.post__media { margin-block: var(--space-lg); }
+.post__media img { width: 100%; height: auto; border-radius: var(--radius-lg); display: block; }
+
+/* --- blok zrodla dla kategorii media --- */
+.source-note {
+  background: var(--color-surface-soft);
+  border-left: var(--border-accent) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--padding-card-cozy);
+  margin-block: var(--space-lg);
+}
+
+/* --- udostepnianie --- */
+.share { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: var(--border-hairline) solid var(--color-border); }
+.share__heading {
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+.share__list { display: flex; flex-wrap: wrap; gap: var(--space-sm); list-style: none; padding: 0; }
+.share__link {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-hairline) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: none;
+  font: inherit;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+.share__link:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
+
+/* --- blok kontaktowy --- */
+.contact-block { background: var(--color-surface-soft); padding-block: var(--space-2xl); }
+.contact-block__inner { text-align: center; }
+.contact-block__heading { font-family: var(--font-display); font-size: var(--text-h3); margin-bottom: var(--space-md); }
+.contact-block__person { font-weight: var(--weight-bold); }
+.contact-block__email a { font-size: var(--text-body-lg); color: var(--color-link); }
+.contact-block__note { margin-top: var(--space-md); color: var(--color-text-secondary); font-size: var(--text-caption-1); }
+/* base.css ustawia p { max-width: 70ch } — wysrodkowanie wymaga margin-inline. */
+.contact-block__inner p { margin-inline: auto; }
+
+/* --- paginacja (nieaktywna przy obecnej liczbie wpisow) --- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+.pagination__status { color: var(--color-text-muted); font-size: var(--text-caption-1); }
+
+/* --- naglowek sekcji z linkiem ---
+   erli.de centrowalo ten blok (text-align + margin-inline: auto), przez co
+   naglowek i link ladowaly jeden pod drugim. Tu odzyskuja jeden wiersz. */
+.section-header { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-lg); }
+.section-header__link { color: var(--color-link); font-weight: var(--weight-bold); }
+
+.container--narrow { max-width: var(--max-narrow); }
+
+@media (max-width: 768px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .press-hero { padding-block: var(--space-2xl); }
+}
