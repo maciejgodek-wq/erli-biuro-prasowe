@@ -1,4 +1,4 @@
-# Układ v2 — przebudowa kompozycji wzorowana na biurze prasowym Żabki
+# Układ v2 — wyróżniony artykuł i lista pionowa
 
 Data: 2026-07-28
 Status: zaakceptowany, gotowy do wdrożenia
@@ -11,27 +11,29 @@ Pierwsza kompozycja (hero + siatka kafli 3×3) została odrzucona przez
 właściciela: „nie skaluje się dobrze", „zdjęcia nie są w równych liniach",
 „nagłówek biuro prasowe nie siedzi", „za wąska szpalta tekstu".
 
-Referencja wybrana przez właściciela: <https://www.zabka.pl/biuro-prasowe/>
-— z zastrzeżeniem „trochę za duża jak dla nas", więc skala w dół.
+Kierunek wskazany przez właściciela: wyróżniony artykuł na górze, pozostałe
+jeden pod drugim z dużym zdjęciem, wyeksponowany kontakt dla mediów.
+Skala mniejsza niż w referencji, którą podał.
 
-## Pomiary referencji (Żabka, viewport 1400 px)
+## Pomiary referencji (viewport 1400 px)
 
 | Element | Wartość |
 |---|---|
 | Kontener treści | 1032 px |
 | Zdjęcie w liście | 516 px (dokładnie połowa kontenera) |
 | Zdjęcie wyróżnionego | 561 × 386 px, po **prawej** stronie |
-| Zdjęcia w liście | po **lewej** stronie (x = 177) |
+| Zdjęcia w liście | po **lewej** stronie |
 | Tytuł wyróżnionego | 40 px, waga 700 |
 | Tytuł w liście | 22 px, waga 700 |
 | Tekst artykułu | **800 px szerokości, 20 px, interlinia 26 px** |
 | Karta kontaktowa | 400 × 202 px, promień 20 px |
 | Notka pod kartą | 600 px, wyśrodkowana |
+| Tło wyróżnionego | delikatny szary pas na pełną szerokość |
 
 ### Mechanizm wysokości zdjęć
 
 Wysokość zdjęcia **idzie za długością tekstu**, nie za proporcją obrazu.
-Zmierzone na Żabce:
+Zmierzone w referencji:
 
 | Znaki tekstu | Wysokość zdjęcia |
 |---|---|
@@ -54,14 +56,16 @@ w wariancie jednokolumnowym (mobile), gdzie nie ma wiersza do wypełnienia.
 
 | # | Decyzja | Uzasadnienie |
 |---|---|---|
-| U1 | Turkusowy pas hero **usunięty** | Żabka nie ma hero; dziennikarz widzi najnowszy komunikat od pierwszej sekundy |
-| U2 | Wyróżniony: tekst lewo, zdjęcie prawo | 1:1 z Żabką |
+| U1 | Turkusowy pas hero **usunięty** | Dziennikarz widzi najnowszy komunikat od pierwszej sekundy |
+| U2 | Wyróżniony: tekst lewo, zdjęcie prawo | Zgodnie z referencją |
 | U3 | Lista: jeden wpis na wiersz, zdjęcie lewo 50% | Zamiast siatki 3×3. Znosi problem nierównych wysokości — przy jednym wpisie na wiersz nie ma z czym równać |
-| U4 | Zdjęcia kadrowane, wysokość z tekstu | Mechanizm Żabki, patrz wyżej |
+| U4 | Zdjęcia kadrowane, wysokość z tekstu | Mechanizm opisany wyżej |
 | U5 | Jedna karta kontaktowa + notka pod nią | Kontakt prasowy wyeksponowany; adres dla kupujących w notce. Dwie równorzędne karty zestawiałyby kontakt prasowy z obsługą klienta — nierówne rangi |
 | U6 | Stopka: + social media ERLI, + link do erli.pl | Social media były na obecnym biurze prasowym i wypadły przy przebudowie; biuro prasowe jest dziś odcięte od erli.pl |
 | U7 | Leady wydłużone do 250–350 znaków | Patrz „Problem długości leadów" |
 | U8 | Nowy token 20 px na tekst artykułu | Patrz „Ograniczenie skali typograficznej" |
+| U9 | Wyróżniony na pasie `--color-surface-alt`, lista na białym | Wyróżnienie bez dodatkowej ramki ani cienia. `#f4f4f4` jest wystarczająco delikatne, a `--color-surface-soft` (`#fafafa`) jest już nieodróżnialne od bieli |
+| U10 | Aktywna pozycja menu bez paska pod spodem | Poprzednie `box-shadow: inset 0 -2px` było zbyt ciężkie. Zostaje kolor, pogrubienie i cienkie podkreślenie z odstępem |
 
 ## Ograniczenie skali typograficznej
 
@@ -88,18 +92,18 @@ przez właściciela.
 ## Problem długości leadów
 
 Nasze leady (kolumna `intro_text` z Joomli) mają **50–183 znaki**;
-Żabkowe 191–381. Skutek: mechanizm wysokości nie ma czym rozciągnąć wiersza
-i zdjęcia wychodzą paskami. Zmierzone warianty:
+w referencji 191–381. Skutek: mechanizm wysokości nie ma czym rozciągnąć
+wiersza i zdjęcia wychodzą paskami. Zmierzone warianty:
 
 | Wariant | Proporcje zdjęć w liście |
 |---|---|
 | Tekst 15,35 px, bez podłogi | 1,88 – 2,49 |
 | Tekst 18 px, bez podłogi | 1,88 – 2,49 |
 | Podłoga `min-height: 288px` | 1,60 we wszystkich — zmienność zniknęła |
-| Żabka | 1,10 – 1,72, zmienne |
+| Referencja | 1,10 – 1,72, zmienne |
 
-Podłoga naprawia paski, ale kasuje zmienność, która była powodem wyboru tej
-referencji — żaden nasz lead nie jest dość długi, żeby ją przekroczyć.
+Podłoga naprawia paski, ale kasuje zmienność, która była powodem wyboru tego
+kierunku — żaden nasz lead nie jest dość długi, żeby ją przekroczyć.
 
 **Decyzja U7:** zamiast podłogi wydłużamy leady. Skrypt uzupełnia zbyt krótkie
 `lead` pierwszym akapitem treści do ~250–350 znaków, ucinając na granicy
@@ -123,10 +127,10 @@ Każdy z komentarzem w `tokens.css` mówiącym, skąd wzięła się wartość.
 
 ```
 header (bez zmian, kontener 1032)
-─────────────────────────────────
+═════════════════════════════════  pas --color-surface-alt, pełna szerokość
 wyróżniony: tekst lewo | zdjęcie prawo, tytuł h1 32–40 px
-─────────────────────────────────
-„Wcześniejsze"            „Wszystkie aktualności" →
+═════════════════════════════════
+„Wcześniejsze"            „Wszystkie aktualności" →      białe tło
 wpis: zdjęcie lewo | tekst prawo, tytuł h3 22–24 px
 wpis: zdjęcie lewo | tekst prawo
 …
@@ -157,3 +161,6 @@ na zdjęciu, żeby zdjęcie nie wyprzedzało tytułu.
   rozmiarowe i `srcset`
 - D4 i D5 z `BLOKADY.md`
 - decyzja o pushu na `origin` (47 commitów, brak przeglądu)
+- komunikaty commitów z wcześniejszych sesji zawierają nazwę serwisu
+  referencyjnego; historia jest wyłącznie lokalna, więc da się ją przepisać,
+  ale to decyzja właściciela

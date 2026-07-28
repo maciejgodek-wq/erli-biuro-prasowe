@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Układ v2 (Żabka) — Biuro prasowe ERLI</title>
+<title>Układ v2 — Biuro prasowe ERLI</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/main.css">
 <style>
 /* ================================================================
-   UKŁAD v2 — kompozycja wzorowana na biurze prasowym Żabki.
-   Wszystko na tokenach z tokens.css poza trzema wartościami
-   oznaczonymi NOWY TOKEN niżej.
+   UKŁAD v2 — wyróżniony artykuł na górze, pozostałe jeden pod drugim.
+   Wszystko na tokenach z tokens.css poza wartościami oznaczonymi
+   NOWY TOKEN niżej.
    ================================================================ */
 
-/* --- NOWE TOKENY do zatwierdzenia --------------------------------
-   Zmierzone u Żabki: kontener 1032 px, zdjęcie w liście 516 px (połowa).
-   Nasz --max-content-width to 1344 px — dla biura prasowego zbyt szeroko,
-   wiersz tekstu robi się nieczytelny.                               */
+/* --- NOWE TOKENY -------------------------------------------------
+   Zmierzone w referencji: kontener 1032 px, zdjęcie w liście 516 px
+   (połowa). Nasz --max-content-width to 1344 px — dla biura prasowego
+   zbyt szeroko, wiersz tekstu robi się nieczytelny.                 */
 :root {
   --max-press: 1032px;        /* NOWY TOKEN — kontener biura prasowego */
   --measure-article: 800px;   /* NOWY TOKEN — szpalta artykułu (było 720) */
@@ -25,6 +25,23 @@
 }
 
 .container--press { max-width: var(--max-press); }
+
+/* ================================================================
+   AKTYWNA POZYCJA MENU — subtelnie.
+   press.css ma tu box-shadow: inset 0 -2px — gruby pasek przyklejony
+   do tekstu, zbyt ciezki. Zamiast tego cienka linia z odstepem,
+   w kolorze tekstu, nie brandowym. Kolor i pogrubienie zostaja jako
+   drugi kanal informacji (WCAG 1.4.1 — nie sam kolor).
+   ================================================================ */
+.site-header__nav .is-active {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-bold);
+  box-shadow: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 6px;
+}
 
 /* ================================================================
    WPIS PRASOWY — jeden wzorzec dla wyróżnionego i dla listy.
@@ -99,6 +116,14 @@
 .press-item__more { color: var(--color-link); font-weight: var(--weight-bold); }
 .press-item__link:hover .press-item__title { color: var(--color-primary-700); }
 
+/* ================================================================
+   PAS WYRÓŻNIONEGO — delikatne szare tło na pełną szerokość okna.
+   --color-surface-alt (#f4f4f4), nie --color-surface-soft (#fafafa):
+   to drugie jest już nieodróżnialne od bieli. Sam pas wystarcza
+   za wyróżnienie — bez ramki i bez cienia.
+   ================================================================ */
+.featured-band { background: var(--color-surface-alt); }
+
 /* --- wariant wyróżniony: zdjęcie po prawej, większa typografia --- */
 .press-item--featured { border-bottom: none; }
 .press-item--featured .press-item__link { padding-block: var(--space-3xl); }
@@ -149,8 +174,8 @@
   color: var(--color-text-secondary);
 }
 :root {
-  --card-contact: 400px;   /* NOWY TOKEN — karta kontaktowa, zmierzone u Żabki */
-  --measure-note: 600px;   /* NOWY TOKEN — notka pod kartą, zmierzone u Żabki */
+  --card-contact: 400px;   /* NOWY TOKEN — karta kontaktowa, z pomiaru referencji */
+  --measure-note: 600px;   /* NOWY TOKEN — notka pod kartą, z pomiaru referencji */
 }
 
 /* ================================================================
@@ -193,8 +218,8 @@
 
 <div class="podglad-info">
   <div class="container container--press">
-    <strong>Układ v2</strong> — kompozycja wzorowana na biurze prasowym Żabki.
-    Bez turkusowego pasa, wyróżniony na górze, pozostałe jeden pod drugim.
+    <strong>Układ v2</strong> — wyróżniony artykuł na szarym pasie, pozostałe
+    jeden pod drugim na białym tle. Bez turkusowego hero.
     Zwężaj okno: przy 768 px zdjęcia wchodzą nad tekst.
   </div>
 </div>
@@ -220,8 +245,9 @@
 
 <main id="main">
 
-  <!-- WYRÓŻNIONY: tekst lewo, zdjęcie prawo -->
-  <div class="container container--press">
+  <!-- WYRÓŻNIONY: pas na pełną szerokość, tekst lewo, zdjęcie prawo -->
+  <div class="featured-band">
+   <div class="container container--press">
     <article class="press-item press-item--featured">
       <a class="press-item__link" href="/aktualnosci/erli-z-rekordowym-wzrostem-ponad-1-29-mld-zl-gmv-po-9-miesiacach-2025-roku/">
         <div class="press-item__body">
@@ -238,6 +264,7 @@
         </div>
       </a>
     </article>
+   </div>
   </div>
 
   <!-- LISTA: jeden pod drugim, zdjęcie lewo -->
