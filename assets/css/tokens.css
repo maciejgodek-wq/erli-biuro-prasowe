@@ -356,9 +356,15 @@
   /* --- Układ v2: wyróżniony artykuł i lista pionowa ---------------
      Wartości z pomiaru referencji wskazanej przez właściciela
      (viewport 1400 px). --max-content-width 1344 px jest dla biura
-     prasowego zbyt szerokie: wiersz tekstu przestaje być czytelny. */
-  --max-press:       1032px;  /* kontener biura prasowego */
-  --measure-article:  800px;  /* szpalta tekstu artykułu */
+     prasowego zbyt szerokie.
+     Kontener nie ogranicza długości wiersza — szpalta tekstu artykułu
+     ma własny limit (--measure-article), więc poszerzenie kontenera
+     nie pogarsza czytelności. */
+  --max-press:       1200px;  /* kontener biura prasowego */
+  /* Szpalta tekstu artykułu. 880 px daje 74 znaki w wierszu przy foncie 20 px
+     — górna granica czytelnego zakresu 45–75. Powyżej oko gubi początek
+     następnego wiersza; 960 px dałoby już 82 znaki. */
+  --measure-article:  880px;
   --card-contact:     400px;  /* karta kontaktu prasowego */
   --measure-note:     600px;  /* notka pod kartą kontaktową */
 
@@ -374,6 +380,11 @@
 
   /* Proporcje grafiki OG (1200×630 — zgodne z og:image w base.html) */
   --aspect-og: 1200 / 630;
+
+  /* Kadr zdjęcia na karcie listy. 3:2 zamiast szerokiego 1200:630, bo przy
+     wielolinijkowych tytułach kolumna tekstu bywa dwa razy wyższa niż zdjęcie
+     i po jego bokach zostawała duża pustka. */
+  --aspect-karta: 3 / 2;
 }
 
 /* Smooth <details> height interpolation (Chrome 129+, Firefox 137+) */

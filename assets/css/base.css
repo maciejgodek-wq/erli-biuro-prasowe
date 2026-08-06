@@ -74,7 +74,12 @@ h4 { font-size: var(--text-h4); }
 h5 { font-size: var(--text-h5); }
 h6 { font-size: var(--text-h6); }
 
-p { max-width: 70ch; }
+/* Miare wiersza narzuca `.prose p` w components.css, nie globalne `p`.
+   Reguła globalna lapala kazdy akapit w projekcie, takze te pelniace role
+   kontenerow ukladu — przez co centrowanie i wyrownania liczyly sie wzgledem
+   pudelka 70ch zamiast kolumny. Kosztowalo to trzy usterki: zerowe odstepy
+   miedzy akapitami w 77 artykulach, notke pod panelem kontaktowym i przycisk
+   "Wiecej aktualnosci" odsuniety o 266 px od srodka. */
 
 /* ============ FOCUS ============ */
 :focus { outline: none; }

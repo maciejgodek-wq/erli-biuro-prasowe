@@ -17,11 +17,11 @@
    spelnia WCAG 1.4.1.
    Specyficznosc 0,2,0 — wygrywa z .site-header__nav a (0,1,1). */
 .site-header__nav .is-active {
-  color: var(--color-text-primary);
+  color: var(--color-primary-700);
   font-weight: var(--weight-bold);
   text-decoration: underline;
-  text-decoration-thickness: var(--border-hairline);
-  text-decoration-color: var(--color-border-strong);
+  text-decoration-thickness: var(--border-emphasis);
+  text-decoration-color: var(--color-primary-700);
   text-underline-offset: var(--space-1-5);
 }
 
@@ -38,6 +38,7 @@
   color: var(--color-text-secondary);
   max-width: var(--measure-prose);
 }
+
 
 /* ================================================================
    WPIS PRASOWY — jeden wzorzec dla wyroznionego i dla listy.
@@ -56,25 +57,54 @@
   text-decoration: none;
 }
 
-/* Zdjecie: szerokosc z kolumny siatki, wysokosc z wiersza (wyznacza go
-   kolumna tekstu), nadmiar dociety przez object-fit.
+/* Zdjecie ma stala proporcje, wiec kazda karta na liscie ma je tej samej
+   wysokosci: 544 px toru / 1.905 = 286 px. Wczesniej wysokosc brala sie z
+   wiersza siatki, ktory wyznaczala kolumna tekstu — przy tytulach od 1 do 7
+   linii dawalo to na stronie glownej siedem roznych wysokosci, od 213 do
+   459 px.
 
-   ZADNEGO aspect-ratio w wariancie dwukolumnowym. Element siatki ma juz
-   oba wymiary narzucone; aspect-ratio jest trzecim ograniczeniem, wygrywa
-   i rozpycha zdjecie poza tor, ucinajac tekst w sasiedniej kolumnie.
-   Zmierzone dwukrotnie: tor 778 px / grafika 851 px, potem tor 767 px /
-   grafika 795 px.
+   align-self: center jest tu warunkiem koniecznym i to on uniewaznia dawne
+   ostrzezenie, ze aspect-ratio rozpycha zdjecie poza tor. Rozpychalo, bo przy
+   align-items: stretch wiersz narzucal wysokosc i proporcja byla trzecim,
+   sprzecznym ograniczeniem. Bez rozciagania zostaja dwa: szerokosc toru i
+   proporcja — wynik jest jednoznaczny.
+
+   center, nie start: przy dluzszym tekscie (karta wyrozniona ma 457 px wobec
+   286 px zdjecia) gorne wyrownanie zostawialo cala nadwyzke pod zdjeciem i
+   czytalo sie jak blad. Wysrodkowanie dzieli ja na pol.
+
+   Body nadal dziedziczy stretch z .press-item__link, wiec tekst zostaje
+   wysrodkowany w pionie wzgledem calej karty.
+
+   --aspect-karta to 3:2. Wyzsze niz --aspect-og (1.905), bo przy tytulach na
+   szesc linii kolumna tekstu ma 457 px i po bokach 286-pikselowego zdjecia
+   zostawalo po ~85 px pustki. Kadrowanie jest za to mocniejsze: natywne
+   proporcje zdjec to 1.52-2.19, wiec najszersze traca w kadrze okolo 30%
+   szerokosci. Object-fit tnie symetrycznie, wiec obiekt w srodku kadru
+   przezywa — warto o tym pamietac przy doborze zdjec do artykulow.
 
    overflow: hidden jest obowiazkowe — bez niego zdjecie wyzsze niz ramka
    rozpycha ja od srodka (min-height: auto na bloku). */
 .press-item__media {
   width: 100%;
-  height: 100%;
+  aspect-ratio: var(--aspect-karta);
+  align-self: center;
   overflow: hidden;
   border-radius: var(--radius-xl);
   background: var(--color-neutral-75);
+
+  /* Maska domyka zaokraglone rogi przy powiekszeniu zdjecia. Transform na
+     dziecku promuje je do wlasnej warstwy kompozytora, a wtedy WebKit
+     przestaje respektowac overflow: hidden rodzica i naroza "wyciekaja". */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
-.press-item__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.press-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
 
 .press-item__body {
   display: flex;
@@ -110,6 +140,12 @@
 .press-item__more { color: var(--color-link); font-weight: var(--weight-bold); }
 .press-item__link:hover .press-item__title { color: var(--color-primary-700); }
 
+/* Lekki zoom zdjecia. Skala 1.04 przy object-fit: cover — kadr sie zaciesnia,
+   ramka stoi w miejscu. Takze na :focus-visible, zeby nawigacja klawiatura
+   dostawala te sama informacje zwrotna co mysz. */
+.press-item__link:hover .press-item__img,
+.press-item__link:focus-visible .press-item__img { transform: scale(1.04); }
+
 /* --- pas wyroznionego ---
    --color-surface-alt (#f4f4f4), nie --color-surface-soft (#fafafa):
    to drugie jest przy bieli nieodroznialne. Sam pas wystarcza za
@@ -124,17 +160,92 @@
   font-size: var(--text-xl);
   -webkit-line-clamp: 4;
 }
+/* Wyrozniony dostaje wyzszy kadr niz karty listy: 544/1.333 = 408 px wobec
+   363 px. Blizej wysokosci kolumny tekstu (457 px), wiec obie polowy karty
+   wazą podobnie zamiast zostawiac pasy pustki po bokach zdjecia. */
+.press-item--featured .press-item__media { aspect-ratio: 4 / 3; }
 
-/* --- grupy roczne --- */
-.year-group + .year-group { margin-top: var(--space-3xl); }
-.year-group__heading {
-  font-family: var(--font-display);
-  font-size: var(--text-h3);
-  color: var(--color-text-muted);
-  border-bottom: var(--border-emphasis) solid var(--color-border);
-  padding-bottom: var(--space-sm);
+/* Znacznik "Najnowsze". Do tej pory o pierwszenstwie tego wpisu mowila
+   wylacznie pozycja na stronie i szare pasmo — dla kogos, kto wchodzi z
+   wyszukiwarki prosto na strone glowna, to zadna informacja. */
+.press-item__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-primary-700);
+  color: var(--color-white);
+  font-weight: var(--weight-bold);
+}
+
+/* Etykieta listy na stronie glownej.
+   Wczesniej .section-header__heading, czyli --text-h1 = 42 px — o 10 px wiecej
+   niz tytul wyroznionego newsa (32 px) stojacego nad nia. Etykieta krzyczala
+   glosniej niz tresc, ktora opisuje. */
+.lista-etykieta {
+  display: block;
   margin-bottom: var(--space-lg);
 }
+
+/* --- powiazane materialy: trzy kafle obok siebie ---
+   Ten sam partial co na liscie, tylko odwrocony na pion. W press-item.html
+   zdjecie stoi w kodzie przed tekstem, wiec wystarczy zwinac siatke do jednej
+   kolumny, zeby kafel ulozyl sie obrazek-nad-tekstem. Zadnego drugiego
+   szablonu ani duplikatu znacznikow. */
+.powiazane__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl);
+}
+.powiazane__grid .press-item { border-bottom: none; }
+.powiazane__grid .press-item__link {
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding-block: 0;
+  height: 100%;
+}
+/* Tresc od gory: przy roznej dlugosci tytulow wysrodkowanie rozjezdzalo
+   pierwsze wiersze trzech sasiadujacych kafli. */
+.powiazane__grid .press-item__body { justify-content: flex-start; }
+/* Trzy linijki maksimum, reszta wielokropkiem. Bez tego tytul na szesc linii
+   spychal lead i "Czytaj wiecej" sasiada o ponad 100 px w dol i trzy kafle
+   przestawaly tworzyc rzad. */
+.powiazane__grid .press-item__title {
+  font-size: var(--text-lg);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.powiazane__grid .press-item__lead {
+  font-size: var(--text-sm);
+  -webkit-line-clamp: 3;
+}
+
+@media (max-width: 1024px) {
+  .powiazane__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .powiazane__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+}
+
+/* Przejscie do pelnej listy na koncu przewijania. */
+.lista-wiecej {
+  margin: var(--space-2xl) 0 0;
+  text-align: center;
+}
+/* Promien .btn to 3 px — pigulka trzyma jezyk pozostalych akcji na stronie. */
+.lista-wiecej__cta { border-radius: var(--radius-full); }
+
+/* Odstep pod naglowkiem listy wnosi wylacznie .section--page-top (48 px) —
+   ten sam, co na stronie Kontakt. Sekcja listy nie dokłada nic wlasnego,
+   inaczej listy odjezdzalyby nizej niz pozostale podstrony. */
+.section--lista { padding-block-start: 0; }
+
+/* Grupy roczne usuniete swiadomie: data stoi na kazdej karcie, wiec naglowek
+   rocznika nic nie wnosil, a przy kilku wpisach na rok sugerowal, ze przez caly
+   rok nic sie nie dzialo. Lista jest plaska, od najnowszego. Tak samo robia
+   biura prasowe Allegro i Zabki. */
 
 /* ================================================================
    ARTYKUL
@@ -153,7 +264,7 @@
   font-size: var(--text-h1);
   font-weight: var(--weight-bold);
   line-height: var(--leading-heading);
-  margin-block: var(--space-sm) var(--space-md);
+  margin-block: var(--space-sm) 0;
 }
 .post__lead {
   font-size: var(--text-xl);
@@ -161,16 +272,106 @@
   color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
 }
-.post__media { margin-block: var(--space-lg); }
-.post__media img { width: 100%; height: auto; border-radius: var(--radius-lg); display: block; }
+/* Hero o stalej wysokosci: 1136 px kontenera przy 16:9 daje 639 px, niezaleznie
+   od tego, jakie zdjecie wpadnie. Natywne proporcje w archiwum to 1.52-2.19,
+   wiec bez narzuconego kadru wysokosc skakalaby o kilkaset pikseli miedzy
+   artykulami. object-fit dociera nadmiar, aspect-ratio rezerwuje miejsce zanim
+   plik sie doczyta, wiec uklad nie przeskakuje przy ladowaniu. */
+/* Zdjecie i naglowek w jednej komorce siatki, nie przez position: absolute.
+   Roznica jest istotna: przy absolutnym pozycjonowaniu nakladka wyzsza niz
+   kadr wychodzila poza kontener i overflow: hidden UCINAL pierwsze linie
+   tytulu — bez sladu, bez paska przewijania. Zdarzalo sie na mobile, gdzie
+   kadr ma 193 px, a tytul na siedem linii potrzebowal 360 px.
 
-/* Tekst czytelniczy. base.css ustawia p { max-width: 70ch }, co przy
-   malej czcionce sciska akapit wezej niz kontener — zmierzone 602 px
-   przy kontenerze 720 px. Tutaj kontener jest miara szerokosci. */
+   W siatce wiersz przyjmuje wysokosc wyzszego z dwoch elementow, wiec tekst
+   nigdy nie zostanie przyciety. Zdjecie trzyma 16:9, dopoki naglowek sie w tym
+   miesci; przy skrajnie dlugim tytule kadr po prostu rosnie. */
+/* Odstepy niesie kontener, kadr tylko sam siebie. Wczesniej obie role pelnil
+   jeden element i zaokraglenie ladowalo na pudelku 1200 px razem z paddingiem
+   kontenera, podczas gdy zdjecie ma 1136 px — luk wypadal w przezroczystym
+   marginesie, a widoczne rogi zostawaly ostre. */
+.post__hero-wrap { margin-block: var(--space-xl) var(--space-2xl); }
+
+/* Promien 2xl, nie xl jak na kartach listy. Ten sam luk czyta sie inaczej przy
+   roznej skali: 20 px na karcie 357 px to wyrazne zaokraglenie, na hero 1136 px
+   prawie plaska krawedz. 28 px przywraca te sama proporcje wizualna. */
+.post__hero {
+  display: grid;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.post__media {
+  grid-area: 1 / 1;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  background: var(--color-neutral-75);
+}
+.post__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Naglowek na zdjeciu.
+   Tytuly w archiwum maja od 20 do 235 znakow (mediana 67), wiec nakladka musi
+   znosic i jedna linijke, i szesc. Dlatego nie ma stalej wysokosci: rosnie
+   razem z tekstem, a gradient zaczyna sie wysoko nad nim, zeby przy dlugim
+   tytule gora napisu nie wypadla na jasny fragment zdjecia.
+
+   Skala tytulu ograniczona do --text-h2 (32 px zamiast 42 px). Przy 42 px
+   najdluzszy tytul zajmowalby ponad polowe kadru i zdjecie przestawaloby byc
+   zdjeciem. */
+.post__naglowek {
+  grid-area: 1 / 1;
+  align-self: end;
+  padding: var(--space-4xl) var(--space-2xl) var(--space-2xl);
+  /* Progi policzone, nie dobrane na oko. Bialy tekst na najjasniejszym
+     mozliwym pikselu zdjecia (255) potrzebuje krycia >= 0.54, zeby utrzymac
+     4.5:1. Pierwsza wersja miala w tym miejscu 0.485 i schodzila do 3.84:1.
+     Przy 96 px gornego paddingu tekst zaczyna sie na ~72% wysokosci nakladki,
+     gdzie ten gradient daje 0.71 — z zapasem, takze dla najdluzszych tytulow,
+     przy ktorych nakladka rosnie i tekst siega wyzej. */
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.90) 0%,
+    rgba(0, 0, 0, 0.82) 60%,
+    rgba(0, 0, 0, 0.60) 85%,
+    rgba(0, 0, 0, 0) 100%);
+  color: var(--color-white);
+}
+.post__naglowek .post__title {
+  font-size: var(--text-h2);
+  margin: var(--space-sm) 0 0;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+.post__naglowek .post__meta { color: inherit; }
+.post__naglowek .post__kategoria {
+  color: inherit;
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+}
+.post__naglowek .post__kategoria:hover { text-decoration: underline; }
+/* Nakladka lezy na ciemnym zdjeciu, a domyslny pierscien focusa (primary-700)
+   zlewalby sie z tlem. Ten sam powod co przy karcie kontaktowej. */
+.post__naglowek .post__kategoria:focus-visible { outline-color: var(--color-white); }
+
+/* Tekst czytelniczy. Miare wiersza wyznacza tu kontener (.post__container,
+   880 px = 70 znakow), a nie wlasny max-width akapitu — dlatego ponizej
+   zerujemy 70ch odziedziczone z komponentu .prose.
+
+   margin-inline: 0 zdejmuje centrowanie odziedziczone z komponentu .prose.
+   .prose ma margin-inline: auto i max-width wezszy niz kolumna (767 wobec
+   816 px), wiec sam blok tresci odjezdzal o 24,5 px w prawo wzgledem leadu,
+   naglowka i przyciskow udostepniania. Miara wiersza zostaje bez zmian —
+   max-width dziala dalej, zmienia sie tylko krawedz, do ktorej blok przylega. */
 .post .prose,
 .page-prose {
   font-size: var(--text-article);
   line-height: var(--leading-body);
+  margin-inline: 0;
 }
 .post .prose p,
 .post .prose li,
@@ -215,60 +416,160 @@
 .share__link:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
 
 /* ================================================================
-   KONTAKT DLA MEDIOW — jedna karta, notka pod nia
+   KONTAKT DLA MEDIOW — panel na pelna szerokosc kontenera
+
+   Poprzednio: karta 400 px wysrodkowana w kontenerze 1200 px, czyli 67%
+   szerokosci pustej, na tle #fafafa. Pasmo zlewalo sie ze stopka — czytalo
+   sie jako jej poczatek, a nie osobna sekcja.
+
+   Teraz panel w kolorze marki, na primary-700. Ciemniejszy odcien robi dwie
+   rzeczy naraz: podnosi zapas kontrastu ponad prog AA i przygasza zdjecie,
+   ktore pod multiply staje sie tekstura zamiast konkurowac z tekstem.
+
+   Notka "serwis wylacznie dla mediow" stoi POD panelem, nie w nim. To fine
+   print, a nie komunikat — w srodku rozcienczala przekaz panelu.
    ================================================================ */
 .press-contact { padding-block: var(--space-3xl); background: var(--color-surface-soft); }
+.press-contact__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-3xl);
+  align-items: center;
+  color: var(--color-white);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-3xl);
+
+  /* Zdjecie w tle przez multiply, nie przez polprzezroczysta nakladke.
+     Multiply liczy kanal jako (zdjecie x marka)/255, wiec wynik NIGDY nie jest
+     jasniejszy od samej marki. Kontrast bieli z tlem ma przez to twarda
+     podloge 4.82:1 — niezaleznie od tego, jakie zdjecie tu wstawisz i jak
+     jasne sa jego pola. Nakladka z opacity takiej gwarancji nie daje:
+     przy jasnym niebie czy bialej scianie tekst potrafi zniknac. */
+  background-color: var(--color-primary-700);
+  background-image: url('/assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
 .press-contact__heading {
   font-family: var(--font-display);
   font-size: var(--text-h3);
-  text-align: center;
-  margin-bottom: var(--space-xl);
 }
-.press-contact__card {
-  max-width: var(--card-contact);
-  margin-inline: auto;
-  background: var(--color-surface);
-  border: var(--border-hairline) solid var(--color-border);
-  border-radius: var(--radius-2xl);
-  padding: var(--padding-card-comfort);
-  text-align: center;
+
+/* Fine print pod panelem, na jasnym tle pasma. */
+.press-contact__note {
+  margin-top: var(--space-lg);
+  font-size: var(--text-caption-1);
+  color: var(--color-text-secondary);
+  max-width: 70ch;
+}
+.press-contact__note a { color: var(--color-link); }
+.press-contact__note a:hover { color: var(--color-link-hover); }
+
+/* Kolumna osoby wyrownana do prawej krawedzi panelu — inaczej wisi
+   w polowie pustego toru i traci zwiazek z przyciskiem. */
+.press-contact__osoba-blok {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-xs);
+}
+.press-contact__inicjaly {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-primary-700);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-sm);
 }
 .press-contact__rola {
   font-size: var(--text-caption-1);
   text-transform: uppercase;
   letter-spacing: var(--tracking-overline);
-  color: var(--color-text-muted);
 }
 .press-contact__osoba {
   font-family: var(--font-display);
   font-size: var(--text-h5);
   font-weight: var(--weight-bold);
-  margin-block: var(--space-xs) var(--space-sm);
 }
-.press-contact__mail a {
-  font-size: var(--text-lg);
-  color: var(--color-link);
+.press-contact__cta {
+  margin-top: var(--space-md);
   font-weight: var(--weight-bold);
 }
-.press-contact__note {
-  max-width: var(--measure-note);
-  margin: var(--space-xl) auto 0;
-  text-align: center;
-  font-size: var(--text-caption-1);
-  color: var(--color-text-secondary);
-}
-/* base.css ustawia p { max-width: 70ch } — wysrodkowanie wymaga margin-inline. */
-.press-contact__card p { margin-inline: auto; }
+/* Domyslny promien .btn to 3 px — kant w panelu o promieniu 28 px.
+   Pigulka trzyma sie jezyka pozostalych akcji na stronie. */
+.press-contact__cta { border-radius: var(--radius-full); }
+/* Bialy przycisk na tle marki nie potrzebuje wewnetrznej ramki. */
+.press-contact__cta.btn--secondary { box-shadow: none; }
+.press-contact__cta.btn--secondary:hover { background: var(--color-primary-50); }
+/* Domyslny focus jest ciemnoturkusowy — na tle marki bylby niewidoczny. */
+.press-contact__cta.btn:focus-visible { outline-color: var(--color-white); }
 
-/* --- paginacja --- */
+/* --- paginacja ---
+   Numerowana, bo przy 9 wpisach na strone stron jest kilka i skok wprost
+   jest szybszy niz klikanie "Nastepna". Krance zostaja widoczne jako
+   nieaktywne napisy zamiast znikac — inaczej pasek przeskakuje w bok
+   miedzy pierwsza a srodkowa strona. */
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-md);
   margin-top: var(--space-2xl);
 }
-.pagination__status { color: var(--color-text-muted); font-size: var(--text-caption-1); }
+.pagination__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  font-size: var(--text-sm);
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color var(--motion-default);
+}
+.pagination__link:hover { color: var(--color-link-hover); }
+/* Element nieaktywny jest zwolniony z SC 1.4.3, ale trzymamy go nad progiem
+   4.5:1, zeby automatyczne audyty nie zglaszaly falszywki przy kazdym
+   przebiegu — narzedzia nie rozpoznaja wylaczonego <span> jako kontrolki.
+   Po drodze: --color-text-disabled dawal 1.9:1, neutral-600 4.42:1.
+   Nieaktywnosc niesie brak koloru linku i podkreslenia, nie sama jasnosc. */
+.pagination__link--nieaktywny { color: var(--color-text-muted); }
+
+.pagination__numery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pagination__numer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  padding-inline: var(--space-2);
+  border: var(--border-hairline) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: border-color var(--motion-default), color var(--motion-default);
+}
+.pagination__numer:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
+.pagination__numer:focus-visible { outline: 2px solid var(--color-primary-700); outline-offset: 2px; }
+/* Strona biezaca wypelniona, nie tylko obrysowana — obrys sam w sobie jest
+   za slabym sygnalem obok osmiu identycznych pigulek. */
+.pagination__numer--aktualny {
+  background: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+  color: var(--color-white);
+}
 
 /* --- naglowek sekcji z linkiem ---
    erli.de centrowalo ten blok (text-align + margin-inline: auto), przez co
@@ -283,10 +584,384 @@
 }
 .section-header__link { color: var(--color-link); font-weight: var(--weight-bold); }
 
-/* --- stopka: social media --- */
-.site-footer__social { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-md); }
-.site-footer__social a { color: var(--color-text-secondary); }
+/* --- stopka: social media ---
+   Te same zasady co .site-footer__nav a: bez podkreslenia i z celem
+   dotykowym 32 px. Wczesniej byly podkreslone, wiec w jednej stopce dzialaly
+   dwa rozne style linku. */
+.site-footer__social { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+.site-footer__social a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 32px;
+  transition: color var(--motion-default);
+}
+/* Ikony sa konturowe, wiec kolor niesie stroke, a nie fill — currentColor na
+   fillu dalby czarne klaksy zamiast linii.
+
+   stroke-width tez idzie z CSS: zrodlowy LinkedIn mial 2, pozostale 1.5, przez
+   co po przeskalowaniu do 18 px wygladalby na pogrubiony. Jedna wartosc dla
+   wszystkich czterech wyrownuje wage optyczna.
+
+   Zaokraglone zakonczenia sa obowiazkowe: kropki w LinkedIn i Instagramie to
+   segmenty o zerowej dlugosci (V8.01), ktore bez stroke-linecap: round znikaja. */
+.site-footer__social svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .site-footer__social a:hover { color: var(--color-primary-700); }
+.site-footer__social a:focus-visible {
+  color: var(--color-primary-700);
+  outline: 2px solid var(--color-primary-700);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ================================================================
+   STRONA KONTAKT — dwie kolumny: karta osoby i nota dla redakcji
+
+   Kontakt prasowy i nota dostaja rozne traktowanie, nie rozny rozmiar:
+   karta jest wypelniona (--color-surface-alt), nota tylko obrysowana.
+   Wypelnienie czyta sie jako wazniejsze, wiec dziennikarz trafia wzrokiem
+   najpierw na osobe, a nie na tekst do skopiowania.
+
+   Proporcja 5:7 zamiast 1:1 — karta ma cztery krotkie wiersze, nota kilka
+   zdan. Rowne kolumny zostawialyby po lewej stronie dziure.
+   ================================================================ */
+.kontakt__lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-sm);
+}
+.kontakt { padding-bottom: var(--space-4xl); }
+.kontakt__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-3xl);
+  align-items: start;
+}
+.kontakt__naglowek {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  margin-bottom: var(--space-md);
+}
+
+/* Karta w kolorze marki, nie w szarosci. Wczesniej byla plaskim prostokatem
+   --color-surface-alt i na bialej stronie bez pasma kontaktowego (usunietego
+   stad, zeby tresc sie nie dublowala) nie mialo co przyciagac wzroku.
+   Ten sam jezyk co panel na pozostalych stronach: primary-700, bialy tekst,
+   zmierzone 7.73:1. */
+.kontakt-karta {
+  background: var(--color-primary-700);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+}
+/* Inicjaly zamiast zdjecia — placeholder do czasu, az bedzie fotografia
+   Aleksandry. Kolo z inicjalami jest uczciwe: nie udaje nikogo. */
+.kontakt-karta__inicjaly {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-primary-700);
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-md);
+}
+.kontakt-karta__rola {
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+}
+.kontakt-karta__osoba {
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+  margin-block: var(--space-xs) var(--space-md);
+}
+.kontakt-karta__dane {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-sm);
+}
+/* Bialy, nie --color-link: link w kolorze marki na tle marki bylby nieczytelny. */
+/* min-height 24 px — WCAG 2.2 SC 2.5.8. Wyjatek "inline" nie obejmuje tego
+   linku, bo stoi samodzielnie na liscie, a nie w zdaniu. Przy samym
+   line-height mial 21 px. */
+.kontakt-karta__dane a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  text-underline-offset: 3px;
+}
+/* --color-focus-ring to primary-700, czyli dokladnie kolor tla tej karty —
+   domyslny pierscien bylby na niej niewidoczny (1:1 przy wymaganych 3:1,
+   SC 1.4.11). Na ciemnych powierzchniach focus musi byc bialy. */
+.kontakt-karta__dane a:focus-visible { outline-color: var(--color-white); }
+
+/* Kontakt dla kupujacych schodzi do notki — na stronie prasowej nie moze
+   konkurowac waga z kontaktem dla mediow. */
+.kontakt__notka {
+  margin-top: var(--space-lg);
+  font-size: var(--text-caption-1);
+  color: var(--color-text-secondary);
+}
+
+.boilerplate {
+  background: var(--color-surface);
+  border: var(--border-hairline) solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+}
+.boilerplate__tresc { color: var(--color-text-secondary); }
+.boilerplate__tresc p { margin: 0; }
+.boilerplate__kopiuj {
+  margin-top: var(--space-lg);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-hairline) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: none;
+  font: inherit;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: border-color var(--motion-default), color var(--motion-default);
+}
+.boilerplate__kopiuj:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
+
+/* ================================================================
+   STRONA O NAS — sekcje o roznych ukladach w kontenerze 1200 px
+
+   Kontener jest szeroki jak na stronie glownej, ale ciagly tekst nigdzie nie
+   dostaje calej tej szerokosci: proza siedzi w kolumnie siatki (~7/12), opisy
+   w kaflach sa krotkie. Przy 1136 px wiersz mialby ~100 znakow — dokladnie ten
+   blad, ktory wytknelismy referencji na starcie.
+   ================================================================ */
+.onas-naglowek {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+}
+.onas-nota {
+  margin-top: var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+/* Naglowek sekcji po lewej, tresc po prawej — wspolny uklad dla "korzysci"
+   i "historii". 5:7, bo naglowek z notka jest krotszy niz lista obok. */
+.onas-dwie {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-3xl);
+  align-items: start;
+}
+/* .check-list wnosi wlasne margin-top: 24 px, przez ktore prawa kolumna
+   zaczynala sie nizej niz naglowek po lewej. W tym ukladzie odstep od gory
+   daje siatka, wiec komponent nie ma tu nic dokladac. */
+.onas-dwie .check-list { margin-top: 0; }
+
+/* --- hero: zdjecie z biura po lewej, tekst po prawej ---
+   Zdjecie prowadzi wzrok od lewej krawedzi, tytul startuje w miejscu, gdzie
+   oko i tak sie zatrzymuje. Proporcja 5:7 na korzysc tekstu — fotografia jest
+   kontekstem, nie tematem sekcji. */
+.onas-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.onas-hero__foto {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl);
+  order: -1;
+}
+/* .prose ma margin-inline: auto i max-width wezszy niz kolumna (605 wobec
+   625 px), wiec centrowal sie i odjezdzal o 10,3 px w prawo wzgledem H1.
+   Zerowanie marginesu zostawia miare wiersza nietknieta, a wyrownuje krawedz. */
+.onas-hero__proza { margin-inline: 0; }
+
+/* --- liczby --- */
+.liczby {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.liczby__kafel {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+}
+.liczby__wartosc {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary-700);
+  line-height: var(--leading-tight);
+}
+.liczby__opis {
+  margin: var(--space-xs) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* --- produkty dla sprzedajacych --- */
+.produkty {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+}
+.produkty__karta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+}
+.produkty__nazwa {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h5);
+  font-weight: var(--weight-bold);
+}
+.produkty__opis {
+  margin: 0;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+/* Promien .btn to 3 px — kant przy karcie o promieniu 20 px. */
+.produkty__cta {
+  margin-top: var(--space-md);
+  border-radius: var(--radius-full);
+}
+/* Gradient przyciemniony wzgledem --gradient-primary.
+   Zmierzone: bialy tekst na jasnym koncu firmowego gradientu (#00b3bc) daje
+   2.57:1, czyli mocno ponizej progu AA 4.5:1. Wada siedziala w komponencie
+   .btn--primary od poczatku i nie ujawnila sie, bo nikt go nie uzywal.
+   Zakres 700 -> 600 zachowuje charakter gradientu i przechodzi na calej
+   dlugosci: 7.03:1 na ciemnym koncu, 4.82:1 na jasnym. */
+.produkty__cta.btn--primary {
+  background: linear-gradient(276.11deg, var(--color-primary-700) 0%, var(--color-primary-600) 100%);
+}
+.produkty__cta.btn--primary:hover {
+  background: linear-gradient(276.11deg, var(--color-primary-800) 0%, var(--color-primary-700) 100%);
+}
+
+/* --- kategorie ---
+   Wszystkie zdjecia maja proporcje 388:300 (cat-haus 640:495 to ten sam
+   stosunek), wiec aspect-ratio trzyma siatke bez skokow przy doczytywaniu. */
+.kategorie {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+}
+.kategorie__kafel {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  /* Ta sama maska co przy kartach listy — domyka rogi nad zdjeciem. */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.kategorie__foto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 388 / 300;
+  object-fit: cover;
+}
+/* Gradient zaczyna sie wysoko nad tekstem i pod napisem ma juz 0.8 krycia.
+   Gdyby konczyl sie tuz przy tekscie, na jasnym zdjeciu biel by znikala. */
+.kategorie__nazwa {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: var(--space-2xl) var(--space-md) var(--space-md);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.68) 45%, rgba(0, 0, 0, 0) 100%);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+}
+
+/* --- os czasu --- */
+.oscz {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 var(--space-xl);
+  border-left: var(--border-emphasis) solid var(--color-border);
+}
+.oscz__punkt {
+  position: relative;
+  padding-bottom: var(--space-xl);
+}
+.oscz__punkt:last-child { padding-bottom: 0; }
+/* Kropka na linii: -32 px paddingu, -1 px na polowe kreski, -6 px na promien. */
+.oscz__punkt::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-xl) - 7px);
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-700);
+  box-shadow: 0 0 0 4px var(--color-surface-soft);
+}
+.oscz__data {
+  margin: 0;
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-primary-700);
+  font-weight: var(--weight-bold);
+}
+.oscz__tekst {
+  margin: var(--space-xs) 0 0;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .liczby     { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kategorie  { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .onas-dwie,
+  .onas-hero__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  /* Jedna kolumna — zdjecie wraca pod tytul, zgodnie z kolejnoscia dokumentu. */
+  .onas-hero__foto { order: 0; }
+}
+
+@media (max-width: 768px) {
+  .produkty  { grid-template-columns: 1fr; }
+  .kategorie { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* ================================================================
    MOBILE — zdjecie nad tekstem, pelna szerokosc
@@ -297,12 +972,51 @@
     gap: var(--space-md);
     padding-block: var(--space-xl);
   }
-  /* W jednej kolumnie nie ma wiersza do wypelnienia — tu proporcja jest
-     jedynym sensownym ograniczeniem wysokosci, wiec aspect-ratio jest OK. */
-  .press-item__media { aspect-ratio: var(--aspect-og); height: auto; }
+  /* Proporcja i align-self: start sa juz w regule bazowej — mobile nie
+     potrzebuje wlasnego nadpisania. */
   /* Zdjecie nie moze wyprzedzac tytulu w kolejnosci czytania. */
   .press-item--featured .press-item__media { order: 0; }
   .press-item--featured .press-item__link { padding-block: var(--space-2xl); }
   .press-item--featured .press-item__title { font-size: var(--text-h4); }
   .press-item--featured .press-item__lead { font-size: var(--text-lg); -webkit-line-clamp: 3; }
+
+  /* Na waskim ekranie tytul schodzi ze zdjecia pod nie. Kadr ma tu 193 px, a
+     tytul na kilka linii i tak przykrylby cala fotografie — nakladka nie mialaby
+     czego zaslaniac. Pod zdjeciem tekst jest czytelny bez zadnego gradientu. */
+  .post__hero {
+    display: block;
+    border-radius: 0;
+    overflow: visible;
+    -webkit-mask-image: none;
+  }
+  /* --radius-xl jak wszystkie kafle, nie --radius-lg. Na waskim ekranie kadr
+     ma szerokosc karty listy, wiec i luk ma byc taki sam. */
+  .post__media {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+  .post__naglowek {
+    padding: var(--space-lg) 0 0;
+    background: none;
+    color: inherit;
+  }
+  .post__naglowek .post__meta { color: var(--color-text-muted); }
+  .post__naglowek .post__kategoria { color: var(--color-link); }
+  .post__naglowek .post__title { max-width: none; }
+
+  /* Karta nad nota — kontakt jest tym, po co sie tu przychodzi. */
+  .kontakt__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+
+  .press-contact__panel {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press-item__img { transition: none; }
+  .press-item__link:hover .press-item__img,
+  .press-item__link:focus-visible .press-item__img { transform: none; }
 }

@@ -27,9 +27,13 @@
 .btn--large       { min-height: 52px; padding-inline: var(--space-8); padding-block: 12px;  font-size: var(--text-base); }
 .btn--small       { min-height: 36px; padding-inline: var(--space-4); padding-block: 5.5px; font-size: var(--text-sm); }
 .btn--extra-small { min-height: 32px; padding-inline: var(--space-4); padding-block: 4px;   font-size: var(--text-xs); }
+/* color powtorzony w :hover i :active nie przez przypadek. base.css ma
+   `a:hover { color: var(--color-link-hover) }` o specyficznosci (0,1,1), ktora
+   bije `.btn--primary` (0,1,0) — bez tego bialy napis na przycisku-linku
+   zmienial sie po najechaniu na prawie czarny primary-800. */
 .btn--primary { background: var(--gradient-primary); color: var(--color-white); }
-.btn--primary:hover  { background: var(--gradient-primary-hover); }
-.btn--primary:active { background: var(--gradient-primary-active); }
+.btn--primary:hover  { background: var(--gradient-primary-hover); color: var(--color-white); }
+.btn--primary:active { background: var(--gradient-primary-active); color: var(--color-white); }
 .btn--secondary {
   background: var(--color-white);
   color: var(--color-primary-600);
@@ -44,7 +48,8 @@
 }
 .btn--tertiary:hover { background: var(--color-neutral-75); color: var(--color-primary-800); }
 .btn--promotion { background: var(--color-secondary); color: var(--color-black); }
-.btn--promotion:hover { background: var(--color-secondary-600); }
+/* Ten sam powod co przy --primary: bez color w :hover wygrywa a:hover. */
+.btn--promotion:hover { background: var(--color-secondary-600); color: var(--color-black); }
 .btn--danger {
   background: var(--color-white);
   color: var(--color-error-500);
@@ -194,9 +199,18 @@
   background: var(--color-surface-soft); /* #fafafa — jasniejszy niz alt #f4f4f4 */
 }
 
-/* Podstrona — brak osobnego hero, H1 w pierwszej sekcji contentu */
+/* Podstrona — brak osobnego hero, H1 w pierwszej sekcji contentu.
+
+   Dol na 48 px zamiast dziedziczonych 96 px z .section. Naglowek strony i
+   tresc pod nim to jedna calosc, a nie dwie osobne sekcje — pelny odstep
+   sekcyjny rozrywal je na desktopie. Listy zeruja go calkiem przez
+   .section--lista-gora, bo tam wlasny padding wnosi sekcja listy.
+
+   Uwaga na przyszlosc: design.md nie definiuje odstepow miedzy sekcjami,
+   wiec 96 px pochodzi wylacznie z --section-padding-block w tokens.css. */
 .section--page-top {
   padding-block-start: var(--space-16);
+  padding-block-end: var(--space-12);
 }
 
 /* ================================================================
@@ -251,6 +265,13 @@
 .prose > * + * { margin-block-start: var(--space-6); }
 .prose h2 + p, .prose h3 + p { margin-block-start: var(--space-4); }
 .prose p { margin: 0; max-width: 70ch; }
+/* Odstep miedzy akapitami przywrocony.
+   `.prose p { margin: 0 }` ma specyficznosc (0,1,1) i bilo regule przeplywu
+   `.prose > * + *` (0,1,0) — przez to kolejne akapity sklejaly sie w jeden
+   blok, oddzielone tylko interlinia. Ten selektor ma te sama specyficznosc
+   (0,1,1), ale stoi nizej, wiec wygrywa. `.prose h2 + p` (0,1,2) nadal jest
+   silniejszy i zachowuje swoj wezszy odstep po naglowku. */
+.prose > * + p { margin-block-start: var(--space-6); }
 .prose strong { font-weight: var(--weight-bold); }
 .prose a {
   color: var(--color-link);
@@ -258,10 +279,16 @@
   text-underline-offset: 0.2em;
 }
 .prose a:hover { color: var(--color-link-hover); }
+/* list-style przywrocone jawnie. base.css zeruje je globalnie regula
+   `ul, ol { list-style: none }`, a ta sekcja przywracala tylko wciecie —
+   przez co listy w artykulach mialy odstep, ale zadnych znacznikow.
+   Regula .prose li::marker ponizej stylizowala kropke, ktorej nie bylo. */
 .prose ul, .prose ol {
   padding-inline-start: var(--space-8);
   margin-block: var(--space-4);
 }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
 .prose li { margin-block-start: var(--space-2); }
 .prose li::marker { color: var(--color-primary-500); }
 
@@ -371,9 +398,12 @@
   padding-block: var(--space-10);
   margin-block-start: 0;
 }
+/* Trzy kolumny na trzy bloki. Bylo 1.5fr 1fr przy trzech dzieciach, wiec
+   nawigacja "ERLI" spadala do drugiego wiersza i dostawala 658 px na dwa
+   krotkie linki — stad dziura po prawej i stopka wyzsza o 195 px. */
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-10);
   padding-block-end: var(--space-8);
   border-block-end: 1px solid var(--color-border-default);
@@ -432,9 +462,13 @@
   min-height: 32px;
   padding-block: var(--space-1);
 }
-.site-footer__nav a:hover { color: var(--color-brand-primary); }
+/* primary-700, nie --color-brand-primary (primary-500). Na tle stopki
+   #f4f4f4 primary-500 daje 3.10:1, a primary-600 4.38:1 — oba ponizej progu
+   AA 4.5:1. Stan hover musi spelniac kontrast tak samo jak spoczynek.
+   primary-700: 7.03:1. */
+.site-footer__nav a:hover { color: var(--color-primary-700); }
 .site-footer__nav a:focus-visible {
-  color: var(--color-brand-primary);
+  color: var(--color-primary-700);
   outline: 2px solid var(--color-primary-700);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
@@ -460,6 +494,13 @@
   outline: 2px solid var(--color-primary-700);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
+}
+
+/* Tablet: trzy kolumny sa tu za ciasne dla "Media o ERLI". Marka bierze
+   caly wiersz, obie nawigacje dziela drugi — zamiast osierocac trzecia. */
+@media (max-width: 1024px) {
+  .site-footer__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .site-footer__brand { grid-column: 1 / -1; }
 }
 
 @media (max-width: 768px) {
