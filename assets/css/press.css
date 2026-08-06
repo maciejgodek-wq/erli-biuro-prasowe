@@ -439,18 +439,25 @@
   border-radius: var(--radius-2xl);
   padding: var(--space-3xl);
 
-  /* Zdjecie w tle przez multiply, nie przez polprzezroczysta nakladke.
-     Multiply liczy kanal jako (zdjecie x marka)/255, wiec wynik NIGDY nie jest
-     jasniejszy od samej marki. Kontrast bieli z tlem ma przez to twarda
-     podloge 4.82:1 — niezaleznie od tego, jakie zdjecie tu wstawisz i jak
-     jasne sa jego pola. Nakladka z opacity takiej gwarancji nie daje:
-     przy jasnym niebie czy bialej scianie tekst potrafi zniknac. */
+  /* Plaski kolor marki, bez fotografii. Bialy tekst ma na nim 7.73:1. */
   background-color: var(--color-primary-700);
-  background-image: url('/assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero.webp');
+}
+
+/* GDYBY KIEDYS DOLOZYC TU FOTOGRAFIE (biuro, zespol — cokolwiek, co mowi cos
+   o kontakcie z mediami), wystarczy odkomentowac ponizsze i podac plik.
+   Wazny jest `multiply`, a nie polprzezroczysta nakladka: multiply liczy kanal
+   jako (zdjecie x tlo)/255, wiec wynik nigdy nie jest jasniejszy od samego
+   primary-700. Kontrast bieli ma przez to twarda podloge 7.73:1 niezaleznie
+   od tego, jak jasne jest zdjecie. Nakladka z opacity takiej gwarancji nie
+   daje — przy jasnym kadrze tekst potrafi zniknac.
+
+.press-contact__panel {
+  background-image: url('/assets/img/kv/nazwa-pliku.webp');
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
 }
+*/
 .press-contact__heading {
   font-family: var(--font-display);
   font-size: var(--text-h3);
