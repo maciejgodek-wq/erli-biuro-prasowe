@@ -5,8 +5,6 @@ lead: "„Cała przyjemność na naszej stronie” to hasło pierwszej kampanii 
 grafika: /assets/img/artykuly/kampania-reklamowa-erli-pl-maciej-stuhr-ambasadorem-nowego-marketplace-u/hero.webp
 ---
 
-![](/assets/img/artykuly/kampania-reklamowa-erli-pl-maciej-stuhr-ambasadorem-nowego-marketplace-u/hero.webp)
-
 ### „Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej ERLI.pl
 
 Użytkownicy sieci oraz widzowie telewizji będą mieli okazję bliżej poznać ERLI i ofertę nowego marketplace’u dzięki pięciu spotom reklamowym – jednemu 30-sekudnowemu i czterem 15-sekundowym. W każdym z nich w humorystyczny, ale również informacyjny sposób Maciej Stuhr przybliża nie tylko przykładowe produkty, jakie można znaleźć na ERLI.pl, ale również podkreśla najważniejsze cechy platformy, w tym wyjątkowy program lojalnościowy. Każda wydana złotówka na ERLI to jeden punkt kumulowany w programie. Dzięki temu użytkownicy ERLI.pl mogą skorzystać z darmowego pobytu w ośrodkach Holiday Park & Resort nad polskim morzem.

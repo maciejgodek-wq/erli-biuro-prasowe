@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-pl-chce-zainwestowac-50-mln-zlotych-w-e-sklepy/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-chce-zainwestowac-50-mln-zlotych-w-e-sklepy/hero.webp)
-
 ### ERLI.pl chce zainwestować 50 mln złotych w e-sklepy. "Model radykalnie obniży koszty dla sprzedających".
 
 Całość artykułu dostępna pod adresem:

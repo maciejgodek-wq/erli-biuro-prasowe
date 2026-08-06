@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/natemat-erli-zapowiada-ekspansje-na-polski-rynek-twarza-kampanii-zostal-maciej/hero.webp
 ---
 
-![](/assets/img/artykuly/natemat-erli-zapowiada-ekspansje-na-polski-rynek-twarza-kampanii-zostal-maciej/hero.webp)
-
 ### NaTemat: Erli zapowiada ekspansję na polski rynek. Twarzą kampanii został Maciej Stuhr
 
 Całość artykułu dostępna pod adresem:

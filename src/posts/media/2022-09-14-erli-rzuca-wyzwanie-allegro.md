@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-rzuca-wyzwanie-allegro/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-rzuca-wyzwanie-allegro/hero.webp)
-
 ### Erli rzuca wyzwanie Allegro
 
 Całość artykułu dostępna pod adresem:

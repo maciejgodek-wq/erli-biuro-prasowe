@@ -8,10 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/lowcy-okazji-gotowi-erli-ma-dla-was-oferte/hero.webp
 ---
 
-![](/assets/img/artykuly/lowcy-okazji-gotowi-erli-ma-dla-was-oferte/hero.webp)
-
-**Łowcy okazji gotowi? Erli ma dla was ofertę**
-
 Erli uruchomiło w aplikacji sekcję Najtaniej. Na platformie codziennie będą pojawiać się promocje na produkty codziennego użytku, ale też produkty do domu, ogrodu, a także elektronika. Dodatkowym bonusem jest rok darmowej dostawy oraz kupon rabatowy o wartości 50 zł na kolejne zakupy.
 
 Codziennie lista ofert będzie uzupełniana o kilkadziesiąt kolejnych produktów w najniższych cenach. Produkty objęte promocjami będą dostępne w sekcji Najtajniej tylko przez określony czas oraz w ograniczonych ilościach, dlatego warto pamiętać o zasadzie kto pierwszy, ten lepszy – zapowiada platforma.

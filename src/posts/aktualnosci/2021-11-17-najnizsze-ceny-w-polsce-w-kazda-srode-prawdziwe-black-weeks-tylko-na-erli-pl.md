@@ -5,8 +5,6 @@ lead: "ERLI.pl – platforma do zakupów on-line w każdą środę organizuje ni
 grafika: /assets/img/artykuly/najnizsze-ceny-w-polsce-w-kazda-srode-prawdziwe-black-weeks-tylko-na-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/najnizsze-ceny-w-polsce-w-kazda-srode-prawdziwe-black-weeks-tylko-na-erli-pl/hero.webp)
-
 ### Najniższe ceny w Polsce w każdą środę – prawdziwe Black Weeks tylko na ERLI.pl
 
 ERLI.pl to miejsce w sieci, w którym każdy amator zakupów online znajdzie szeroki wybór produktów, jedne z najatrakcyjniejszych cen na rynku, gwarancję wiarygodnych sprzedawców oraz wyjątkowe nagrody za zakupy w postaci darmowego pobytu w luksusowych ośrodkach Holiday Park & Resort. Z kolei dla sprzedawców ERLI.pl jest szybko rozwijającą się platformą handlową, na której każdy internetowy i tradycyjny sprzedawca znajdzie wsparcie w założeniu sklepu online i rozwoju biznesu.
@@ -15,7 +13,7 @@ W pierwszej edycji promocji można było nabyć smartfony i smartwatche w niezwy
 
 Nowa edycja Black Weeks na ERLI.pl wystartuje już w najbliższą środę 17.11 o godzinie 9:00. Produkty do pracy i dla rodziny będą początkowo przecenione o 50% w stosunku do regularnej ceny na platformie. Po wyczerpaniu zapasów urządzeń w najniższej cenie w Polsce pojawią się dodatkowe pule sprzętu przecenionego kolejno o 20 i później 15 procent.
 
-**Lista produktów dostępnych w ramach promocji to:**
+Lista produktów dostępnych w ramach promocji to:
 
 - [Laptop HP](https://erli.pl/laptopy-hp-compaq/mocny-hp-14-dq-i3-8-gb-256-gb-ssd-windows-11,108714837)
 - [Srebrny laptop HP](https://erli.pl/laptopy-hp-compaq/srebrny-hp-15-amd-athlon-8gb-256gb-ssd-win-10,87910413)

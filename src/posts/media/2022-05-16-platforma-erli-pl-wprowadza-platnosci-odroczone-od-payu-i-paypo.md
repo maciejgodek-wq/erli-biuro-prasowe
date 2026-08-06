@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/hero.webp
 ---
 
-![](/assets/img/artykuly/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/hero.webp)
-
 ### Platforma Erli.pl wprowadza płatności odroczone od PayU i PayPo
 
 Całość artykułu dostępna pod adresem:

@@ -8,14 +8,10 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-idzie-na-rekord-2-2-2/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-idzie-na-rekord-2-2-2/hero.webp)
+W ciągu pierwszych dziewięciu miesięcy tego roku platforma e-handlowa osiągnęła **849 mln** zł wartości sprzedaży brutto, co oznacza wzrost o 71 proc. rok do roku.
 
-**ERLI idzie na rekord**
+Biznes ERLI rozwija się w tym roku wyjątkowo dobrze — przychody netto dwukrotnie wzrosły i wyniosły **117 mln** zł. Zysk na poziomie EBITDA wzrósł do **7,5 mln** zł.
 
-**W ciągu pierwszych dziewięciu miesięcy tego roku platforma e-handlowa osiągnęła 849 mln zł wartości sprzedaży brutto, co oznacza wzrost o 71 proc. rok do roku.**
+*— Planujemy zakończyć rok z wynikiem co najmniej **1,2 mld** zł GMV* [łączne obroty wszystkich działających na platformie sprzedawców — red.] — mówi Adam Ciesielczyk, prezes i założyciel ERLI.
 
-**Biznes ERLI rozwija się w tym roku wyjątkowo dobrze — przychody netto dwukrotnie wzrosły i wyniosły 117 mln zł. Zysk na poziomie EBITDA wzrósł do 7,5 mln zł.**
-
-***— Planujemy zakończyć rok z wynikiem co najmniej 1,2 mld zł GMV* [łączne obroty wszystkich działających na platformie sprzedawców — red.] — mówi Adam Ciesielczyk, prezes i założyciel ERLI.**
-
-**Więcej informacji dotyczących podsumowania 3 kwartałów 2024 roku znaleźć można w publikacji Pulsu Biznesu: [https://www.pb.pl/erli-idzie-na-rekord-1228946](https://www.pb.pl/erli-idzie-na-rekord-1228946)**
+Więcej informacji dotyczących podsumowania 3 kwartałów 2024 roku znaleźć można w publikacji Pulsu Biznesu: [https://www.pb.pl/erli-idzie-na-rekord-1228946](https://www.pb.pl/erli-idzie-na-rekord-1228946)

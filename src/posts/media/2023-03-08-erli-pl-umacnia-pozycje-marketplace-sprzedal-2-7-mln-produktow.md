@@ -8,13 +8,9 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-umacnia-pozycje-marketplace-sprzedal-2-7-mln-produktow/hero.webp)
+​
 
-**Erli.pl umacnia pozycję. Marketplace sprzedał 2,7 mln produktów**
-
-**​**
-
-Platforma Erli.pl podsumowała 2022 rok, który umocnił jej pozycje na krajowym rynku e-commerce. Osiągnęła ona wynik ponad 470 mln zł GMV oraz przekroczyła 2,7 mln sprzedanych produktów. W porównaniu do 2021 roku firma podwoiła liczbę zarejestrowanych użytkowników, co przełożyło się na 2,5-krotny wzrost liczby transakcji.
+Platforma Erli.pl podsumowała 2022 rok, który umocnił jej pozycje na krajowym rynku e-commerce. Osiągnęła ona wynik ponad **470 mln** zł GMV oraz przekroczyła **2,7 mln** sprzedanych produktów. W porównaniu do 2021 roku firma podwoiła liczbę zarejestrowanych użytkowników, co przełożyło się na 2,5-krotny wzrost liczby transakcji.
 
 W ubiegłym roku marketplace wprowadził program wsparcia sprzedawców – ERLI Campaigns, co przyczyniło się między innymi do zwiększenia do ponad 15 tysięcy liczby sprzedawców zarejestrowanych na platformie.
 

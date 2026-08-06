@@ -5,13 +5,11 @@ lead: "Kto nie idzie do przodu, ten się… cofa! Te słowa przyświecają nam n
 grafika: /assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/hero.webp
 ---
 
-![](/assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/hero.webp)
-
 ### Zespół naszej platformy został doceniony jako specjaliści Google Ads
 
 Tak duże wyróżnienie świadczy o stale rosnącym potencjale ERLI w zakresie digital marketingu i Google Ads. Tytuł Partnera Google to nie tylko dowód uznania naszej wiedzy i profesjonalizmu przez giganta z Mountain View, to także potwierdzenie jakości marki ERLI. Wystarczy wspomnieć, że jesteśmy jedną z zaledwie kilkuset polskich firm, które mogą pochwalić się tak ścisłą współpracą z Google.
 
-**Krok po kroku**
+Krok po kroku
 
 Program Google Partners od lat jest wyznacznikiem jakości. Firmy, które biorą w nim udział, przechodzą rygorystyczną selekcję. ERLI musiało spełnić warunki w trzech kategoriach:
 
@@ -21,7 +19,7 @@ Program Google Partners od lat jest wyznacznikiem jakości. Firmy, które biorą
 
 ![](/assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/banery_1492x364_optymalizacja.webp)
 
-**Gra warta świeczki**
+Gra warta świeczki
 
 Zostanie Parterem Google otworzyło przed ERLI wiele ścieżek rozwoju. Po dołączeniu do Programu zyskaliśmy dostęp do szkoleń i materiałów, dzięki którym pomożemy naszym klientom w osiągnięciu sukcesu:
 
@@ -31,7 +29,7 @@ Zostanie Parterem Google otworzyło przed ERLI wiele ścieżek rozwoju. Po doł�
 
 ![](/assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/banery_1492x364_wzorsty.webp)
 
-**Idziemy dalej – Partner CSS**
+Idziemy dalej – Partner CSS
 
 Współpraca z Google pozwoliła ERLI dołączyć do usługi Comparison Shopping Service. Dzięki temu jesteśmy w stanie jeszcze lepiej wykorzystać potencjał reklam Google i zwiększyć sprzedaż naszych klientów.
 

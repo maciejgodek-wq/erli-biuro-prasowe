@@ -5,15 +5,13 @@ lead: "Boże Narodzenie zbliża się wielkimi krokami, dlatego warto zacząć my
 grafika: /assets/img/artykuly/najlepsze-oferty-na-swiateczne-prezenty-z-duzymi-rabatami-na-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/najlepsze-oferty-na-swiateczne-prezenty-z-duzymi-rabatami-na-erli-pl/hero.webp)
-
 ### Najlepsze oferty na świąteczne prezenty z dużymi rabatami na ERLI.pl​
 
 Święta Bożego Narodzenia to przez wielu jeden z najbardziej wyczekiwanych momentów w roku. To czas pełen radości, miłości, uprzejmości oraz obdarowywania prezentami. Chcąc uniknąć przedświątecznej gorączki, która w ciągu najbliższych tygodni opanuje większość, warto pomyśleć wcześniej o zakupie idealnych upominków. Zwłaszcza jeśli można je upolować w wyjątkowych cenach.
 
 Kolejna edycja Black Weeks na ERLI.pl wystartowała w poniedziałek 13.12 o godzinie 9:00 i potrwa do czwartku 16.12. Produkty będą początkowo przecenione o 50% w stosunku do regularnej ceny na platformie. Po wyczerpaniu zapasów w najniższej cenie pojawią się dodatkowe pule produktów przecenionego kolejno o 20, a następnie 15 procent. Każdego dnia, użytkownicy znajdą tam produkty elektroniczne, beauty czy AGD z dużymi rabatami, które idealnie sprawdzą się w jako prezent dla najbliższych. Lista produktów dostępnych w promocyjnych cenach w tym tygodniu:
 
-**Poniedziałek 13.12 – elektronika:**
+Poniedziałek 13.12 – elektronika:
 
 - [Router Xiaomi](https://erli.pl/sprzet-sieciowy-routery-wifi-i-access-pointy/xiaomi-router-mi-aiot-ac2350-wifi-dual-band-3x-lan,30956076)
 - [Kamera](https://erli.pl/sprzet-sieciowy-kamery-ip/kamera-imilab-zewnetrzna-wireless-security-ec2-xiaomi-bramka,30948037)
@@ -26,7 +24,7 @@ Kolejna edycja Black Weeks na ERLI.pl wystartowała w poniedziałek 13.12 o godz
 - [Monitor Xiaomi Mi Curved](https://erli.pl/telewizja-przemyslowa-monitory/monitor-xiaomi-mi-curved-gaming-34-va-uwqhd-144-hz,115203072)
 - [Inteligentny podajnik karmy z kamerą](https://erli.pl/inteligentny-dom-pozostale/inteligentny-podajnik-karmy-z-kamera-petoneer-nutri-vision,55305079)
 
-**Wtorek 14.12 – produkty beauty:**
+Wtorek 14.12 – produkty beauty:
 
 - [Peeling kawitacyjny](https://erli.pl/urzadzenia-kosmetyczne-peelingi-kawitacyjne/zestaw-peeling-kawitacyjny-szczoteczka-soniczna-wagrownik-woreczek,116139940)
 - [Drukarka Xiaomi Mi Photo](https://erli.pl/skanery-i-drukarki-drukarki-inne/przenosna-drukarka-xiaomi-mi-photo-papier-zestaw,116247118)

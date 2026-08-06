@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-pl-dla-gazety-finansowej-e-commerce-kawalek-tortu-nie-tylko-dla-wybranych/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-dla-gazety-finansowej-e-commerce-kawalek-tortu-nie-tylko-dla-wybranych/hero.webp)
-
 ### ERLI.pl dla Gazety Finansowej: E-commerce – kawałek tortu nie tylko dla wybranych
 
 Burzliwa i wciąż aktualna dyskusja o tym, jak bardzo „nowa normalność” (vulgo masowa praca z domu przy równoczesnej rezygnacji z koniecznej do tej pory obecności w biurze) zadomowiła się w naszych przyzwyczajeniach wciąż trwa, a jej rozwiązanie pozostaje otwarte. Mimo wszystko dla niektórych branż czas pandemii był czymś zgoła odmiennym. Dla rynku e-commerce w Polsce i na świecie był to okres przełomowy

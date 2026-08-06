@@ -5,13 +5,9 @@ lead: "Kategoria „opony” na platformie ERLI powiększyła się o ponad 58 ty
 grafika: /assets/img/artykuly/planujesz-zakup-opon-koniecznie-sprawdz-oferte-na-erli/hero.webp
 ---
 
-![](/assets/img/artykuly/planujesz-zakup-opon-koniecznie-sprawdz-oferte-na-erli/hero.webp)
+​
 
-**Planujesz zakup opon? Koniecznie sprawdź ofertę na ERLI**
-
-**​**
-
-**Kierowcy na myśl o jesieni myślą o krótszych dniach i pogarszających się warunkach na drogach oraz konieczności podjęcia kluczowej decyzji – czy to już dobry moment na wymianę opon? Odpowiedź brzmi: oczywiście, że tak! A czy to musi być droga inwestycja? Absolutnie nie! Teraz na ERLI podkategoria „opony i felgi” zwiększyła się o niemal 58 tys. nowych ofert produktów w niezwykle atrakcyjnych cenach, a dodatkowo kupujący mogą skorzystać z nieoprocentowanych rat 5x0% za zakupy do 1 500 zł.**
+Kierowcy na myśl o jesieni myślą o krótszych dniach i pogarszających się warunkach na drogach oraz konieczności podjęcia kluczowej decyzji – czy to już dobry moment na wymianę opon? Odpowiedź brzmi: oczywiście, że tak! A czy to musi być droga inwestycja? Absolutnie nie! Teraz na ERLI podkategoria „opony i felgi” zwiększyła się o niemal 58 tys. nowych ofert produktów w niezwykle atrakcyjnych cenach, a dodatkowo kupujący mogą skorzystać z nieoprocentowanych rat 5x0% za zakupy do 1 500 zł.
 
 Tegoroczne rekordy inflacji, dynamiczne zmiany cen paliwa oraz problemy z jego dostępnością, to tylko część problemów z jakimi mierzyli się polscy kierowcy, co widać po wynikach branży motoryzacyjnej. Dane Europejskiego Stowarzyszenia Producentów Opon i Gumy (ETRMA) wykazały, że sprzedaż opon do samochodów osobowych w Polsce spadła aż o 20 proc. r/r, podczas gdy w Europie średni spadek wyniósł 12 proc. To także efekt zmian preferencji kierujących, którzy poszukując oszczędności coraz chętniej sięgają po opony całoroczne – jak pokazują dane Polskiego Związku Przemysłu Oponiarskiego ten rodzaj opon stanowił 18 proc. sprzedanych kompletów w zeszłym roku. Z kolei jak wskazuje niedawno publikowany raport e-Izby, ze względu na odczuwalne skutki inflacji i zbliżający się kryzys gospodarczy co drugi konsument częściej kieruje się na zakupy do Internetu[[1]](#_ftn1). Sklepy internetowe oferują szerszy wybór produktów oraz korzystniejsze oferty cenowe (w tym specjalne promocje i rabaty) niż sklepy stacjonarne. Co trzeci Polak uważa, że ceny w sklepach online są niższe, przez co ich oferty są bardziej atrakcyjne.
 

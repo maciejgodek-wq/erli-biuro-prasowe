@@ -5,8 +5,6 @@ lead: "Żar leje się z bezchmurnego nieba. Termometry już dawno wskazały 30 s
 grafika: /assets/img/artykuly/czas-na-wakacje-czas-na-hot-okazje/hero.webp
 ---
 
-![](/assets/img/artykuly/czas-na-wakacje-czas-na-hot-okazje/hero.webp)
-
 ### Czas na wakacje? Czas na HOT Okazje!
 
 W tym roku postanowiliśmy nie robić sobie wakacji od niskich cen. Wręcz przeciwnie, najgorętsze miesiące w roku to na ERLI.pl czas najlepszych możliwych ofert. Przez 8 najbliższych tygodni na naszych stronach znaleźć będzie można okazje, które miłośników promocji rozpalą do czerwoności. Nadchodzą HOT Okazje!

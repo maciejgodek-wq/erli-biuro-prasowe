@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-pl-rzuca-wyzwanie-gigantom/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-rzuca-wyzwanie-gigantom/hero.webp)
-
 ### Erli.pl rzuca wyzwanie gigantom. Gorącą oferta wschodzącego rywala Allegro i Amazona
 
 Całość artykułu dostępna pod adresem:

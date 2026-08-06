@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-pl-nowa-polska-platforma-e-commerce-chce-byc-drugim-allegro/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-nowa-polska-platforma-e-commerce-chce-byc-drugim-allegro/hero.webp)
-
 ### KomputerŚwiat: Erli.pl - nowa polska platforma e-commerce chce być drugim Allegro
 
 Całość artykułu dostępna pod adresem:

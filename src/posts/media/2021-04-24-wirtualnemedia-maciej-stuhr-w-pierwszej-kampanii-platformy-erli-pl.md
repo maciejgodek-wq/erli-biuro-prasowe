@@ -8,11 +8,9 @@ zrodlo:
 grafika: /assets/img/artykuly/wirtualnemedia-maciej-stuhr-w-pierwszej-kampanii-platformy-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/wirtualnemedia-maciej-stuhr-w-pierwszej-kampanii-platformy-erli-pl/hero.webp)
-
 ### Wirtualnemedia: Maciej Stuhr w pierwszej kampanii platformy Erli.pl
 
-**Maciej Stuhr w pierwszej kampanii platformy Erli.pl**
+Maciej Stuhr w pierwszej kampanii platformy Erli.pl
 
 „Cała przyjemność na naszej stronie” to hasło pierwszej kampanii marketingowej Erli.pl, nowego marketplace’u na polskim rynku e-handlu. Ambasadorem kampanii został aktor **Maciej Stuhr**. Za realizację działań reklamowych odpowiadają agencje Freundschaft i Spark Foundry (Publicis Media).
 

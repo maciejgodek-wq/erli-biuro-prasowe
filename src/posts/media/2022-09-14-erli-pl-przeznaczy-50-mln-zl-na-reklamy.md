@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/erli-pl-przeznaczy-50-mln-zl-na-reklamy/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-przeznaczy-50-mln-zl-na-reklamy/hero.webp)
-
 ### ERLI.pl przeznaczy 50 mln zł na reklamy w Google dla sprzedających na platformie
 
 Całość artykułu dostępna pod adresem:

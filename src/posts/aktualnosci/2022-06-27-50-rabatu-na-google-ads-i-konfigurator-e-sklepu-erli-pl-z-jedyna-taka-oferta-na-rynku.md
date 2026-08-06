@@ -5,11 +5,9 @@ lead: "W dobie dynamicznego rozwoju rynku e-commerce przedsiębiorcy, sprzedają
 grafika: /assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/hero.webp
 ---
 
-![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/hero.webp)
-
 ### -50% rabatu na Google Ads i konfigurator e-sklepu – ERLI.pl z jedyną taką ofertą na rynku
 
-**Nowości dla przedsiębiorców**
+Nowości dla przedsiębiorców
 
 ERLI Campaigns to pomysł ERLI.pl na skuteczne narzędzie promocyjne, które otworzy sprzedającym drzwi do świata kampanii Google Ads. Usługa w swoim zamyśle ma pomóc Sprzedawcom dotrzeć do nowych kupujących. Dzięki ERLI Campaigns oferty Sprzedawców ERLI.pl będą się wyświetlały w formie reklam na stronach należących do Google. O tym, jak dużą przewagę daje tego typu reklama niech świadczy fakt, że tylko w maju tego roku ponad 29 milionów użytkowników Internetu w Polsce odwiedziło portale należące do Google. To przeszło 97% polskich Internautów.**
 
@@ -19,7 +17,7 @@ Czym ERLI Campaigns wyróżnia się na tle konkurencji? Niższą ceną i lepszym
 
 ![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/1492x364_erli_shop.webp)
 
-**ERLI Shop – Twój sklep w kilka minut**
+ERLI Shop – Twój sklep w kilka minut
 
 Drugą nowością przygotowaną z myślą o przedsiębiorcach jest ERLI Shop. To pakiet usług, dzięki którym sprzedający będą mogli zaprezentować swoje oferty w taki sposób, jaki najbardziej będzie im odpowiadać. Do najważniejszych korzyści płynących z subskrypcji ERLI Shop należy dostęp do narzędzi, które pozwolą Sprzedawcom stworzyć przestrzeń dla swoich marek.
 
@@ -29,7 +27,7 @@ Aż 87% użytkowników podczas zakupów w e-sklepach zwraca uwagę właśnie na 
 
 ![](/assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/1492x364_erli_shop_campaigns_2.webp)
 
-**Być o krok przed innymi**
+Być o krok przed innymi
 
 ERLI Shop ma kompleksowo odpowiadać na potrzeby przedsiębiorców. Wśród najważniejszych dodatkowych korzyści warto wymienić jeszcze m.in. dostęp do różnorodnych metod płatności oraz darmowe dostawy dla Kupujących w ramach ErliPRO. Sprzedawcy mają możliwość wysyłki produktów do Paczkomatów InPost już za 2,99 zł. Ponadto, każdy przedsiębiorca korzystający z pakietu może liczyć na promocję swojej oferty na stronach ERLI.pl, a także lokowanie produktów zarówno w poradnikach zakupowych, jak i w cyklicznych mailingach sprzedażowych.
 

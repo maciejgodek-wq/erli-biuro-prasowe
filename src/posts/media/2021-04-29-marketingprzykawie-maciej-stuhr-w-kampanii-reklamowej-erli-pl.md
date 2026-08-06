@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/marketingprzykawie-maciej-stuhr-w-kampanii-reklamowej-erli-pl/hero.webp
 ---
 
-![](/assets/img/artykuly/marketingprzykawie-maciej-stuhr-w-kampanii-reklamowej-erli-pl/hero.webp)
-
 ### MarketingPrzyKawie: Maciej Stuhr w kampanii reklamowej Erli.pl
 
 Całość artykułu dostępna pod adresem:

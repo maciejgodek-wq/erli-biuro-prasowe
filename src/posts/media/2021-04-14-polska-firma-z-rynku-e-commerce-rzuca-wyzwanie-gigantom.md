@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/polska-firma-z-rynku-e-commerce-rzuca-wyzwanie-gigantom/hero.webp
 ---
 
-![](/assets/img/artykuly/polska-firma-z-rynku-e-commerce-rzuca-wyzwanie-gigantom/hero.webp)
-
 ### MyCompanyPolska.pl: Polska firma z rynku e-commerce rzuca wyzwanie gigantom. "Chcemy dać klientom alternatywę"
 
 Całość artykułu dostępna pod adresem:

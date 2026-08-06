@@ -5,15 +5,13 @@ lead: "Osoby, które szukają pomysłów na prezenty świąteczne w atrakcyjnych
 grafika: /assets/img/artykuly/najtansze-prezenty-swiateczne-tylko-na-erli-pl-w-trakcie-prawdziwych-black-weeks/hero.webp
 ---
 
-![](/assets/img/artykuly/najtansze-prezenty-swiateczne-tylko-na-erli-pl-w-trakcie-prawdziwych-black-weeks/hero.webp)
-
 ### Najtańsze prezenty świąteczne tylko na ERLI.pl w trakcie prawdziwych Black Weeks
 
 Black Weeks na ERLI.pl to cykliczna (odbywająca się co środę) akcja promocyjna obejmująca różne grupy produktów. W pierwszej edycji promocji można było nabyć smartfony Realme 7-Pro 8 GB w cenie 599,50 zł (dziś najniższa cena wg ceneo.pl to 1238 zł) a model Xiaomi Redmi Note 10 Pro 6/128 GB za 738,99 zł (wg dzisiejszych ofert najniższa cena to 1256 zł). Oferta cieszyła się niezwykłym powodzeniem, ponieważ Black Weeks na ERLI.pl to faktyczne, niespotykane nigdzie indziej obniżki cen. Oddają one realny charakter i założenia Czarnego Piątku, w przeciwieństwie do często spotykanych na rynku haseł nawiązujących do tego święta zakupów, a w rzeczywistości będących symbolicznymi promocjami.
 
 Nowa edycja Black Weeks na ERLI.pl wystartuje już w najbliższą środę 24.11 o godzinie 9:00. Produkty objęte ofertą są skierowane do dorosłych jak i dzieci – co stanowi idealną propozycję dla tych, którzy już szukają prezentów pod choinkę. W miarę wykupywania najtańszych produktów ich ceny będą stopniowo rosły, więc warto się spieszyć.
 
-**Lista potencjalnych prezentów dostępnych w ramach promocji to:**
+Lista potencjalnych prezentów dostępnych w ramach promocji to:
 
 - [Zestaw klocków Lego Classic](https://erli.pl/lego-classic/lego-classic-10696-kreatywne-klocki-484-elementy,102658622)
 - [Zestaw klocków Lego Classic – duże pudełko](https://erli.pl/lego-classic/lego-classic-10698-kreatywne-llocki-duze-pudelk-790-el,102658641)

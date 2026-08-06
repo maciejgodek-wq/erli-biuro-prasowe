@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/nowa-platforma-marketplace-erli-pl-liczy-na-osiagniecie-rentownosci-w-tym-roku/hero.webp
 ---
 
-![](/assets/img/artykuly/nowa-platforma-marketplace-erli-pl-liczy-na-osiagniecie-rentownosci-w-tym-roku/hero.webp)
-
 ### Wiadomości Handlowe: Nowa platforma marketplace Erli.pl liczy na osiągnięcie rentowności w tym roku
 
 Całość artykułu dostępna pod adresem:

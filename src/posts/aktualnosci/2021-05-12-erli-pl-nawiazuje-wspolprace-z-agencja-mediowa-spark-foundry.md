@@ -5,8 +5,6 @@ lead: "Spark Foundry, agencja należąca do Publicis Groupe, zajmie się obsług
 grafika: /assets/img/artykuly/erli-pl-nawiazuje-wspolprace-z-agencja-mediowa-spark-foundry/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-nawiazuje-wspolprace-z-agencja-mediowa-spark-foundry/hero.webp)
-
 ### ERLI.pl nawiązuje współpracę z agencją mediową Spark Foundry
 
 *Współpraca ze Spark Foundry to kolejny etap rozwoju ERLI. Już za moment rozpoczynamy szeroką kampanię marketingową. Będziemy docierali do Polaków zarówno przez telewizję, jak i kanały digitalowe. Dynamicznie się rozwijamy i chcemy współpracować z profesjonalnymi partnerami, którzy skutecznie pomogą nam realizować nasze cele. Wierzę, że współpraca z agencjami, takimi jak MSL czy Spark Foundry, które funkcjonują w ramach jednej Grupy Publicis, wpłynie pozytywnie na sprawną i efektywną komunikację przy projektach realizowanych dla naszego marketplace’u* – **mówi Adam Ciesielczyk, Prezes ERLI.pl.**
@@ -17,6 +15,6 @@ W ramach nawiązanej współpracy, agencja mediowa Spark Foundry będzie odpowie
 
 Kooperacja z ERLI.pl realizowana jest zgodnie z ideą Power of One i obejmuje współpracę z agencjami należącymi do Groupy Publicis: Spark Foundry (strategia, planowanie i zakup mediów), MSL (Public Relations), Performics (marketing efektywnościowy) oraz dywizja biznesowa Publicis Groupe Data Science.
 
-**Spark Foundry**
+Spark Foundry
 
 Spark Foundry jest globalną agencją mediową należącą do holdingu Publicis Groupe. Agencja łączy skalę i siłę międzynarodowej firmy z energią do rozwoju, wdrażania innowacji i transformacji, charakterystyczną dla startupów. Przedsiębiorczość, nowatorskie podejście do biznesu, otwartość na zmiany i eksperymentowanie, to cechy, które łączą Spark Foundry z klientami agencji, wśród których są takie marki jak Żabka, Blik, Storytel, Agata, The Lorenz Bahlsen, czy Lenovo/Motorola. Kompetencje Spark Foundry wykraczają daleko poza obszar standardowych usług związanych z biznesem mediowym i obejmuję między innymi analitykę, technologię marketingową, content marketing, e-commerce oraz doradztwo w dziedzinie digital transformation. Agencja regularnie zdobywa wyróżnienia i nagrody za efektywność i kreatywność kampanii. W 2020 zdobyła 5 nagród, w tym Grand Prix w konkursie Effie Awards.

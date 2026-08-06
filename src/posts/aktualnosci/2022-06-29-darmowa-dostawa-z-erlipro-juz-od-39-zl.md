@@ -5,15 +5,13 @@ lead: "Darmowa dostawa z ErliPRO stała się właśnie jeszcze bardziej dostępn
 grafika: /assets/img/artykuly/darmowa-dostawa-z-erlipro-juz-od-39-zl/hero.webp
 ---
 
-![](/assets/img/artykuly/darmowa-dostawa-z-erlipro-juz-od-39-zl/hero.webp)
-
 ### Darmowa dostawa z ErliPRO już od 39 zł!
 
 „*W ERLI.pl widzimy, jak dynamicznie zmienia się krajobraz rynku marketplace i reagujemy na te zmiany oferując nowe rozwiązania i rozwijając istniejące usługi. Programy lojalnościowe zapewniające darmową dostawę powinny być absolutnym standardem każdej platformy sprzedażowej. Nasze ErliPRO do tej pory spełniało swoją rolę, jednak zauważyliśmy spory potencjał rozwoju tej usługi. Mając na uwadze obecną sytuację rynkową postanowiliśmy zmniejszyć próg cenowy, od którego dostawa jest darmowa. Od teraz wystarczy, że nasi klienci zrobią zakupy za 39 zł u jednego sprzedawcy, by cieszyć się z bezpłatnej przesyłki. Dzięki podjętym krokom możemy z pełnym przekonaniem stwierdzić, że obecnie ErliPRO jest najbardziej przyjaznym użytkownikowi i najlepszym programem darmowych dostaw na rynku.*” - **Adam Ciesielczyk, CEO ERLI.pl**
 
 ErliPRO to program darmowych dostaw, w ramach którego klienci mogą korzystać z bezpłatnych przesyłek poprzez InPost, DHL, Pocztę Polską i Orlen Paczkę. Liczba przesyłek jest nielimitowana, dzięki czemu kupujący mogą zamówić dowolną liczbę paczek bez żadnych ograniczeń. W ofercie ERLI.pl znajdują się blisko 4 miliony produktów dostępnych z bezpłatną dostawą w ramach ErliPRO.
 
-**PROste zasady i korzyści**
+PROste zasady i korzyści
 
 Jak zacząć z ErliPRO? Podczas zakupów kupujący powinni szukać produktów oznaczonych logo ErliPRO. Dzięki temu będą mieli pewność, że dostawa będzie bezpłatna. Następnie wystarczy zrobić zakupy za minimum 39 zł u jednego sprzedawcy. Dzięki ErliPRO klienci nie tylko oszczędzają na przesyłce. W ramach usługi każdy kupujący może korzystać z ponad 40 000 punktów odbioru, Paczkomatów InPost oraz usług kurierskich.
 

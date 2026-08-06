@@ -8,8 +8,6 @@ zrodlo:
 grafika: /assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero.webp
 ---
 
-![](/assets/img/artykuly/50-mln-zlotych-na-wsparcie-polskich-sprzedawcow/hero.webp)
-
 ### Platforma ERLI.pl przeznaczy 50 mln złotych na wsparcie polskich sprzedawców
 
 Model biznesowy, który radykalnie obniży koszty dla sprzedających w Internecie, a tym samym ceny dla kupujących, został stworzony w oparciu o rozwiązania: Erli, InPost, Google oraz PayU.

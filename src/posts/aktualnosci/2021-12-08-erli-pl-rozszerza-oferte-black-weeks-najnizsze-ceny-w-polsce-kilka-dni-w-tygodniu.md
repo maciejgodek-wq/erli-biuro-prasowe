@@ -5,13 +5,11 @@ lead: "Podczas gdy cały świat oczekuje największych promocji jedynie podczas 
 grafika: /assets/img/artykuly/erli-pl-rozszerza-oferte-black-weeks-najnizsze-ceny-w-polsce-kilka-dni-w/hero.webp
 ---
 
-![](/assets/img/artykuly/erli-pl-rozszerza-oferte-black-weeks-najnizsze-ceny-w-polsce-kilka-dni-w/hero.webp)
-
 ### ERLI.pl rozszerza ofertę Black Weeks. Najniższe ceny w Polsce już nie tylko w środy, a kilka dni w tygodniu!
 
 Rozszerzona oferta Black Weeks na ERLI.pl wystartowała w poniedziałek 6.12 o godzinie 9:00. Produkty będą początkowo przecenione o 50% w stosunku do regularnej ceny na platformie. Po wyczerpaniu zapasów w najniższej cenie pojawią się dodatkowe pule produktów przecenionego kolejno o 20, a następnie 15 procent.
 
-**Lista pomysłów na prezent dostępnych w poniedziałkowej promocji to:**
+Lista pomysłów na prezent dostępnych w poniedziałkowej promocji to:
 
 - [Dron](https://erli.pl/akcesoria-fotograficzne-multicoptery-i-drony/dron-overmax-x-bee-drone-9-5-fold,115634269)
 - [Projektor LED](https://erli.pl/projektory-urzadzenia/projektor-led-overmax-multipic-5-1,110762239)
@@ -24,7 +22,7 @@ Rozszerzona oferta Black Weeks na ERLI.pl wystartowała w poniedziałek 6.12 o g
 - [Tablet Lenovo](https://erli.pl/tablety-urzadzenia/lenovo-yoga-smart-tab-yt-x705l-4-64gb-lte-wi-fi,113993765)
 - [Drukarka HP](https://erli.pl/skanery-i-drukarki-urzadzenia-wielofunkcyjne/drukarka-wielofunkcyjna-hp-deskjet-4122e-bialy-wifi,115746599)
 
-**We wtorek 7.12 dnia osoby, które poszukują ciekawych i oryginalnych pomysłów na prezent dla dzieci w najniższych cenach, znajdą coś dla siebie, m. in:**
+We wtorek 7.12 dnia osoby, które poszukują ciekawych i oryginalnych pomysłów na prezent dla dzieci w najniższych cenach, znajdą coś dla siebie, m. in:
 
 - [Zestaw Elementarz](https://erli.pl/ksiazki-dla-dzieci-encyklopedie-slowniki-i-atlasy/czytaj-z-albikiem-zestaw-pierwszy-elementarz-pioro-albik,76660295)
 - [Gry planszowe](https://erli.pl/planszowe-rodzinne/wsiasc-do-pociagu-dookola-swiata-pociagi-i-statki,76658869)
@@ -37,7 +35,7 @@ Rozszerzona oferta Black Weeks na ERLI.pl wystartowała w poniedziałek 6.12 o g
 - [Jeździk](https://erli.pl/rowery-i-pojazdy-jezdziki/skiddou-bjorg-jezdzik-grawitacyjny-dla-dzieci-szary,56680739)
 - [Mata edukacyjna](https://erli.pl/dla-niemowlat-maty-edukacyjne/skiddou-lykke-mata-edukacyjna-dla-niemowlat-akcesoria,64154784)
 
-**Ponadto, w nadchodzącą środę ERLI.pl zaprezentuje listę świątecznych produktów do domu w wyjątkowo korzystnych cenach, a w czwartek sprzęty AGD z wielkimi rabatami:**
+Ponadto, w nadchodzącą środę ERLI.pl zaprezentuje listę świątecznych produktów do domu w wyjątkowo korzystnych cenach, a w czwartek sprzęty AGD z wielkimi rabatami:
 
 **Środa 8.12:**​
 
