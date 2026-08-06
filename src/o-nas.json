@@ -1,0 +1,77 @@
+{
+  "liczby": [
+    { "wartosc": "30 000", "opis": "zarejestrowanych polskich sprzedawców" },
+    { "wartosc": "35 mln", "opis": "produktów w ofercie" },
+    { "wartosc": "9 mln", "opis": "kupujących każdego miesiąca" },
+    { "wartosc": "89%", "opis": "wzrostu przychodu netto rok do roku" }
+  ],
+
+  "korzysciKupujacy": [
+    { "tekst": "Na ERLI.pl w pierwszej kolejności zobaczysz oferty produktów w najlepszej cenie z oznaczeniem okazja!" },
+    { "tekst": "ErliPRO – produkty z tym oznaczeniem zamówisz z darmową dostawą od 79 zł! Abonament na darmowe dostawy jest bezpłatny!" },
+    { "tekst": "Program ochrony kupujących – nie martwisz się o bezpieczeństwo transakcji!" },
+    { "tekst": "Wyłącznie polscy sprzedawcy!" }
+  ],
+  "notaKupujacy": "Jako platforma e-commerce skupiamy handel wyłącznie nowymi i oryginalnymi towarami.",
+
+  "produkty": [
+    {
+      "nazwa": "ERLI Shop",
+      "opis": "Kompleksowe wsparcie Twojego sklepu. Pierwszy miesiąc 0 zł!",
+      "url": "https://erli.pl/sprzedawcy/"
+    },
+    {
+      "nazwa": "ERLI Campaigns",
+      "opis": "Najlepsza oferta na skuteczne kampanie reklamowe Twojego sklepu.",
+      "url": "https://erli.pl/campaigns/"
+    },
+    {
+      "nazwa": "ERLI Pro",
+      "opis": "Wygodne metody dostaw. Paczkomat InPost od 3,99 zł.",
+      "url": "https://erli.pl/erlipro/"
+    }
+  ],
+
+  "kategorie": [
+    { "nazwa": "Dom i ogród",        "obraz": "/assets/img/cat-haus.webp" },
+    { "nazwa": "Dziecko",            "obraz": "/assets/img/cat-kind.webp" },
+    { "nazwa": "Elektronika",        "obraz": "/assets/img/cat-elektronik.webp" },
+    { "nazwa": "Firma",              "obraz": "/assets/img/cat-business.webp" },
+    { "nazwa": "Kolekcje i sztuka",  "obraz": "/assets/img/cat-sammeln.webp" },
+    { "nazwa": "Kultura i rozrywka", "obraz": "/assets/img/cat-kultur.webp" },
+    { "nazwa": "Moda",               "obraz": "/assets/img/cat-mode.webp" },
+    { "nazwa": "Motoryzacja",        "obraz": "/assets/img/cat-auto.webp" },
+    { "nazwa": "Sport i turystyka",  "obraz": "/assets/img/cat-sport.webp" },
+    { "nazwa": "Supermarket",        "obraz": "/assets/img/cat-supermarkt.webp" },
+    { "nazwa": "Uroda",              "obraz": "/assets/img/cat-beauty.webp" },
+    { "nazwa": "Zdrowie",            "obraz": "/assets/img/cat-gesundheit.webp" }
+  ],
+
+  "historiaWstep": "Motywacją do stworzenia w sieci nowej przestrzeni dedykowanej sprzedawcom była chęć udostępnienia alternatywy dla czołowych innych platform sprzedażowych działających w Polsce, a także zauważalny wzrost potencjału rynku e-commerce.",
+  "historia": [
+    {
+      "data": "Wrzesień 2019",
+      "tekst": "Prace przygotowawcze do uruchomienia marketplace’u nabierają tempa. Powstaje nazwa ERLI.pl."
+    },
+    {
+      "data": "Początek 2020",
+      "tekst": "Pierwsza, testowa rejestracja na platformie."
+    },
+    {
+      "data": "16 stycznia 2020",
+      "tekst": "Na platformie rejestruje się pierwszy sprzedawca."
+    },
+    {
+      "data": "Styczeń 2021",
+      "tekst": "Na ERLI.pl działa już 2248 aktywnych sprzedawców."
+    },
+    {
+      "data": "Wrzesień 2021",
+      "tekst": "Liczba sprzedawców przekracza 7000."
+    },
+    {
+      "data": "Dziś",
+      "tekst": "Ponad 35 mln produktów od ponad 30 000 sprzedających. Miesięcznie marketplace odwiedza ponad 9 mln użytkowników."
+    }
+  ]
+}

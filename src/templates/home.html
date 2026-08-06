@@ -5,6 +5,7 @@
       <a class="press-item__link" href="{{ wyrozniony.url }}">
         <div class="press-item__body">
           <p class="press-item__meta">
+            <span class="press-item__badge">Najnowsze</span>
             <span class="press-item__kategoria">{{ wyrozniony.kategoriaNazwa }}</span>
             <time datetime="{{ wyrozniony.data }}">{{ wyrozniony.dataPl }}</time>
           </p>
@@ -25,11 +26,17 @@
 
 <section class="section" aria-labelledby="wczesniejsze">
   <div class="container container--press">
-    <header class="section-header">
-      <h2 id="wczesniejsze" class="section-header__heading">Wcześniejsze</h2>
-      <a class="section-header__link" href="/aktualnosci/">Wszystkie aktualności</a>
-    </header>
+    <!-- Etykieta, nie naglowek ekspozycyjny: sekcja tylko oddziela liste od
+         wyroznionego newsa. Link "Wszystkie aktualnosci" usuniety — dublowal
+         pozycje z menu glownego dwa rzedy wyzej. -->
+    <h2 id="wczesniejsze" class="section-eyebrow lista-etykieta">Wcześniejsze publikacje</h2>
     {{#each pozostale}}{{> press-item }}{{/each}}
+
+    <!-- Na koncu listy, nie przy naglowku: tam link dublowal menu i rozpychal
+         sekcje, tu jest naturalnym nastepnym krokiem po doczytaniu do konca. -->
+    <p class="lista-wiecej">
+      <a class="btn btn--secondary btn--medium lista-wiecej__cta" href="/aktualnosci/">Więcej aktualności</a>
+    </p>
   </div>
 </section>
 

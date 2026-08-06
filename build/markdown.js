@@ -22,6 +22,21 @@ export function renderMarkdown(source) {
 }
 
 /** HTML -> czysty tekst; do meta description i podgladow. */
+/**
+ * Podnosi <h3> z tresci artykulu do <h2>.
+ *
+ * Na stronie artykulu <h1> to tytul, wiec pierwszy poziom w tekscie powinien
+ * byc <h2>. Migracja z Joomli wyprodukowala same <h3> — sprawdzone: 31 plikow
+ * uzywa wylacznie ###, zaden nie uzywa ## ani ####. Przy takim jednorodnym
+ * zbiorze podniesienie o jeden poziom nie moze niczego splaszczyc, a usuwa
+ * przeskok h1 → h3, ktory gubi czytnikow ekranu nawigujacych po naglowkach.
+ */
+export function podniesNaglowki(html) {
+  return String(html ?? '')
+    .replace(/<h3(\s[^>]*)?>/g, '<h2$1>')
+    .replace(/<\/h3>/g, '</h2>');
+}
+
 export function plainText(html) {
   return String(html ?? '')
     .replace(/<[^>]+>/g, '')

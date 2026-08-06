@@ -3,10 +3,10 @@ import { readFile, writeFile, mkdir, rm, cp, readdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { existsSync } from 'node:fs';
 
-import { loadPosts, groupByYear } from './build/posts.js';
+import { loadPosts } from './build/posts.js';
 import { parseFrontmatter } from './build/frontmatter.js';
 import { render } from './build/template.js';
-import { renderMarkdown, plainText } from './build/markdown.js';
+import { renderMarkdown, plainText, podniesNaglowki } from './build/markdown.js';
 import { buildCss } from './build/css.js';
 import { assertNoGerman } from './build/lang-guard.js';
 import { assertNoMissingImages } from './build/image-guard.js';
@@ -15,7 +15,7 @@ import { buildSitemap, buildRobots, DOMENA } from './build/seo.js';
 import { buildRedirectMap, toHtaccess, toNginx, toCsv } from './build/redirects.js';
 import { paginate } from './build/paginate.js';
 import {
-  KATEGORIE, navFlags, decoratePost, powiazaneDo,
+  KATEGORIE, navFlags, decoratePost, powiazaneDo, leadDublujeTresc,
   articleSchema, organizationSchema,
 } from './build/render.js';
 
@@ -101,7 +101,9 @@ async function build() {
   // --- listy kategorii ---
   for (const [klucz, meta] of Object.entries(KATEGORIE)) {
     const posty = wszystkie.filter((p) => p.kategoria === klucz);
-    for (const strona of paginate(posty, meta.url)) {
+    const strony = paginate(posty, meta.url);
+
+    for (const strona of strony) {
       dodaj(strona.url, skladaj(tpl, 'list', {
         url: strona.url,
         tytulStrony: `${meta.naglowek} — Biuro prasowe ERLI`,
@@ -112,19 +114,28 @@ async function build() {
         schemaJsonLd: `<script type="application/ld+json">${organizationSchema()}</script>`,
         naglowek: meta.naglowek,
         wprowadzenie: meta.wprowadzenie,
-        grupy: groupByYear(strona.elementy),
+        posty: strona.elementy,
         maPaginacje: strona.lacznie > 1,
         numer: strona.numer,
         lacznie: strona.lacznie,
         poprzednia: strona.poprzednia,
         nastepna: strona.nastepna,
+        // Numerowana paginacja: przy 9 wpisach na strone stron jest kilka,
+        // wiec skok wprost jest szybszy niz klikanie "Nastepna".
+        numery: strony.map((s) => ({
+          numer: s.numer,
+          url: s.url,
+          aktualna: s.numer === strona.numer,
+        })),
       }), '2026-07-27', '0.8');
     }
   }
 
   // --- artykuły ---
   for (const post of wszystkie) {
-    const trescHtml = renderMarkdown(post.tresc);
+    // H1 na stronie artykulu to tytul, wiec naglowki w tresci zaczynaja sie
+    // od H2. Zrodla po migracji maja same ###.
+    const trescHtml = podniesNaglowki(renderMarkdown(post.tresc));
     dodaj(post.url, skladaj(tpl, 'post', {
       ...post,
       tytulStrony: `${post.tytul} — Biuro prasowe ERLI`,
@@ -136,7 +147,10 @@ async function build() {
         `<script type="application/ld+json">${articleSchema(post)}</script>\n` +
         `  <script type="application/ld+json">${organizationSchema()}</script>`,
       trescHtml,
-      powiazane: powiazaneDo(post, wszystkie),
+      // Lead pokazujemy tylko, gdy nie powtarza sie w tekscie. Pole `lead`
+      // zostaje w danych i dalej zasila opis w <head> oraz zajawki na listach.
+      pokazLead: Boolean(post.lead) && !leadDublujeTresc(post.lead, plainText(trescHtml)),
+      powiazane: powiazaneDo(post, wszystkie).map((p) => ({ ...p, podrzedny: true })),
     }), post.data, '0.7');
   }
 
@@ -146,9 +160,27 @@ async function build() {
     const { data, body } = parseFrontmatter(await readFile(join('src/pages', plik), 'utf8'));
     const slug = plik.replace('.md', '');
     const url = `/${slug}/`;
-    dodaj(url, skladaj(tpl, 'page', {
+
+    // Strona moze wskazac wlasny szablon przez frontmatter `szablon`. Domyslny
+    // `page` dokleja pasmo kontaktowe; strona Kontakt ma wlasny uklad, zeby ta
+    // sama tresc nie pojawila sie na niej dwa razy.
+    const szablon = tpl.templates[data.szablon] ? data.szablon : 'page';
+
+    // Dane strukturalne z src/<slug>.json, jesli istnieja. Frontmatter zna
+    // tylko plaskie pary klucz-wartosc, wiec listy sekcji (kafle, kategorie,
+    // os czasu) nie zmieszcza sie w naglowku pliku .md.
+    const plikDanych = join('src', `${slug}.json`);
+    const daneSekcji = existsSync(plikDanych)
+      ? JSON.parse(await readFile(plikDanych, 'utf8'))
+      : {};
+
+    dodaj(url, skladaj(tpl, szablon, {
+      ...daneSekcji,
+      ...data,
       url,
       tytul: data.tytul,
+      // Numer do atrybutu tel: bez spacji i lacznikow.
+      telefonHref: data.telefon ? data.telefon.replace(/[^\d+]/g, '') : '',
       tytulStrony: `${data.tytul} — Biuro prasowe ERLI`,
       opis: data.lead ?? '',
       kanoniczny: `${DOMENA}${url}`,

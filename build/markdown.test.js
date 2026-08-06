@@ -1,6 +1,32 @@
 // build/markdown.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { podniesNaglowki } from './markdown.js';
+
+test('podnosi h3 do h2', () => {
+  assert.equal(podniesNaglowki('<h3>Tytul sekcji</h3>'), '<h2>Tytul sekcji</h2>');
+});
+
+test('zachowuje atrybuty naglowka', () => {
+  assert.equal(podniesNaglowki('<h3 id="abc">X</h3>'), '<h2 id="abc">X</h2>');
+});
+
+test('nie rusza pozostalych poziomow ani tresci', () => {
+  const wejscie = '<h2>Dwa</h2><p>h3 w tekscie</p><h4>Cztery</h4>';
+  assert.equal(podniesNaglowki(wejscie), wejscie);
+});
+
+test('obsluguje wiele naglowkow w jednym dokumencie', () => {
+  assert.equal(
+    podniesNaglowki('<h3>A</h3><p>x</p><h3>B</h3>'),
+    '<h2>A</h2><p>x</p><h2>B</h2>'
+  );
+});
+
+test('pusty wejsciowy html nie wywraca funkcji', () => {
+  assert.equal(podniesNaglowki(''), '');
+  assert.equal(podniesNaglowki(null), '');
+});
 import { renderMarkdown, plainText } from './markdown.js';
 
 test('renderuje akapity', () => {

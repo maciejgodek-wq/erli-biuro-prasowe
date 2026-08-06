@@ -5,20 +5,35 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section--lista">
   <div class="container container--press">
-    {{#each grupy}}
-    <div class="year-group">
-      <h2 class="year-group__heading">{{ rok }}</h2>
-      {{#each posty}}{{> press-item }}{{/each}}
-    </div>
-    {{/each}}
+    {{#each posty}}{{> press-item }}{{/each}}
 
     {{#if maPaginacje}}
     <nav class="pagination" aria-label="Paginacja">
-      {{#if poprzednia}}<a class="pagination__link" href="{{ poprzednia }}" rel="prev">Poprzednia</a>{{/if}}
-      <span class="pagination__status">Strona {{ numer }} z {{ lacznie }}</span>
-      {{#if nastepna}}<a class="pagination__link" href="{{ nastepna }}" rel="next">Następna</a>{{/if}}
+      {{#if poprzednia}}
+      <a class="pagination__link" href="{{ poprzednia }}" rel="prev">Poprzednia</a>
+      {{else}}
+      <span class="pagination__link pagination__link--nieaktywny" aria-hidden="true">Poprzednia</span>
+      {{/if}}
+
+      <ol class="pagination__numery" role="list">
+        {{#each numery}}
+        <li>
+          {{#if aktualna}}
+          <span class="pagination__numer pagination__numer--aktualny" aria-current="page">{{ numer }}</span>
+          {{else}}
+          <a class="pagination__numer" href="{{ url }}" aria-label="Strona {{ numer }}">{{ numer }}</a>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ol>
+
+      {{#if nastepna}}
+      <a class="pagination__link" href="{{ nastepna }}" rel="next">Następna</a>
+      {{else}}
+      <span class="pagination__link pagination__link--nieaktywny" aria-hidden="true">Następna</span>
+      {{/if}}
     </nav>
     {{/if}}
   </div>

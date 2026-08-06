@@ -1,0 +1,94 @@
+<section class="section section--page-top onas-hero">
+  <div class="container container--press onas-hero__grid">
+    <!-- Tekst przed zdjeciem w kolejnosci dokumentu: H1 ma otwierac strone dla
+         czytnikow ekranu i wyszukiwarek. Na desktopie CSS przesuwa fotografie
+         na lewa strone, na mobile zostaje pod tytulem. -->
+    <div class="onas-hero__tresc">
+      <h1 class="page-title">{{ tytul }}</h1>
+      <div class="prose onas-hero__proza">
+{{{ trescHtml }}}
+      </div>
+    </div>
+    <img class="onas-hero__foto" src="/assets/img/was-ist-erli.webp"
+         width="608" height="406" loading="eager" decoding="async"
+         alt="Zespół ERLI podczas spotkania w biurze, w tle sześciany z logo firmy">
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container container--press">
+    <ul class="liczby" role="list">
+      {{#each liczby}}
+      <li class="liczby__kafel">
+        <p class="liczby__wartosc">{{ wartosc }}</p>
+        <p class="liczby__opis">{{ opis }}</p>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="dla-kupujacych">
+  <div class="container container--press onas-dwie">
+    <div>
+      <h2 id="dla-kupujacych" class="onas-naglowek">Kluczowe korzyści dla kupujących</h2>
+      <p class="onas-nota">{{ notaKupujacy }}</p>
+    </div>
+    <ul class="check-list" role="list">
+      {{#each korzysciKupujacy}}
+      <li>{{ tekst }}</li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="dla-sprzedajacych">
+  <div class="container container--press">
+    <h2 id="dla-sprzedajacych" class="onas-naglowek">Kluczowe korzyści dla sprzedających</h2>
+    <ul class="produkty" role="list">
+      {{#each produkty}}
+      <li class="produkty__karta">
+        <h3 class="produkty__nazwa">{{ nazwa }}</h3>
+        <p class="produkty__opis">{{ opis }}</p>
+        <a class="btn btn--primary btn--medium produkty__cta" href="{{ url }}"
+           target="_blank" rel="noopener noreferrer">Sprawdź<span class="visually-hidden"> — {{ nazwa }}</span></a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="kategorie">
+  <div class="container container--press">
+    <h2 id="kategorie" class="onas-naglowek">Kategorie</h2>
+    <p class="onas-nota">Klienci mogą wybierać spośród milionów produktów z 12 najpopularniejszych kategorii w jednym miejscu.</p>
+    <ul class="kategorie" role="list">
+      {{#each kategorie}}
+      <li class="kategorie__kafel">
+        <img class="kategorie__foto" src="{{ obraz }}" width="388" height="300"
+             alt="" loading="lazy" decoding="async">
+        <span class="kategorie__nazwa">{{ nazwa }}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--soft" aria-labelledby="historia">
+  <div class="container container--press onas-dwie">
+    <div>
+      <h2 id="historia" class="onas-naglowek">Historia ERLI</h2>
+      <p class="onas-nota">{{ historiaWstep }}</p>
+    </div>
+    <ol class="oscz" role="list">
+      {{#each historia}}
+      <li class="oscz__punkt">
+        <p class="oscz__data">{{ data }}</p>
+        <p class="oscz__tekst">{{ tekst }}</p>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>
+
+{{> contact-block }}

@@ -1,6 +1,40 @@
 // build/render.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { leadDublujeTresc } from './render.js';
+
+test('lead powtorzony w tresci jest wykrywany', () => {
+  const lead = 'Przychody ERLI wzrosly o 62% do 189,7 mln zl w trzecim kwartale.';
+  const tresc = 'Platforma podsumowuje kwartal. Przychody ERLI wzrosly o 62% do 189,7 mln zl w trzecim kwartale. Dalszy ciag tekstu.';
+  assert.equal(leadDublujeTresc(lead, tresc), true);
+});
+
+test('porownuje pierwsze zdanie, wiec doklejony tytul nie przeszkadza', () => {
+  const lead = 'Przychody ERLI wzrosly o 62% do 189,7 mln zl w trzecim kwartale. ERLI z rekordowym wzrostem po 9 miesiacach.';
+  const tresc = 'Przychody ERLI wzrosly o 62% do 189,7 mln zl w trzecim kwartale.';
+  assert.equal(leadDublujeTresc(lead, tresc), true);
+});
+
+test('lead nieobecny w tresci nie jest wykrywany', () => {
+  const lead = 'Zupelnie inne zdanie wprowadzajace, ktore nie pada w tekscie artykulu.';
+  assert.equal(leadDublujeTresc(lead, 'Tresc artykulu o czym innym.'), false);
+});
+
+test('rozne zawijanie wierszy nie psuje porownania', () => {
+  const lead = 'Przychody ERLI wzrosly o 62% do 189,7 mln zl w trzecim kwartale.';
+  const tresc = 'Przychody ERLI\n  wzrosly o 62%   do 189,7 mln zl\nw trzecim kwartale.';
+  assert.equal(leadDublujeTresc(lead, tresc), true);
+});
+
+test('krotkie zdanie nie wystarcza — za duze ryzyko przypadkowego trafienia', () => {
+  assert.equal(leadDublujeTresc('Rekordowy rok.', 'Rekordowy rok. I dalszy tekst.'), false);
+});
+
+test('brak leadu lub tresci zwraca false', () => {
+  assert.equal(leadDublujeTresc('', 'cokolwiek'), false);
+  assert.equal(leadDublujeTresc('Dostatecznie dlugie zdanie wprowadzajace do tekstu.', ''), false);
+  assert.equal(leadDublujeTresc(null, null), false);
+});
 import { navFlags, grafikaUrl, KATEGORIE, articleSchema, powiazaneDo } from './render.js';
 
 test('flaga aria-current tylko dla aktywnej pozycji', () => {

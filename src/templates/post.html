@@ -1,17 +1,29 @@
 <article class="post">
-  <div class="container post__container">
-    <p class="post__meta">
-      <a class="post__kategoria" href="{{ kategoriaUrl }}">{{ kategoriaNazwa }}</a>
-      <time datetime="{{ data }}">{{ dataPl }}</time>
-    </p>
-    <h1 class="post__title">{{ tytul }}</h1>
-    {{#if lead}}<p class="post__lead">{{ lead }}</p>{{/if}}
+  <!-- Hero otwiera strone, tytul lezy na zdjeciu. Kontener szerszy niz kolumna
+       tekstu: fotografia dostaje 1136 px, tresc zostaje w 800 px, czyli przy
+       czytelnych 67 znakach w wierszu. -->
+  <header class="container container--press post__hero-wrap">
+    <!-- Kadr musi byc osobnym elementem od kontenera: kontener ma
+         padding-inline 32 px, wiec zaokraglenie ustawione na nim wypadaloby
+         w przezroczystym marginesie, a zdjecie zostawaloby z ostrymi rogami. -->
+    <div class="post__hero">
+      <div class="post__media">
+        <img src="{{ grafikaUrl }}" srcset="{{ grafikaSrcset }}"
+             sizes="(max-width: 1200px) 100vw, 1136px"
+             alt="" loading="eager" fetchpriority="high">
+      </div>
+      <div class="post__naglowek">
+        <p class="post__meta">
+          <a class="post__kategoria" href="{{ kategoriaUrl }}">{{ kategoriaNazwa }}</a>
+          <time datetime="{{ data }}">{{ dataPl }}</time>
+        </p>
+        <h1 class="post__title">{{ tytul }}</h1>
+      </div>
+    </div>
+  </header>
 
-    <figure class="post__media">
-      <img src="{{ grafikaUrl }}" srcset="{{ grafikaSrcset }}"
-           sizes="(max-width: 840px) 100vw, 800px"
-           alt="" loading="eager" fetchpriority="high">
-    </figure>
+  <div class="container post__container">
+    {{#if pokazLead}}<p class="post__lead">{{ lead }}</p>{{/if}}
 
     {{#if zrodlo}}
     <aside class="source-note">
@@ -30,12 +42,12 @@
 </article>
 
 {{#if powiazane}}
-<section class="section" aria-labelledby="powiazane">
+<section class="section powiazane" aria-labelledby="powiazane">
   <div class="container container--press">
-    <header class="section-header">
-      <h2 id="powiazane" class="section-header__heading">Powiązane materiały</h2>
-    </header>
-    {{#each powiazane}}{{> press-item }}{{/each}}
+    <h2 id="powiazane" class="section-eyebrow lista-etykieta">Powiązane materiały</h2>
+    <div class="powiazane__grid">
+      {{#each powiazane}}{{> press-item }}{{/each}}
+    </div>
   </div>
 </section>
 {{/if}}

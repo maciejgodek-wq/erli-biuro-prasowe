@@ -1,0 +1,54 @@
+<section class="section section--page-top">
+  <div class="container container--press">
+    <h1 class="page-title">{{ tytul }}</h1>
+    <p class="kontakt__lead">{{ lead }}</p>
+  </div>
+</section>
+
+<section class="kontakt">
+  <div class="container container--press">
+    <div class="kontakt__grid">
+
+      <section class="kontakt__kolumna" aria-labelledby="kontakt-prasowy">
+        <h2 class="kontakt__naglowek" id="kontakt-prasowy">Kontakt dla mediów</h2>
+
+        <div class="kontakt-karta">
+          <p class="kontakt-karta__inicjaly" aria-hidden="true">{{ inicjaly }}</p>
+          <p class="kontakt-karta__rola">{{ rola }}</p>
+          <p class="kontakt-karta__osoba">{{ osoba }}</p>
+          <ul class="kontakt-karta__dane" role="list">
+            <li><a href="mailto:{{ mail }}">{{ mail }}</a></li>
+{{#if telefon}}
+            <li><a href="tel:{{ telefonHref }}">{{ telefon }}</a></li>
+{{/if}}
+{{#if linkedin}}
+            <li><a href="{{ linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+{{/if}}
+          </ul>
+        </div>
+
+        <p class="kontakt__notka">
+          Serwis prasowy przeznaczony jest wyłącznie dla mediów.
+          Pytania dotyczące zamówień i zakupów prosimy kierować na
+          <a href="mailto:{{ mailKupujacy }}">{{ mailKupujacy }}</a>.
+        </p>
+      </section>
+
+      <section class="kontakt__kolumna" aria-labelledby="nota-o-firmie">
+        <h2 class="kontakt__naglowek" id="nota-o-firmie">Nota o firmie</h2>
+
+        <div class="boilerplate">
+          <div class="boilerplate__tresc" id="boilerplate-tresc">
+{{{ trescHtml }}}
+          </div>
+          <button class="boilerplate__kopiuj" type="button" data-kopiuj="boilerplate-tresc">
+            Kopiuj notę
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/copy.js" defer></script>

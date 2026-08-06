@@ -98,6 +98,30 @@ export function grafikaUrlMala(post) {
   return duza.endsWith('.webp') ? duza.replace(/\.webp$/, '-600.webp') : null;
 }
 
+/**
+ * Czy lead powtarza sie w tresci artykulu.
+ *
+ * Po migracji z Joomli lead czesto jest przepisanym pierwszym zdaniem tekstu,
+ * przez co czytelnik dostaje to samo dwa razy pod rzad: raz pogrubione nad
+ * artykulem, raz w akapicie otwierajacym. Zamiast wycinac zdania z tresci
+ * redakcyjnej, szablon po prostu nie pokazuje leadu tam, gdzie sie dubluje.
+ *
+ * Pole `lead` zostaje nietkniete i dalej zasila <meta name="description">,
+ * og:description oraz zajawki na listach — te generuja sie z frontmattera
+ * w <head>, niezaleznie od tego, co renderujemy w <body>.
+ *
+ * Porownujemy pierwsze zdanie, nie caly lead: czesto lead to zdanie z tekstu
+ * plus doklejony tytul, wiec dopasowanie calosci nic by nie wykrylo.
+ */
+export function leadDublujeTresc(lead, tekstTresci) {
+  if (!lead || !tekstTresci) return false;
+  const norm = (s) => s.replace(/\s+/g, ' ').trim();
+  const pierwszeZdanie = norm(lead).split(/(?<=[.!?])\s+/)[0] ?? '';
+  // Ponizej 40 znakow ryzyko przypadkowego trafienia jest zbyt duze.
+  if (pierwszeZdanie.length < 40) return false;
+  return norm(tekstTresci).includes(pierwszeZdanie);
+}
+
 /** Wzbogaca post o pola potrzebne w szablonach. */
 export function decoratePost(post) {
   return {

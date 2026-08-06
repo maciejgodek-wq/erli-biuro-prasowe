@@ -2,9 +2,11 @@
 
 /**
  * Ponizej tej liczby wpisow lista pozostaje jednostronicowa.
- * Przy ~20 komunikatach na kategorie dzielenie listy tylko utrudnia szukanie.
+ *
+ * 9, nie 30: strona ma sie miescic w kilku ruchach scrolla i wygladac na
+ * biezaca, a nie na zwal archiwum. Tyle pokazuja biura prasowe Allegro i Zabki.
  */
-export const PROG_PAGINACJI = 30;
+export const PROG_PAGINACJI = 9;
 
 /**
  * Dzieli liste na strony. Pierwsza strona zachowuje adres bazowy,

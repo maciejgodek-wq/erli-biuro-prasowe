@@ -1,12 +1,22 @@
 // build/frontmatter.js
 
-/** Zdejmuje otaczajace cudzyslowy, jesli wystepuja po obu stronach. */
+/**
+ * Zdejmuje otaczajace cudzyslowy, jesli wystepuja po obu stronach.
+ *
+ * Wewnatrz cudzyslowow podwojnych odkodowuje tez \" i \\. Bez tego backslash
+ * wychodzil na strone: tytul zapisany jako "Allegro.\"Byl taki moment\""
+ * renderowal sie z widocznymi ukosnikami. Dotyczylo 2 z 77 artykulow.
+ * Apostrofy zostawiamy bez zmian — w YAML nie znaja sekwencji ucieczki.
+ */
 function unquote(value) {
   const trimmed = value.trim();
   if (trimmed.length >= 2) {
     const first = trimmed[0];
     const last = trimmed[trimmed.length - 1];
-    if ((first === '"' && last === '"') || (first === "'" && last === "'")) {
+    if (first === '"' && last === '"') {
+      return trimmed.slice(1, -1).replace(/\\(["\\])/g, '$1');
+    }
+    if (first === "'" && last === "'") {
       return trimmed.slice(1, -1);
     }
   }

@@ -29,6 +29,30 @@ test('zdejmuje cudzyslowy z wartosci', () => {
   assert.equal(data.tytul, 'ERLI idzie na rekord');
 });
 
+// Przypadek z produkcji: 2 artykuly mialy cytat w tytule i backslash
+// wychodzil na strone razem z cudzyslowem.
+test('odkodowuje cudzyslowy w srodku wartosci', () => {
+  const { data } = parseFrontmatter(
+    '---\ntytul: "Allegro.\\"Byl taki moment\\""\n---\n'
+  );
+  assert.equal(data.tytul, 'Allegro."Byl taki moment"');
+});
+
+test('odkodowuje podwojny backslash', () => {
+  const { data } = parseFrontmatter('---\ntytul: "sciezka C:\\\\dane"\n---\n');
+  assert.equal(data.tytul, 'sciezka C:\\dane');
+});
+
+test('nie rusza backslasha w apostrofach — YAML nie zna tam ucieczki', () => {
+  const { data } = parseFrontmatter("---\ntytul: 'bez \\\" ucieczki'\n---\n");
+  assert.equal(data.tytul, 'bez \\" ucieczki');
+});
+
+test('nie rusza backslasha w wartosci bez cudzyslowow', () => {
+  const { data } = parseFrontmatter('---\ntytul: bez \\" cudzyslowow\n---\n');
+  assert.equal(data.tytul, 'bez \\" cudzyslowow');
+});
+
 test('pomija puste linie i komentarze', () => {
   const { data } = parseFrontmatter('---\n# komentarz\n\ntytul: X\n---\n');
   assert.deepEqual(data, { tytul: 'X' });
