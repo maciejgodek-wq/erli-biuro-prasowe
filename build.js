@@ -12,7 +12,7 @@ import { assertNoGerman } from './build/lang-guard.js';
 import { assertNoMissingImages } from './build/image-guard.js';
 import { assertNoMissingRedirectTargets } from './build/redirect-guard.js';
 import { buildSitemap, buildRobots, DOMENA } from './build/seo.js';
-import { buildRedirectMap, toHtaccess, toNginx, toCsv } from './build/redirects.js';
+import { buildRedirectMap, toHtaccess, toNginx, toCsv, toCloudflare } from './build/redirects.js';
 import { paginate } from './build/paginate.js';
 import {
   KATEGORIE, navFlags, decoratePost, powiazaneDo, leadDublujeTresc,
@@ -224,6 +224,13 @@ async function build() {
   await zapisz(join(DIST, 'redirects/.htaccess'), toHtaccess(mapa));
   await zapisz(join(DIST, 'redirects/nginx.conf'), toNginx(mapa));
   await zapisz(join(DIST, 'redirects/mapa.csv'), toCsv(mapa));
+
+  // --- pliki konfiguracyjne Cloudflare Pages ---
+  // Oba musza lezec w katalogu glownym wyniku budowania, nie w redirects/.
+  // Cloudflare czyta je sam przy wdrozeniu — stad przekierowania 301 dzialaja
+  // na tym hostingu bez osobnego wdrozenia po stronie IT.
+  await zapisz(join(DIST, '_redirects'), toCloudflare(mapa));
+  await cp('_headers', join(DIST, '_headers'));
 
   console.log(`  ${strony.length} stron, ${mapa.length} przekierowan`);
   console.log('Gotowe: dist/');

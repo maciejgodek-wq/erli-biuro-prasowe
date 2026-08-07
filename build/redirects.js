@@ -73,6 +73,21 @@ export function toNginx(mapa) {
   );
 }
 
+/**
+ * Format dla Cloudflare Pages — plik `_redirects` w katalogu glownym dist/.
+ * Cloudflare czyta go sam przy kazdym wdrozeniu, wiec na tym hostingu mapa 301
+ * jedzie razem ze strona i nie wymaga osobnego wdrozenia po stronie IT.
+ * Limit statycznych regul na Pages to 2100 — mapa ma ich okolo stu.
+ */
+export function toCloudflare(mapa) {
+  return (
+    '# Przekierowania 301 ze starych adresow Joomli.\n' +
+    '# Wygenerowane przez build.js — nie edytuj recznie.\n\n' +
+    mapa.map(({ stary, nowy }) => `${stary} ${nowy} 301`).join('\n') +
+    '\n'
+  );
+}
+
 /** Format uniwersalny — do wklejenia w panel hostingu lub arkusz. */
 export function toCsv(mapa) {
   return (

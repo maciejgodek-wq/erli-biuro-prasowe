@@ -1,7 +1,7 @@
 // build/redirects.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildRedirectMap, toHtaccess, toNginx, toCsv } from './redirects.js';
+import { buildRedirectMap, toHtaccess, toNginx, toCsv, toCloudflare } from './redirects.js';
 
 const POSTY = [
   { kategoria: 'aktualnosci', slug: 'nowa-era-handlu', url: '/aktualnosci/nowa-era-handlu/' },
@@ -34,6 +34,20 @@ test('format htaccess uzywa Redirect 301', () => {
 test('format nginx uzywa rewrite permanent', () => {
   const out = toNginx(buildRedirectMap(POSTY));
   assert.match(out, /rewrite \^\/index\\\.php\/aktualnosci\/nowa-era-handlu\$ \/aktualnosci\/nowa-era-handlu\/ permanent;/);
+});
+
+test('format Cloudflare to trzy kolumny zakonczone kodem 301', () => {
+  const out = toCloudflare(buildRedirectMap(POSTY));
+  assert.match(out, /^\/index\.php\/aktualnosci\/nowa-era-handlu \/aktualnosci\/nowa-era-handlu\/ 301$/m);
+});
+
+test('format Cloudflare ma jeden wiersz na przekierowanie', () => {
+  const mapa = buildRedirectMap(POSTY);
+  const reguly = toCloudflare(mapa)
+    .trim()
+    .split('\n')
+    .filter((l) => l && !l.startsWith('#'));
+  assert.equal(reguly.length, mapa.length);
 });
 
 test('CSV ma naglowek i jeden wiersz na przekierowanie', () => {

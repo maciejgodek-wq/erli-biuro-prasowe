@@ -72,14 +72,34 @@ Build przerywa się błędem w trzech sytuacjach:
 
 ## Wdrożenie
 
+### Cloudflare Pages (docelowo)
+
+Projekt jest podpięty pod ten branch `main`. Każdy push uruchamia build:
+
+| Ustawienie | Wartość |
+| --- | --- |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Wersja Node | z pliku `.node-version` |
+
+Build zapisuje do `dist/` dwa pliki, które Cloudflare czyta sam:
+
+- `_redirects` — mapa przekierowań 301 ze starych adresów Joomli,
+- `_headers` — nagłówki bezpieczeństwa i reguły cache'owania.
+
+Na tym hostingu przekierowania jadą razem ze stroną, więc **nie wymagają
+osobnego wdrożenia po stronie IT**.
+
+### Inny hosting
+
 Zawartość `dist/` (bez katalogu `redirects/`) trafia do katalogu głównego
 serwera.
 
-**Katalog `dist/redirects/` to nie pliki strony.** Zawiera mapę przekierowań
-301 ze starych adresów Joomli w trzech formatach — `.htaccess` (Apache),
-`nginx.conf`, `mapa.csv` (panel hostingu). Muszą zostać wdrożone razem
-z podmianą strony. Bez nich każdy link do biura prasowego z artykułów
-w mediach prowadzi na 404, a strona traci pozycje w wyszukiwarce.
+**Katalog `dist/redirects/` to nie pliki strony.** Zawiera tę samą mapę 301
+w trzech formatach — `.htaccess` (Apache), `nginx.conf`, `mapa.csv` (panel
+hostingu). Muszą zostać wdrożone razem z podmianą strony. Bez nich każdy link
+do biura prasowego z artykułów w mediach prowadzi na 404, a strona traci
+pozycje w wyszukiwarce.
 
 Po wdrożeniu: zgłosić `sitemap.xml` w Google Search Console.
 
