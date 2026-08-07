@@ -126,5 +126,9 @@ zmiany wprowadzaj w plikach źródłowych.
 
 ## Dokumentacja
 
+- [`docs/jak-dodac-komunikat.md`](docs/jak-dodac-komunikat.md) — instrukcja dla
+  redakcji, bez wymagań technicznych po stronie czytającego
+- [`docs/wymagania-hostingowe.md`](docs/wymagania-hostingowe.md) — wymagania
+  dla działu IT wraz z listą kontrolną do odbioru
 - `docs/superpowers/specs/` — projekt techniczny i decyzje układu
 - `design-system/design.md` — tokeny i komponenty

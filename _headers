@@ -4,8 +4,25 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/assets/*
+# Fonty i obrazy: nazwa pliku jednoznacznie okresla tresc. Nowe zdjecie
+# dostaje nowa nazwe (katalog artykulu), fonty nie zmieniaja sie wcale,
+# wiec rok z `immutable` jest bezpieczny.
+/assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS i JS maja stale nazwy (main.css, nav.js) i zmienna tresc — build nie
+# dokleja do nich odcisku. Przy `immutable` na rok kazdy, kto raz otworzyl
+# strone, siedzialby na starym wygladzie do konca waznosci cache i zadne
+# wdrozenie by go nie ruszylo. Rewalidacja kosztuje jedno zapytanie
+# warunkowe konczace sie 304 — przy 75 KB CSS i 2 KB JS to nic.
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
