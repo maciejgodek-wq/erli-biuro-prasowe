@@ -104,12 +104,30 @@ function renderuj(template, context, partials) {
  * Bloki moga byc zagniezdzane dowolnie, takze w tym samym typie —
  * domkniecia dobierane sa przez liczenie glebokosci, nie regexem.
  */
+const MAX_ZAGNIEZDZEN_PARTIALI = 10;
+
 export function render(template, context = {}, partials = {}) {
   // Partiale najpierw, zeby ich zawartosc przeszla przez pozostale reguly.
-  const zPartialami = template.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => {
-    if (!(name in partials)) throw new Error(`Nieznany partial: ${name}`);
-    return partials[name];
-  });
+  //
+  // Rozwijane w petli, bo partial moze zawierac kolejny partial — ikona
+  // koperty siedzi w pasmie kontaktowym, ktore samo jest partialem. Przy
+  // jednym przebiegu placeholder wewnetrzny trafial do HTML-a doslownie.
+  //
+  // Licznik chroni przed cyklem A -> B -> A: bez niego petla nigdy by sie
+  // nie zatrzymala i build wisialby zamiast zglosic blad.
+  let zPartialami = template;
+  for (let i = 0; ; i++) {
+    if (!/\{\{>\s*[\w-]+\s*\}\}/.test(zPartialami)) break;
+    if (i === MAX_ZAGNIEZDZEN_PARTIALI) {
+      throw new Error(
+        `Partiale zagniezdzone glebiej niz ${MAX_ZAGNIEZDZEN_PARTIALI} poziomow — prawdopodobnie cykl`
+      );
+    }
+    zPartialami = zPartialami.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => {
+      if (!(name in partials)) throw new Error(`Nieznany partial: ${name}`);
+      return partials[name];
+    });
+  }
 
   return renderuj(zPartialami, context, partials);
 }

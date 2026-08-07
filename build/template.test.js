@@ -93,3 +93,21 @@ test('partial jest wstawiany i ma dostep do danych', () => {
 test('nieznany partial rzuca czytelny blad', () => {
   assert.throws(() => render('{{> brak }}', {}, {}), /Nieznany partial: brak/);
 });
+
+test('partial w partialu jest rozwijany do konca', () => {
+  const partials = {
+    pasmo: '<section>{{> ikona }}</section>',
+    ikona: '<svg></svg>',
+  };
+  assert.equal(render('{{> pasmo }}', {}, partials), '<section><svg></svg></section>');
+});
+
+test('partial zagniezdzony w partialu widzi dane', () => {
+  const partials = { zewnetrzny: '<p>{{> wewnetrzny }}</p>', wewnetrzny: '{{ imie }}' };
+  assert.equal(render('{{> zewnetrzny }}', { imie: 'ERLI' }, partials), '<p>ERLI</p>');
+});
+
+test('cykl partiali rzuca blad zamiast zapetlac build', () => {
+  const partials = { a: '{{> b }}', b: '{{> a }}' };
+  assert.throws(() => render('{{> a }}', {}, partials), /cykl/);
+});

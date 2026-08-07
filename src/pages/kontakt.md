@@ -4,7 +4,6 @@ lead: Materiały i informacje dla dziennikarzy piszących o ERLI.
 szablon: kontakt
 rola: Kontakt prasowy
 osoba: Aleksandra Grądzka
-inicjaly: AG
 mail: media@erli.pl
 mailKupujacy: pomoc@erli.pl
 # Pola opcjonalne — po odkomentowaniu i uzupelnieniu pojawia sie na karcie

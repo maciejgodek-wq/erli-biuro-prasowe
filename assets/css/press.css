@@ -439,25 +439,28 @@
   border-radius: var(--radius-2xl);
   padding: var(--space-3xl);
 
-  /* Plaski kolor marki, bez fotografii. Bialy tekst ma na nim 7.73:1. */
+  /* Fotografia sali konferencyjnej wtopiona w kolor marki.
+
+     Wazny jest `multiply`, a nie polprzezroczysta nakladka: multiply liczy
+     kanal jako (zdjecie x tlo)/255, wiec wynik nigdy nie jest jasniejszy od
+     samego primary-700. Kontrast bieli ma przez to twarda podloge 7.73:1
+     niezaleznie od tego, jak jasne jest zdjecie — nawet przeswietlone okna
+     w kadrze schodza do plaskiego koloru marki. Nakladka z opacity takiej
+     gwarancji nie daje: przy jasnym kadrze tekst potrafi zniknac.
+
+     Kadr dobrany pod ten mechanizm — duze spokojne plaszczyzny scian i szkla,
+     ludzie drobni i odwroceni. Pod multiply zostaje z tego tekstura
+     architektoniczna, ktora nie konkuruje z naglowkiem.
+
+     Zrodlo: Rodeo Project Management Software / Unsplash, licencja Unsplash
+     (uzycie komercyjne bez oplat, atrybucja niewymagana).
+     https://unsplash.com/photos/people-sitting-on-chair-inside-building-ONe-snuCaqQ */
   background-color: var(--color-primary-700);
-}
-
-/* GDYBY KIEDYS DOLOZYC TU FOTOGRAFIE (biuro, zespol — cokolwiek, co mowi cos
-   o kontakcie z mediami), wystarczy odkomentowac ponizsze i podac plik.
-   Wazny jest `multiply`, a nie polprzezroczysta nakladka: multiply liczy kanal
-   jako (zdjecie x tlo)/255, wiec wynik nigdy nie jest jasniejszy od samego
-   primary-700. Kontrast bieli ma przez to twarda podloge 7.73:1 niezaleznie
-   od tego, jak jasne jest zdjecie. Nakladka z opacity takiej gwarancji nie
-   daje — przy jasnym kadrze tekst potrafi zniknac.
-
-.press-contact__panel {
-  background-image: url('/assets/img/kv/nazwa-pliku.webp');
+  background-image: url('/assets/img/kontakt-tlo.webp');
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
 }
-*/
 .press-contact__heading {
   font-family: var(--font-display);
   font-size: var(--text-h3);
@@ -480,7 +483,7 @@
   justify-items: start;
   gap: var(--space-xs);
 }
-.press-contact__inicjaly {
+.press-contact__ikona {
   width: 56px;
   height: 56px;
   display: grid;
@@ -488,11 +491,9 @@
   border-radius: var(--radius-full);
   background: var(--color-white);
   color: var(--color-primary-700);
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-bold);
   margin-bottom: var(--space-sm);
 }
+.press-contact__ikona .ikona-kontakt { width: 26px; height: 26px; }
 .press-contact__rola {
   font-size: var(--text-caption-1);
   text-transform: uppercase;
@@ -673,9 +674,10 @@
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
 }
-/* Inicjaly zamiast zdjecia — placeholder do czasu, az bedzie fotografia
-   Aleksandry. Kolo z inicjalami jest uczciwe: nie udaje nikogo. */
-.kontakt-karta__inicjaly {
+/* Koperta zamiast zdjecia i zamiast inicjalow. Zdjecie stockowe podpisane
+   nazwiskiem przedstawialoby osobe, ktora nie istnieje; inicjaly wygladaly
+   jak awatar, ktoremu nie doladowal sie obrazek. Ikona nie udaje niczego. */
+.kontakt-karta__ikona {
   width: 72px;
   height: 72px;
   display: grid;
@@ -683,11 +685,9 @@
   border-radius: var(--radius-full);
   background: var(--color-white);
   color: var(--color-primary-700);
-  font-family: var(--font-display);
-  font-size: var(--text-h5);
-  font-weight: var(--weight-bold);
   margin-bottom: var(--space-md);
 }
+.kontakt-karta__ikona .ikona-kontakt { width: 34px; height: 34px; }
 .kontakt-karta__rola {
   font-size: var(--text-caption-1);
   text-transform: uppercase;
