@@ -7,8 +7,7 @@
    ================================================================ */
 
 /* --- kontenery --- */
-.container--press  { max-width: var(--max-press); }
-.container--narrow { max-width: var(--max-narrow); }
+.container--press { max-width: var(--max-press); }
 
 /* --- aktywna pozycja nawigacji ---
    aria-current obsluguje czytniki ekranu; ponizsze daje wskazowke wizualna.
@@ -367,20 +366,15 @@
    816 px), wiec sam blok tresci odjezdzal o 24,5 px w prawo wzgledem leadu,
    naglowka i przyciskow udostepniania. Miara wiersza zostaje bez zmian —
    max-width dziala dalej, zmienia sie tylko krawedz, do ktorej blok przylega. */
-.post .prose,
-.page-prose {
+.post .prose {
   font-size: var(--text-article);
   line-height: var(--leading-body);
   margin-inline: 0;
 }
 .post .prose p,
-.post .prose li,
-.page-prose p,
-.page-prose li { max-width: none; }
-.post .prose h2,
-.page-prose h2 { font-size: var(--text-h3); margin-top: var(--space-2xl); }
-.post .prose h3,
-.page-prose h3 { font-size: var(--text-h4); margin-top: var(--space-xl); }
+.post .prose li { max-width: none; }
+.post .prose h2 { font-size: var(--text-h3); margin-top: var(--space-2xl); }
+.post .prose h3 { font-size: var(--text-h4); margin-top: var(--space-xl); }
 .post .prose img { width: 100%; height: auto; border-radius: var(--radius-lg); margin-block: var(--space-lg); }
 
 /* --- blok zrodla dla kategorii media --- */
@@ -578,19 +572,6 @@
   border-color: var(--color-primary-700);
   color: var(--color-white);
 }
-
-/* --- naglowek sekcji z linkiem ---
-   erli.de centrowalo ten blok (text-align + margin-inline: auto), przez co
-   naglowek i link ladowaly jeden pod drugim. Tu odzyskuja jeden wiersz. */
-.section-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-lg);
-}
-.section-header__link { color: var(--color-link); font-weight: var(--weight-bold); }
 
 /* --- stopka: social media ---
    Te same zasady co .site-footer__nav a: bez podkreslenia i z celem

@@ -349,10 +349,6 @@
   --measure-lead:  52ch;   /* lead w hero */
   --measure-prose: 60ch;   /* lead na podstronach */
 
-  /* Szerokości układu biura prasowego */
-  --min-post-card: 300px;   /* min. kolumna auto-fill w .post-grid */
-  --max-narrow:    720px;   /* kolumna tekstu stron statycznych */
-
   /* --- Układ v2: wyróżniony artykuł i lista pionowa ---------------
      Wartości z pomiaru referencji wskazanej przez właściciela
      (viewport 1400 px). --max-content-width 1344 px jest dla biura

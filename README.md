@@ -111,10 +111,14 @@ src/pages/       O nas, Kontakt
 src/templates/   szablony stron
 src/partials/    fragmenty wielokrotnego użytku
 build/           moduły generatora + testy
-tools/           generator grafik wyróżniających, skrypty jednorazowe migracji
+tools/           generator grafik wyróżniających, optymalizacja obrazów
 assets/          CSS (źródła), fonty, obrazy
 dist/            wynik budowania (nie w repozytorium)
 ```
+
+Skrypty jednorazowe migracji z Joomli zostały usunięte po zakończeniu
+przenosin — są w historii repozytorium, gdyby kiedyś trzeba było do nich
+wrócić (`git log --diff-filter=D -- tools/`).
 
 `assets/css/main.css` jest generowany przez build ze źródeł
 (`tokens`, `base`, `layout`, `components`). Nie edytuj go —
@@ -122,6 +126,5 @@ zmiany wprowadzaj w plikach źródłowych.
 
 ## Dokumentacja
 
-- `docs/superpowers/specs/` — projekt techniczny
-- `docs/superpowers/plans/` — plan wdrożenia i rejestr blokad (`BLOKADY.md`)
+- `docs/superpowers/specs/` — projekt techniczny i decyzje układu
 - `design-system/design.md` — tokeny i komponenty
