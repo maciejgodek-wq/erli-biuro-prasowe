@@ -631,6 +631,27 @@
   color: var(--color-text-secondary);
   margin-top: var(--space-sm);
 }
+
+/* ================================================================
+   404 — strona bledu
+
+   Ten sam uklad co naglowek podstrony, wiec nie wyglada jak awaria serwera,
+   tylko jak strona serwisu. Dwa przyciski zamiast jednego "wroc na strone
+   glowna": kto trafil tu ze starego linku w artykule, szuka konkretnego
+   komunikatu, a nie strony glownej — listy sa blizej tego celu.
+   ================================================================ */
+.blad-404__lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-sm);
+  max-width: var(--measure-prose);
+}
+.blad-404__akcje {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
 .kontakt { padding-bottom: var(--space-4xl); }
 .kontakt__grid {
   display: grid;

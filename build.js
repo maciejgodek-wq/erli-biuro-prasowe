@@ -191,6 +191,25 @@ async function build() {
     }), '2026-07-27', '0.5');
   }
 
+  // --- strona błędu 404 ---
+  // Z pominieciem dodaj(): musi wyladowac jako 404.html w korzeniu (serwery
+  // szukaja jej tam, nie pod /404/) i nie moze trafic do sitemapy. Trafia za to
+  // do `strony`, wiec obejmuje ja kontrola jezykowa i kontrola obrazkow.
+  // Bez kanonicznego i z noindex — to nie jest adres, pod ktory ktos ma wracac.
+  strony.push({
+    sciezka: '404.html',
+    html: skladaj(tpl, '404', {
+      url: '/404',
+      tytulStrony: 'Nie ma takiej strony — Biuro prasowe ERLI',
+      opis: 'Adres jest nieaktualny albo zawiera literówkę.',
+      kanoniczny: '',
+      noindex: true,
+      ogTyp: 'website',
+      ogObraz: `${DOMENA}/assets/img/kv/default.webp`,
+      schemaJsonLd: '',
+    }),
+  });
+
   // --- kontrola językowa: przerywa build ---
   assertNoGerman(strony);
   console.log('  kontrola jezykowa: OK');

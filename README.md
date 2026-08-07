@@ -57,8 +57,13 @@ Wynik ląduje w `dist/`. To zawartość tego katalogu wgrywa się na serwer.
 
 ```bash
 npm run build   # generuje dist/
+npm run paczka  # buduje i składa archiwum wdrożeniowe dla IT
 npm test        # testy modułów budujących
 ```
+
+`npm run paczka` zawsze przebudowuje stronę przed spakowaniem — dzięki temu
+data w nazwie archiwum odpowiada jego zawartości i nie da się przekazać IT
+nieaktualnej wersji.
 
 Build przerywa się błędem w trzech sytuacjach:
 

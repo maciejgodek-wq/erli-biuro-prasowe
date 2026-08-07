@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ tytulStrony }}</title>
   <meta name="description" content="{{ opis }}">
+{{#if noindex}}
+  <meta name="robots" content="noindex,follow">
+{{else}}
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+{{/if}}
+{{#if kanoniczny}}
   <link rel="canonical" href="{{ kanoniczny }}">
+{{/if}}
 
   <meta property="og:type" content="{{ ogTyp }}">
   <meta property="og:title" content="{{ tytulStrony }}">

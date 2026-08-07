@@ -146,14 +146,17 @@ Permissions-Policy: camera=(), microphone=(), geolocation=()
 Serwis nie ładuje niczego z zewnątrz, więc można na nim domknąć również
 restrykcyjne `Content-Security-Policy` — jeśli IT to standaryzuje.
 
-### 2.8. Strona 404 — **do uzgodnienia**
+### 2.8. Strona 404
 
-Build **nie generuje** obecnie pliku `404.html`. Do wyboru:
+Paczka zawiera gotowy plik `404.html` w katalogu głównym — w szacie graficznej
+serwisu, z menu i odesłaniem do obu list.
 
-- serwer oddaje własną stronę błędu (wystarczy, jeśli jest firmowy standard), albo
-- dopiszemy `404.html` do buildu — wtedy IT wskazuje go jako stronę błędu.
+Wymaganie: serwer ma go oddawać dla nieistniejących adresów, **z kodem
+odpowiedzi 404** (nie 200 i nie przekierowaniem na stronę główną). Hostingi
+typu Cloudflare Pages robią to automatycznie; Apache i nginx wymagają
+wskazania (`ErrorDocument 404 /404.html` / `error_page 404 /404.html;`).
 
-Proszę o decyzję, bo to jedyny punkt, w którym paczka jest niekompletna.
+Strona ma `noindex` i nie występuje w `sitemap.xml`.
 
 ---
 
@@ -162,15 +165,24 @@ Proszę o decyzję, bo to jedyny punkt, w którym paczka jest niekompletna.
 Strona powstaje z plików źródłowych przez **build** — krok, który zamienia
 teksty w markdownie na gotowy HTML. Dwa modele do wyboru.
 
-### Model A — IT dostaje gotową paczkę *(prostszy)*
+### Model A — IT dostaje gotową paczkę *(wybrany)*
 
-Build uruchamia redakcja lub osoba techniczna po swojej stronie. IT dostaje
-katalog `dist/` i wgrywa jego zawartość do katalogu głównego serwera.
+Paczkę składa osoba opiekująca się repozytorium jedną komendą
+(`npm run paczka`). Powstaje archiwum `biuro-prasowe-RRRR-MM-DD.zip`
+o stałej strukturze:
 
-Wymagania: **żadne**. Serwer nie potrzebuje Node'a ani niczego poza
-serwowaniem plików.
+```
+strona/          zawartość katalogu głównego serwera
+konfiguracja/    mapa 301 dla Apache / nginx / panelu — NIE wgrywać na serwer
+WYMAGANIA-HOSTINGOWE.md
+PRZECZYTAJ-NAJPIERW.txt
+```
 
-Koszt: przy każdym komunikacie ktoś musi zbudować paczkę i przekazać ją IT.
+Wymagania po stronie serwera: **żadne poza punktem 2**. Bez Node'a, bez
+narzędzi budujących, bez dostępu do repozytorium.
+
+Paczki nie da się złożyć bez przebudowania strony — data w nazwie zawsze
+odpowiada zawartości. To zabezpieczenie przed wgraniem nieaktualnej wersji.
 
 ### Model B — build po stronie IT lub CI
 
@@ -232,7 +244,8 @@ Do sprawdzenia na nowym serwerze, zanim przełączymy DNS:
 - [ ] nagłówki odpowiedzi zawierają cztery pozycje z punktu 2.7
 - [ ] `/assets/css/main.css` **nie** ma nagłówka `immutable`
 - [ ] `/sitemap.xml` i `/robots.txt` są dostępne
-- [ ] nieistniejący adres zwraca 404, a nie stronę główną ani błąd 500
+- [ ] nieistniejący adres oddaje `404.html` **z kodem 404** — nie stronę
+      główną, nie kod 200, nie błąd 500
 
 Po przełączeniu DNS: zgłosić `sitemap.xml` w Google Search Console.
 

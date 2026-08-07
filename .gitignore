@@ -32,7 +32,9 @@ briefs/
 # Wynik budowania
 dist/
 
-# Paczki wdrozeniowe do recznego wgrania na serwer. Nie commitujemy ich:
-# szybko sie dezaktualizuja, a wtedy ktos wgrywa stara wersje strony
-# przekonany, ze wgrywa biezaca. Paczke robi sie z aktualnego dist/.
+# Paczki wdrozeniowe do recznego wgrania na serwer (npm run paczka).
+# Nie commitujemy ich: szybko sie dezaktualizuja, a wtedy ktos wgrywa stara
+# wersje strony przekonany, ze wgrywa biezaca.
+biuro-prasowe-*.zip
 biuro-prasowe-*.tar.gz
+.paczka-tmp/
