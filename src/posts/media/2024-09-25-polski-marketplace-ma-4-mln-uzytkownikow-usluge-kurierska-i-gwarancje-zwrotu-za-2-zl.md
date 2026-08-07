@@ -1,7 +1,7 @@
 ---
 tytul: "Polski marketplace ma 4 mln użytkowników, usługę kurierską i gwarancję zwrotu za 2 zł"
 data: 2024-09-25
-lead: "Marketplace Erli przekroczył próg 4 milionów zarejestrowanych klientów. Firma wprowadziła też Gwarancję Darmowego Zwrotu. Za 1,99 zł klienci ERLI mogą skorzystać z możliwości zwrotu produktów za pośrednictwem Paczkomatów® InPost. Polski marketplace ma 4 mln użytkowników, usługę kurierską i gwarancję zwrotu za 2 zł"
+lead: "Marketplace Erli przekroczył próg 4 milionów zarejestrowanych klientów. Firma wprowadziła też Gwarancję Darmowego Zwrotu. Za 1,99 zł klienci ERLI mogą skorzystać z możliwości zwrotu produktów za pośrednictwem Paczkomatów® InPost."
 zrodlo:
   nazwa: dlahandlu.pl
   url: https://www.dlahandlu.pl/e-commerce/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za-2-zl,149403.html

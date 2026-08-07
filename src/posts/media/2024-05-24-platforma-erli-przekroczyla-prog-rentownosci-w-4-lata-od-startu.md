@@ -1,7 +1,7 @@
 ---
 tytul: "Platforma ERLI przekroczyła próg rentowności w 4 lata od startu"
 data: 2024-05-24
-lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r. Dzięki temu EBITDA spółki po pierwszym kwartale wyniosła ponad 3,2 mln zł. Platforma ERLI przekroczyła próg rentowności w 4 lata od startu"
+lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r. Dzięki temu EBITDA spółki po pierwszym kwartale wyniosła ponad 3,2 mln zł."
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/platforma-erli-przekroczyla-prog-rentownosci-w-4-lata-od-startu/14869

@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI świętuje ponad 2 miliony pobrań aplikacji mobilnej: Polski m-commerce rośnie w siłę!"
 data: 2024-10-01
-lead: "ERLI, jedna z najszybciej rozwijających się platform e-commerce, przekroczyła próg 2 milionów pobrań swojej aplikacji mobilnej. ERLI świętuje ponad 2 miliony pobrań aplikacji mobilnej: Polski m-commerce rośnie w siłę!"
+lead: "ERLI, jedna z najszybciej rozwijających się platform e-commerce, przekroczyła próg 2 milionów pobrań swojej aplikacji mobilnej."
 grafika: /assets/img/artykuly/erli-swietuje-ponad-2-miliony-pobran-aplikacji-mobilnej-polski-m-commerce/hero.webp
 ---
 

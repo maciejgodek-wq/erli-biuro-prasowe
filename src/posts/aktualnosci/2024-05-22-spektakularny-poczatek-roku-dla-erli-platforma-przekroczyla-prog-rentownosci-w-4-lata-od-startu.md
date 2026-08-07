@@ -1,7 +1,7 @@
 ---
 tytul: "Spektakularny początek roku dla ERLI – platforma przekroczyła próg rentowności w 4 lata od startu"
 data: 2024-05-22
-lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r. Spektakularny początek roku dla ERLI – platforma przekroczyła próg rentowności w 4 lata od startu"
+lead: "Platforma zakupowa ERLI w pierwszych trzech miesiącach 2024 r. podwoiła liczbę transakcji oraz przychód netto, a obrót (GMV) wzrósł o 90% r/r."
 grafika: /assets/img/artykuly/spektakularny-poczatek-roku-dla-erli-platforma-przekroczyla-prog-rentownosci-w/hero.webp
 ---
 

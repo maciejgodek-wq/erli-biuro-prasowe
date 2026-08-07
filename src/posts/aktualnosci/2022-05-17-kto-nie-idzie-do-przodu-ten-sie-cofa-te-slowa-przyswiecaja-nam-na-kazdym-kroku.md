@@ -1,7 +1,7 @@
 ---
 tytul: "Kto nie idzie do przodu, ten się...cofa! Te słowa przyświecają nam na każdym kroku"
 data: 2022-05-17
-lead: "Kto nie idzie do przodu, ten się… cofa! Te słowa przyświecają nam na każdym kroku rozwoju ERLI. Codziennie staramy się podnosić swoje kwalifikacje, by zapewnić naszym klientom jak najlepsze doświadczenia i radość z zakupów. Dlatego z ogromną satysfakcją ogłaszamy - zostaliśmy Partnerem Google!"
+lead: "Te słowa przyświecają nam na każdym kroku rozwoju ERLI. Codziennie staramy się podnosić swoje kwalifikacje, by zapewnić naszym klientom jak najlepsze doświadczenia i radość z zakupów. Dlatego z ogromną satysfakcją ogłaszamy - zostaliśmy Partnerem Google!"
 grafika: /assets/img/artykuly/kto-nie-idzie-do-przodu-ten-sie-cofa-te-slowa-przyswiecaja-nam-na-kazdym-kroku/hero.webp
 ---
 

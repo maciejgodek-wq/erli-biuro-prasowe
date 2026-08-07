@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI chce w '25 przekroczyć 2 mld zł sprzedaży GMV"
 data: 2024-12-23
-lead: "ERLI, platforma marketplace, która po 9 miesiącach tego roku zwiększyła sprzedaż GMV o ponad 70 proc. do ok. 850 mln zł, w przyszłym roku chce przekroczyć 2 mld zł GMV. ERLI chce w '25 przekroczyć 2 mld zł sprzedaży GMV"
+lead: "ERLI, platforma marketplace, która po 9 miesiącach tego roku zwiększyła sprzedaż GMV o ponad 70 proc. do ok. 850 mln zł, w przyszłym roku chce przekroczyć 2 mld zł GMV."
 zrodlo:
   nazwa: biznes.pap.pl
   url: https://biznes.pap.pl/wiadomosci/firmy/erli-chce-w-25-przekroczyc-2-mld-zl-sprzedazy-gmv-wywiad

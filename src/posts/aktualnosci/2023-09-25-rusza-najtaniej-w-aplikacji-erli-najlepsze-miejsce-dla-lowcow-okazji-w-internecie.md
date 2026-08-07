@@ -1,7 +1,7 @@
 ---
 tytul: "Rusza „NAJtaniej!” w aplikacji ERLI – najlepsze miejsce dla łowców okazji w internecie"
 data: 2023-09-25
-lead: "W aplikacji ERLI ruszyła sekcja „NAJtaniej!”, w której dostępne są najtańsze oferty zakupowe – każda w limitowanych ilościach i o określonym czasie trwania. Rusza „NAJtaniej!” w aplikacji ERLI – najlepsze miejsce dla łowców okazji w internecie"
+lead: "W aplikacji ERLI ruszyła sekcja „NAJtaniej!”, w której dostępne są najtańsze oferty zakupowe – każda w limitowanych ilościach i o określonym czasie trwania."
 grafika: /assets/img/artykuly/rusza-najtaniej-w-aplikacji-erli-najlepsze-miejsce-dla-lowcow-okazji-w/hero.webp
 ---
 

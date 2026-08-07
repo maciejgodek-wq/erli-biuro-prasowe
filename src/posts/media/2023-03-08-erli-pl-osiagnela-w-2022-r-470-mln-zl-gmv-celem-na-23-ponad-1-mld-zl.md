@@ -1,7 +1,7 @@
 ---
 tytul: "Erli.pl osiągnęła w 2022 r. 470 mln zł GMV. Celem na '23 ponad 1 mld zł"
 data: 2023-03-08
-lead: "Erli.pl, platforma typu marketplace, w 2022 roku osiągnęła ponad 470 mln zł GMV oraz przekroczyła 2,7 mln sprzedanych produktów. W 2023 roku spółka chce przekroczyć 1 mld zł GMV i osiągnąć 6 mln sprzedanych produktów. Erli.pl osiągnęła w 2022 r. 470 mln zł GMV."
+lead: "Erli.pl, platforma typu marketplace, w 2022 roku osiągnęła ponad 470 mln zł GMV oraz przekroczyła 2,7 mln sprzedanych produktów. W 2023 roku spółka chce przekroczyć 1 mld zł GMV i osiągnąć 6 mln sprzedanych produktów. 470 mln zł GMV."
 zrodlo:
   nazwa: bankier.pl
   url: https://www.bankier.pl/wiadomosc/Erli-pl-osiagnela-w-2022-r-470-mln-zl-GMV-celem-na-23-ponad-1-mld-zl-8501567.html

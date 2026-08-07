@@ -1,7 +1,7 @@
 ---
 tytul: "ERLI i PayU rozszerzają współpracę partnerską o raty 5x0%"
 data: 2023-10-18
-lead: "ERLI udostępnia system rat 0% tuż przed doroczną gorączką zakupów ERLI i PayU rozszerzają współpracę partnerską o raty 5x0%"
+lead: "ERLI udostępnia system rat 0% tuż przed doroczną gorączką zakupów."
 grafika: /assets/img/artykuly/erli-i-payu-rozszerzaja-wspolprace-partnerska-o-raty-5x0/hero.webp
 ---
 

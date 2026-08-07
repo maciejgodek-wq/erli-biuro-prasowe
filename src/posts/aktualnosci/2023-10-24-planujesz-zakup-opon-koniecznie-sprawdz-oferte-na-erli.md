@@ -1,7 +1,7 @@
 ---
 tytul: "Planujesz zakup opon? Koniecznie sprawdź ofertę na ERLI"
 data: 2023-10-24
-lead: "Kategoria „opony” na platformie ERLI powiększyła się o ponad 58 tys. ofert – wszystkie w najlepszych cenach! Planujesz zakup opon? Koniecznie sprawdź ofertę na ERLI"
+lead: "Kategoria „opony” na platformie ERLI powiększyła się o ponad 58 tys. ofert – wszystkie w najlepszych cenach!"
 grafika: /assets/img/artykuly/planujesz-zakup-opon-koniecznie-sprawdz-oferte-na-erli/hero.webp
 ---
 

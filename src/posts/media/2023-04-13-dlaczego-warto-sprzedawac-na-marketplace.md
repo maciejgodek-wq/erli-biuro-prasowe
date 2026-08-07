@@ -1,7 +1,7 @@
 ---
 tytul: "Dlaczego warto sprzedawać na marketplace?"
 data: 2023-04-13
-lead: "Zanim zaczniesz swój własny biznes w e-commerce pomyśl, co chcesz osiągnąć i jak duże pieniądze możesz włożyć na start. Dlaczego warto sprzedawać na marketplace?"
+lead: "Zanim zaczniesz swój własny biznes w e-commerce pomyśl, co chcesz osiągnąć i jak duże pieniądze możesz włożyć na start."
 zrodlo:
   nazwa: mycompanypolska.pl
   url: https://mycompanypolska.pl/artykul/dlaczego-warto-sprzedawac-na-marketplace/11706

@@ -1,7 +1,7 @@
 ---
 tytul: "Aplikacja ERLI podbija rynek m-commerce – milion pobrań w pół roku"
 data: 2024-04-11
-lead: "Zaledwie 6 miesięcy wystarczyło, aby aplikacja mobilna ERLI przekroczyła 1 milion pobrań. Aplikacja ERLI podbija rynek m-commerce – milion pobrań w pół roku"
+lead: "Zaledwie 6 miesięcy wystarczyło, aby aplikacja mobilna ERLI przekroczyła 1 milion pobrań."
 grafika: /assets/img/artykuly/aplikacja-erli-podbija-rynek-m-commerce-milion-pobran-w-pol-roku/hero.webp
 ---
 
