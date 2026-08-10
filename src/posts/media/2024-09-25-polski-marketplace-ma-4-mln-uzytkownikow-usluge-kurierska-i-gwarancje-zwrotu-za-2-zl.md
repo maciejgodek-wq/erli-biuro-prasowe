@@ -6,6 +6,7 @@ zrodlo:
   nazwa: dlahandlu.pl
   url: https://www.dlahandlu.pl/e-commerce/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za-2-zl,149403.html
 grafika: /assets/img/artykuly/polski-marketplace-ma-4-mln-uzytkownikow-usluge-kurierska-i-gwarancje-zwrotu-za/hero.webp
+kadr: lewo
 ---
 
 Marketplace Erli przekroczył próg 4 milionów zarejestrowanych klientów. To efekt modelu biznesowego firmy, opartego na partnerskiej współpracy ze sprzedawcami. Firma podjęła współpracę z DPD Polska a klienci mogą korzystać z nowej metody dostawy – ERLI DPD Kurier. Firma wprowadziła też Gwarancję Darmowego Zwrotu. Za 1,99 zł klienci ERLI mogą skorzystać z możliwości zwrotu produktów za pośrednictwem Paczkomatów® InPost. Usługa jest dostępna dla wszystkich zamówień z dostawą do automatów paczkowych InPost.

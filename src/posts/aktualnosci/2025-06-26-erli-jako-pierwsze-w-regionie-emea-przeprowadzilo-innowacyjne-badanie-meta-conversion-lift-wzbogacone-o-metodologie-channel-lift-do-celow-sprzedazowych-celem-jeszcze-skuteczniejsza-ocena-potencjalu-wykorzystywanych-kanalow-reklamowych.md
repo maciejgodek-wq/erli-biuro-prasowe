@@ -3,6 +3,7 @@ tytul: "ERLI jako pierwsze w regionie EMEA przeprowadziło innowacyjne badanie M
 data: 2025-06-26
 lead: "ERLI, jeden z najszybciej rozwijających się marketplace’ów w Polsce, jako pierwszy reklamodawca w regionie EMEA (Europa, Bliski Wschód i Afryka), przeprowadził nowatorskie badanie Meta Conversion Lift z wykorzystaniem metodologii channel lift do kampanii sprzedażowych."
 grafika: /assets/img/artykuly/erli-jako-pierwsze-w-regionie-emea-przeprowadzilo-innowacyjne-badanie-meta/hero.webp
+kadr: lewo
 ---
 
 Celem analizy jest lepsze zrozumienie, jaki udział mają reklamy Mety w sprzedaży zakończonej w badanych kanałach: Google Ads, Bing Ads oraz ruchu organicznym. Dane pozyskane w badaniu pozwalają jeszcze skuteczniej wspierać sprzedaż merchantów – są kolejnym ważnym źródłem informacji przy podejmowaniu decyzji o optymalizacji działań reklamowych, doborze kanałów i dystrybucji budżetu.

@@ -105,6 +105,23 @@
   transition: transform var(--duration-slow) var(--ease-out);
 }
 
+/* --- kadr przy krawedzi ---
+   object-fit: cover tnie symetrycznie od srodka. Dla fotografii to wlasciwe
+   zachowanie, dla klucza wizualnego z tekstem — nie: layout KV ERLI to
+   naglowek przy jednej krawedzi i produkt albo telefon przy drugiej, a karta
+   3:2 zabiera z grafiki 2.17:1 az 31% szerokosci. Efekt to "MILIONY" zamiast
+   "2 MILIONY pobran aplikacji ERLI!".
+
+   Przyklejenie kadru do krawedzi z tekstem ratuje caly napis i nie kosztuje
+   nic w ukladzie: ramka zostaje ta sama, wiec karty na liscie dalej maja
+   rowna wysokosc. Traci sie drugie pol grafiki, ktore i tak bylo docinane.
+
+   Wlacza sie polem `kadr: lewo` (albo `prawo`) we frontmatterze artykulu.
+   Dziala na wszystkich trzech kadrach: karcie listy, karcie wyroznionej
+   i hero artykulu. */
+.kadr-lewo  { object-position: left center; }
+.kadr-prawo { object-position: right center; }
+
 .press-item__body {
   display: flex;
   flex-direction: column;
@@ -184,6 +201,17 @@
 .lista-etykieta {
   display: block;
   margin-bottom: var(--space-lg);
+}
+
+/* Etykieta na stronie glownej stala w dwoch dziurach naraz. Nad nia 84 px
+   paddingu sekcji (clamp 48-96 przy 1400 px), pod nia 24 px wlasnego marginesu
+   plus 48 px paddingu pierwszej karty — razem 72 px. Podpis wisial w bieli
+   osobno od pasma nad soba i osobno od listy, ktora opisuje.
+   Teraz 48 px nad i 32 px pod: etykieta nalezy do listy, nie do przerwy. */
+.section--hp-lista { padding-block-start: var(--space-2xl); }
+.section--hp-lista .lista-etykieta { margin-bottom: var(--space-md); }
+.section--hp-lista .lista-etykieta + .press-item .press-item__link {
+  padding-block-start: var(--space-md);
 }
 
 /* --- powiazane materialy: trzy kafle obok siebie ---
@@ -307,7 +335,10 @@
   height: 100%;
   background: var(--color-neutral-75);
 }
-.post__media img {
+/* Wlasna klasa zamiast selektora `.post__media img`: obrazek i tak dostaje
+   atrybut class dla opcjonalnego .kadr-*, wiec niech ma normalna nazwe BEM
+   jak reszta arkusza. */
+.post__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -410,15 +441,24 @@
 .share__link:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
 
 /* ================================================================
-   KONTAKT DLA MEDIOW — panel na pelna szerokosc kontenera
+   KONTAKT DLA MEDIOW — jasne pasmo z ciemna karta osoby
 
-   Poprzednio: karta 400 px wysrodkowana w kontenerze 1200 px, czyli 67%
-   szerokosci pustej, na tle #fafafa. Pasmo zlewalo sie ze stopka — czytalo
-   sie jako jej poczatek, a nie osobna sekcja.
+   Historia tego bloku w dwoch krokach. Najpierw byla karta 400 px
+   wysrodkowana w kontenerze 1200 px — 67% szerokosci pustej, na tle #fafafa;
+   pasmo zlewalo sie ze stopka. Potem cala plaszczyzna poszla w primary-700 ze
+   zdjeciem sali konferencyjnej w trybie multiply. Kontrast byl bez zarzutu,
+   ale blok stal sie najciezszym elementem calego serwisu: ciemny prostokat na
+   1136 px szerokosci, tuz nad rownie ciemna stopka.
 
-   Teraz panel w kolorze marki, na primary-700. Ciemniejszy odcien robi dwie
-   rzeczy naraz: podnosi zapas kontrastu ponad prog AA i przygasza zdjecie,
-   ktore pod multiply staje sie tekstura zamiast konkurowac z tekstem.
+   Teraz ciezar niesie tylko karta osoby. Pasmo jest jasne (primary-50),
+   akcent marki zostaje na kwadracie 5/12 szerokosci. Ten sam uklad co
+   .kontakt-karta na stronie Kontakt — dwa miejsca o tej samej roli wygladaja
+   tak samo, zamiast kazde inaczej.
+
+   Zdjecie sali konferencyjnej wypadlo razem z ciemnym tlem. Bez multiply nie
+   ma po nim czego ratowac: pokazane wprost bylo fotografia stockowa cudzego
+   biura podana jako biuro ERLI — dokladnie ten sam problem, przez ktory
+   w karcie stoi koperta, a nie zdjecie osoby.
 
    Notka "serwis wylacznie dla mediow" stoi POD panelem, nie w nim. To fine
    print, a nie komunikat — w srodku rozcienczala przekaz panelu.
@@ -429,35 +469,34 @@
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   gap: var(--space-3xl);
   align-items: center;
-  color: var(--color-white);
+  background: var(--color-primary-50);
   border-radius: var(--radius-2xl);
   padding: var(--space-3xl);
-
-  /* Fotografia sali konferencyjnej wtopiona w kolor marki.
-
-     Wazny jest `multiply`, a nie polprzezroczysta nakladka: multiply liczy
-     kanal jako (zdjecie x tlo)/255, wiec wynik nigdy nie jest jasniejszy od
-     samego primary-700. Kontrast bieli ma przez to twarda podloge 7.73:1
-     niezaleznie od tego, jak jasne jest zdjecie — nawet przeswietlone okna
-     w kadrze schodza do plaskiego koloru marki. Nakladka z opacity takiej
-     gwarancji nie daje: przy jasnym kadrze tekst potrafi zniknac.
-
-     Kadr dobrany pod ten mechanizm — duze spokojne plaszczyzny scian i szkla,
-     ludzie drobni i odwroceni. Pod multiply zostaje z tego tekstura
-     architektoniczna, ktora nie konkuruje z naglowkiem.
-
-     Zrodlo: Rodeo Project Management Software / Unsplash, licencja Unsplash
-     (uzycie komercyjne bez oplat, atrybucja niewymagana).
-     https://unsplash.com/photos/people-sitting-on-chair-inside-building-ONe-snuCaqQ */
-  background-color: var(--color-primary-700);
-  background-image: url('/assets/img/kontakt-tlo.webp');
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: multiply;
 }
 .press-contact__heading {
   font-family: var(--font-display);
   font-size: var(--text-h3);
+}
+/* Naglowek stal wczesniej sam w polowie panelu i zostawialo to duza dziure.
+   Jedno zdanie mowiace, z czym tu pisac, wypelnia kolumne i jest przy okazji
+   informacja, ktorej dziennikarz szuka. */
+.press-contact__opis {
+  margin-top: var(--space-md);
+  color: var(--color-text-secondary);
+  max-width: var(--measure-prose);
+}
+
+/* Zmierzone na #ddecf0: biel karty niesie primary-700 (7.73:1 dla bialego
+   tekstu w srodku), czarny naglowek na samym pasmie ma 14.4:1, a tekst
+   drugorzedny #3c3c3c — 9.1:1. */
+.press-contact__karta {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-xs);
+  background: var(--color-primary-700);
+  color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
 }
 
 /* Fine print pod panelem, na jasnym tle pasma. */
@@ -470,13 +509,6 @@
 .press-contact__note a { color: var(--color-link); }
 .press-contact__note a:hover { color: var(--color-link-hover); }
 
-/* Kolumna osoby wyrownana do prawej krawedzi panelu — inaczej wisi
-   w polowie pustego toru i traci zwiazek z przyciskiem. */
-.press-contact__osoba-blok {
-  display: grid;
-  justify-items: start;
-  gap: var(--space-xs);
-}
 .press-contact__ikona {
   width: 56px;
   height: 56px;
@@ -502,7 +534,7 @@
   margin-top: var(--space-md);
   font-weight: var(--weight-bold);
 }
-/* Domyslny promien .btn to 3 px — kant w panelu o promieniu 28 px.
+/* Domyslny promien .btn to 3 px — kant w karcie o promieniu 20 px.
    Pigulka trzyma sie jezyka pozostalych akcji na stronie. */
 .press-contact__cta { border-radius: var(--radius-full); }
 /* Bialy przycisk na tle marki nie potrzebuje wewnetrznej ramki. */

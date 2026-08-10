@@ -8,6 +8,13 @@ const MIESIACE_DOPELNIACZ = [
   'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia',
 ];
 
+/* Dozwolone wartosci pola `kadr`. Karty tna grafike w proporcji 3:2 (4:3 na
+   wyroznionej), a klucze wizualne ERLI maja tekst przy jednej krawedzi —
+   przy domyslnym kadrze od srodka pierwsze i ostatnie slowa naglowka wypadaja
+   poza ramke. `lewo` i `prawo` przyklejaja kadr do tej krawedzi, przy ktorej
+   stoi tekst. Zdjecia reportazowe zadnego pola nie potrzebuja. */
+export const KADRY = ['lewo', 'prawo'];
+
 /** Zdejmuje rozszerzenie i opcjonalny prefiks daty RRRR-MM-DD. */
 export function slugFromFilename(filename) {
   return filename.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
@@ -74,6 +81,13 @@ export async function loadPosts(dir, kategoria) {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(data.data)) {
         throw new Error(`${filename}: pole "data" musi miec format RRRR-MM-DD, jest "${data.data}"`);
       }
+      // Literowka w `kadr` nie ma jak sie ujawnic w wyniku — nieznana wartosc
+      // dalaby klase bez reguly CSS i grafika kadrowalaby sie po staremu.
+      if (data.kadr && !KADRY.includes(data.kadr)) {
+        throw new Error(
+          `${filename}: pole "kadr" przyjmuje ${KADRY.join(' albo ')}, jest "${data.kadr}"`
+        );
+      }
 
       return {
         slug,
@@ -83,6 +97,7 @@ export async function loadPosts(dir, kategoria) {
         tytul: data.tytul,
         lead: data.lead ?? '',
         grafika: data.grafika ?? null,
+        kadr: data.kadr ?? null,
         zrodlo: data.zrodlo ?? null,
         tresc: body,
         url: `/${kategoria}/${skrocSlug(slug)}/`,

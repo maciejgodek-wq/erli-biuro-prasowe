@@ -3,6 +3,7 @@ tytul: "4 miliony zarejestrowanych użytkowników na ERLI – sukces polskiej pl
 data: 2024-09-25
 lead: "ERLI jest jednym z liderów polskiego rynku e-commerce: marketplace ma już 4 miliony zarejestrowanych klientów, a serwis pozostaje w gronie najpopularniejszych platform e-commerce w Polsce. ERLI, drugi największy marketplace w Polsce, przekroczył próg 4 milionów zarejestrowanych klientów."
 grafika: /assets/img/artykuly/4-miliony-zarejestrowanych-uzytkownikow-na-erli-sukces-polskiej-platformy-e/hero.webp
+kadr: lewo
 ---
 
 ERLI, drugi największy marketplace w Polsce, przekroczył próg 4 milionów zarejestrowanych klientów. Dynamiczny wzrost bazy użytkowników to efekt konsekwentnie realizowanego modelu biznesowego firmy, opartego na partnerskiej współpracy ze sprzedawcami oraz szerokiej gamie korzyści dla kupujących oraz sprzedających.

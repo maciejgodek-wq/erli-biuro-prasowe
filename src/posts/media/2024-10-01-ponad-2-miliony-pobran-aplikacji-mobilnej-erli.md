@@ -6,6 +6,7 @@ zrodlo:
   nazwa: nowymarketing.pl
   url: https://nowymarketing.pl/ponad-2-miliony-pobran-aplikacji-mobilnej-erli/
 grafika: /assets/img/artykuly/ponad-2-miliony-pobran-aplikacji-mobilnej-erli/hero.webp
+kadr: lewo
 ---
 
 Platforma e-commerce ERLI przekroczyła próg 2 milionów pobrań swojej aplikacji mobilnej. Apka dostępna jest na rynku od września 2023 roku i notuje systematyczny wzrost popularności, przyciągając coraz większe grono użytkowników. Za jej pośrednictwem realizowanych jest już ponad 55% wszystkich transakcji ERLI.

@@ -35,7 +35,7 @@ test('brak leadu lub tresci zwraca false', () => {
   assert.equal(leadDublujeTresc('Dostatecznie dlugie zdanie wprowadzajace do tekstu.', ''), false);
   assert.equal(leadDublujeTresc(null, null), false);
 });
-import { navFlags, grafikaUrl, KATEGORIE, articleSchema, powiazaneDo } from './render.js';
+import { navFlags, grafikaUrl, kadrKlasa, KATEGORIE, articleSchema, powiazaneDo } from './render.js';
 
 test('flaga aria-current tylko dla aktywnej pozycji', () => {
   const flagi = navFlags('/aktualnosci/');
@@ -62,6 +62,12 @@ test('nazwy kategorii sa po polsku', () => {
 
 test('grafika buduje sciezke ze sluga gdy pole puste', () => {
   assert.equal(grafikaUrl({ slug: 'nowa-era', grafika: null }), '/assets/img/kv/nowa-era.webp');
+});
+
+test('kadrKlasa dokleja sie do listy klas albo znika bez sladu', () => {
+  assert.equal(kadrKlasa({ kadr: 'lewo' }), ' kadr-lewo');
+  assert.equal(kadrKlasa({ kadr: null }), '');
+  assert.equal(kadrKlasa({}), '');
 });
 
 test('grafika uzywa jawnie podanej nazwy', () => {

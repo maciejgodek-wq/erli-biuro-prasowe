@@ -6,6 +6,7 @@ zrodlo:
   nazwa: omnichannelnews.pl
   url: https://omnichannelnews.pl/2022/04/27/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/
 grafika: /assets/img/artykuly/platforma-erli-pl-wprowadza-platnosci-odroczone-od-payu-i-paypo/hero.webp
+kadr: lewo
 ---
 
 ### Platforma Erli.pl wprowadza płatności odroczone od PayU i PayPo

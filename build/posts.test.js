@@ -1,7 +1,23 @@
 // build/posts.test.js
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { slugFromFilename, sortByDateDesc, groupByYear, formatDatePl, skrocSlug } from './posts.js';
+import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import {
+  slugFromFilename, sortByDateDesc, groupByYear, formatDatePl, skrocSlug, loadPosts,
+} from './posts.js';
+
+/** Zapisuje jeden plik .md w katalogu tymczasowym i wczytuje go loadPosts. */
+async function wczytajZFrontmattera(frontmatter) {
+  const dir = await mkdtemp(join(tmpdir(), 'posty-'));
+  try {
+    await writeFile(join(dir, '2025-01-01-test.md'), `---\n${frontmatter}\n---\n\nTresc.\n`, 'utf8');
+    return await loadPosts(dir, 'aktualnosci');
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+}
 
 test('slug pomija prefiks daty w nazwie pliku', () => {
   assert.equal(slugFromFilename('2025-11-03-nowa-era-handlu.md'), 'nowa-era-handlu');
@@ -78,4 +94,19 @@ test('skrocSlug jest deterministyczny (ten sam wsad, ten sam wynik)', () => {
 test('skrocSlug domyslny limit to 80 znakow', () => {
   const dlugi = 'a-' + 'b'.repeat(90);
   assert.ok(skrocSlug(dlugi).length <= 80);
+});
+
+test('kadr przechodzi z frontmattera, domyslnie null', async () => {
+  const [zKadrem] = await wczytajZFrontmattera('tytul: T\ndata: 2025-01-01\nkadr: lewo');
+  assert.equal(zKadrem.kadr, 'lewo');
+
+  const [bezKadru] = await wczytajZFrontmattera('tytul: T\ndata: 2025-01-01');
+  assert.equal(bezKadru.kadr, null);
+});
+
+test('nieznana wartosc kadru przerywa build', async () => {
+  await assert.rejects(
+    () => wczytajZFrontmattera('tytul: T\ndata: 2025-01-01\nkadr: srodek'),
+    /pole "kadr" przyjmuje lewo albo prawo, jest "srodek"/
+  );
 });

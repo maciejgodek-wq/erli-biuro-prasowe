@@ -122,10 +122,20 @@ export function leadDublujeTresc(lead, tekstTresci) {
   return norm(tekstTresci).includes(pierwszeZdanie);
 }
 
+/**
+ * Klasa przesuwajaca kadr grafiki do krawedzi, przy ktorej stoi tekst.
+ * Ze spacja z przodu, zeby doklejala sie do listy klas w szablonie bez
+ * dodatkowych warunkow; pusta, gdy post nie deklaruje pola `kadr`.
+ */
+export function kadrKlasa(post) {
+  return post.kadr ? ` kadr-${post.kadr}` : '';
+}
+
 /** Wzbogaca post o pola potrzebne w szablonach. */
 export function decoratePost(post) {
   return {
     ...post,
+    kadrKlasa: kadrKlasa(post),
     grafikaUrl: grafikaUrl(post),
     grafikaSrcset: grafikaUrlMala(post)
       ? `${grafikaUrlMala(post)} 600w, ${grafikaUrl(post)} 1200w`

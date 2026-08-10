@@ -3,6 +3,7 @@ tytul: "ERLI świętuje ponad 2 miliony pobrań aplikacji mobilnej: Polski m-com
 data: 2024-10-01
 lead: "ERLI, jedna z najszybciej rozwijających się platform e-commerce, przekroczyła próg 2 milionów pobrań swojej aplikacji mobilnej."
 grafika: /assets/img/artykuly/erli-swietuje-ponad-2-miliony-pobran-aplikacji-mobilnej-polski-m-commerce/hero.webp
+kadr: lewo
 ---
 
 ERLI, jedna z najszybciej rozwijających się platform e-commerce, przekroczyła próg 2 milionów pobrań swojej aplikacji mobilnej. Ten imponujący wynik to efekt nie tylko rosnącej popularności zakupów online, ale przede wszystkim szeregu funkcjonalności i korzyści wynikających z jej użytkowania. Wymienić tu należy przede wszystkim niższe ceny niż na stronie internetowej oraz spersonalizowane oferty i powiadomienia o nowych promocjach. Aplikacja jest również dopracowana pod kątem doświadczenia użytkownika (UX), oferując intuicyjną wyszukiwarkę produktów, w pełni funkcjonalny koszyk zintegrowany z różnorodnymi metodami dostaw i płatności, a także możliwość zapisywania ulubionych produktów. Apka dostępna jest na rynku od września 2023 roku i notuje systematyczny wzrost popularności, przyciągając coraz większe grono użytkowników. Za jej pośrednictwem realizowanych jest już ponad 55% wszystkich transakcji ERLI.

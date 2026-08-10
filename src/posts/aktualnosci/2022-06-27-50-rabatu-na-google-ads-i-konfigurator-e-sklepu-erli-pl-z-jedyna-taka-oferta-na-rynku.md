@@ -3,6 +3,7 @@ tytul: "-50% rabatu na Google Ads i konfigurator e-sklepu – ERLI.pl z jedyną 
 data: 2022-06-27
 lead: "W dobie dynamicznego rozwoju rynku e-commerce przedsiębiorcy, sprzedający na platformach typu marketplace, poszukują narzędzi, które zapewnią im wzrost sprzedaży i wyróżnią ich ofertę na tle stale rosnącej konkurencji. W ERLI.pl doskonale znamy potrzeby naszych Sprzedawców, dlatego od dłuższego czasu pracowaliśmy nad rozwiązaniami, które sprostają ich oczekiwaniom. Teraz możemy oficjalnie zaprezentować światu nasze nowe usługi – ERLI Shop i ERLI Campaigns"
 grafika: /assets/img/artykuly/50-rabatu-na-google-ads-i-konfigurator-e-sklepu-erli-pl-z-jedyna-taka-oferta-na/hero.webp
+kadr: lewo
 ---
 
 ### -50% rabatu na Google Ads i konfigurator e-sklepu – ERLI.pl z jedyną taką ofertą na rynku

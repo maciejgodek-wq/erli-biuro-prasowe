@@ -16,7 +16,7 @@
         <div class="press-item__media">
           <img src="{{ wyrozniony.grafikaUrl }}" srcset="{{ wyrozniony.grafikaSrcset }}"
                sizes="(max-width: 768px) 100vw, 460px"
-               alt="" loading="eager" fetchpriority="high" class="press-item__img">
+               alt="" loading="eager" fetchpriority="high" class="press-item__img{{ wyrozniony.kadrKlasa }}">
         </div>
       </a>
     </article>
@@ -24,7 +24,7 @@
 </div>
 {{/if}}
 
-<section class="section" aria-labelledby="wczesniejsze">
+<section class="section section--hp-lista" aria-labelledby="wczesniejsze">
   <div class="container container--press">
     <!-- Etykieta, nie naglowek ekspozycyjny: sekcja tylko oddziela liste od
          wyroznionego newsa. Link "Wszystkie aktualnosci" usuniety — dublowal

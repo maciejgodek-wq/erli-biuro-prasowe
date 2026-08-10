@@ -3,6 +3,7 @@ tytul: "ERLI i PayU rozszerzają współpracę partnerską o raty 5x0%"
 data: 2023-10-18
 lead: "ERLI udostępnia system rat 0% tuż przed doroczną gorączką zakupów."
 grafika: /assets/img/artykuly/erli-i-payu-rozszerzaja-wspolprace-partnerska-o-raty-5x0/hero.webp
+kadr: lewo
 ---
 
 ERLI, jedna z najszybciej rozwijających się platform marketplace w Europie, uruchamia wygodny system nieoprocentowanych rat 5x0% dostarczany przez PayU. Nowa możliwość sfinansowania zakupów dostępna jest dla wszystkich kupujących przy zakupie produktów o wartości od 100 do 1 500 zł.
