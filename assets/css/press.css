@@ -459,41 +459,44 @@
 .share__link:hover { border-color: var(--color-primary); color: var(--color-primary-700); }
 
 /* ================================================================
-   KONTAKT DLA MEDIOW — jasne pasmo z ciemna karta osoby
+   KONTAKT DLA MEDIOW — jeden komponent, dwa miejsca
 
-   Historia tego bloku w dwoch krokach. Najpierw byla karta 400 px
-   wysrodkowana w kontenerze 1200 px — 67% szerokosci pustej, na tle #fafafa;
-   pasmo zlewalo sie ze stopka. Potem cala plaszczyzna poszla w primary-700 ze
-   zdjeciem sali konferencyjnej w trybie multiply. Kontrast byl bez zarzutu,
-   ale blok stal sie najciezszym elementem calego serwisu: ciemny prostokat na
-   1136 px szerokosci, tuz nad rownie ciemna stopka.
+   Historia tego bloku w trzech krokach. Najpierw karta 400 px wysrodkowana
+   w kontenerze 1200 px — 67% szerokosci pustej; pasmo zlewalo sie ze stopka.
+   Potem cala plaszczyzna w primary-700 ze zdjeciem sali konferencyjnej pod
+   multiply: kontrast bez zarzutu, ale blok stal sie najciezszym elementem
+   serwisu. Potem jasne pasmo primary-50 z ciemna karta osoby — lzejsze, ale
+   karta dalej byla ciemnym prostokatem, tyle ze mniejszym.
 
-   Teraz ciezar niesie tylko karta osoby. Pasmo jest jasne (primary-50),
-   akcent marki zostaje na kwadracie 5/12 szerokosci. Ten sam uklad co
-   .kontakt-karta na stronie Kontakt — dwa miejsca o tej samej roli wygladaja
-   tak samo, zamiast kazde inaczej.
+   Teraz hierarchie niesie swiatlo, nie kolor. Panel to bardzo jasny gradient,
+   a "tym waznym miejscem" jest biala karta uniesiona cieniem. Turkus zostaje
+   na kole ikony i w przycisku — dwa male pola zamiast calej plaszczyzny.
 
-   Zdjecie sali konferencyjnej wypadlo razem z ciemnym tlem. Bez multiply nie
-   ma po nim czego ratowac: pokazane wprost bylo fotografia stockowa cudzego
-   biura podana jako biuro ERLI — dokladnie ten sam problem, przez ktory
-   w karcie stoi koperta, a nie zdjecie osoby.
+   Karta (.wizytowka) jest jednym komponentem uzywanym w dwoch miejscach:
+   w pasmie pod trescia kazdej strony i na stronie Kontakt. Wczesniej byly to
+   dwa osobne zestawy regul (.press-contact__* i .kontakt-karta__*), ktore
+   opisywaly ten sam obiekt i rozjezdzaly sie przy kazdej zmianie.
 
    Notka "serwis wylacznie dla mediow" stoi POD panelem, nie w nim. To fine
    print, a nie komunikat — w srodku rozcienczala przekaz panelu.
    ================================================================ */
+
+/* --- pasmo pod trescia: wszystkie strony poza Kontaktem --- */
 .press-contact { padding-block: var(--space-3xl); background: var(--color-surface-soft); }
 .press-contact__panel {
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   gap: var(--space-3xl);
   align-items: center;
-  background: var(--color-primary-50);
+  background: var(--gradient-panel);
   border-radius: var(--radius-2xl);
   padding: var(--space-3xl);
 }
 .press-contact__heading {
   font-family: var(--font-display);
   font-size: var(--text-h3);
+  max-width: 15ch;
+  text-wrap: balance;
 }
 /* Naglowek stal wczesniej sam w polowie panelu i zostawialo to duza dziure.
    Jedno zdanie mowiace, z czym tu pisac, wypelnia kolumne i jest przy okazji
@@ -502,19 +505,6 @@
   margin-top: var(--space-md);
   color: var(--color-text-secondary);
   max-width: var(--measure-prose);
-}
-
-/* Zmierzone na #ddecf0: biel karty niesie primary-700 (7.73:1 dla bialego
-   tekstu w srodku), czarny naglowek na samym pasmie ma 14.4:1, a tekst
-   drugorzedny #3c3c3c — 9.1:1. */
-.press-contact__karta {
-  display: grid;
-  justify-items: start;
-  gap: var(--space-xs);
-  background: var(--color-primary-700);
-  color: var(--color-white);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
 }
 
 /* Fine print pod panelem, na jasnym tle pasma.
@@ -530,39 +520,93 @@
 .press-contact__note a { color: var(--color-link); }
 .press-contact__note a:hover { color: var(--color-link-hover); }
 
-.press-contact__ikona {
+/* --- wizytowka: karta osoby ---
+   Ten sam komponent w pasmie i na stronie Kontakt. Na gradiencie panelu biel
+   sama w sobie jest za slabym sygnalem, wiec role "wypelnienia" z poprzedniej
+   wersji przejmuje cien: karta unosi sie nad panelem, nota o firmie obok
+   zostaje plaska i tylko obrysowana. Ta sama hierarchia co wczesniej —
+   dziennikarz trafia wzrokiem najpierw na osobe — innym srodkiem.
+
+   Zmierzone: czarne nazwisko na bieli 17.4:1, rola #5a5a5a na bieli 7.0:1,
+   przycisk primary-700 na primary-50 6.3:1, nagłówek na jaśniejszym końcu
+   gradientu (#f8fbfc) 16.6:1. */
+.wizytowka {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-xs);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-wizytowka);
+}
+/* Koperta, nie inicjaly i nie zdjecie. Fotografia stockowa podpisana
+   nazwiskiem przedstawialaby osobe, ktora nie istnieje; inicjaly wygladaly
+   jak awatar, ktoremu nie doladowal sie obrazek. Ikona nie udaje niczego. */
+.wizytowka__ikona {
   width: 56px;
   height: 56px;
   display: grid;
   place-items: center;
   border-radius: var(--radius-full);
-  background: var(--color-white);
-  color: var(--color-primary-700);
+  background: var(--color-primary-700);
+  color: var(--color-white);
   margin-bottom: var(--space-sm);
 }
-.press-contact__ikona .ikona-kontakt { width: 26px; height: 26px; }
-.press-contact__rola {
-  font-size: var(--text-caption-1);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-overline);
-}
-.press-contact__osoba {
+.wizytowka__ikona .ikona-kontakt { width: 26px; height: 26px; }
+/* Nazwisko przed rola, nie odwrotnie: to ono jest tresc, rola tylko ja
+   kwalifikuje. Poprzednia kolejnosc byla dziedzictwem ciemnej karty, gdzie
+   mala etykieta u gory otwierala blok. */
+.wizytowka__osoba {
   font-family: var(--font-display);
   font-size: var(--text-h5);
   font-weight: var(--weight-bold);
 }
-.press-contact__cta {
+.wizytowka__rola {
+  font-size: var(--text-caption-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+}
+/* Promien .btn to 3 px — kant w karcie o promieniu 20 px. Pigulka trzyma
+   jezyk pozostalych akcji na stronie. */
+.wizytowka__cta {
   margin-top: var(--space-md);
   font-weight: var(--weight-bold);
+  border-radius: var(--radius-full);
 }
-/* Domyslny promien .btn to 3 px — kant w karcie o promieniu 20 px.
-   Pigulka trzyma sie jezyka pozostalych akcji na stronie. */
-.press-contact__cta { border-radius: var(--radius-full); }
-/* Bialy przycisk na tle marki nie potrzebuje wewnetrznej ramki. */
-.press-contact__cta.btn--secondary { box-shadow: none; }
-.press-contact__cta.btn--secondary:hover { background: var(--color-primary-50); }
-/* Domyslny focus jest ciemnoturkusowy — na tle marki bylby niewidoczny. */
-.press-contact__cta.btn:focus-visible { outline-color: var(--color-white); }
+/* --secondary jest bialy z wewnetrzna ramka — na bialej karcie zniknalby.
+   Wypelnienie primary-50 daje przyciskowi wlasne pole bez ramki. */
+.wizytowka__cta.btn--secondary {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+  box-shadow: none;
+}
+.wizytowka__cta.btn--secondary:hover {
+  background: var(--color-primary-100);
+  color: var(--color-primary-800);
+}
+
+/* Telefon i LinkedIn — pola opcjonalne, pojawiaja sie tylko gdy sa uzupelnione
+   w kontakt.md. Adres e-mail zostaje przyciskiem, te sa linkami: jedna akcja
+   glowna na karte, reszta pod nia.
+   min-height 24 px — WCAG 2.2 SC 2.5.8. Wyjatek "inline" nie obejmuje tych
+   linkow, bo stoja samodzielnie na liscie, a nie w zdaniu. */
+.wizytowka__dane {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-sm);
+}
+.wizytowka__dane a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  color: var(--color-link);
+  font-weight: var(--weight-bold);
+  text-underline-offset: 3px;
+}
+.wizytowka__dane a:hover { color: var(--color-link-hover); }
 
 /* --- paginacja ---
    Numerowana, bo przy 9 wpisach na strone stron jest kilka i skok wprost
@@ -672,9 +716,14 @@
    STRONA KONTAKT — dwie kolumny: karta osoby i nota dla redakcji
 
    Kontakt prasowy i nota dostaja rozne traktowanie, nie rozny rozmiar:
-   karta jest wypelniona (--color-surface-alt), nota tylko obrysowana.
-   Wypelnienie czyta sie jako wazniejsze, wiec dziennikarz trafia wzrokiem
-   najpierw na osobe, a nie na tekst do skopiowania.
+   karta jest uniesiona cieniem, nota tylko obrysowana. Uniesienie czyta sie
+   jako wazniejsze, wiec dziennikarz trafia wzrokiem najpierw na osobe, a nie
+   na tekst do skopiowania.
+
+   Sekcja stoi na tej samej powierzchni co pasmo kontaktowe na pozostalych
+   stronach (--gradient-panel). Bez tego biala karta na bialej stronie nie
+   miala od czego sie odbic, a oba miejsca — mimo tego samego komponentu —
+   dalej wygladalyby inaczej.
 
    Proporcja 5:7 zamiast 1:1 — karta ma cztery krotkie wiersze, nota kilka
    zdan. Rowne kolumny zostawialyby po lewej stronie dziure.
@@ -705,7 +754,10 @@
   gap: var(--space-md);
   margin-top: var(--space-xl);
 }
-.kontakt { padding-bottom: var(--space-4xl); }
+.kontakt {
+  padding-block: var(--space-3xl) var(--space-4xl);
+  background: var(--gradient-panel);
+}
 .kontakt__grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
@@ -718,68 +770,11 @@
   margin-bottom: var(--space-md);
 }
 
-/* Karta w kolorze marki, nie w szarosci. Wczesniej byla plaskim prostokatem
-   --color-surface-alt i na bialej stronie bez pasma kontaktowego (usunietego
-   stad, zeby tresc sie nie dublowala) nie mialo co przyciagac wzroku.
-   Ten sam jezyk co panel na pozostalych stronach: primary-700, bialy tekst,
-   zmierzone 7.73:1. */
-.kontakt-karta {
-  background: var(--color-primary-700);
-  color: var(--color-white);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-}
-/* Koperta zamiast zdjecia i zamiast inicjalow. Zdjecie stockowe podpisane
-   nazwiskiem przedstawialoby osobe, ktora nie istnieje; inicjaly wygladaly
-   jak awatar, ktoremu nie doladowal sie obrazek. Ikona nie udaje niczego. */
-.kontakt-karta__ikona {
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-full);
-  background: var(--color-white);
-  color: var(--color-primary-700);
-  margin-bottom: var(--space-md);
-}
-.kontakt-karta__ikona .ikona-kontakt { width: 34px; height: 34px; }
-.kontakt-karta__rola {
-  font-size: var(--text-caption-1);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-overline);
-}
-.kontakt-karta__osoba {
-  font-family: var(--font-display);
-  font-size: var(--text-h5);
-  font-weight: var(--weight-bold);
-  margin-block: var(--space-xs) var(--space-md);
-}
-.kontakt-karta__dane {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: var(--space-sm);
-}
-/* Bialy, nie --color-link: link w kolorze marki na tle marki bylby nieczytelny. */
-/* min-height 24 px — WCAG 2.2 SC 2.5.8. Wyjatek "inline" nie obejmuje tego
-   linku, bo stoi samodzielnie na liscie, a nie w zdaniu. Przy samym
-   line-height mial 21 px. */
-.kontakt-karta__dane a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  font-size: var(--text-lg);
-  font-weight: var(--weight-bold);
-  color: var(--color-white);
-  text-underline-offset: 3px;
-}
-/* --color-focus-ring to primary-700, czyli dokladnie kolor tla tej karty —
-   domyslny pierscien bylby na niej niewidoczny (1:1 przy wymaganych 3:1,
-   SC 1.4.11). Na ciemnych powierzchniach focus musi byc bialy. */
-.kontakt-karta__dane a:focus-visible { outline-color: var(--color-white); }
+/* Karta osoby to teraz .wizytowka — ten sam komponent co w pasmie na
+   pozostalych stronach. Osobne reguly .kontakt-karta__* zniknely: opisywaly
+   ten sam obiekt drugi raz i rozjezdzaly sie przy kazdej zmianie.
 
-/* Kontakt dla kupujacych schodzi do notki — na stronie prasowej nie moze
+   Kontakt dla kupujacych schodzi do notki — na stronie prasowej nie moze
    konkurowac waga z kontaktem dla mediow. */
 .kontakt__notka {
   margin-top: var(--space-lg);

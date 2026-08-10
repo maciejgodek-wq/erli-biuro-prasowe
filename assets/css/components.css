@@ -300,8 +300,15 @@
    FOOTER — light, 2-kolumnowy grid
    ================================================================ */
 
+/* Kreska u gory, bo sama roznica tla stopki nie niesie.
+   Zmierzone: #f4f4f4 stopki wobec #fafafa pasma kontaktowego to 1.04:1, a
+   wobec jasnego konca gradientu na stronie Kontakt (#f8fbfc) — 1.06:1. Przy
+   takiej roznicy granica sekcji nie istnieje i stopka czyta sie jak dalszy
+   ciag kontaktu. Wlosowa linia w kolorze pozostalych separatorow zalatwia to
+   bez wprowadzania kolejnego tla. */
 .site-footer {
   background: var(--color-surface-alt);
+  border-top: var(--border-hairline) solid var(--color-border);
   color: var(--color-text-secondary);
   padding-block: var(--space-10);
   margin-block-start: 0;

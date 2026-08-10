@@ -10,14 +10,18 @@
     <div class="kontakt__grid">
 
       <section class="kontakt__kolumna" aria-labelledby="kontakt-prasowy">
-        <h2 class="kontakt__naglowek" id="kontakt-prasowy">Kontakt dla mediów</h2>
+        <h2 class="kontakt__naglowek" id="kontakt-prasowy">Masz pytania? Napisz do nas</h2>
 
-        <div class="kontakt-karta">
-          <div class="kontakt-karta__ikona">{{> ikona-kontakt }}</div>
-          <p class="kontakt-karta__rola">{{ rola }}</p>
-          <p class="kontakt-karta__osoba">{{ osoba }}</p>
-          <ul class="kontakt-karta__dane" role="list">
-            <li><a href="mailto:{{ mail }}">{{ mail }}</a></li>
+        <!-- Ten sam komponent co w pasmie kontaktowym na pozostalych stronach.
+             Adres jest przyciskiem, telefon i LinkedIn linkami pod nim: jedna
+             akcja glowna na karte. -->
+        <div class="wizytowka">
+          <div class="wizytowka__ikona">{{> ikona-kontakt }}</div>
+          <p class="wizytowka__osoba">{{ osoba }}</p>
+          <p class="wizytowka__rola">{{ rola }}</p>
+          <a class="btn btn--secondary btn--medium wizytowka__cta" href="mailto:{{ mail }}">{{ mail }}</a>
+{{#if maDodatkoweDane}}
+          <ul class="wizytowka__dane" role="list">
 {{#if telefon}}
             <li><a href="tel:{{ telefonHref }}">{{ telefon }}</a></li>
 {{/if}}
@@ -25,6 +29,7 @@
             <li><a href="{{ linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
 {{/if}}
           </ul>
+{{/if}}
         </div>
 
         <p class="kontakt__notka">

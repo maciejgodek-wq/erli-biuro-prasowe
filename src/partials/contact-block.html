@@ -3,27 +3,20 @@
     <div class="press-contact__panel">
 
       <div class="press-contact__intro">
-        <h2 id="kontakt-prasowy" class="press-contact__heading">Kontakt dla mediów</h2>
+        <h2 id="kontakt-prasowy" class="press-contact__heading">Masz pytania? Napisz do nas</h2>
         <p class="press-contact__opis">
-          Pytania od dziennikarzy, prośby o komentarz, dane i materiały
-          do publikacji.
+          Potrzebujesz komentarza, informacji lub materiałów do publikacji?
+          Jesteśmy do dyspozycji.
         </p>
       </div>
 
-      <!-- Ciemny akcent zostaje, ale tylko na karcie osoby — nie na calym
-           pasmie. Wczesniej cala plaszczyzna szla w primary-700 pod zdjeciem
-           sali konferencyjnej w trybie multiply i pasmo wychodzilo ciezsze
-           niz cokolwiek innego na stronie. Ten sam uklad co karta na stronie
-           Kontakt, wiec oba miejsca mowia jednym jezykiem. -->
-      <div class="press-contact__karta">
-        <!-- Koperta, nie inicjaly i nie zdjecie. Fotografia stockowa podpisana
-             nazwiskiem Aleksandry przedstawialaby dziennikarzom osobe, ktora
-             nie istnieje, a inicjaly czytaly sie jak awatar bez awatara.
-             Ikona mowi wprost, po co jest ten blok. -->
-        <div class="press-contact__ikona">{{> ikona-kontakt }}</div>
-        <p class="press-contact__rola">Kontakt prasowy</p>
-        <p class="press-contact__osoba">Aleksandra Grądzka</p>
-        <a class="btn btn--secondary btn--medium press-contact__cta" href="mailto:media@erli.pl">media@erli.pl</a>
+      <!-- Ten sam komponent co karta na stronie Kontakt. Jesli zmienia sie
+           tutaj, zmienia sie tam — o to chodzilo. -->
+      <div class="wizytowka">
+        <div class="wizytowka__ikona">{{> ikona-kontakt }}</div>
+        <p class="wizytowka__osoba">Aleksandra Grądzka</p>
+        <p class="wizytowka__rola">Kontakt prasowy</p>
+        <a class="btn btn--secondary btn--medium wizytowka__cta" href="mailto:media@erli.pl">media@erli.pl</a>
       </div>
 
     </div>

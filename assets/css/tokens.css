@@ -374,6 +374,23 @@
   /* Podniesienie karty na hover */
   --lift-card: -2px;
 
+  /* --- powierzchnia kontaktowa („wizytówka") -----------------------
+     Panel pod kartą osoby: bardzo jasny gradient między bielą a
+     primary-50. Dwa własne odcienie, bo skala neutralna jest bez
+     podbicia w turkus (#fafafa, #f4f4f4), a primary-50 (#ddecf0) jako
+     całe tło panelu ciąży — sprawdzone, to była poprzednia wersja.
+     Te dwa to tinty primary-50 przy ~35% i ~12% krycia na bieli.
+     Kierunek 160° prowadzi wzrok od nagłówka po lewej do karty po prawej. */
+  --color-panel-od: #eef5f8;
+  --color-panel-do: #f8fbfc;
+  --gradient-panel: linear-gradient(160deg, var(--color-panel-od) 0%, var(--color-panel-do) 62%);
+
+  /* Cień karty osoby. Dwie warstwy: styk (1 px) i rozrzut (32 px w górę
+     przesunięty o -8 px), obie w primary-800 zamiast czerni — szary cień
+     na turkusowym panelu wychodzi brudny. --shadow-card-hover jest za
+     płytki, karta ma się unosić, a nie muskać tła. */
+  --shadow-wizytowka: 0 1px 2px rgba(0, 60, 75, 0.06), 0 12px 32px -8px rgba(0, 60, 75, 0.14);
+
   /* Proporcje grafiki OG (1200×630 — zgodne z og:image w base.html) */
   --aspect-og: 1200 / 630;
 

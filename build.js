@@ -181,6 +181,10 @@ async function build() {
       tytul: data.tytul,
       // Numer do atrybutu tel: bez spacji i lacznikow.
       telefonHref: data.telefon ? data.telefon.replace(/[^\d+]/g, '') : '',
+      // Szablon nie zna alternatywy logicznej, a lista pod przyciskiem ma sie
+      // pojawic, gdy jest CHOCBY jedno z pol opcjonalnych. Bez tej flagi
+      // trzeba bylo zagniezdzac dwa {{#if}} z powtorzonym <ul> w kazdej galezi.
+      maDodatkoweDane: Boolean(data.telefon || data.linkedin),
       tytulStrony: `${data.tytul} — Biuro prasowe ERLI`,
       opis: data.lead ?? '',
       kanoniczny: `${DOMENA}${url}`,

@@ -1,6 +1,6 @@
 ---
 tytul: Kontakt
-lead: Materiały i informacje dla dziennikarzy piszących o ERLI.
+lead: Potrzebujesz komentarza, informacji lub materiałów do publikacji? Jesteśmy do dyspozycji.
 szablon: kontakt
 rola: Kontakt prasowy
 osoba: Aleksandra Grądzka
