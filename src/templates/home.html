@@ -6,7 +6,6 @@
         <div class="press-item__body">
           <p class="press-item__meta">
             <span class="press-item__badge">Najnowsze</span>
-            <span class="press-item__kategoria">{{ wyrozniony.kategoriaNazwa }}</span>
             <time datetime="{{ wyrozniony.data }}">{{ wyrozniony.dataPl }}</time>
           </p>
           <h1 class="press-item__title">{{ wyrozniony.tytul }}</h1>
@@ -15,7 +14,7 @@
         </div>
         <div class="press-item__media">
           <img src="{{ wyrozniony.grafikaUrl }}" srcset="{{ wyrozniony.grafikaSrcset }}"
-               sizes="(max-width: 768px) 100vw, 460px"
+               sizes="(max-width: 768px) 100vw, 544px"
                alt="" loading="eager" fetchpriority="high" class="press-item__img{{ wyrozniony.kadrKlasa }}">
         </div>
       </a>

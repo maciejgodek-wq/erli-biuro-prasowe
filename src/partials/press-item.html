@@ -2,12 +2,15 @@
   <a class="press-item__link" href="{{ url }}">
     <div class="press-item__media">
       <img src="{{ grafikaUrl }}" srcset="{{ grafikaSrcset }}"
-           sizes="(max-width: 768px) 100vw, 544px"
+           sizes="(max-width: 768px) 100vw, 453px"
            alt="" loading="lazy" decoding="async" class="press-item__img{{ kadrKlasa }}">
     </div>
     <div class="press-item__body">
+      <!-- Sama data, bez nazwy kategorii. Na listach kategorii etykieta
+           powtarzala naglowek strony przy kazdej z dziewieciu kart, a na
+           stronie glownej i w powiazanych materialach byla drugim kolorem
+           w linijce, ktora ma tylko datowac wpis. -->
       <p class="press-item__meta">
-        <span class="press-item__kategoria">{{ kategoriaNazwa }}</span>
         <time datetime="{{ data }}">{{ dataPl }}</time>
       </p>
       <!-- Na listach kafle stoja bezposrednio pod H1 strony, wiec sa H2.

@@ -46,9 +46,17 @@
    ================================================================ */
 
 .press-item { border-bottom: var(--border-hairline) solid var(--color-border); }
+
+/* 5:7 na korzysc tekstu, nie po polowie.
+   Zmierzone na wszystkich 77 kartach: kolumna tekstu ma w medianie 212 px
+   wysokosci (min 179, q90 244). Przy rownych torach zdjecie mialo 544 px
+   szerokosci, czyli w kadrze 3:2 az 363 px wysokosci — o 151 px wiecej niz
+   tekst obok, i to pustka nad i pod tekstem robila dziury na liscie.
+   Wezszy tor to 453 px zdjecia, a przy okazji szersza szpalta tekstu, w
+   ktorej najdluzszy tytul schodzi z 374 do 341 px. */
 .press-item__link {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   align-items: stretch;
   gap: var(--space-2xl);
   padding-block: var(--space-2xl);
@@ -57,7 +65,7 @@
 }
 
 /* Zdjecie ma stala proporcje, wiec kazda karta na liscie ma je tej samej
-   wysokosci: 544 px toru / 1.905 = 286 px. Wczesniej wysokosc brala sie z
+   wysokosci: 453 px toru / 1.778 = 255 px. Wczesniej wysokosc brala sie z
    wiersza siatki, ktory wyznaczala kolumna tekstu — przy tytulach od 1 do 7
    linii dawalo to na stronie glownej siedem roznych wysokosci, od 213 do
    459 px.
@@ -68,19 +76,22 @@
    sprzecznym ograniczeniem. Bez rozciagania zostaja dwa: szerokosc toru i
    proporcja — wynik jest jednoznaczny.
 
-   center, nie start: przy dluzszym tekscie (karta wyrozniona ma 457 px wobec
-   286 px zdjecia) gorne wyrownanie zostawialo cala nadwyzke pod zdjeciem i
-   czytalo sie jak blad. Wysrodkowanie dzieli ja na pol.
+   center, nie start: przy dluzszym tekscie gorne wyrownanie zostawialoby cala
+   nadwyzke pod zdjeciem i czytalo sie jak blad. Wysrodkowanie dzieli ja na pol.
 
    Body nadal dziedziczy stretch z .press-item__link, wiec tekst zostaje
    wysrodkowany w pionie wzgledem calej karty.
 
-   --aspect-karta to 3:2. Wyzsze niz --aspect-og (1.905), bo przy tytulach na
-   szesc linii kolumna tekstu ma 457 px i po bokach 286-pikselowego zdjecia
-   zostawalo po ~85 px pustki. Kadrowanie jest za to mocniejsze: natywne
-   proporcje zdjec to 1.52-2.19, wiec najszersze traca w kadrze okolo 30%
-   szerokosci. Object-fit tnie symetrycznie, wiec obiekt w srodku kadru
-   przezywa — warto o tym pamietac przy doborze zdjec do artykulow.
+   --aspect-karta to 16:9, po pomiarze wszystkich 77 kart. Poprzednie 3:2 przy
+   torze 544 px dawalo zdjecie na 363 px, czyli srednio 145 px pustki na karte
+   — najczestszy tytul ma dwie linie i kolumna tekstu konczy sie na 212 px.
+   Tor 453 px w kadrze 16:9 to 255 px zdjecia i srednio 52 px pustki. Tylko
+   2 karty ze 77 maja tekst wyzszy od zdjecia; przy 1.905 bylo ich juz 7.
+
+   Kadrowanie w pionie jest za to mocniejsze niz przy 3:2: zdjecia 1.5:1 (a
+   takich jest w archiwum najwiecej) traca 16% wysokosci. Przejrzane — twarze
+   i tekst na kluczach wizualnych przezywaja. Przy doborze nowych zdjec warto
+   pamietac, ze object-fit tnie symetrycznie od srodka.
 
    overflow: hidden jest obowiazkowe — bez niego zdjecie wyzsze niz ramka
    rozpycha ja od srodka (min-height: auto na bloku). */
@@ -137,7 +148,6 @@
   text-transform: uppercase;
   letter-spacing: var(--tracking-overline);
 }
-.press-item__kategoria { color: var(--color-primary-700); font-weight: var(--weight-bold); }
 .press-item__title {
   font-family: var(--font-display);
   font-size: var(--text-h4);
@@ -169,7 +179,15 @@
 .featured-band { background: var(--color-surface-alt); }
 
 .press-item--featured { border-bottom: none; }
-.press-item--featured .press-item__link { padding-block: var(--space-3xl); }
+/* Rowne tory, w odroznieniu od kart listy. Karta wyrozniona ma tytul w --text-h2
+   i lead na cztery linie, wiec jej kolumna tekstu jest dwa razy wyzsza niz na
+   liscie i zdjecie ma sie z czym rownac. Reset jest obowiazkowy takze dlatego,
+   ze `order: 2` przenosi zdjecie do drugiego toru — przy 5fr/7fr dostaloby ten
+   szerszy, czyli dokladnie odwrotnie niz na liscie. */
+.press-item--featured .press-item__link {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding-block: var(--space-3xl);
+}
 .press-item--featured .press-item__media { order: 2; }
 .press-item--featured .press-item__title { font-size: var(--text-h2); }
 .press-item--featured .press-item__lead {
@@ -499,12 +517,15 @@
   padding: var(--space-xl);
 }
 
-/* Fine print pod panelem, na jasnym tle pasma. */
+/* Fine print pod panelem, na jasnym tle pasma.
+   Bez ograniczenia miary wiersza: 70ch lamalo te dwa zdania na dwie linie
+   w polowie szerokosci kontenera i zrobil sie z tego akapit, a to ma byc
+   jedna linijka drobnym drukiem. Przy 13 px caly tekst ma ~800 px i miesci
+   sie w 1136 px kontenera; na wezszych ekranach zawija sie normalnie. */
 .press-contact__note {
   margin-top: var(--space-lg);
   font-size: var(--text-caption-1);
   color: var(--color-text-secondary);
-  max-width: 70ch;
 }
 .press-contact__note a { color: var(--color-link); }
 .press-contact__note a:hover { color: var(--color-link-hover); }

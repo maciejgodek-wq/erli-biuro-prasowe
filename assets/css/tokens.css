@@ -377,10 +377,10 @@
   /* Proporcje grafiki OG (1200×630 — zgodne z og:image w base.html) */
   --aspect-og: 1200 / 630;
 
-  /* Kadr zdjęcia na karcie listy. 3:2 zamiast szerokiego 1200:630, bo przy
-     wielolinijkowych tytułach kolumna tekstu bywa dwa razy wyższa niż zdjęcie
-     i po jego bokach zostawała duża pustka. */
-  --aspect-karta: 3 / 2;
+  /* Kadr zdjęcia na karcie listy. 16:9 dobrane pomiarem wszystkich 77 kart
+     (mediana kolumny tekstu 212 px) — uzasadnienie przy `.press-item__media`
+     w press.css. Karta wyróżniona ma własne 4:3, bo jej tekst jest większy. */
+  --aspect-karta: 16 / 9;
 }
 
 /* Smooth <details> height interpolation (Chrome 129+, Firefox 137+) */
