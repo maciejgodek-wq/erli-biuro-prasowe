@@ -226,7 +226,11 @@
    plus 48 px paddingu pierwszej karty — razem 72 px. Podpis wisial w bieli
    osobno od pasma nad soba i osobno od listy, ktora opisuje.
    Teraz 48 px nad i 32 px pod: etykieta nalezy do listy, nie do przerwy. */
-.section--hp-lista { padding-block-start: var(--space-2xl); }
+/* Dol wyzerowany: pasmo kontaktowe wnosi juz wlasne 64 px od gory, a odkad
+   jest biale, nie ma tu zadnej zmiany tla, ktora usprawiedliwialaby jeszcze
+   84 px paddingu sekcji. Razem bylo 148 px pustki miedzy przyciskiem
+   "Wiecej aktualnosci" a panelem — zostaje 64. */
+.section--hp-lista { padding-block: var(--space-2xl) 0; }
 .section--hp-lista .lista-etykieta { margin-bottom: var(--space-md); }
 .section--hp-lista .lista-etykieta + .press-item .press-item__link {
   padding-block-start: var(--space-md);
@@ -481,8 +485,12 @@
    print, a nie komunikat — w srodku rozcienczala przekaz panelu.
    ================================================================ */
 
-/* --- pasmo pod trescia: wszystkie strony poza Kontaktem --- */
-.press-contact { padding-block: var(--space-3xl); background: var(--color-surface-soft); }
+/* --- pasmo pod trescia: wszystkie strony poza Kontaktem ---
+   Tlo biale, nie #fafafa. Szare pasmo mialo sens, gdy panel byl w kolorze
+   marki i potrzebowal ramy — teraz sam panel jest jasnym gradientem, wiec
+   szare tlo pod nim dawalo trzy odcienie bieli jeden na drugim i pasmo
+   robilo sie mgliste. Na bieli gradient panelu ma sie od czego odciac. */
+.press-contact { padding-block: var(--space-3xl); background: var(--color-surface); }
 .press-contact__panel {
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
@@ -720,10 +728,12 @@
    jako wazniejsze, wiec dziennikarz trafia wzrokiem najpierw na osobe, a nie
    na tekst do skopiowania.
 
-   Sekcja stoi na tej samej powierzchni co pasmo kontaktowe na pozostalych
-   stronach (--gradient-panel). Bez tego biala karta na bialej stronie nie
-   miala od czego sie odbic, a oba miejsca — mimo tego samego komponentu —
-   dalej wygladalyby inaczej.
+   Obie kolumny siedza w jednym panelu na tej samej powierzchni co pasmo
+   kontaktowe na pozostalych stronach (--gradient-panel), z tym samym
+   promieniem i paddingiem. Panel, nie tlo na cala szerokosc: pasmo na
+   pozostalych stronach tez jest zamknietym prostokatem w kontenerze, a
+   rozlane tlo robilo z tej sekcji cos innego niz wszedzie indziej.
+   Bez panelu biala karta na bialej stronie nie ma od czego sie odbic.
 
    Proporcja 5:7 zamiast 1:1 — karta ma cztery krotkie wiersze, nota kilka
    zdan. Rowne kolumny zostawialyby po lewej stronie dziure.
@@ -754,15 +764,15 @@
   gap: var(--space-md);
   margin-top: var(--space-xl);
 }
-.kontakt {
-  padding-block: var(--space-3xl) var(--space-4xl);
-  background: var(--gradient-panel);
-}
+.kontakt { padding-block: 0 var(--space-4xl); }
 .kontakt__grid {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: var(--space-3xl);
   align-items: start;
+  background: var(--gradient-panel);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-3xl);
 }
 .kontakt__naglowek {
   font-family: var(--font-display);
@@ -1062,8 +1072,14 @@
   .post__naglowek .post__kategoria { color: var(--color-link); }
   .post__naglowek .post__title { max-width: none; }
 
-  /* Karta nad nota — kontakt jest tym, po co sie tu przychodzi. */
-  .kontakt__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  /* Karta nad nota — kontakt jest tym, po co sie tu przychodzi.
+     Padding schodzi do 32 px tak samo jak w pasmie: przy 64 px na panelu
+     szerokim na 343 px na tresc zostawalo 215 px. */
+  .kontakt__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    padding: var(--space-xl);
+  }
 
   .press-contact__panel {
     grid-template-columns: 1fr;
