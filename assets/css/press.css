@@ -518,18 +518,23 @@
   max-width: var(--measure-prose);
 }
 
-/* Fine print pod panelem, na jasnym tle pasma.
-   Bez ograniczenia miary wiersza: 70ch lamalo te dwa zdania na dwie linie
-   w polowie szerokosci kontenera i zrobil sie z tego akapit, a to ma byc
-   jedna linijka drobnym drukiem. Przy 13 px caly tekst ma ~800 px i miesci
-   sie w 1136 px kontenera; na wezszych ekranach zawija sie normalnie. */
-.press-contact__note {
+/* --- drobny druk pod panelem ---
+   Jeden komponent w pasmie i na stronie Kontakt, tak samo jak .wizytowka.
+   Stoi POD panelem, nie w nim: to fine print, a nie komunikat — w srodku
+   rozcienczal przekaz panelu.
+
+   Bez ograniczenia miary wiersza. Kolejno: 70ch lamalo te dwa zdania na dwie
+   linie w polowie szerokosci kontenera, a na stronie Kontakt notka siedziala
+   w kolumnie 393 px i schodzila na dwie linie mimo braku limitu. Zmierzone:
+   caly tekst ma 766 px przy 12.7 px, wiec w kontenerze 1136 px miesci sie
+   w jednej linii do okna 831 px szerokosci. Nizej zawija sie normalnie. */
+.drobny-druk {
   margin-top: var(--space-lg);
   font-size: var(--text-caption-1);
   color: var(--color-text-secondary);
 }
-.press-contact__note a { color: var(--color-link); }
-.press-contact__note a:hover { color: var(--color-link-hover); }
+.drobny-druk a { color: var(--color-link); }
+.drobny-druk a:hover { color: var(--color-link-hover); }
 
 /* --- wizytowka: karta osoby ---
    Ten sam komponent w pasmie i na stronie Kontakt. Na gradiencie panelu biel
@@ -787,13 +792,9 @@
    pozostalych stronach. Osobne reguly .kontakt-karta__* zniknely: opisywaly
    ten sam obiekt drugi raz i rozjezdzaly sie przy kazdej zmianie.
 
-   Kontakt dla kupujacych schodzi do notki — na stronie prasowej nie moze
-   konkurowac waga z kontaktem dla mediow. */
-.kontakt__notka {
-  margin-top: var(--space-lg);
-  font-size: var(--text-caption-1);
-  color: var(--color-text-secondary);
-}
+   Kontakt dla kupujacych schodzi do drobnego druku pod panelem (.drobny-druk,
+   ten sam komponent co w pasmie) — na stronie prasowej nie moze konkurowac
+   waga z kontaktem dla mediow, a w kolumnie lamal sie na dwie linie. */
 
 .boilerplate {
   background: var(--color-surface);

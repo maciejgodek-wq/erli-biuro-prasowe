@@ -31,12 +31,6 @@
           </ul>
 {{/if}}
         </div>
-
-        <p class="kontakt__notka">
-          Serwis prasowy przeznaczony jest wyłącznie dla mediów.
-          Pytania dotyczące zamówień i zakupów prosimy kierować na
-          <a href="mailto:{{ mailKupujacy }}">{{ mailKupujacy }}</a>.
-        </p>
       </section>
 
       <section class="kontakt__kolumna" aria-labelledby="nota-o-firmie">
@@ -53,6 +47,15 @@
       </section>
 
     </div>
+
+    <!-- Drobny druk POD panelem, nie w kolumnie. W kolumnie mial 393 px
+         i lamal sie na dwie linie; tu ma cala szerokosc kontenera i miesci
+         sie w jednej. Ta sama pozycja co w pasmie kontaktowym. -->
+    <p class="drobny-druk">
+      Serwis prasowy przeznaczony jest wyłącznie dla mediów.
+      Pytania dotyczące zamówień i zakupów prosimy kierować na
+      <a href="mailto:{{ mailKupujacy }}">{{ mailKupujacy }}</a>.
+    </p>
   </div>
 </section>
 
