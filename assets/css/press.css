@@ -500,10 +500,13 @@
   border-radius: var(--radius-2xl);
   padding: var(--space-3xl);
 }
+/* 22ch, nie 15ch: tamta wartosc byla dobrana pod dluzszy naglowek i lamala
+   "Kontakt dla mediow" po slowie "dla". Limit zostaje, zeby dluzszy tekst nie
+   rozjechal sie na cala szerokosc kolumny (588 px to ponad 30 znakow). */
 .press-contact__heading {
   font-family: var(--font-display);
   font-size: var(--text-h3);
-  max-width: 15ch;
+  max-width: 22ch;
   text-wrap: balance;
 }
 /* Naglowek stal wczesniej sam w polowie panelu i zostawialo to duza dziure.
