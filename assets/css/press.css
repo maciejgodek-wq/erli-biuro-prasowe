@@ -1090,6 +1090,10 @@
     gap: var(--space-xl);
     padding: var(--space-xl);
   }
+  /* Wymuszone zlamanie opisu tylko na szerokim ekranie — w kolumnie 279 px
+     tekst zawija sie sam kilka razy i sztywny podzial zostawialby przed soba
+     poszarpana, krotka linie. */
+  .lamanie-desktop { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
